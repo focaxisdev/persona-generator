@@ -1,0 +1,39 @@
+name: Source note or citation
+description: Propose a bounded source note or citation clarification.
+title: "[Source note]: "
+labels: ["documentation", "source-note"]
+body:
+  - type: textarea
+    id: citation
+    attributes:
+      label: Citation details
+      description: Provide exact bibliographic details, DOI, URL, or access notes where available.
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim boundary
+      description: What limited vocabulary or boundary does this support?
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Proposed status
+      options:
+        - bounded-source-note
+        - partial-source-note
+        - source-gap
+        - do-not-use
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: This does not claim psychometric validation, diagnosis, or real-person prediction.
+          required: true
+        - label: This does not include fabricated citation details.
+          required: true

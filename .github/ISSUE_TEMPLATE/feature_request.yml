@@ -1,0 +1,28 @@
+name: Feature request
+description: Request a bounded documentation or template improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: Request
+      description: What improvement do you want?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: How does this stay within Markdown-first, fictional, low-stakes use?
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: This does not request an app, CLI, API, backend, database, telemetry, dependency, or hosted service.
+          required: true
+        - label: This does not request real-person profiling, diagnosis, scoring, or high-stakes use.
+          required: true

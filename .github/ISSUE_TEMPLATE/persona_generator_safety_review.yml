@@ -1,0 +1,41 @@
+name: Persona Generator safety review
+description: Report a safety-boundary issue in docs, templates, examples, or claims.
+title: "[Safety]: "
+labels: ["safety"]
+body:
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue type
+      options:
+        - real-person profiling risk
+        - high-stakes use risk
+        - diagnosis or scoring risk
+        - protected or sensitive attribute inference risk
+        - source-note inflation
+        - static catalog confusion
+        - hidden runtime or dependency confusion
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Location
+      description: File or section where the risk appears.
+    validations:
+      required: true
+  - type: textarea
+    id: concern
+    attributes:
+      label: Concern
+      description: Explain the risk without including real personal data.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: This issue avoids secrets, credentials, real personal data, and private documents.
+          required: true

@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a broken link, malformed Markdown, or packaging issue.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong?
+      description: Describe the documentation or packaging problem.
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where?
+      description: File, section, or link.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: This report does not include real personal data, secrets, credentials, or private files.
+          required: true

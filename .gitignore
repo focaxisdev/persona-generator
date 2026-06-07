@@ -1,0 +1,21 @@
+# Local/private files
+.env
+*.local
+private/
+raw-inputs/
+real-user-data/
+secrets/
+credentials/
+
+# Operating-system metadata
+._*
+.DS_Store
+Thumbs.db
+
+# Build/cache output
+node_modules/
+dist/
+build/
+.cache/
+__pycache__/
+*.pyc

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Persona Generator social preview</title>
+  <desc id="desc">Persona Generator preview showing a grammar-first flow from scenario brief through bounded constructs, ephemeral fictional personas, review, and optional handoff.</desc>
+  <defs>
+    <style>
+      text { font-family: system-ui, "Segoe UI", Arial, sans-serif; fill: #16202f; }
+      .bg { fill: #f4efe6; }
+      .accent { fill: #1e6b72; }
+      .accent2 { fill: #c85f3f; }
+      .line { stroke: #1e6b72; stroke-width: 5; fill: none; marker-end: url(#arrow); }
+      .node { fill: #ffffff; stroke: #1e6b72; stroke-width: 3; rx: 18; }
+      .node2 { fill: #fff8df; stroke: #c85f3f; stroke-width: 3; rx: 18; }
+      .h1 { font-size: 82px; font-weight: 800; }
+      .tag { font-size: 31px; font-weight: 520; fill: #344255; }
+      .core { font-size: 36px; font-weight: 760; fill: #1e6b72; }
+      .badge-text { font-size: 21px; font-weight: 700; fill: #ffffff; }
+      .node-text { font-size: 21px; font-weight: 700; text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#1e6b72" />
+    </marker>
+  </defs>
+  <rect class="bg" width="1280" height="640" />
+  <circle cx="1126" cy="116" r="72" fill="#e8d7b5" />
+  <rect x="64" y="70" width="164" height="42" rx="21" class="accent" />
+  <text x="88" y="99" class="badge-text">fictional</text>
+  <rect x="244" y="70" width="174" height="42" rx="21" class="accent2" />
+  <text x="270" y="99" class="badge-text">low-stakes</text>
+  <rect x="434" y="70" width="216" height="42" rx="21" class="accent" />
+  <text x="461" y="99" class="badge-text">Markdown-first</text>
+  <rect x="666" y="70" width="168" height="42" rx="21" class="accent2" />
+  <text x="694" y="99" class="badge-text">no profiling</text>
+
+  <text x="64" y="225" class="h1">Persona Generator</text>
+  <text x="68" y="286" class="tag">Generate academically bounded fictional personas on demand.</text>
+  <text x="68" y="366" class="core">Grammar, not a catalog.</text>
+
+  <rect x="736" y="404" width="146" height="86" class="node" />
+  <text x="809" y="455" class="node-text">brief</text>
+  <path class="line" d="M882 447 H925" />
+  <rect x="940" y="404" width="146" height="86" class="node" />
+  <text x="1013" y="455" class="node-text">constructs</text>
+  <path class="line" d="M1086 447 H1129" />
+  <rect x="1144" y="404" width="96" height="86" class="node2" />
+  <text x="1192" y="441" class="node-text">specs</text>
+  <text x="1192" y="468" class="node-text">review</text>
+
+  <text x="68" y="544" class="tag">Temporary fictional sub-agent specs for brainstorming, risk finding, and rehearsal.</text>
+</svg>

@@ -1,0 +1,30 @@
+name: Fictional persona example request
+description: Request or suggest a fictional low-stakes example.
+title: "[Fictional example]: "
+labels: ["example"]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Fictional scenario
+      description: Describe the low-stakes fictional scenario.
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Intended use
+      description: What should the example help readers understand?
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: This request is fictional and low-stakes.
+          required: true
+        - label: This request does not include real personal data.
+          required: true
+        - label: This request does not ask for diagnosis, scoring, protected/sensitive inference, or high-stakes use.
+          required: true

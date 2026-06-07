@@ -1,0 +1,31 @@
+# Persona Generator
+
+> Protocol-first Markdown for generating academically bounded fictional personas on demand for multi-agent rehearsal.
+
+Persona Generator is for fictional, low-stakes advisory work. It stores persona-generation grammar, not a static persona catalog. `llms.txt` is provided as an experimental navigation aid and does not guarantee crawler or model support.
+
+## Core
+
+- [README](README.md)
+- [AI Discovery Guide](AI_DISCOVERY.md)
+- [Quickstart](docs/QUICKSTART.md)
+- [Safety Boundaries](docs/SAFETY_BOUNDARIES.md)
+- [Architecture](docs/ARCHITECTURE.md)
+
+## Protocols
+
+- [LLM-native fictional persona instantiation](protocols/llm-native-fictional-persona-instantiation-v0.1.md)
+- [Persona generation request template](fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
+- [Ephemeral persona spec template](fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
+- [Instantiation review checklist](fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
+- [Persona Pack v0.1 contract](protocols/persona-pack-v0.1-contract.md)
+
+## Optional
+
+- [Minimal panel adapter](ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md)
+- [Persona Pack README](persona-pack-v0.1/README.md)
+- [Fictional walkthrough](examples/fictional-walkthrough-001/README.md)
+
+## Do Not Use For
+
+Real-person profiling, diagnosis, psychometric scoring, sensitive-attribute inference, hiring, surveillance, legal, medical, credit, insurance, educational placement, or autonomous decisions.
