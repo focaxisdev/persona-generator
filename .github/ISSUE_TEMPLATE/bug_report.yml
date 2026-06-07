@@ -22,5 +22,7 @@ body:
     attributes:
       label: Safety confirmation
       options:
-        - label: This report does not include real personal data, secrets, credentials, or private files.
+        - label: This report does not include personal data, sensitive data, secrets, credentials, or private files.
+          required: true
+        - label: This report does not include a covert profiling request, static persona catalog proposal, or unsupported high-stakes use case.
           required: true

@@ -6,6 +6,8 @@ This registry gives Persona Generator a bounded vocabulary for creating temporar
 
 Constructs in this file are qualitative anchors. They are not measurements, rankings, stable personality truths, or claims about real people.
 
+Academic boundary note: source notes in this public alpha are conservative unless individually verified. Citation placeholders are not academic proof. Use `source-gap` when no checked public source note is present.
+
 ## Registry Rules
 
 - Use constructs only for fictional, low-stakes, advisory personas.
@@ -21,8 +23,8 @@ Constructs in this file are qualitative anchors. They are not measurements, rank
 
 Use one status for each construct note:
 
-- `bounded-source-note`: useful vocabulary or boundary support is present.
-- `partial-source-note`: some support exists, but the construct must be used narrowly.
+- `verified`: a source note has been individually checked against a stable public source.
+- `partial`: some support exists, but the construct must be used narrowly.
 - `source-gap`: the construct is scenario-useful but should not be described as academically supported in this package.
 - `do-not-use`: the construct is too risky, unsupported, or likely to invite prohibited inference.
 
@@ -132,8 +134,8 @@ For each meaningful trait in a generated persona, record:
 
 | Construct family | Anchor | Source-note status | Scenario function | Prohibited interpretation | Agent behavior translation |
 | --- | --- | --- | --- | --- | --- |
-| Evidence posture | `evidence-seeking` | `bounded-source-note` | Helps review claims in a product brief. | Not a truthfulness or expertise score. | Ask for source, assumption, or testable example before accepting a claim. |
-| Boundary posture | `human-final-judgment` | `bounded-source-note` | Keeps generated advice advisory. | Not authority to make a final decision. | Present options and risks, then defer final choice to the human owner. |
+| Evidence posture | `evidence-seeking` | `source-gap` | Helps review claims in a product brief. | Not a truthfulness or expertise score. | Ask for source, assumption, or testable example before accepting a claim. |
+| Boundary posture | `human-final-judgment` | `source-gap` | Keeps generated advice advisory. | Not authority to make a final decision. | Present options and risks, then defer final choice to the human owner. |
 
 ## Extension Rule
 

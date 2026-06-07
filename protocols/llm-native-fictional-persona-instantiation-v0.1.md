@@ -17,7 +17,7 @@
 
 Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.
 
-Any capable AI agent may instantiate fictional personas on demand when it has a low-stakes fictional scenario brief, reads the bounded construct registry, applies qualitative variation rules, and produces an inspectable temporary persona specification.
+The protocol is designed for a capable AI agent to instantiate fictional personas on demand after it has a low-stakes fictional scenario brief, reads the bounded construct registry, applies qualitative variation rules, and produces an inspectable temporary persona specification for manual review.
 
 The protocol is not a persona inventory. It does not require named archetypes, prebuilt persona cards, numeric vectors, psychometric scores, embeddings, vector search, a database, an app, or hidden prompt state.
 
@@ -133,7 +133,7 @@ Do not create extra personas for completeness. Stop when additional personas add
 Construct combinations must be selected from the registry or clearly marked as source gaps. Each important generated trait must include:
 
 - construct family
-- source-note reference or source gap
+- source-note reference or explicit source gap
 - source-note status
 - intended scenario function
 - qualitative variation anchor

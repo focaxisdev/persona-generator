@@ -4,11 +4,7 @@ Persona Generator is a public distribution workspace for protocol-first fictiona
 
 ## Read First
 
-1. [AI_DISCOVERY.md](AI_DISCOVERY.md)
-2. [docs/QUICKSTART.md](docs/QUICKSTART.md)
-3. [docs/SAFETY_BOUNDARIES.md](docs/SAFETY_BOUNDARIES.md)
-
-Read only the smallest task-specific path. Do not crawl the full repository by default.
+Read [AI_DISCOVERY.md](AI_DISCOVERY.md) first, then follow the smallest task-specific path from its file map. Do not crawl the full repository by default.
 
 ## Core Rule
 
@@ -31,6 +27,14 @@ Read only the smallest task-specific path. Do not crawl the full repository by d
 - Hiring, surveillance, legal, medical, credit, insurance, or educational placement decisions.
 - Static persona catalog expansion.
 - Autonomous final decisions.
+
+## Runtime Inventory Boundary
+
+Do not infer or build a runtime persona inventory from examples, templates, Persona Pack files, or adapter docs. Examples are fictional fixtures only.
+
+## Optional Components
+
+Use the panel adapter or Persona Pack only when the active task explicitly requires synthesis, persistence, auditability, or handoff.
 
 ## Stop Rule
 

@@ -1,6 +1,8 @@
 # Evidence Summary
 
-This public summary is intentionally concise. It does not copy raw internal evidence.
+This public summary is intentionally concise. It does not copy private raw evidence.
+
+Read this together with [Academic Boundaries and Source Notes](ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md), [Safety Boundaries](SAFETY_BOUNDARIES.md), [Architecture](ARCHITECTURE.md), and [Quickstart](QUICKSTART.md).
 
 ## Supported Bounded Evidence
 
@@ -12,14 +14,16 @@ This public summary is intentionally concise. It does not copy raw internal evid
 
 ## What This Does Not Prove
 
-- General persona-generation reliability.
-- Universal panel quality.
-- Cross-provider portability.
-- Psychometric validity.
-- Real-user readiness.
-- High-stakes suitability.
-- Autonomous decision quality.
+- No universal reliability claim.
+- No universal panel-quality claim.
+- No cross-provider portability claim.
+- No psychometric-validity claim.
+- No real-user-readiness claim.
+- No high-stakes suitability claim.
+- No autonomous final-decision claim.
 
 ## Evidence Boundary
 
-The evidence supports public alpha protocol inspection, not claims of broad reliability or real-world deployment readiness.
+The evidence supports public alpha protocol inspection, not broad reliability or real-world deployment readiness.
+
+Public distribution includes only this curated summary. Private raw evidence remains outside the public workspace.

@@ -29,5 +29,7 @@ body:
     attributes:
       label: Safety confirmation
       options:
-        - label: This issue does not include real personal data, secrets, or private files.
+        - label: This issue does not include personal data, sensitive data, secrets, credentials, or private files.
+          required: true
+        - label: This issue does not include a covert profiling request, static persona catalog proposal, or unsupported high-stakes use case.
           required: true

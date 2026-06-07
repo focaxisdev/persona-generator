@@ -1,17 +1,19 @@
 # Security Policy
 
-## Reporting
+## Reporting Security or Privacy Issues
 
-Before public release, maintainers must replace this placeholder with an owner-approved security contact.
+Use GitHub Private Vulnerability Reporting where available for security, privacy, secrets, credentials, private data, or exploitable vulnerability reports.
 
-Until a contact is published, do not include secrets, credentials, real personal data, or sensitive reports in public issues.
+Do not disclose secrets, credentials, personal data, sensitive data, or exploitable details in public issues.
+
+Use public GitHub Issues only for non-sensitive documentation bugs, packaging problems, or safety-boundary questions that can be described with fictional or minimal examples.
 
 ## Reportable Issues
 
 Please report:
 
 - exposed secrets or credentials
-- accidental inclusion of real personal data
+- accidental inclusion of personal or sensitive data
 - unsafe persona-generation behavior
 - prompt-injection risks in templates or examples
 - misleading claims about diagnosis, scoring, validation, or real-person inference
@@ -23,14 +25,15 @@ Public issues must not include:
 
 - passwords, tokens, keys, or credentials
 - private documents
-- real-user data
+- personal data
+- sensitive data
 - medical, legal, hiring, surveillance, or eligibility details
-- sensitive identity information
+- covert profiling requests
 
-Use fictional or minimal examples when describing a problem.
+Use fictional or minimal examples when describing a public problem.
 
 ## Supported Versions
 
 | Version | Status |
 | --- | --- |
-| public alpha draft | owner review required before public release |
+| `v0.1.0-alpha` | public alpha protocol distribution |

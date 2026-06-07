@@ -1,30 +1,35 @@
 # Persona Generator
 
-> Protocol-first Markdown for generating academically bounded fictional personas on demand for multi-agent rehearsal.
+> Experimental discovery file for a protocol-first Markdown framework that generates academically bounded fictional personas on demand for multi-agent rehearsal.
 
-Persona Generator is for fictional, low-stakes advisory work. It stores persona-generation grammar, not a static persona catalog. `llms.txt` is provided as an experimental navigation aid and does not guarantee crawler or model support.
+`llms.txt` is not an official GitHub standard, and crawler or model support is not guaranteed. Read only the smallest task-specific path. Do not crawl the entire repository by default.
 
 ## Core
 
-- [README](README.md)
-- [AI Discovery Guide](AI_DISCOVERY.md)
-- [Quickstart](docs/QUICKSTART.md)
-- [Safety Boundaries](docs/SAFETY_BOUNDARIES.md)
-- [Architecture](docs/ARCHITECTURE.md)
+- [README](https://github.com/focaxisdev/persona-generator/blob/main/README.md)
+- [Traditional Chinese README](https://github.com/focaxisdev/persona-generator/blob/main/README.zh-TW.md)
+- [AI Discovery Guide](https://github.com/focaxisdev/persona-generator/blob/main/AI_DISCOVERY.md)
+- [Quickstart](https://github.com/focaxisdev/persona-generator/blob/main/docs/QUICKSTART.md)
+- [Architecture](https://github.com/focaxisdev/persona-generator/blob/main/docs/ARCHITECTURE.md)
+- [Safety Boundaries](https://github.com/focaxisdev/persona-generator/blob/main/docs/SAFETY_BOUNDARIES.md)
+- [Academic Boundaries and Source Notes](https://github.com/focaxisdev/persona-generator/blob/main/docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md)
+- [Evidence Summary](https://github.com/focaxisdev/persona-generator/blob/main/docs/EVIDENCE_SUMMARY.md)
 
 ## Protocols
 
-- [LLM-native fictional persona instantiation](protocols/llm-native-fictional-persona-instantiation-v0.1.md)
-- [Persona generation request template](fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
-- [Ephemeral persona spec template](fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
-- [Instantiation review checklist](fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
-- [Persona Pack v0.1 contract](protocols/persona-pack-v0.1-contract.md)
+- [LLM-native fictional persona instantiation](https://github.com/focaxisdev/persona-generator/blob/main/protocols/llm-native-fictional-persona-instantiation-v0.1.md)
+- [Persona generation request template](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
+- [Ephemeral persona spec template](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
+- [Instantiation review checklist](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
+- [Minimal panel adapter](https://github.com/focaxisdev/persona-generator/blob/main/ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md)
+- [Persona Pack v0.1 README](https://github.com/focaxisdev/persona-generator/blob/main/persona-pack-v0.1/README.md)
+- [Persona Pack v0.1 contract](https://github.com/focaxisdev/persona-generator/blob/main/protocols/persona-pack-v0.1-contract.md)
 
-## Optional
+## Public Example
 
-- [Minimal panel adapter](ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md)
-- [Persona Pack README](persona-pack-v0.1/README.md)
-- [Fictional walkthrough](examples/fictional-walkthrough-001/README.md)
+- [Limited public beta fixture](https://github.com/focaxisdev/persona-generator/blob/main/examples/limited-public-beta/README.md)
+
+Examples are fictional fixtures for format and safety demonstration only. They are not runtime inventory, datasets, or reusable persona catalog entries.
 
 ## Do Not Use For
 

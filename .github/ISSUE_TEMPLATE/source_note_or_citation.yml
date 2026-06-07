@@ -22,8 +22,8 @@ body:
     attributes:
       label: Proposed status
       options:
-        - bounded-source-note
-        - partial-source-note
+        - verified
+        - partial
         - source-gap
         - do-not-use
     validations:
@@ -33,7 +33,9 @@ body:
     attributes:
       label: Confirmations
       options:
-        - label: This does not claim psychometric validation, diagnosis, or real-person prediction.
+        - label: This does not claim psychometric validation, diagnosis, real-person prediction, or unsupported high-stakes suitability.
           required: true
         - label: This does not include fabricated citation details.
+          required: true
+        - label: This does not include personal data, sensitive data, secrets, credentials, private files, covert profiling requests, or static persona catalog proposals.
           required: true

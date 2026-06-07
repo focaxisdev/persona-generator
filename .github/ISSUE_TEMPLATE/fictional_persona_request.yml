@@ -24,7 +24,7 @@ body:
       options:
         - label: This request is fictional and low-stakes.
           required: true
-        - label: This request does not include real personal data.
+        - label: This request does not include personal data, sensitive data, secrets, credentials, or private files.
           required: true
-        - label: This request does not ask for diagnosis, scoring, protected/sensitive inference, or high-stakes use.
+        - label: This request does not ask for diagnosis, scoring, protected/sensitive inference, covert profiling, static persona catalogs, or unsupported high-stakes use.
           required: true

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
   <title id="title">Persona Generator social preview</title>
-  <desc id="desc">Persona Generator preview showing a grammar-first flow from scenario brief through bounded constructs, ephemeral fictional personas, review, and optional handoff.</desc>
+  <desc id="desc">Persona Generator preview with fictional, low-stakes, Markdown-first, and no-profiling badges; headline text and a compact flow from brief to constructs to specs review.</desc>
   <defs>
     <style>
       text { font-family: system-ui, "Segoe UI", Arial, sans-serif; fill: #16202f; }

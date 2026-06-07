@@ -11,8 +11,8 @@ Core principle:
 - Generate temporary fictional personas for bounded low-stakes scenarios.
 - Review generated personas manually before downstream use.
 - Preserve uncertainty, dissent, and safety boundaries.
-- Optionally use a minimal panel rehearsal.
-- Optionally serialize one selected fictional persona with Persona Pack v0.1.
+- Use optional panel rehearsal only when the task explicitly asks for synthesis.
+- Use optional Persona Pack serialization only when the task explicitly needs persistence, auditability, or handoff.
 
 ## Prohibited Use
 
@@ -28,11 +28,12 @@ Core principle:
 
 1. [docs/QUICKSTART.md](docs/QUICKSTART.md)
 2. [docs/SAFETY_BOUNDARIES.md](docs/SAFETY_BOUNDARIES.md)
-3. [fictional-persona-instantiation-v0.1/persona-generation-request-template.md](fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
-4. [fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md](fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
-5. [fictional-persona-instantiation-v0.1/instantiation-review-checklist.md](fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
-6. Optional: [ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md](ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md)
-7. Optional: [protocols/persona-pack-v0.1-contract.md](protocols/persona-pack-v0.1-contract.md)
+3. [docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md)
+4. [fictional-persona-instantiation-v0.1/persona-generation-request-template.md](fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
+5. [fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md](fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
+6. [fictional-persona-instantiation-v0.1/instantiation-review-checklist.md](fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
+7. Optional, only when task-triggered: [ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md](ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md)
+8. Optional, only when task-triggered: [protocols/persona-pack-v0.1-contract.md](protocols/persona-pack-v0.1-contract.md)
 
 ## Machine-Readable Architecture Summary
 
@@ -56,6 +57,11 @@ fictional_low_stakes_scenario
 | Review personas | [fictional-persona-instantiation-v0.1/instantiation-review-checklist.md](fictional-persona-instantiation-v0.1/instantiation-review-checklist.md) | Pass, Revise, or Block is recorded. |
 | Run optional panel rehearsal | [ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md](ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md) | One bounded synthesis is complete. |
 | Serialize for handoff | [protocols/persona-pack-v0.1-contract.md](protocols/persona-pack-v0.1-contract.md) | Persona Pack files are complete and manually reviewed. |
+| Audit or discover boundaries | [docs/SAFETY_BOUNDARIES.md](docs/SAFETY_BOUNDARIES.md) + [docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md) | Boundary summary complete; no generation performed. |
+
+## Examples
+
+Examples are fictional fixtures for format and safety demonstration only. They are not runtime inventory, datasets, reusable presets, or a static persona catalog.
 
 ## Bounded Claims
 

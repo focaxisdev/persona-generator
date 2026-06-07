@@ -4,7 +4,9 @@ Generate academically bounded fictional personas on demand for multi-agent rehea
 
 `Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
 
-Persona Generator is a local-first, Markdown-first protocol package for creating temporary fictional personas for bounded, low-stakes scenarios. It helps an AI agent generate only the perspectives needed for a task, review them manually, preserve dissent, and stop before claims outrun evidence.
+Persona Generator is a local-first, Markdown-first protocol package for creating temporary fictional personas for bounded, low-stakes scenarios. Use this when you want an AI agent to generate a few temporary fictional viewpoints for a low-stakes rehearsal, then stop with an auditable advisory summary.
+
+**Start here:** [Quickstart](docs/QUICKSTART.md) -> [AI discovery guide](AI_DISCOVERY.md) -> [Safety boundaries](docs/SAFETY_BOUNDARIES.md).
 
 ## What This Is
 
@@ -16,6 +18,27 @@ Persona Generator is a local-first, Markdown-first protocol package for creating
 | A manual-review workflow | A diagnosis tool |
 | A dissent-preserving advisory aid | An autonomous decision maker |
 | Optional Persona Pack handoff files | Real-person profiling infrastructure |
+
+## Try It in Five Minutes
+
+1. Read [docs/QUICKSTART.md](docs/QUICKSTART.md).
+2. Ask your AI agent to read [AI_DISCOVERY.md](AI_DISCOVERY.md) for the smallest task-specific path.
+3. Provide one fictional, low-stakes scenario brief.
+4. Generate the minimum useful set of ephemeral personas.
+5. Run the manual review checklist.
+6. Optionally use the minimal panel adapter only when the task explicitly calls for synthesis.
+7. Stop with a bounded advisory synthesis.
+
+Copy-paste starter prompt:
+
+```text
+Read AI_DISCOVERY.md and docs/QUICKSTART.md. Use Persona Generator only for a fictional, low-stakes scenario. Generate the minimum useful set of ephemeral fictional personas, review them manually, preserve dissent, avoid static persona catalogs, and stop after a bounded advisory synthesis.
+
+Scenario: [describe your fictional low-stakes scenario here]
+Decision or rehearsal question: [what should the temporary perspectives examine?]
+Why this is fictional and low-stakes: [brief boundary statement]
+Desired output: [personas only / personas plus synthesis / optional handoff]
+```
 
 ## How It Works
 
@@ -33,23 +56,11 @@ fictional low-stakes scenario
 -> stop
 ```
 
-## Try It in Five Minutes
+Optional panel rehearsal and Persona Pack serialization are task-triggered components. They are not default runtime inventory and they do not create reusable persona presets.
 
-1. Read [docs/QUICKSTART.md](docs/QUICKSTART.md).
-2. Ask your AI agent to read [AI_DISCOVERY.md](AI_DISCOVERY.md) or [AGENTS.md](AGENTS.md).
-3. Provide one fictional, low-stakes scenario.
-4. Generate the minimum useful set of ephemeral personas.
-5. Run the manual review checklist.
-6. Optionally use the minimal panel adapter.
-7. Stop with a bounded advisory synthesis.
+## Public Example
 
-Copy-paste starter prompt:
-
-```text
-Read AI_DISCOVERY.md and docs/QUICKSTART.md. Use Persona Generator only for a fictional, low-stakes scenario. Generate the minimum useful set of ephemeral fictional personas, review them manually, preserve dissent, avoid static persona catalogs, and stop after a bounded advisory synthesis.
-
-Scenario: [describe your fictional low-stakes scenario here]
-```
+See [examples/limited-public-beta](examples/limited-public-beta/README.md) for a fictional volunteer knowledge-sharing scenario with multiple ephemeral personas, visible dissent, a preserved minority view, and an advisory synthesis.
 
 ## Use Cases
 
@@ -57,10 +68,10 @@ Scenario: [describe your fictional low-stakes scenario here]
 - Social-conflict perspective exploration using fictional roles.
 - Creative brainstorming without permanent persona inventory.
 - Pre-mortem review for reversible decisions.
-- Advisory red-team review for low-stakes plans.
+- Advisory review for low-stakes plans.
 - Optional handoff of one selected fictional persona through Persona Pack v0.1.
 
-All examples are fictional, low-stakes, and advisory only.
+All examples are fictional fixtures for format and safety demonstration only. They are not datasets, runtime inventory, reusable presets, or a static persona catalog.
 
 ## Safety Boundaries
 
@@ -68,16 +79,17 @@ Persona Generator is not for real-person profiling, diagnosis, hiring, surveilla
 
 Read [docs/SAFETY_BOUNDARIES.md](docs/SAFETY_BOUNDARIES.md) before adapting the workflow.
 
-## Evidence and Current Limits
+## Academic Boundaries and Evidence
 
-Current evidence supports bounded internal dry-run claims only. It does not prove general persona-generation reliability, panel quality, cross-provider portability, psychometric validity, real-user readiness, or high-stakes suitability.
+Academic constructs are bounded vocabulary for scenario design. They are not psychometric measurements, validation proof, diagnosis, or real-world behavior prediction.
 
-Read [docs/EVIDENCE_SUMMARY.md](docs/EVIDENCE_SUMMARY.md).
+Read [docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md) and [docs/EVIDENCE_SUMMARY.md](docs/EVIDENCE_SUMMARY.md).
 
 ## Documentation
 
 - [Quickstart](docs/QUICKSTART.md)
 - [Architecture](docs/ARCHITECTURE.md)
+- [Academic Boundaries and Source Notes](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md)
 - [Why Persona Generator](docs/WHY_PERSONA_GENERATOR.md)
 - [Use Cases](docs/USE_CASES.md)
 - [FAQ](docs/FAQ.md)
@@ -89,12 +101,12 @@ Read [docs/EVIDENCE_SUMMARY.md](docs/EVIDENCE_SUMMARY.md).
 
 Before contributing, read [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [SECURITY.md](SECURITY.md), and [SUPPORT.md](SUPPORT.md).
 
-Do not submit real-user data, sensitive personal data, covert profiling requests, static persona catalogs, psychometric scoring, or high-stakes use cases.
+Do not submit personal data, sensitive data, covert profiling requests, static persona catalog proposals, psychometric scoring, or high-stakes use cases.
 
 ## License
 
-License selection is pending before public launch. The owner must choose the final license before this package is published as an open-source repository.
+Persona Generator is licensed under [Apache-2.0](LICENSE). The license applies to this public repository's docs, protocols, templates, examples, visual assets, and future code unless a file states otherwise.
 
 ## Star the Project
 
-If this protocol-first approach is useful to you, consider starring the repository so others can discover it.
+If this protocol-first approach is useful to you, consider starring the repository so other builders can find it.

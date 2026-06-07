@@ -1,8 +1,11 @@
 name: Persona Generator safety review
-description: Report a safety-boundary issue in docs, templates, examples, or claims.
+description: Report a public, non-sensitive safety-boundary issue in docs, templates, examples, or claims.
 title: "[Safety]: "
 labels: ["safety"]
 body:
+  - type: markdown
+    attributes:
+      value: Do not use this public template for secrets, credentials, private data, exploitable vulnerabilities, personal data, sensitive data, or conduct reports. Use GitHub Private Vulnerability Reporting or GitHub moderation channels where appropriate.
   - type: dropdown
     id: issue_type
     attributes:
@@ -15,6 +18,7 @@ body:
         - source-note inflation
         - static catalog confusion
         - hidden runtime or dependency confusion
+        - covert profiling request risk
         - other
     validations:
       required: true
@@ -22,14 +26,14 @@ body:
     id: location
     attributes:
       label: Location
-      description: File or section where the risk appears.
+      description: File or section where the public risk appears.
     validations:
       required: true
   - type: textarea
     id: concern
     attributes:
       label: Concern
-      description: Explain the risk without including real personal data.
+      description: Explain the public risk using fictional or minimal context only.
     validations:
       required: true
   - type: checkboxes
@@ -37,5 +41,7 @@ body:
     attributes:
       label: Safety confirmation
       options:
-        - label: This issue avoids secrets, credentials, real personal data, and private documents.
+        - label: This issue avoids secrets, credentials, personal data, sensitive data, and private documents.
+          required: true
+        - label: This issue does not include a covert profiling request, static persona catalog proposal, or unsupported high-stakes use case.
           required: true

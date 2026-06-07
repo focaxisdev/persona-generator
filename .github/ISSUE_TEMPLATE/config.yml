@@ -2,4 +2,4 @@ blank_issues_enabled: false
 contact_links:
   - name: Security or privacy report
     url: https://github.com/focaxisdev/persona-generator/security/policy
-    about: Do not post secrets or real personal data in public issues. Use the published security route after maintainers enable it.
+    about: Do not post secrets, personal data, sensitive data, private files, or exploitable details in public issues. Use GitHub Private Vulnerability Reporting where available.

@@ -1,6 +1,6 @@
 # Support
 
-Persona Generator support is documentation-focused.
+Persona Generator support is documentation-focused and handled through GitHub Issues.
 
 ## Good Support Requests
 
@@ -19,11 +19,13 @@ The project does not provide support for:
 - psychometric scoring
 - profiling real people
 - protected or sensitive attribute inference
+- covert profiling requests
+- static persona catalog proposals
 - manipulation or exploitative persuasion
 - deploying a hosted service, app, API, database, or telemetry system
 
 ## How To Ask
 
-Use fictional or minimal examples. Do not include real personal data, secrets, credentials, or private documents.
+Open a GitHub Issue using the closest matching template. Include fictional, low-stakes task context only.
 
-Before public release, maintainers must add an owner-approved support contact or issue route.
+Do not submit personal data, sensitive data, secrets, credentials, private documents, covert profiling requests, or unsupported high-stakes scenarios.
