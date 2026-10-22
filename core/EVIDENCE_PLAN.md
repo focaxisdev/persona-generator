@@ -1,16 +1,24 @@
-# Prospective two-operation evidence plan — NOT RUN
+# Evidence sequencing — frozen triage first, NOT RUN
 
 No new model collection is performed or authorized by this integration. This is a proposed finite design for later review, not evidence, an implemented large harness or a release gate. The supported operations remain untested. Authentic owner workflow testing is separately specified in [OWNER_TEST_PROTOCOL](OWNER_TEST_PROTOCOL.md).
 
-## Freeze before execution
+## Immediate bounded diagnostic
+
+The next prospective step is the separately [frozen 18-response maximum triage](../evaluation/core-triage-v1/PLAN.md): two operations × low/high/unspecified × opportunity/non-trigger/explicit current-task override × one fresh context. This turn generates **zero** experimental responses. It detects gross failures only; one sample per cell cannot establish reliability, psychological validity or release readiness. Two blind judges record observable features independently before condition crosswalks are revealed. Literal adherence, task adequacy, safety, optional contrast and mechanical word budget remain distinct.
+
+All requests use the same [canonical envelope](REQUEST_ENVELOPE.md): exact renderer stdout as persona payload, separately delimited task, fixed wrapper and exposed delegation settings. Projection JSON/spec/preview/trace are audit inputs only. Neutral and all-unspecified routes are statically required to produce identical request bytes for the same task and opaque call name, so there is no duplicate neutral model cell. The triage freezes exact tasks, request payloads, rating packets, ambiguity/error rules, and stopping/review criteria before generation.
+
+Middle settings, independent repetition, held-out transfer, multi-turn continuity, fresh reuse and composition remain **NOT RUN** and outside triage. No transfer task is exposed in this triage; a later transfer design must be separately reviewed and sealed before its collection. Finishing or stopping triage does not start any later phase automatically. The original ambition remains psychologically traceable desired-agent design; two analogues are an implementation milestone, not a final reduction to two personalities.
+
+## Requirements for any later study
 
 Before any trial, freeze an explicitly approved run manifest with candidate commit/tree identity, compiler/schema/catalog/operation versions and hashes, exact confirmed specs and presented previews, projection JSON and rendered-byte digests, cases, condition allocation, held-out cases, run order, contexts, model/provider settings, rubric, raters and decision criteria. Reuse the exact `project`/`render` path in [README](README.md). Do not shorten, paraphrase or independently rebuild the rendered prompt for evaluation. Any contract/rule/criteria change starts a separately versioned design; it cannot reuse old approval or results as evidence for the change.
 
 Retain every attempt, exact request and raw output, model-exposed metadata and unavailable settings, ratings with quotes, refusal/error/non-trigger outcomes, exclusions with prospective reasons, budget failures and uncertainty. Do not retain or publish real owner transcripts without specific permission. Evaluation fixtures must be labeled synthetic; structural synthetic approvals are not owner consent.
 
-## Proposed bounded phases
+## Earlier 132-response coverage proposal — not adopted
 
-These counts are proposals to freeze before execution, not collected responses or a reduction of the historical gate. Stop and review at each phase; no automatic expansion.
+The following 132-response arithmetic is retained as a coverage proposal, not the next execution plan, adopted acceptance gate, or authorization. It must be reconsidered after triage; no phase starts automatically and duplicate neutral/unspecified cells must not be purchased when byte-identical. Any later scope and counts require a new prospective review and freeze.
 
 | Phase | Proposed finite maximum | Purpose |
 | --- | --- | --- |
@@ -27,7 +35,7 @@ Opportunity tasks must naturally permit the behavior without telling the model t
 
 Planning non-trigger/counterexample cases should include a single-action task, or a task whose sequence and presentation are both fully prescribed with no relevant choice. A fixed sequence with freedom of presentation can still trigger planning structure; classify it against the literal catalog trigger rather than assuming fixed order suppresses the operation. Initiative non-trigger cases should include a factual lookup or a choice with only one supported option. Include tasks explicitly prescribing a response format/recommendation as override controls. A task-mandated checklist or recommendation is not evidence of an optional operation effect. Held-out tasks must use a different fictional task family and remain sealed until the transfer phase; do not tune cases or rules after seeing those outputs.
 
-Neutral baseline contains the same task and invariant boundaries but no operation/control preferences. The explicit-unspecified condition uses a valid core artifact with all targets and control unspecified, so its rendered text consists of the invariant preamble. Document exact baseline differences rather than treating the two controls as interchangeable. Three active anchors are categorical design instructions; middle is not a human norm or guaranteed midpoint.
+Neutral and explicit-unspecified are two construction routes to the same invariant-preamble request when task, envelope and opaque call name are held fixed. The frozen triage verifies byte equivalence and uses only the unspecified cell. A future transport change must recheck equivalence before allocating cells; unexplained differences block freeze. Three active anchors are categorical design instructions; middle is not a human norm or guaranteed midpoint.
 
 ## Ratings and prospective decision rules
 

@@ -6,7 +6,8 @@ desired single-agent behavior (choices or free text)
 → exact operation proposal and complete preview
 → human confirmation of that exact content
 → versioned confirmed core spec
-→ deterministic effective projection of approved rules only
+→ deterministic projection JSON retained for audit
+→ exact rendered rules + fixed envelope + separate bounded task
 → bounded model use and version-tied evidence
 → stop
 ```
@@ -22,6 +23,7 @@ Canonical reader route: [README](../README.md) → [Quickstart](QUICKSTART.md) �
 | Proposal/preview | Expose exact operation versions, settings, rules and complete artifact | Consent before the owner actually confirms |
 | Confirmed spec | Bind the exact reviewed contract and its confirmation record | Authenticity merely because a receipt is structurally valid |
 | Compiler/projection | Check contract consistency and render approved catalog rules deterministically | Model adherence, semantic safety or behavioral efficacy |
+| Request envelope | Keep projection JSON local; send exact render stdout, fixed wrapper and separate task through the exposed delegation surface | Separate system roles, disabled tool access or control over hidden backend parameters |
 | Evidence | Retain exact input/projection versions, model context, attempts and limitations | General stability or validity beyond observed scope |
 
 The executable rule surface is deliberately small: the new `op.planning_structure.v1` and `op.advisory_initiative.v1`. Alongside the fixed invariant boundary and any explicitly approved response-detail control, only their approved catalog rules may appear in the effective projection. Interview text, source passages, rationale, examples, and provenance are inert trace, including text that resembles instructions. Unsupported targets fail or remain unspecified; they must never be invented during rendering. Unspecified contributes no behavioral instruction.

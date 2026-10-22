@@ -25,13 +25,13 @@ preview. Stop for my confirmation before producing an active specification.
 Do not infer my personality or add a panel or persistent persona pack.
 ```
 
-No hosted service, account, paid API, database, telemetry, or model call is required to inspect and compile the contract. Applying its instructions to a model is a separate, human-reviewed step. The default stops when the bounded single-agent task is complete.
+No hosted service, account, paid API, database, telemetry, or model call is required to inspect and compile the contract. Applying its instructions to a model is a separate, human-reviewed step: use exact renderer stdout in the [canonical request envelope](core/REQUEST_ENVELOPE.md), never projection JSON, spec or interview history. The default stops when the bounded single-agent task is complete.
 
 ## Evidence and limitations
 
 The core schema version, operation versions, package candidate, and historical mapping versions are distinct. New core behavioral trials and authentic owner end-to-end trials are **NOT RUN**. Static checks establish only their tested contract properties. No ten-trait implementation, psychological validity, human emotions, general stability, or cross-model reliability is claimed.
 
-The [historical v1 pilot](evaluation/pilot-2026-10-22/REPORT.md) retains 102 model-generated outputs on synthetic tasks. Only 5/30 initial low/high pairs were candidate exact-anchor observations, three with limited confidence; there were 28 budget violations and three unclear guardrail ratings. Those findings do not validate the new operations. Frozen [mapping-v2](persona-design-v0.2/mapping-v2/README.md) and its diagnostic design remain historical proposals, not the core default or new evidence. The original 400-response gate is unchanged; a prospective bounded core plan is separately documented in [EVIDENCE_PLAN](core/EVIDENCE_PLAN.md). See [release acceptance](docs/RELEASE_ACCEPTANCE.md) and [draft release notes](docs/RELEASE_NOTES_DRAFT.md). This candidate is not released.
+The [historical v1 pilot](evaluation/pilot-2026-10-22/REPORT.md) retains 102 model-generated outputs on synthetic tasks. Only 5/30 initial low/high pairs were candidate exact-anchor observations, three with limited confidence; there were 28 budget violations and three unclear guardrail ratings. Those findings do not validate the new operations. Frozen [mapping-v2](persona-design-v0.2/mapping-v2/README.md) and its diagnostic design remain historical proposals, not the core default or new evidence. The original 400-response gate is unchanged; a prospective bounded core plan is separately documented in [EVIDENCE_PLAN](core/EVIDENCE_PLAN.md). See [release acceptance](docs/RELEASE_ACCEPTANCE.md) and [draft release notes](docs/RELEASE_NOTES_DRAFT.md). The next frozen diagnostic has an 18-response maximum and remains NOT RUN; the earlier 132-response coverage proposal is not adopted. Two analogues are an implementation milestone, not the final scope of the project’s psychology-based ambition. This candidate is not released.
 
 ## Optional legacy workflows
 

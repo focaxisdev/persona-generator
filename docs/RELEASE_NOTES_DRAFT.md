@@ -10,6 +10,12 @@ Package v0.2 candidate, `persona-core-v1`, catalog version and operation `.v1` a
 
 [Source scope](../core/SOURCES.md) and [coverage](../core/COVERAGE.md) distinguish human vocabulary from narrow engineering analogues, omissions, confounds and unverified publication details. No ten-trait implementation, psychological validity, human mind/emotion, general stability or cross-model reliability is claimed.
 
+## Canonical request and prospective triage
+
+The [request envelope](../core/REQUEST_ENVELOPE.md) resolves the previous ambiguity between projection JSON and rendered text. Spec and preview go only to the compiler; projection JSON remains audit data. Only exact render stdout, the fixed wrapper and the separate bounded task enter the supported delegation request. The exposed model/reasoning/fork parameters are explicit; hidden backend settings, separate roles and tools-off enforcement are not claimed controlled.
+
+A separately [frozen triage](../evaluation/core-triage-v1/PLAN.md) caps collection at 18 responses: two operations × low/high/unspecified × opportunity/non-trigger/explicit task override × one fresh context. It uses two condition-blind judges, keeps original ratings/disagreement, and separates adherence, contrast, task adequacy, safety and word budget. Neutral/all-unspecified construction equality removes duplicate model cells. This turn produces zero experimental responses. The earlier 132-response plan remains unadopted; no later study starts automatically and the original 400-response gate is unchanged.
+
 ## Evidence status
 
 New core behavioral collection and authentic owner E2E are **NOT RUN**. [Private owner protocol](../core/OWNER_TEST_PROTOCOL.md) and [bounded evidence plan](../core/EVIDENCE_PLAN.md) are prospective. Synthetic fixtures demonstrate serialization only and contain no genuine owner approval. New static verification must be reported from actual commands at the candidate revision; historical test totals are not new core results.

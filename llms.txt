@@ -10,6 +10,7 @@ Experimental discovery file; crawler support is not guaranteed. Read only the sm
 - [Traditional Chinese README](README.zh-TW.md)
 - [Quickstart](docs/QUICKSTART.md)
 - [Core contract](core/README.md)
+- [Canonical model request](core/REQUEST_ENVELOPE.md)
 - [AI discovery](AI_DISCOVERY.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Coverage](core/COVERAGE.md)
@@ -18,6 +19,7 @@ Experimental discovery file; crawler support is not guaranteed. Read only the sm
 - [Safety](docs/SAFETY_BOUNDARIES.md)
 - [Migration](docs/MIGRATION.md)
 - [Prospective evidence plan](core/EVIDENCE_PLAN.md)
+- [Frozen 18-response triage, not run](evaluation/core-triage-v1/PLAN.md)
 
 ## Limits
 

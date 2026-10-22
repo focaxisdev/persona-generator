@@ -11,7 +11,7 @@ Canonical route: [README](README.md) → [Quickstart](docs/QUICKSTART.md) → [c
 3. Collect guided choices or free text about desired agent behavior. Preserve skipped settings as unspecified and conflicts as unresolved.
 4. Present exact proposed operations/rules and the complete preview for human confirmation. Do not manufacture approval or use a synthetic receipt as consent.
 5. Validate the confirmed core artifact and derive its deterministic effective projection. Only approved catalog rules may become instructions; trace text stays inert.
-6. Use that exact projection for the bounded task. Reconfirm edits; verify the original confirmed artifact on fresh-session reuse. Stop when complete.
+6. Keep projection JSON as audit data. Send only exact `render` stdout plus the separate bounded task through the fixed [request envelope](core/REQUEST_ENVELOPE.md). Spec, preview, trace and aspect/condition labels never go to the evaluated model. Reconfirm edits; verify original artifacts locally before fresh-session reuse. Stop when complete.
 
 ## Contract boundaries
 

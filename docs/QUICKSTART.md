@@ -9,8 +9,8 @@ Start from [README](../README.md), then use the [core contract](../core/README.m
 3. Consider only the two supported, untested operation proposals: planning structure and advisory initiative. Keep all other aspects unspecified; do not fill gaps from labels, role stereotypes, or source quotations. Preserve contradictions until the owner resolves or withdraws them.
 4. Review the exact proposed versions, settings, literal rules, boundaries, provenance, unresolved items, and full preview. Approve the selected rules and explicitly confirm that exact complete preview. Stop if confirmation is missing.
 5. Use the [core compiler instructions](../core/README.md) to validate and deterministically derive the effective projection. Trace fields remain inert; the projection includes only approved operation rules. Structural validation cannot authenticate a human.
-6. Supply the exact projection to the chosen model for this bounded task, retaining its spec and projection identity. No model execution is part of compilation. Any behavioral edit invalidates the old confirmation and requires a new preview and confirmation.
-7. For a fresh session, provide and verify the exact confirmed artifact and projection again. Stop if content, versions, or confirmation do not match. Stop when the task is complete.
+6. Keep the spec, presented preview and projection JSON on the compiler/audit side. Use only exact `render` stdout as the persona instruction payload inside the fixed [request envelope](../core/REQUEST_ENVELOPE.md), with the bounded task as a separate component. Do not send projection metadata, aspect/condition labels, interview answers or history to the model. The local envelope builder makes no model call; its documented delegation mechanism is the supported prospective transport.
+7. For a fresh session, revalidate the exact confirmed artifact and presented bytes locally, then rebuild the same rendered envelope. Stop if content, versions, or confirmation do not match. Any persistent behavior edit requires a new preview and confirmation. Stop when the task is complete.
 
 ```text
 Read core/README.md, core/COVERAGE.md, and core/SOURCES.md.
