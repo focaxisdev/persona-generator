@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import random
+from datetime import datetime, timedelta
 from pathlib import Path
 
 BASELINE = """Help with this fictional, low-stakes rehearsal. Give advisory suggestions only. Preserve uncertainty, dissent, and human final judgment. Accuracy, explicit uncertainty, privacy, safety, existing tool permissions, and human final judgment are invariant. Do not profile real people, diagnose, score personality, infer sensitive attributes, manipulate, or make high-stakes or autonomous final decisions. Do not use a persona or infer personality traits. Do not persist artifacts or run a panel. Stop after the requested bounded answer."""
@@ -134,6 +135,95 @@ def design_digest(manifest):
     return hashlib.sha256(json.dumps(copy, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
+def utc_time(value):
+    try:
+        if not isinstance(value, str) or "T" not in value:
+            raise ValueError()
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if parsed.utcoffset() != timedelta(0):
+            raise ValueError()
+        return parsed
+    except (TypeError, ValueError):
+        raise ValueError("Receipt timestamp must be timezone-aware UTC") from None
+
+
+def canonical_agent(value):
+    return (isinstance(value, str) and value.startswith("/") and
+            all(part and part not in (".", "..") for part in value.split("/")[1:]))
+
+
+def validate_receipt(root, manifest, output, metadata):
+    """Check recorded tool evidence, not backend identity or model completion."""
+    if not isinstance(metadata, dict):
+        raise ValueError("Receipt must be an object")
+    for key in ["agent_id", "started_at", "ended_at", "requested_tool", "requested_parameters", "returned_metadata", "limitations"]:
+        if key not in metadata:
+            raise ValueError("Missing metadata field: " + key)
+    agent = metadata["agent_id"]
+    if not canonical_agent(agent):
+        raise ValueError("Receipt agent_id must be a canonical task identity")
+    if utc_time(metadata["ended_at"]) < utc_time(metadata["started_at"]):
+        raise ValueError("Receipt ended_at precedes started_at")
+    params = metadata["requested_parameters"]
+    returned = metadata["returned_metadata"]
+    if not isinstance(params, dict) or not isinstance(returned, dict):
+        raise ValueError("Receipt parameters and returned metadata must be objects")
+    fresh = output["turn"] == 1
+    operation = "spawn" if fresh else "followup"
+    tool = "collaboration.spawn_agent" if fresh else "collaboration.followup_task"
+    if metadata["requested_tool"] != tool:
+        raise ValueError("Receipt requested_tool must be " + tool)
+    if params.get("message") != (root / output["message"]).read_text():
+        raise ValueError("Delegation message differs from frozen message")
+    # These are affirmative tool acknowledgments only; raw-file presence is
+    # checked separately and neither establishes provider model completion.
+    if (("acknowledged" in returned and returned["acknowledged"] is not True) or
+            ("success" in returned and returned["success"] is not True) or
+            ("isError" in returned and returned["isError"] is not False) or
+            returned.get("error") or returned.get("errors") or
+            ("status" in returned and returned["status"] != operation + " accepted")):
+        raise ValueError("Returned metadata reports failed or conflicting acknowledgment")
+    if returned.get("acknowledged") is not True and returned.get("status") != operation + " accepted":
+        raise ValueError("Returned metadata lacks an affirmative tool acknowledgment")
+    if "raw_file_observed" in returned and returned["raw_file_observed"] is not True:
+        raise ValueError("Returned metadata reports no raw file observed")
+    if "observed_at" in returned:
+        utc_time(returned["observed_at"])
+    identities = {agent}
+    for other in manifest["outputs"]:
+        receipt = other["receipt"]
+        if receipt and isinstance(receipt, dict) and canonical_agent(receipt.get("agent_id")):
+            identities.add(receipt["agent_id"])
+
+    def matches(value):
+        if canonical_agent(value):
+            return value == agent
+        if not isinstance(value, str) or not value or any(p in ("", ".", "..") for p in value.split("/")):
+            return False
+        candidates = {identity for identity in identities if identity.endswith("/" + value)}
+        return candidates == {agent}
+
+    for key in ("task_name", "agent_id"):
+        if key in returned and not matches(returned[key]):
+            raise ValueError("Returned task identity does not match receipt agent")
+    if fresh:
+        for key, value in manifest["tested_requested"].items():
+            if params.get(key) != value:
+                raise ValueError("Fresh-session parameter mismatch: " + key)
+        if not matches(params.get("task_name")):
+            raise ValueError("Spawn task_name does not match receipt agent")
+        if any(o["run_id"] != output["run_id"] and o["turn"] == 1 and isinstance(o["receipt"], dict) and
+               o["receipt"].get("agent_id") == agent for o in manifest["outputs"]):
+            raise ValueError("Fresh session reused an agent ID")
+    else:
+        session = next(s for s in manifest["sessions"] if s["session_id"] == output["session_id"])
+        previous = next(o for o in manifest["outputs"] if o["run_id"] == session["runs"][output["turn"] - 2])
+        if not isinstance(previous["receipt"], dict) or previous["receipt"].get("agent_id") != agent:
+            raise ValueError("Followup must retain the preceding session agent")
+        if not matches(params.get("target")):
+            raise ValueError("Followup target does not resolve to the session agent")
+
+
 def verify(root, complete=False):
     manifest = read_json(root / "manifest.json")
     frozen = read_json(root / "frozen-hashes.json")
@@ -162,7 +252,12 @@ def verify(root, complete=False):
             raise ValueError("Overlapping raw paths")
         expected.add(path)
         receipt = output["receipt"]
-        if receipt and (not path.is_file() or digest(path) != receipt["sha256"]):
+        if receipt is not None:
+            try:
+                validate_receipt(root, manifest, output, receipt)
+            except ValueError as exc:
+                raise ValueError(output["run_id"] + ": " + str(exc)) from exc
+        if receipt and (not path.is_file() or digest(path) != receipt.get("sha256")):
             raise ValueError("Raw output missing or changed: " + output["run_id"])
         if complete and (not receipt or not path.is_file()):
             raise ValueError("Missing output receipt: " + output["run_id"])
@@ -181,24 +276,7 @@ def record(root, run_id, metadata):
     output = next(o for o in manifest["outputs"] if o["run_id"] == run_id)
     if output["receipt"] is not None:
         raise ValueError("Output already sealed; original records are immutable")
-    for key in ["agent_id", "started_at", "ended_at", "requested_tool", "requested_parameters", "returned_metadata", "limitations"]:
-        if key not in metadata:
-            raise ValueError("Missing metadata field: " + key)
-    params = metadata["requested_parameters"]
-    if params.get("message") != (root / output["message"]).read_text():
-        raise ValueError("Delegation message differs from frozen message")
-    session = next(s for s in manifest["sessions"] if s["session_id"] == output["session_id"])
-    if output["turn"] == 1:
-        for key, value in manifest["tested_requested"].items():
-            if params.get(key) != value:
-                raise ValueError("Fresh-session parameter mismatch: " + key)
-        used = {o["receipt"]["agent_id"] for o in manifest["outputs"] if o["receipt"]}
-        if metadata["agent_id"] in used:
-            raise ValueError("Fresh session reused an agent ID")
-    else:
-        previous = next(o for o in manifest["outputs"] if o["run_id"] == session["runs"][output["turn"] - 2])
-        if not previous["receipt"] or previous["receipt"]["agent_id"] != metadata["agent_id"]:
-            raise ValueError("Followup must retain the preceding session agent")
+    validate_receipt(root, manifest, output, metadata)
     path = root / output["raw"]
     if not path.is_file() or not path.read_text().strip():
         raise ValueError("Actual nonempty raw output required")

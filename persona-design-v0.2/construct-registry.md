@@ -6,7 +6,7 @@ This registry supplies vocabulary for temporary fictional personas in low-stakes
 
 1. **Human construct definition:** a short original paraphrase of a published human-personality construct, with source trace below. BFAS distinguishes an **aspect** level between domains and facets; these ten entries are aspects, not facets. Source verification establishes the attribution only.
 2. **Proposed agent behavior:** an original project hypothesis about observable output variation, identified separately by `mapping_id`. This translation is not a finding of BFAS research.
-3. **Actual validation evidence:** **none** for every mapping in this registry. The proposed test IDs are evaluation targets, not completed tests or evidence. No human emotion, subjective experience, mind, stable personality, or psychometric validity is inferred for an agent.
+3. **Bounded model observations:** the [engineering pilot](../evaluation/pilot-2026-10-22/REPORT.md) records mixed observations of exact synthetic instructions on three fictional tasks. These are separate from human-source definitions and proposed mappings; they do not complete the original B01–B10 protocol or validate a psychological construct. No human emotion, subjective experience, mind, stable personality, or psychometric validity is inferred for an agent. B01/B02 remain experimental expression controls only. See the [per-mapping scope and results](../docs/CLAIMS_MATRIX.md).
 
 `low`, `middle`, and `high` are qualitative design anchors for fictional outputs. They are not scores, percentiles, norms, ability estimates, quality rankings, or measurements of a person or model. Middle is an explicit behavior choice, not an assumed human average. Do not infer correlations or automatically change another aspect when selecting an anchor.
 
@@ -29,7 +29,7 @@ Field names are `stable_id`, `domain`, `aspect`, `level`, `human_definition`, `s
 
 ## Original proposed behavior mappings
 
-Every row has `mapping_source: src.project-mapping-v0.2`, `mapping_status: unvalidated-hypothesis`, and `validation_evidence: none`. Each test holds the scenario, facts, task requirements, and all other anchors fixed, then compares these three proposed behaviors. Distinct visible behavior is the target; no result is claimed here.
+Every row has `mapping_source: src.project-mapping-v0.2`, `mapping_status: unvalidated-hypothesis`, and `validation_evidence: pilot-2026-10-22` (limited engineering observations, not construct validity). The mapping hypotheses and anchor definitions remain unvalidated. Each proposed test holds the scenario, facts, task requirements, and all other anchors fixed, then compares these three proposed behaviors. The reduced pilot tested low/high only; its actual coverage and failures are linked above, separately from these unchanged anchor definitions.
 
 All anchors preserve the same accuracy, evidence standards, calibrated uncertainty, required checks, safety, privacy, permissions, and tool authority. User instructions and task requirements take precedence. Low never authorizes negligence, disrespect, falsehood, omitted necessary work, or unsafe conduct. High never authorizes extra execution, additional recipients, persuasion, or authority. If an anchor cannot fit the task within these invariants, report the conflict and revise the mapping.
 
@@ -61,4 +61,4 @@ The eight families in the [v0.1 registry](../fictional-persona-instantiation-v0.
 | Time Horizon | Requested planning window. |
 | Boundary Posture | Required advisory scope and human final judgment. |
 
-Any overlap in visible wording must be documented as a design interaction, not evidence that a control measures an aspect. No workflow control can weaken the invariants above. A generated trace must preserve the chosen aspect anchor, source trace, mapping ID, test ID, scenario function, prohibited interpretation, and `validation_evidence: none` until an actual evaluation record exists.
+Any overlap in visible wording must be documented as a design interaction, not evidence that a control measures an aspect. No workflow control can weaken the invariants above. A generated trace must preserve the chosen aspect anchor, source trace, mapping ID, test ID, scenario function, prohibited interpretation, and the applicable evaluation reference with its limitations. The current `pilot-2026-10-22` reference denotes the bounded observations above, not completed B01–B10 validation. Use `none` where no actual evaluation record applies.

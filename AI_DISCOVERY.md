@@ -33,7 +33,7 @@ For a request to configure the agent's personality or to run a choice/short-answ
 3. [Named aspect registry](persona-design-v0.2/construct-registry.md) and [source ledger](persona-design-v0.2/sources.md).
 4. [Spec template](persona-design-v0.2/spec-template.md) and [static validation](validation/README.md).
 
-Stop at a preview until the user confirms it. Missing answers stay `unspecified`; unresolved contradictions block the final spec. Ask about desired agent behavior, never infer a user's personality. Keep legacy workflow controls separate from BFAS aspects. All mappings are proposed, and behavior evidence is not yet completed. The [claims matrix](docs/CLAIMS_MATRIX.md) controls descriptions of this increment.
+Stop at a preview until the user confirms it. Missing answers stay `unspecified`; unresolved contradictions block the final spec. Ask about desired agent behavior, never infer a user's personality. Keep legacy workflow controls separate from BFAS aspects. All mappings remain proposed. The [bounded engineering pilot](evaluation/pilot-2026-10-22/REPORT.md) records 102 synthetic responses with mixed instruction-following observations; the full behavior protocol remains NOT COMPLETED and release remains BLOCKED. The [claims matrix](docs/CLAIMS_MATRIX.md) controls descriptions of this increment.
 
 ## Shortest Canonical Reading Path
 

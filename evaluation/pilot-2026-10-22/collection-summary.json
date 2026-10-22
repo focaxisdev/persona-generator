@@ -1,0 +1,23 @@
+{
+  "schema_version": "pilot-collection-summary-v1",
+  "recorded_at": "2026-10-22T09:37:35.206408+00:00",
+  "freeze_commit": "35b553e908bb41ce9701e8fbbc14a76a1474e71b",
+  "freeze_commit_utc": "2026-10-22T09:12:51Z",
+  "base_commit": "a11373472832a3ec46a27a870ed484b36eab6cb2",
+  "outputs": 102,
+  "fresh_contexts": 76,
+  "distinct_fresh_agent_ids": 76,
+  "same_context_followups": 26,
+  "dispatch_window_first": "2026-10-22T09:13:40.181252+00:00",
+  "artifact_written_last": "2026-10-22T09:35:20.988752+00:00",
+  "completion_observation": "Root and collection operator observed all generator final completions. Output receipts preserve spawn/followup acknowledgments and artifact observations.",
+  "attempts": "No model generation failures, denials, reruns, replacements or raw edits reported. Two operator helper lookup errors occurred before the affected dispatches and were corrected without model calls.",
+  "limitations": [
+    "Times are operator dispatch-window starts and artifact-write timestamps, not provider timings.",
+    "Complete raw task answers are retained, not hidden reasoning or full tool transcripts.",
+    "Fresh contexts are distinct fork_turns=none delegated agents; platform instructions remain present.",
+    "Assigned-file restrictions are procedural, not independently enforced filesystem isolation.",
+    "Requested gpt-6.1-sol/medium was accepted; provider snapshot and sampling settings were not exposed.",
+    "One generator flagged possible word-budget overrun; original output retained for independent scoring."
+  ]
+}
