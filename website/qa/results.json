@@ -1,0 +1,826 @@
+{
+  "source_sha256_at_start": {
+    "index.html": "504fc2aaead2fde7d432e6d4ce0836385491e5dc8a7a4827611556d669baac08",
+    "styles.css": "948df23b6d3317c111aa06e9e1559e8176f99acdf8fc984769d27e5a13451860",
+    "demo.js": "0a66ab38a56bc53ae4e43cea8f7ccaae6caacf08c9aac33172443589f1a6a1f8",
+    "favicon.svg": "b45a525318b59c6489475f66301b86a5fcc90010c07166525b128f153fbc933c"
+  },
+  "executed_at_utc": "2026-10-22T10:17:13.140228+00:00",
+  "checks": [
+    {
+      "name": "styles loaded",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "keyboard skip link is first tab stop",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "skip link focus visible",
+      "passed": true,
+      "evidence": {
+        "outline": "rgb(174, 68, 46) solid 3px",
+        "rect": {
+          "x": 16,
+          "y": 12,
+          "width": 136.015625,
+          "height": 49.59375,
+          "top": 12,
+          "right": 152.015625,
+          "bottom": 61.59375,
+          "left": 16
+        }
+      }
+    },
+    {
+      "name": "skip link targets main",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all rendered links have valid anchor or repository target",
+      "passed": true,
+      "evidence": {
+        "count": 19,
+        "invalid": []
+      }
+    },
+    {
+      "name": "form controls have native label or accessible label",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "default ten unspecified and no rules",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "export locked until confirmation",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchecked review cannot confirm",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "explicit anchor maps only chosen aspect",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "forward keyboard reaches preview details",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "forward tab traverses closed preview details to review checkbox",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "review checkbox forward tab reaches confirm",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "confirmed action forward tab reaches copy",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "review confirmation enables export",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "unchecking review revokes export",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "copy matches exact displayed JSON",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "download exact preview and filename",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "clipboard denial exposes exact readable fallback",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "editing input invalidates previous preview and export",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "contradictory explicit answers retained and confirm blocked",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "explicit conflict resolution retained",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "free text remains verbatim unknown with no inferred targets",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "HTML payload rendered literally without execution",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "keep unknown explicitly permits review without mapping",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "manual flag blocks review",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "manual resolution retains history",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "reset clears page memory",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "linked explicit choice preserves raw unknown and permits review",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "reload clears page memory",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "page has no horizontal overflow at 1440px",
+      "passed": true,
+      "evidence": {
+        "viewport": 1440,
+        "scroll": 1440
+      }
+    },
+    {
+      "name": "visible controls within viewport at 1440px",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "full JSON preview no page overflow at 1440px",
+      "passed": true,
+      "evidence": {
+        "viewport": 1440,
+        "scroll": 1440
+      }
+    },
+    {
+      "name": "page has no horizontal overflow at 768px",
+      "passed": true,
+      "evidence": {
+        "viewport": 768,
+        "scroll": 768
+      }
+    },
+    {
+      "name": "visible controls within viewport at 768px",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "full JSON preview no page overflow at 768px",
+      "passed": true,
+      "evidence": {
+        "viewport": 768,
+        "scroll": 768
+      }
+    },
+    {
+      "name": "page has no horizontal overflow at 760px",
+      "passed": true,
+      "evidence": {
+        "viewport": 760,
+        "scroll": 760
+      }
+    },
+    {
+      "name": "visible controls within viewport at 760px",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "full JSON preview no page overflow at 760px",
+      "passed": true,
+      "evidence": {
+        "viewport": 760,
+        "scroll": 760
+      }
+    },
+    {
+      "name": "page has no horizontal overflow at 390px",
+      "passed": true,
+      "evidence": {
+        "viewport": 390,
+        "scroll": 390
+      }
+    },
+    {
+      "name": "visible controls within viewport at 390px",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "mobile body readability14px and inputs16px",
+      "passed": true,
+      "evidence": [
+        {
+          "selector": "P.local-disclosure",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "SELECT.",
+          "size": 16,
+          "control": true
+        },
+        {
+          "selector": "SELECT.",
+          "size": 16,
+          "control": true
+        },
+        {
+          "selector": "SELECT.",
+          "size": 16,
+          "control": true
+        },
+        {
+          "selector": "TEXTAREA.",
+          "size": 16,
+          "control": true
+        },
+        {
+          "selector": "SELECT.",
+          "size": 16,
+          "control": true
+        },
+        {
+          "selector": "TEXTAREA.",
+          "size": 16,
+          "control": true
+        },
+        {
+          "selector": "TEXTAREA.",
+          "size": 16,
+          "control": true
+        },
+        {
+          "selector": "TEXTAREA.demo-fallback",
+          "size": 16,
+          "control": true
+        },
+        {
+          "selector": "P.source-line",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "DD.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.pilot-limit",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "SPAN.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.",
+          "size": 14,
+          "control": false
+        },
+        {
+          "selector": "P.",
+          "size": 14,
+          "control": false
+        }
+      ]
+    },
+    {
+      "name": "full JSON preview no page overflow at 390px",
+      "passed": true,
+      "evidence": {
+        "viewport": 390,
+        "scroll": 390
+      }
+    },
+    {
+      "name": "page has no horizontal overflow at 375px",
+      "passed": true,
+      "evidence": {
+        "viewport": 375,
+        "scroll": 375
+      }
+    },
+    {
+      "name": "visible controls within viewport at 375px",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "full JSON preview no page overflow at 375px",
+      "passed": true,
+      "evidence": {
+        "viewport": 375,
+        "scroll": 375
+      }
+    },
+    {
+      "name": "page has no horizontal overflow at 320px",
+      "passed": true,
+      "evidence": {
+        "viewport": 320,
+        "scroll": 320
+      }
+    },
+    {
+      "name": "visible controls within viewport at 320px",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "full JSON preview no page overflow at 320px",
+      "passed": true,
+      "evidence": {
+        "viewport": 320,
+        "scroll": 320
+      }
+    },
+    {
+      "name": "no storage or cookie writes after interactions",
+      "passed": true,
+      "evidence": {
+        "writes": [],
+        "localStorageLength": 0,
+        "cookies": []
+      }
+    },
+    {
+      "name": "no external requests on load or demo interactions",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "no browser console errors",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "no uncaught page errors",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "no failed asset responses",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "application files unchanged during QA run",
+      "passed": true,
+      "evidence": {
+        "start": {
+          "index.html": "504fc2aaead2fde7d432e6d4ce0836385491e5dc8a7a4827611556d669baac08",
+          "styles.css": "948df23b6d3317c111aa06e9e1559e8176f99acdf8fc984769d27e5a13451860",
+          "demo.js": "0a66ab38a56bc53ae4e43cea8f7ccaae6caacf08c9aac33172443589f1a6a1f8",
+          "favicon.svg": "b45a525318b59c6489475f66301b86a5fcc90010c07166525b128f153fbc933c"
+        },
+        "end": {
+          "index.html": "504fc2aaead2fde7d432e6d4ce0836385491e5dc8a7a4827611556d669baac08",
+          "styles.css": "948df23b6d3317c111aa06e9e1559e8176f99acdf8fc984769d27e5a13451860",
+          "demo.js": "0a66ab38a56bc53ae4e43cea8f7ccaae6caacf08c9aac33172443589f1a6a1f8",
+          "favicon.svg": "b45a525318b59c6489475f66301b86a5fcc90010c07166525b128f153fbc933c"
+        }
+      }
+    }
+  ],
+  "screenshots": [
+    "desktop-full.png",
+    "desktop-hero-viewport.png",
+    "desktop-hero.png",
+    "conflict-review.png",
+    "mobile-hero.png",
+    "mobile-full.png",
+    "mobile-workbench.png",
+    "mobile-preview.png"
+  ],
+  "limitations": [
+    "Automated targeted checks, not accessibility certification. External links checked structurally against repository files, not fetched. No screen-reader or real mobile device testing."
+  ],
+  "browser": "154.0.8037.57",
+  "computed_color_samples": [
+    {
+      "selector": "BODY",
+      "color": "rgb(23, 46, 60)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "contrast_ratio": 12.9
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(23, 46, 60)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "8px",
+      "fontWeight": "500",
+      "contrast_ratio": 12.9
+    },
+    {
+      "selector": "hero-description",
+      "color": "rgb(23, 46, 60)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "contrast_ratio": 12.9
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(35, 108, 101)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "contrast_ratio": 5.65
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(35, 108, 101)",
+      "background": "rgb(233, 237, 229)",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "contrast_ratio": 5.2
+    },
+    {
+      "selector": "demo-notice",
+      "color": "rgb(23, 46, 60)",
+      "background": "rgb(233, 237, 229)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 11.87
+    },
+    {
+      "selector": "demo-status",
+      "color": "rgb(35, 108, 101)",
+      "background": "rgb(222, 233, 223)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 4.94
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(23, 46, 60)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "contrast_ratio": 14.07
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(35, 108, 101)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "contrast_ratio": 5.65
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(145, 188, 177)",
+      "background": "rgb(23, 46, 60)",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "contrast_ratio": 6.72
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(88, 105, 105)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "contrast_ratio": 5.29
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(23, 46, 60)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "contrast_ratio": 12.9
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(23, 46, 60)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "contrast_ratio": 12.9
+    },
+    {
+      "selector": "eyebrow",
+      "color": "rgb(35, 108, 101)",
+      "background": "rgb(247, 245, 238)",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "contrast_ratio": 5.65
+    },
+    {
+      "selector": "button",
+      "color": "rgb(255, 254, 248)",
+      "background": "rgb(35, 108, 101)",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "contrast_ratio": 6.11
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/demo.js",
+    "http://127.0.0.1:4173/favicon.svg",
+    "http://127.0.0.1:4173/favicon.svg",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/demo.js",
+    "http://127.0.0.1:4173/favicon.svg"
+  ],
+  "source_sha256": {
+    "index.html": "504fc2aaead2fde7d432e6d4ce0836385491e5dc8a7a4827611556d669baac08",
+    "styles.css": "948df23b6d3317c111aa06e9e1559e8176f99acdf8fc984769d27e5a13451860",
+    "demo.js": "0a66ab38a56bc53ae4e43cea8f7ccaae6caacf08c9aac33172443589f1a6a1f8",
+    "favicon.svg": "b45a525318b59c6489475f66301b86a5fcc90010c07166525b128f153fbc933c"
+  },
+  "summary": {
+    "passed": 55,
+    "failed": 0
+  }
+}
