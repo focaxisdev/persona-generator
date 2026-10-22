@@ -1,5 +1,7 @@
 # Quickstart: configure one agent
 
+**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
+
 Start from [README](../README.md), then use the [core contract](../core/README.md). This unreleased v0.2 candidate configures desired behavior for one fictional, low-stakes advisory agent. Multiple personas, panels, and Persona Packs are optional legacy paths.
 
 ## Interview → confirmation → effective projection

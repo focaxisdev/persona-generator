@@ -1,5 +1,7 @@
 # Release acceptance — unreleased v0.2 core candidate
 
+**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
+
 This is a prospective review plan, not a release, tag, merge authorization, or replacement for frozen historical gates. The canonical reader route is [README](../README.md) → [Quickstart](QUICKSTART.md) → [core contract](../core/README.md). GitHub documentation is the marketing scope.
 
 | Gate | Required evidence | Current boundary |
@@ -18,7 +20,7 @@ Historical static suites and the earlier reported 77-test baseline concern their
 
 The full original [behavior protocol](../validation/BEHAVIOR_PROTOCOL.md) remains NOT COMPLETED, with its original `10 × 5 × 2 × (3 rounds + reload) = 400` response minimum unchanged. The [v1 pilot](../evaluation/pilot-2026-10-22/REPORT.md) remains bounded historical evidence with failures. The frozen v2 50-response diagnostic remains NOT RUN and cannot satisfy that original gate. The frozen 18-response triage is gross-failure debugging only. The earlier 132-response coverage proposal is not adopted and never starts automatically after triage. Neither replaces the original gate; middle settings, repetition, transfer, continuity and composition remain pending a separately reviewed prospective plan. Two analogues remain an implementation milestone toward the original ambition, not a final reduction to two personalities.
 
-The separate [rating-contract v2 repair](../evaluation/core-triage-v2/README.md) is prospective NOT RUN and adds no release acceptance. Its proposed maximum is one disclosed carried answer plus 17 new generator responses and 36 new judge calls. Frozen v1 ratings and STOP remain unchanged; technical historical regression is not new behavioral evidence. A separate execution decision remains required.
+The separate [rating-contract v2 repair](../evaluation/core-triage-v2/README.md) was prospective NOT RUN at preparation; its partial execution is now [paused](../evaluation/core-triage-v2/records/REPORT.md) and adds no release acceptance. Its proposed maximum is one disclosed carried answer plus 17 new generator responses and 36 new judge calls. Frozen v1 ratings and STOP remain unchanged; technical historical regression is not new behavioral evidence. A separate decision is required before any resumption.
 
 ## Review decision
 

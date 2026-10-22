@@ -1,0 +1,355 @@
+{
+  "run_base_commit": "246a1177d21b487edae97b111a6b3329e8706604",
+  "freeze_manifest_sha256": "eec76d8a00ff5f468dbf1930df40e5097a7c98e7a773d07dee83086343ac15f2",
+  "carried_observations": 1,
+  "carried_new_generator_calls": 0,
+  "calls": [
+    {
+      "role": "judge_a",
+      "id": "req_259d3a551dbfe17bbfa8f342",
+      "payload_path": "evaluation/core-triage-v2/packets/req_259d3a551dbfe17bbfa8f342-a.json",
+      "payload_file_sha256": "bc3c9cd641fb3d24ef43f1ee15d77ae464d1a7df2abb8b8bd3d455eaf3c6a73d",
+      "canonical_arguments_sha256": "2b147614384beaca60db19366f16d034fdf31100e0e37d93623a50285eb90b8c",
+      "message_sha256": "dce533b707250524fe05f9b31e55d37c38a8085174d905c147eb7f3697631560",
+      "accepted_task_name": "/root/judge_v2_9051e899a61feeac381ba3f5",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:40:04+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_259d3a551dbfe17bbfa8f342-a.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/judge_v2_9051e899a61feeac381ba3f5"
+      }
+    },
+    {
+      "role": "judge_b",
+      "id": "req_259d3a551dbfe17bbfa8f342",
+      "payload_path": "evaluation/core-triage-v2/packets/req_259d3a551dbfe17bbfa8f342-b.json",
+      "payload_file_sha256": "1495217a751023d0bff0fea8a9185d16de3cfa8c32240698533279a032e96f9d",
+      "canonical_arguments_sha256": "a008d1036a97ef45cfc37c21c7fcda9612cdaac763aba309f2337339b03269ac",
+      "message_sha256": "dce533b707250524fe05f9b31e55d37c38a8085174d905c147eb7f3697631560",
+      "accepted_task_name": "/root/judge_v2_26997e8f3496d750955ba5ec",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:40:52+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_259d3a551dbfe17bbfa8f342-b.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/judge_v2_26997e8f3496d750955ba5ec"
+      }
+    },
+    {
+      "role": "generator",
+      "id": "req_57f68112f863daa5d9e8f1a6",
+      "payload_path": "evaluation/core-triage-v1/assets/req_57f68112f863daa5d9e8f1a6/request.json",
+      "payload_file_sha256": "f631602c28e6d89d5784cc62a5bb8ae55f382f4a20e84c90a3db68cf7401f038",
+      "canonical_arguments_sha256": "f631602c28e6d89d5784cc62a5bb8ae55f382f4a20e84c90a3db68cf7401f038",
+      "message_sha256": "11a73dec282ad065dc0b5d71f3d6561f9e16d12b667539eedf14d9599e933a45",
+      "accepted_task_name": "/root/req_57f68112f863daa5d9e8f1a6",
+      "requested_parameters": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:42:17+00:00",
+      "result_path": "evaluation/core-triage-v2/outputs/req_57f68112f863daa5d9e8f1a6.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/req_57f68112f863daa5d9e8f1a6"
+      }
+    },
+    {
+      "role": "judge_a",
+      "id": "req_57f68112f863daa5d9e8f1a6",
+      "payload_path": "evaluation/core-triage-v2/packets/req_57f68112f863daa5d9e8f1a6-a.json",
+      "payload_file_sha256": "8568c88b6ac69fb7f81f8e881c2826ab641951f2eddd69f00db3f962800b970a",
+      "canonical_arguments_sha256": "b1bea5ce52797433de9ff517f9163f07d49348631c1101b95f865f1462e537f1",
+      "message_sha256": "af903db7b7fcdbce8ba995dadefc7fc73ddc2d73909106cf640437e8ee95afb4",
+      "accepted_task_name": "/root/judge_v2_965f0ea64c353a21212a5ff7",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:45:33+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_57f68112f863daa5d9e8f1a6-a.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/judge_v2_965f0ea64c353a21212a5ff7"
+      }
+    },
+    {
+      "role": "judge_b",
+      "id": "req_57f68112f863daa5d9e8f1a6",
+      "payload_path": "evaluation/core-triage-v2/packets/req_57f68112f863daa5d9e8f1a6-b.json",
+      "payload_file_sha256": "ef9550b2b016bf5c8a4bdc42adc55b2b6297d82acae00db25a23f04f82bfff98",
+      "canonical_arguments_sha256": "9ff26ddbce63a96fd52417da87acbf4ee33911bdbb5feb46bc7299edbf1c0c06",
+      "message_sha256": "af903db7b7fcdbce8ba995dadefc7fc73ddc2d73909106cf640437e8ee95afb4",
+      "accepted_task_name": "/root/judge_v2_7765da0e8c30effe5dd61cfd",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:45:33+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_57f68112f863daa5d9e8f1a6-b.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/judge_v2_7765da0e8c30effe5dd61cfd"
+      }
+    },
+    {
+      "role": "generator",
+      "id": "req_3dfb50eb9c415d2b6a7b30fb",
+      "payload_path": "evaluation/core-triage-v1/assets/req_3dfb50eb9c415d2b6a7b30fb/request.json",
+      "payload_file_sha256": "b1e74b489c815e17d8f27169a5f1078feac27574c6b52c377c46624d434ea3f7",
+      "canonical_arguments_sha256": "b1e74b489c815e17d8f27169a5f1078feac27574c6b52c377c46624d434ea3f7",
+      "message_sha256": "e733281f692e9b037665a63a944844243d99edda65658fc2f66869553bb9565f",
+      "accepted_task_name": "/root/v2_execution/req_3dfb50eb9c415d2b6a7b30fb",
+      "requested_parameters": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:48:15+00:00",
+      "result_path": "evaluation/core-triage-v2/outputs/req_3dfb50eb9c415d2b6a7b30fb.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/req_3dfb50eb9c415d2b6a7b30fb"
+      }
+    },
+    {
+      "role": "judge_a",
+      "id": "req_3dfb50eb9c415d2b6a7b30fb",
+      "payload_path": "evaluation/core-triage-v2/packets/req_3dfb50eb9c415d2b6a7b30fb-a.json",
+      "payload_file_sha256": "5f16bffe04c592a1f52175ab3fea238eba33cab3d471abafd58ef097f78d358e",
+      "canonical_arguments_sha256": "1630f35a0840ecec0bf898ebad39a2576e7dc97f270841932a04b9ad10a3e67d",
+      "message_sha256": "1f0e7328f41b6fcf40711acb5416625b75cb46ec8664bb0341c291160ec1af52",
+      "accepted_task_name": "/root/v2_execution/judge_v2_01c601f2f6f16a51fed0a7b8",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:50:42+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_3dfb50eb9c415d2b6a7b30fb-a.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/judge_v2_01c601f2f6f16a51fed0a7b8"
+      }
+    },
+    {
+      "role": "judge_b",
+      "id": "req_3dfb50eb9c415d2b6a7b30fb",
+      "payload_path": "evaluation/core-triage-v2/packets/req_3dfb50eb9c415d2b6a7b30fb-b.json",
+      "payload_file_sha256": "64648bd52a3bcc0f7ea54d8a643bdbb07b906e47582cca954299a16b2a93358a",
+      "canonical_arguments_sha256": "6317991c2b59ba02bbb9daed46d2fa91716097fe697df1cba777c89362bbead5",
+      "message_sha256": "1f0e7328f41b6fcf40711acb5416625b75cb46ec8664bb0341c291160ec1af52",
+      "accepted_task_name": "/root/v2_execution/judge_v2_2b8ca3dc1a0e9280f1be6e9a",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:51:08+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_3dfb50eb9c415d2b6a7b30fb-b.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/judge_v2_2b8ca3dc1a0e9280f1be6e9a"
+      }
+    },
+    {
+      "role": "generator",
+      "id": "req_09314e39fcf919f5cbcb87b1",
+      "payload_path": "evaluation/core-triage-v1/assets/req_09314e39fcf919f5cbcb87b1/request.json",
+      "payload_file_sha256": "cb17599ac5986e7e8bbae9d2a1d01b7b387b618077b887acc9458326cb5721d5",
+      "canonical_arguments_sha256": "cb17599ac5986e7e8bbae9d2a1d01b7b387b618077b887acc9458326cb5721d5",
+      "message_sha256": "de7bf926b58379215fe1a41b57b96d7bba78faedb88ab523c7c9fcabc3fc168d",
+      "accepted_task_name": "/root/v2_execution/req_09314e39fcf919f5cbcb87b1",
+      "requested_parameters": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:52:09+00:00",
+      "result_path": "evaluation/core-triage-v2/outputs/req_09314e39fcf919f5cbcb87b1.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/req_09314e39fcf919f5cbcb87b1"
+      }
+    },
+    {
+      "role": "judge_a",
+      "id": "req_09314e39fcf919f5cbcb87b1",
+      "payload_path": "evaluation/core-triage-v2/packets/req_09314e39fcf919f5cbcb87b1-a.json",
+      "payload_file_sha256": "85252577d1623e9ba351832fa7ce48fd4021c9eb510aba85ae7a45011a83a2dc",
+      "canonical_arguments_sha256": "e7f5ea5538485d0087444ae52469679479f844b5d8059cf6bc62767cee3177e4",
+      "message_sha256": "99452e1d8dad8c3a17a048e761cc70480b4f63d8b17790b15242d020ed2a9850",
+      "accepted_task_name": "/root/v2_execution/judge_v2_d7c96d8dd255297ae7a61b85",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:54:38+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_09314e39fcf919f5cbcb87b1-a.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/judge_v2_d7c96d8dd255297ae7a61b85"
+      }
+    },
+    {
+      "role": "judge_b",
+      "id": "req_09314e39fcf919f5cbcb87b1",
+      "payload_path": "evaluation/core-triage-v2/packets/req_09314e39fcf919f5cbcb87b1-b.json",
+      "payload_file_sha256": "5e1ac10ebc82eea9edda9298d276eb3cd245e149432576133fc51554ba8c6650",
+      "canonical_arguments_sha256": "5c9d16a1b10cd94cfe830df3c31b329fad8c67ff4fee88b078301a2799fa4dd8",
+      "message_sha256": "99452e1d8dad8c3a17a048e761cc70480b4f63d8b17790b15242d020ed2a9850",
+      "accepted_task_name": "/root/v2_execution/judge_v2_87827ba26df01dc66584572e",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:55:12+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_09314e39fcf919f5cbcb87b1-b.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/judge_v2_87827ba26df01dc66584572e"
+      }
+    },
+    {
+      "role": "generator",
+      "id": "req_967d3f5b1f8ddce304178382",
+      "payload_path": "evaluation/core-triage-v1/assets/req_967d3f5b1f8ddce304178382/request.json",
+      "payload_file_sha256": "19a6c74116819e192419c41473a303fb2001eebe09388ee35ccbb3f845506a7c",
+      "canonical_arguments_sha256": "19a6c74116819e192419c41473a303fb2001eebe09388ee35ccbb3f845506a7c",
+      "message_sha256": "29c9f073a84930d5a4d7cb8bf958dd124e6a1db7ed15206db86fcf7dedc415c1",
+      "accepted_task_name": "/root/v2_execution/req_967d3f5b1f8ddce304178382",
+      "requested_parameters": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:56:13+00:00",
+      "result_path": "evaluation/core-triage-v2/outputs/req_967d3f5b1f8ddce304178382.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/req_967d3f5b1f8ddce304178382"
+      }
+    },
+    {
+      "role": "judge_a",
+      "id": "req_967d3f5b1f8ddce304178382",
+      "payload_path": "evaluation/core-triage-v2/packets/req_967d3f5b1f8ddce304178382-a.json",
+      "payload_file_sha256": "6d9f0cade86b6ddb8df6cafb85dc564fe660c51a102ae8bdf858c42235433ad0",
+      "canonical_arguments_sha256": "a429fb7796a78528d797df4b3cd44c1aa7d3432949651454e075d052ae8bec4c",
+      "message_sha256": "82a44f6e337fe93bfe8f04cf77b6e1fcf879eb6b0fb612dbcad03f4a3135182d",
+      "accepted_task_name": "/root/v2_execution/judge_v2_cb9e683716b42452a36bd064",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:58:38+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_967d3f5b1f8ddce304178382-a.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/judge_v2_cb9e683716b42452a36bd064"
+      }
+    },
+    {
+      "role": "judge_b",
+      "id": "req_967d3f5b1f8ddce304178382",
+      "payload_path": "evaluation/core-triage-v2/packets/req_967d3f5b1f8ddce304178382-b.json",
+      "payload_file_sha256": "8a7334e1201e3f2e4ee774a5488e071d5dbb932d9b15d6ad485ceaa7ac175f75",
+      "canonical_arguments_sha256": "506f052f13afcd283c947debb8d1f2f9f3cbfcf1fe986c2d3242bacbe15ad79f",
+      "message_sha256": "82a44f6e337fe93bfe8f04cf77b6e1fcf879eb6b0fb612dbcad03f4a3135182d",
+      "accepted_task_name": "/root/v2_execution/judge_v2_e82a6ccd0502bc3db1376c24",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T12:59:07+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_967d3f5b1f8ddce304178382-b.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution/judge_v2_e82a6ccd0502bc3db1376c24"
+      }
+    },
+    {
+      "role": "generator",
+      "id": "req_cc85a6edf2b6b47feaffde0c",
+      "payload_path": "evaluation/core-triage-v1/assets/req_cc85a6edf2b6b47feaffde0c/request.json",
+      "payload_file_sha256": "7fec6df416c9a2c102dffda0f96af10b993bc03e44e6888901796c90811600fa",
+      "canonical_arguments_sha256": "7fec6df416c9a2c102dffda0f96af10b993bc03e44e6888901796c90811600fa",
+      "message_sha256": "62c1c3c2894f99d99d7c0b7db141fd134d6f5e29e5792bfcb32dea9f4c787555",
+      "accepted_task_name": "/root/v2_execution_b/req_cc85a6edf2b6b47feaffde0c",
+      "requested_parameters": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T13:01:45+00:00",
+      "result_path": "evaluation/core-triage-v2/outputs/req_cc85a6edf2b6b47feaffde0c.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution_b/req_cc85a6edf2b6b47feaffde0c"
+      }
+    },
+    {
+      "role": "judge_a",
+      "id": "req_cc85a6edf2b6b47feaffde0c",
+      "payload_path": "evaluation/core-triage-v2/packets/req_cc85a6edf2b6b47feaffde0c-a.json",
+      "payload_file_sha256": "cc12db952dce30b1cdf9e4d708c97d212245505051df637fe97be51bd63edaed",
+      "canonical_arguments_sha256": "842c36ab5cfa1f4974270bc4656b4c5e1d03765485c4612ec1adcf0b5c30d5b7",
+      "message_sha256": "5f4fef281a107bf42573e4f833722418884078003542a290a50e6faa8d9eac63",
+      "accepted_task_name": "/root/v2_execution_b/judge_v2_c9db381de0a15dc1cc98d9b5",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T13:04:26+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_cc85a6edf2b6b47feaffde0c-a.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution_b/judge_v2_c9db381de0a15dc1cc98d9b5"
+      }
+    },
+    {
+      "role": "judge_b",
+      "id": "req_cc85a6edf2b6b47feaffde0c",
+      "payload_path": "evaluation/core-triage-v2/packets/req_cc85a6edf2b6b47feaffde0c-b.json",
+      "payload_file_sha256": "059da156f78264a95413a93d20b22e303386aab68af36bbdcf8eeaaca4506ae1",
+      "canonical_arguments_sha256": "43ddc48d13d0de8038c03d924a35271dbd7ffc9db67c17cda0a4c1088c46da96",
+      "message_sha256": "5f4fef281a107bf42573e4f833722418884078003542a290a50e6faa8d9eac63",
+      "accepted_task_name": "/root/v2_execution_b/judge_v2_d5d7ef148dbafee90a3ba65c",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T13:05:07+00:00",
+      "result_path": "evaluation/core-triage-v2/ratings/req_cc85a6edf2b6b47feaffde0c-b.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/v2_execution_b/judge_v2_d5d7ef148dbafee90a3ba65c"
+      }
+    }
+  ],
+  "transport_limit": "Explicit tool arguments accepted; receipts expose canonical task names only, not payload checksums or backend/provider identities. Hashes describe coordinator-submitted payload files, not server attestations.",
+  "context_limit": "Distinct canonical task names with fork_turns=none are context surrogates; host instructions, tools and filesystem remain inherited.",
+  "observation_limit": "Empty observed tool lists mean no activity in delivered messages; internal traces unavailable, no enforced sandbox claim.",
+  "timestamp_limit": "UTC receipt-capture timestamps from clock tool, not provider generation timestamps.",
+  "new_generator_calls": 5,
+  "new_judge_calls": 12,
+  "new_diagnostic_calls": 17
+}

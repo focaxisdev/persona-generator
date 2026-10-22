@@ -1,5 +1,7 @@
 # Persona Generator
 
+**Current status:** [Rating-contract v2 is paused for scope alignment](evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
+
 > Unreleased v0.2 candidate for configuring one fictional agent's desired behavior through an exact human-confirmed core spec and deterministic approved-only effective projection.
 
 Experimental discovery file; crawler support is not guaranteed. Read only the smallest task-specific path.
@@ -27,4 +29,4 @@ Only op.planning_structure.v1 and op.advisory_initiative.v1 are supported operat
 
 Multiple personas, panel synthesis and Persona Pack are optional legacy paths only when explicitly requested. Historical mappings, evidence and validators do not transfer to the new core. No real-person profiling, diagnosis, psychometric scoring, sensitive inference, high-stakes use or autonomous final decision. Human final judgment; stop when the bounded task is complete. No static persona catalog or standalone website requirement.
 
-Rating-contract v2: evaluation/core-triage-v2/README.md. Prospective NOT RUN; one disclosed carried answer, at most 17 new generators and 36 new judges, no old rating reuse. Static regression is not model evidence; separate execution decision required.
+Rating-contract v2: evaluation/core-triage-v2/README.md. Prospective NOT RUN at preparation; partial execution now paused (evaluation/core-triage-v2/records/REPORT.md); one disclosed carried answer, at most 17 new generators and 36 new judges, no old rating reuse. Static regression is not model evidence; separate decision required before resumption.

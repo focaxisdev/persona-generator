@@ -1,5 +1,7 @@
 # Persona Generator
 
+**Current status:** [Core triage v2 is paused for scope alignment](evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new) and 12 fresh locked schema-valid ratings, totaling 17 new diagnostic calls. The frozen v2 preparation’s **NOT RUN** text is historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified.
+
 Configure how one fictional AI agent should behave for a bounded, low-stakes task. Follow desired behavior through source and construct context, an exact human-confirmed specification, a deterministic effective projection, and evidence tied to those versions.
 
 **Start:** [Quickstart](docs/QUICKSTART.md) → [core contract](core/README.md). [繁體中文](README.zh-TW.md) · [AI discovery](AI_DISCOVERY.md)
@@ -33,7 +35,7 @@ The core schema version, operation versions, package candidate, and historical m
 
 The [historical v1 pilot](evaluation/pilot-2026-10-22/REPORT.md) retains 102 model-generated outputs on synthetic tasks. Only 5/30 initial low/high pairs were candidate exact-anchor observations, three with limited confidence; there were 28 budget violations and three unclear guardrail ratings. Those findings do not validate the new operations. Frozen [mapping-v2](persona-design-v0.2/mapping-v2/README.md) and its diagnostic design remain historical proposals, not the core default or new evidence. The original 400-response gate is unchanged; a prospective bounded core plan is separately documented in [EVIDENCE_PLAN](core/EVIDENCE_PLAN.md). See [release acceptance](docs/RELEASE_ACCEPTANCE.md) and [draft release notes](docs/RELEASE_NOTES_DRAFT.md). The frozen diagnostic stopped at its first cell, leaving 17 generator cells and 34 judge calls NOT RUN; the earlier 132-response coverage proposal is not adopted. Two analogues are an implementation milestone, not the final scope of the project’s psychology-based ambition. This candidate is not released.
 
-A separate [rating-contract v2 repair](evaluation/core-triage-v2/README.md) is prospective and NOT RUN. It preserves the stopped v1 evidence and proposes carrying its one exact raw answer forward, with at most 17 new generator calls and 36 new judge calls under a reviewed new contract. Old invalid ratings remain invalid; synthetic and historical regression checks are software tests, not live ratings or behavioral evidence. Execution requires a separate decision.
+At preparation, the separate [rating-contract v2 repair](evaluation/core-triage-v2/README.md) was prospective and NOT RUN; its partial execution is now [paused](evaluation/core-triage-v2/records/REPORT.md). It preserves the stopped v1 evidence and proposes carrying its one exact raw answer forward, with at most 17 new generator calls and 36 new judge calls under a reviewed new contract. Old invalid ratings remain invalid; synthetic and historical regression checks are software tests, not live ratings or behavioral evidence. Resuming the remaining cells requires a separate decision.
 
 ## Optional legacy workflows
 

@@ -1,5 +1,7 @@
 # Confirmed single-agent core — unreleased candidate
 
+**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
+
 Canonical route: [README](../README.md) → [Quickstart](../docs/QUICKSTART.md) → this contract. Configure desired behavior for one fictional, low-stakes, ephemeral advisory agent, then stop when its bounded task is complete. No panel or Persona Pack is required.
 
 ## Version and supported surface

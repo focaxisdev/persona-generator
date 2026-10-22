@@ -1,0 +1,12 @@
+{
+  "id": "req_3dfb50eb9c415d2b6a7b30fb",
+  "files": {
+    "ratings/req_3dfb50eb9c415d2b6a7b30fb-a.json": "bc125642fcedde4adfb2f7dafdcb3ff81e599880ddba90b0c6434a99fc49fdd7",
+    "packets/req_3dfb50eb9c415d2b6a7b30fb-a.json": "5f16bffe04c592a1f52175ab3fea238eba33cab3d471abafd58ef097f78d358e",
+    "ratings/req_3dfb50eb9c415d2b6a7b30fb-b.json": "d4674db117bf4477fd03a64ffd1253717eec770d0144afaa50f8a73e83f340a3",
+    "packets/req_3dfb50eb9c415d2b6a7b30fb-b.json": "64648bd52a3bcc0f7ea54d8a643bdbb07b906e47582cca954299a16b2a93358a",
+    "outputs/req_3dfb50eb9c415d2b6a7b30fb.json": "e8010e7132db7b93475fa2b7f4bc6f8093911467e845c24b6630a11f34db585e",
+    "records/req_3dfb50eb9c415d2b6a7b30fb.reservation.json": "427460415c588ad5eb60024c8c77ff2e438db0784da56943abd36bb6c08138b6"
+  },
+  "both_judge_attempt_outcomes_retained": true
+}

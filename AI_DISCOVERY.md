@@ -1,5 +1,7 @@
 # Persona Generator AI Discovery Guide
 
+**Current status:** [Core triage v2 is paused for scope alignment](evaluation/core-triage-v2/records/REPORT.md): six retained answers (one byte-identical carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Frozen v2 preparation **NOT RUN** text is historical; no continuation is automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified.
+
 Canonical route: [README](README.md) → [Quickstart](docs/QUICKSTART.md) → [core contract](core/README.md). The default configures **one fictional agent's desired behavior** for a bounded, low-stakes task. Do not start by generating several personas, a panel, or a pack.
 
 `Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
@@ -17,7 +19,7 @@ Canonical route: [README](README.md) → [Quickstart](docs/QUICKSTART.md) → [c
 
 The unreleased v0.2 package candidate uses the new core schema and separately versioned `op.planning_structure.v1` and `op.advisory_initiative.v1`. Ten human aspects are vocabulary; only these two operational analogues are supported, and neither is behaviorally validated. Other aspects remain unspecified. Never infer a user's personality, treat settings as human scores, or fill unsupported goals from a role, source excerpt, or neighboring aspect.
 
-Static validation cannot prove human approval, model adherence, safety, psychological validity, or stability. Read the [claims matrix](docs/CLAIMS_MATRIX.md) before describing evidence. The [core triage](evaluation/core-triage-v1/records/REPORT.md) stopped after one generator and two judge calls, both schema-invalid; zero ratings were accepted. New core behavior remains unvalidated; authentic owner E2E is NOT RUN. The separate [rating-contract v2 repair](evaluation/core-triage-v2/README.md) is prospective NOT RUN: one disclosed carried answer, at most 17 new generators and 36 new judges; no old rating becomes valid and no execution follows automatically. The [evidence plan](core/EVIDENCE_PLAN.md) is prospective; the [private owner protocol](core/OWNER_TEST_PROTOCOL.md) must not be simulated into a claim of genuine consent.
+Static validation cannot prove human approval, model adherence, safety, psychological validity, or stability. Read the [claims matrix](docs/CLAIMS_MATRIX.md) before describing evidence. The [core triage](evaluation/core-triage-v1/records/REPORT.md) stopped after one generator and two judge calls, both schema-invalid; zero ratings were accepted. New core behavior remains unvalidated; authentic owner E2E is NOT RUN. At preparation, the separate [rating-contract v2 repair](evaluation/core-triage-v2/README.md) was prospective NOT RUN; partial execution is now [paused](evaluation/core-triage-v2/records/REPORT.md). Its preparation maximum was: one disclosed carried answer, at most 17 new generators and 36 new judges; no old rating becomes valid and no execution follows automatically. The [evidence plan](core/EVIDENCE_PLAN.md) is prospective; the [private owner protocol](core/OWNER_TEST_PROTOCOL.md) must not be simulated into a claim of genuine consent.
 
 ## Optional historical paths
 
