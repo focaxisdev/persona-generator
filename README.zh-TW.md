@@ -1,117 +1,41 @@
 # Persona Generator / 人格產生器
 
-Persona Generator（人格產生器）是一套 protocol-first、Markdown-first 的 AI 多代理人格生成框架。它不儲存預製人格目錄，而是依照情境即時產生受學術邊界約束的虛構人格。
+為一個虛構、低風險任務設定單一 AI agent 的行為。主流程是：希望 agent 如何表現 → 來源與構念脈絡 → 人工確認的完整 spec → 確定性的有效指令投影 → 綁定版本的證據。
 
-公開 tagline：
-
-`Generate academically bounded fictional personas on demand for multi-agent rehearsal.`
-
-核心原則：
+**從這裡開始：**[Quickstart](docs/QUICKSTART.md) → [core 合約](core/README.md)。[English README](README.md) · [AI 導覽](AI_DISCOVERY.md)
 
 `Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
 
-[Read the English README](README.md)
+## 目前範圍：尚未發布的 v0.2 候選版
 
-## 可追溯的 agent 人格設定（尚未發布的 v0.2 候選增量）
+核心流程透過選項或自由短答詢問「希望 agent 如何表現」，不推測使用者人格。未回答的設定保持 `unspecified`。使用者先檢查來源、轉譯理由、精確規則、衝突與完整預覽，再明確確認。行為變更必須重新預覽與確認；新 session 使用前須核對原確認內容。
 
-新[訪談流程](persona-design-v0.2/protocol.md)以選擇題或簡答詢問「希望 agent 如何表現」，不推測使用者真實人格。十個 Big Five aspects 依 DeYoung、Quilty、Peterson（2007）具名記錄，並分開標示文獻構念、專案提出的行為轉譯、實際模型測試證據。
+[涵蓋表](core/COVERAGE.md)將十個 Big Five aspects 作為研究詞彙。核心只支援兩個新的操作類比：`op.planning_structure.v1` 與 `op.advisory_initiative.v1`。兩者都是**尚未經行為試驗的工程提案**，不代表已實現人類特質；其餘面向保持未指定，不產生指令。[來源與存取限制](core/SOURCES.md)支持詞彙脈絡，不證明本專案的 agent 行為有效。請讀[主張邊界](docs/CLAIMS_MATRIX.md)。
 
-設定只有偏低／中間／偏高／未指定四種設計目標，不是心理測量分數。未指定不補成中間；矛盾不平均。先檢視來源、轉譯理由與不確定項，再確認完整預覽，才能產出 spec。人格不得改寫事實準確性、隱私、安全或工具權限。
+本機 compiler 檢查 core 合約，從固定邊界、已核准的 operation 規則與明確核准的回答詳略控制產生有效指令。訪談原文、來源摘錄、解釋與其他追溯欄位都是惰性資料，不能被拼進執行指令。確定性輸出能說明產生了什麼，不保證模型遵守，也無法自行證明真正的人已同意。
 
-由[Quickstart](docs/QUICKSTART.md)開始；v0.1 保留，見[遷移說明](docs/MIGRATION.md)。本增量已完成一項[受限工程試驗](evaluation/pilot-2026-10-22/REPORT.md)，保留 76 個新 context 的 102 份合成任務回答，並由獨立 context 的模型進行條件盲評。結果混合且僅適用於記錄的任務，未完成原始行為 protocol；本增量仍未發布。參見[宣稱邊界](docs/CLAIMS_MATRIX.md)與[release 驗收](docs/RELEASE_ACCEPTANCE.md)。
-
-## 一句話說明
-
-當你需要 AI Agent 為一個虛構、低風險情境產生幾個臨時觀點，用來做 brainstorming、風險檢查或交接演練時，Persona Generator 提供一套可檢查、可停止、可移交的 Markdown protocol。
-
-## 這是什麼 / 不是什麼
-
-| Persona Generator 是 | Persona Generator 不是 |
-| --- | --- |
-| 本地優先的 Markdown protocol 套件 | Hosted service |
-| 依情境產生臨時虛構人格的 grammar | 靜態人格目錄 |
-| 用於低風險演練的受限 construct vocabulary | 人格測驗或心理計量工具 |
-| 需要人工審查的 advisory workflow | 診斷工具 |
-| 保留異議與少數觀點的合成輔助 | 自動決策系統 |
-| 可選的 Persona Pack 交接格式 | 真人側寫基礎建設 |
-
-## 五分鐘開始
-
-1. 讀 [docs/QUICKSTART.md](docs/QUICKSTART.md)。
-2. 讓 AI Agent 讀 [AI_DISCOVERY.md](AI_DISCOVERY.md)，並只走最小必要路徑。
-3. 提供一個虛構、低風險的 scenario brief。
-4. 產生最小必要的 ephemeral personas（臨時虛構人格）。
-5. 執行人工 review checklist。
-6. 只有在任務明確需要時，才使用 panel rehearsal（多觀點合成）或 Persona Pack handoff（Markdown 交接包）。
-7. 產出 bounded advisory synthesis（受限建議性合成）後停止。
-
-複製起始 prompt：
+## 以一個任務開始
 
 ```text
-Read AI_DISCOVERY.md and docs/QUICKSTART.md. Use Persona Generator only for a fictional, low-stakes scenario. Generate the minimum useful set of ephemeral fictional personas, review them manually, preserve dissent, avoid static persona catalogs, and stop after a bounded advisory synthesis.
-
-Scenario: [描述一個虛構、低風險情境]
-Decision or rehearsal question: [臨時觀點要檢查什麼問題？]
-Why this is fictional and low-stakes: [簡短說明邊界]
-Desired output: [只要 personas / personas plus synthesis / optional handoff]
+讀 docs/QUICKSTART.md 與 core/README.md，協助設定一個為虛構桌遊下午
+提供建議的 agent。可用選項或自由短答，詢問我希望 agent 如何表現。
+把提案連到 core 的來源與涵蓋表，略過的設定保持未指定。顯示完整且
+精確的預覽，等我確認後才能產生可使用的 spec。不要推測我的人格，
+也不要自行增加 panel 或持久化 Persona Pack。
 ```
 
-## 架構概覽
+檢查與編譯合約不需要 hosted service、帳號、付費 API、資料庫、遙測或模型呼叫。把指令交給模型是另一個需人工審閱的步驟。完成受限的單一 agent 任務後停止。
 
-![Architecture overview](docs/assets/architecture-overview.svg)
+## 證據與限制
 
-```text
-虛構低風險情境
--> 受邊界約束的 construct vocabulary
--> LLM-native on-demand ephemeral personas
--> 人工審查
--> 可選 panel rehearsal
--> 保留異議的 advisory synthesis
--> 可選 Persona Pack v0.1 serialization
--> 可選 handoff
--> stop
-```
+套件 v0.2 候選版、core schema 版本、operation 版本，以及舊 mapping 版本各自獨立。新 core 行為試驗與真正 owner 的端到端試驗均為 **NOT RUN**；靜態測試只支持實際測過的合約性質。不宣稱十個特質已實現、心理計量有效、人類心智／情緒、通用穩定性或跨模型可靠性。
 
-## 公開範例
+[舊 v1 試行](evaluation/pilot-2026-10-22/REPORT.md)保留 102 份模型對合成任務的實際輸出；30 組初始低／高對照中，只有 5 組是符合端點的候選觀察，其中 3 組信心受限；另有 28 次字數違規與三項不明確的 guardrail 評分。這些結果不能轉作新 operation 的證據。凍結的 [mapping-v2](persona-design-v0.2/mapping-v2/README.md) 與其診斷設計仍為歷史提案，不是預設路徑或新證據。原 400 回答門檻不變；[core 證據計畫](core/EVIDENCE_PLAN.md)是另立的前瞻計畫，不是替代門檻。詳見[發布驗收](docs/RELEASE_ACCEPTANCE.md)與[發布說明草稿](docs/RELEASE_NOTES_DRAFT.md)。候選版尚未發布。
 
-請看 [examples/limited-public-beta](examples/limited-public-beta/README.md)。這是一個虛構的志工知識分享場景，示範多個臨時人格、可見異議、少數觀點保留，以及受限的建議性合成。
+## 僅在明確要求時使用的舊流程
 
-範例只是 public fixture：用來示範格式與安全邊界，不是資料集、runtime inventory、可重用 preset，也不是靜態人格目錄。
+[v0.1 情境流程](fictional-persona-instantiation-v0.1/README.md)、[panel adapter](ephemeral-persona-panel-adapter-v0.1/README.md) 與 [Persona Pack](persona-pack-v0.1/README.md)仍可選用。多個 persona、panel 合成、持久化與交接都不是設定單一 agent 的必要步驟，也不構成 core spec 的確認。見[遷移說明](docs/MIGRATION.md)。
 
-## 安全邊界
+僅供虛構、低風險、建議性任務，最終由人判斷。禁止真人側寫、診斷、人格評分、敏感屬性推論，以及招聘、監控、法律、醫療、信用、保險、教育分配等高風險用途與自動最終決策。人格設定不得改寫準確性、隱私、安全、任務必要內容或工具權限。[安全邊界](docs/SAFETY_BOUNDARIES.md) · [架構](docs/ARCHITECTURE.md) · [貢獻](CONTRIBUTING.md) · [安全通報](SECURITY.md)
 
-Persona Generator 預設只用於虛構、低風險、建議性情境。不要用於真人側寫、診斷、心理計量評分、招聘、監控、法律、醫療、信用、保險、教育分配或其他高風險決策。
-
-使用前請讀 [docs/SAFETY_BOUNDARIES.md](docs/SAFETY_BOUNDARIES.md)。
-
-## 學術邊界與證據限制
-
-這裡的 construct 只是受邊界約束的描述詞彙，用來幫助情境設計；它不是心理測量、臨床驗證、診斷、人格真相或行為預測。
-
-請讀 [docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md) 與 [docs/EVIDENCE_SUMMARY.md](docs/EVIDENCE_SUMMARY.md)。
-
-## 文件導覽
-
-- [Quickstart](docs/QUICKSTART.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Academic Boundaries and Source Notes](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md)
-- [Why Persona Generator](docs/WHY_PERSONA_GENERATOR.md)
-- [Use Cases](docs/USE_CASES.md)
-- [FAQ](docs/FAQ.md)
-- [Safety Boundaries](docs/SAFETY_BOUNDARIES.md)
-- [AI Discovery Guide](AI_DISCOVERY.md)
-- [Experimental llms.txt](llms.txt)
-
-## Contributing
-
-貢獻前請讀 [CONTRIBUTING.md](CONTRIBUTING.md)、[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)、[SECURITY.md](SECURITY.md) 與 [SUPPORT.md](SUPPORT.md)。
-
-請不要提交個人資料、敏感資料、秘密側寫需求、靜態人格目錄、心理計量評分或高風險使用案例。
-
-## License
-
-Persona Generator 使用 [Apache-2.0](LICENSE) 授權。除非個別檔案另有說明，授權範圍包含本公開 repository 的文件、protocols、templates、examples、visual assets，以及未來程式碼。
-
-## Star
-
-如果這種 protocol-first 的做法對你有幫助，歡迎 Star 這個 repository，讓更多 builders 找得到它。
+原創 repository 素材採 [Apache-2.0](LICENSE)；外部論文與第三方素材保留原權利。行銷範圍為 GitHub 文件，不需要獨立網站。

@@ -1,0 +1,42 @@
+# Prospective two-operation evidence plan — NOT RUN
+
+No new model collection is performed or authorized by this integration. This is a proposed finite design for later review, not evidence, an implemented large harness or a release gate. The supported operations remain untested. Authentic owner workflow testing is separately specified in [OWNER_TEST_PROTOCOL](OWNER_TEST_PROTOCOL.md).
+
+## Freeze before execution
+
+Before any trial, freeze an explicitly approved run manifest with candidate commit/tree identity, compiler/schema/catalog/operation versions and hashes, exact confirmed specs and presented previews, projection JSON and rendered-byte digests, cases, condition allocation, held-out cases, run order, contexts, model/provider settings, rubric, raters and decision criteria. Reuse the exact `project`/`render` path in [README](README.md). Do not shorten, paraphrase or independently rebuild the rendered prompt for evaluation. Any contract/rule/criteria change starts a separately versioned design; it cannot reuse old approval or results as evidence for the change.
+
+Retain every attempt, exact request and raw output, model-exposed metadata and unavailable settings, ratings with quotes, refusal/error/non-trigger outcomes, exclusions with prospective reasons, budget failures and uncertainty. Do not retain or publish real owner transcripts without specific permission. Evaluation fixtures must be labeled synthetic; structural synthetic approvals are not owner consent.
+
+## Proposed bounded phases
+
+These counts are proposals to freeze before execution, not collected responses or a reduction of the historical gate. Stop and review at each phase; no automatic expansion.
+
+| Phase | Proposed finite maximum | Purpose |
+| --- | --- | --- |
+| Static preparation | No model responses | Validate all exact specs/projections and the frozen manifest; verify all unspecified targets contribute no preferences and trace remains inert. |
+| Isolated fresh-context probes | 2 operations × 5 conditions × 3 cases × 2 independent contexts = **60 responses** | Low/middle/high, explicit unspecified and a neutral task-only baseline. Per operation: one unprompted opportunity, one non-trigger/counterexample and one held-out transfer case. |
+| Continuity/reload | 2 operations × 2 endpoint settings × 2 task families × 2 independent sequences × (2 continuation turns + 1 fresh reload) = **48 additional responses** | Extend relevant initial endpoint cells from the opportunity and held-out families; retain low as well as high settings, task changes and fresh reuse. |
+| Limited two-operation composition | 4 preset endpoint pairs + both-unspecified + neutral baseline = 6 conditions × 2 task cases × 2 contexts = **24 responses** | Only the two supported operations; one jointly eliciting task and one task with a non-trigger/override for one operation. |
+
+Proposed total if every phase is separately approved: **132 model responses**, including continuations/reloads. No broad ten-aspect study, cross-provider claim, exhaustive composition grid or self-report personality survey is proposed. A later reviewer may narrow or reject this plan **before** execution; counts and criteria then must be frozen explicitly. These totals are not a release threshold.
+
+## Cases and controls
+
+Opportunity tasks must naturally permit the behavior without telling the model to show a checklist, take initiative, name a trait or reproduce the rubric. Hold required actions, supported facts/options, word budget, safety and task usefulness constant across conditions. Fix response-detail control across comparisons (prefer unspecified); never let verbosity masquerade as a behavioral difference. Include dependencies only when supplied by the task; high planning structure must not invent them.
+
+Planning non-trigger/counterexample cases should include a single-action task, or a task whose sequence and presentation are both fully prescribed with no relevant choice. A fixed sequence with freedom of presentation can still trigger planning structure; classify it against the literal catalog trigger rather than assuming fixed order suppresses the operation. Initiative non-trigger cases should include a factual lookup or a choice with only one supported option. Include tasks explicitly prescribing a response format/recommendation as override controls. A task-mandated checklist or recommendation is not evidence of an optional operation effect. Held-out tasks must use a different fictional task family and remain sealed until the transfer phase; do not tune cases or rules after seeing those outputs.
+
+Neutral baseline contains the same task and invariant boundaries but no operation/control preferences. The explicit-unspecified condition uses a valid core artifact with all targets and control unspecified, so its rendered text consists of the invariant preamble. Document exact baseline differences rather than treating the two controls as interchangeable. Three active anchors are categorical design instructions; middle is not a human norm or guaranteed midpoint.
+
+## Ratings and prospective decision rules
+
+Freeze observable rubrics based on the literal catalog rules and exclusions, not trait adjectives or desirable impressions. Independently rate task adequacy, required content, literal rule adherence, optional contrast, safety/permission preservation, and budget. Use two independent condition-blind raters for every scoped output, including continuations, reloads and composition outputs; record unavoidable prompt leakage and blinding limitations. Freeze the presentation/blinding procedure and prospective adjudication process before collection. Preserve each original rating alongside adjudicated outcomes and report disagreement rather than replacing it with apparent consensus. Never retroactively rerate old outputs to improve a result.
+
+Use distinct labels: **applicable and followed**, **applicable and not followed**, **not_triggered**, **overridden**, **unclear**, and **missing/error**. An absent trigger or legitimate higher-priority task override is not nonadherence, and it is not positive behavioral evidence. Surface layout, longer answers, self-described personality or repeating supplied examples cannot alone establish the human construct. Inspect confounds identified in [COVERAGE](COVERAGE.md).
+
+Before execution, specify the exact per-case required features and which omissions constitute failure. Report all applicable endpoint pairs and their confidence; do not promote intermediate categories into attained endpoints or aggregate away required-content failures. Any safety/permission failure, omitted required work or hidden instruction leakage blocks a favorable scoped acceptance claim pending review. Ambiguous or non-elicited results remain inconclusive. Completion of counts alone does not pass an operation: a scoped decision must separately assess literal adherence, distinguishability from controls, task usefulness, transfer and continuity, naming exact versions and limitations. This proposal intentionally sets no post hoc numeric pass rate; a later acceptance threshold, if wanted, must be approved and frozen before the first response.
+
+## Historical boundaries
+
+The original [behavior protocol](../validation/BEHAVIOR_PROTOCOL.md) and its 400-response minimum remain unchanged and NOT COMPLETED. The frozen v2 50-response diagnostic remains NOT RUN; do not execute it by default or reinterpret literal debug work as new core evidence. Historical raw outputs, locked ratings, rubric, failures and budget classifications remain untouched. New IDs require new evidence, and no prospective plan validates personality, human emotions, general stability, universal portability or release readiness.

@@ -1,22 +1,21 @@
-# Migration from v0.1 to the v0.2 candidate
+# Migration and historical compatibility
 
-The v0.1 directories, protocol contracts, example fixtures, and published release are not rewritten. The new `persona-design-v0.2` directory is an unreleased opt-in path for configuring desired agent behavior. This does not add a permanent persona inventory.
+The canonical unreleased candidate now starts at [Quickstart](QUICKSTART.md) → [core contract](../core/README.md) for one fictional agent. This documentation change does not relabel or rewrite a released package, old spec, old confirmation, mapping, or historical evidence.
 
-| Existing item | Treatment |
+| Artifact | Treatment |
 | --- | --- |
-| Decision tempo, evidence posture, uncertainty posture, communication posture | Preserve as workflow controls; no automatic BFAS mapping. |
-| Creative posture, collaboration posture, time horizon, boundary posture | Preserve as workflow controls; boundary obligations remain mandatory. |
-| Missing psychological construct goals | Record all ten as `unspecified` until the user requests and confirms a target. |
-| Old spec or Persona Pack | Still v0.1; do not relabel it as a confirmed v0.2 spec. |
-| Old manual review Pass | Does not confirm a new preview or validate its mappings. |
-| Legacy dry-run summary | Does not establish new behavior evidence. |
+| v0.1 scenario workflow and Persona Pack | Optional legacy formats; retain original identity. |
+| Workflow controls such as decision tempo, evidence posture, and creative posture | Context only; no automatic aspect or operation mapping. |
+| `persona-design-v0.2` mapping-v1/v2 documents | Frozen historical proposals; not the new core compiler's rule source. |
+| Existing validator or test result | Applies only to its original contract and tested revision. |
+| Historical pilot outputs/ratings/failures | Preserve unchanged; no evidence transfer to new operation IDs. |
+| Old manual review or preview approval | Does not confirm a new core artifact. |
+| Frozen v2 diagnostic design | NOT RUN; neither new core evidence nor a replacement release gate. |
 
-To migrate one bounded task, retain the original artifact, run the new interview, and cite the old workflow controls as context rather than evidence of traits. Ask the user to review any proposed new construct target and its rationale. Preserve contradictions and uncertainty. Require explicit confirmation of the new preview and a new manual review before use.
+To configure an old task through the core, retain the old artifact, restate the desired behavior, inspect current [coverage](../core/COVERAGE.md), and create a new proposal using only the two supported operation choices. All other aspects remain unspecified. Resolve contradictions, approve exact proposed rules, and obtain a fresh confirmation of the complete new preview. Do not infer settings from domain labels, questionnaires, roles, or old ratings.
 
-For optional Persona Pack handoff, keep the reviewed v0.2 Markdown spec intact as a companion artifact with its identity/digest. Record that companion in the existing evidence ledger and handoff notes without changing the v0.1 schema or pretending the pack alone preserves the new contract. On reload provide the exact companion and validate it against the approved preview. Missing companion, changed content, or missing confirmation blocks v0.2 activation.
+The package candidate is v0.2; the core schema is `persona-core-v1`; operations have separate `.v1` versions. Those names do not denote old mapping-v1 or mapping-v2 compatibility. The core compiler does not validate frozen mapping-v2 artifacts, and the old validator does not validate the new core contract.
 
-There is no automatic conversion, score conversion, domain-to-aspect inference, or mapping of BFI-2/HEXACO facets. A desire for a fast workflow is not evidence of Extraversion, and evidence-seeking is not a measurement of Intellect.
+A Persona Pack may accompany a core artifact only when persistence or handoff is explicitly requested. Keep the confirmed spec, its identity, and deterministic effective projection intact as companion artifacts. A pack or summary alone does not preserve core confirmation. On reload verify exact content and versions; missing, changed, or unconfirmed content blocks activation. Any behavior edit requires a new preview and reconfirmation.
 
-## Separate mapping-v2 proposal
-
-The [mapping-v2 workflow](../persona-design-v0.2/mapping-v2/WORKFLOW.md) is a separate opt-in proposal, not an automatic migration or the default path. Coordinator acceptance of its [acceptance proposal](../persona-design-v0.2/mapping-v2/ACCEPTANCE_PROPOSAL.md) is pending; v2 behavior and authentic owner E2E are NOT RUN. Begin all ten aspect keys unspecified. Explicitly approve each selected version, anchor, rule and boundary, then separately confirm the complete new preview. B03/B05/B06/B08/B10 use revised `.v2` IDs; B01/B02/B04/B07/B09 retain `.v1` only by explicit opt-in. B01/B02 remain experimental expression controls. Existing specs, confirmations, reviews and evidence remain historical and do not transfer. A separate extension contract is proposed; v1 validator acceptance must not be assumed. See the [v2 index](../persona-design-v0.2/mapping-v2/README.md) for scope and current blockers.
+The [original behavior protocol](../validation/BEHAVIOR_PROTOCOL.md) remains unchanged, including its 400-response minimum. The old 50-response diagnostic remains a separate unexecuted historical proposal. The [new prospective core plan](../core/EVIDENCE_PLAN.md) is separately scoped and cannot silently satisfy or replace that historical gate.

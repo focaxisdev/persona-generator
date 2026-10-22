@@ -1,5 +1,9 @@
 # Why Persona Generator
 
+The current unreleased candidate configures **one fictional agent**: desired behavior → source/construct trace → exact confirmed spec → deterministic effective projection → version-tied evidence. Start at [Quickstart](QUICKSTART.md) → [core contract](../core/README.md). Only two operational analogues are supported and behaviorally untested; see [coverage](../core/COVERAGE.md) and [claims](CLAIMS_MATRIX.md).
+
+Multiple perspectives, panels and Persona Packs described below are **optional legacy use cases**, only when explicitly requested. They are never required by the single-agent core.
+
 Many persona workflows start by creating reusable persona lists. Those lists can become repetitive, brittle, and easy to treat as a source of truth.
 
 Persona Generator takes a different path. It stores a protocol for generating the perspectives needed by one bounded fictional scenario.
