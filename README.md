@@ -14,7 +14,7 @@ Configure **how a fictional agent should behave**, using a choice-guided or shor
 
 Answers become `low`, `middle`, `high`, or `unspecified` design goals, never personality scores. Review the source trace, proposed rules, conflicts, and unknowns, then confirm the exact preview before generating a spec. Unanswered goals remain unconstrained. Accuracy, privacy, safety, and tool permissions are never personality options.
 
-Start with the [new quickstart](docs/QUICKSTART.md). Existing v0.1 workflows remain available; see [migration](docs/MIGRATION.md). This increment has **no completed model behavior evidence** and is **not released**. See [claims](docs/CLAIMS_MATRIX.md), [evaluation protocol](validation/BEHAVIOR_PROTOCOL.md), and [release acceptance](docs/RELEASE_ACCEPTANCE.md).
+Start with the [new quickstart](docs/QUICKSTART.md). Existing v0.1 workflows remain available; see [migration](docs/MIGRATION.md). A [bounded engineering pilot](evaluation/pilot-2026-10-22/REPORT.md) retained 102 synthetic task responses in 76 fresh contexts with separate condition-blinded model ratings. Its mixed, task-specific observations do not fulfill the original behavior protocol; this increment is **not released**. See [claims](docs/CLAIMS_MATRIX.md), [evaluation protocol](validation/BEHAVIOR_PROTOCOL.md), and [release acceptance](docs/RELEASE_ACCEPTANCE.md).
 
 ## What This Is
 

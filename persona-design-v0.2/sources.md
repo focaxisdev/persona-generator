@@ -49,7 +49,7 @@ National Library of Medicine, [PubMed record 17983306](https://pubmed.ncbi.nlm.n
 
 Persona Generator, [Construct registry v0.2: original proposed behavior mappings](construct-registry.md#original-proposed-behavior-mappings).
 
-- Provenance: original project design, not an external academic source. `mapping_status: unvalidated-hypothesis`; `validation_evidence: none` for all ten mappings.
+- Provenance: original project design, not an external academic source. `mapping_status: unvalidated-hypothesis`; `validation_evidence: pilot-2026-10-22` records [limited engineering observations](../evaluation/pilot-2026-10-22/REPORT.md), including failures, for all ten mapping instructions. This is not construct validity or completion of the original behavior protocol; the original source attribution and mapping hypotheses are unchanged.
 - Supports: attribution of the proposed low/middle/high output instructions and their B01–B10 evaluation targets.
 - Limit: documentation checks and proposed test cases do not establish actual behavior, effect size, robustness, cross-provider portability, or human psychometric validity. Any future evidence must identify the tested mapping version and actual observed outputs; it cannot be backfilled from citations.
 - Rights: original project prompt/mapping instructions are covered by this repository's [Apache License 2.0](../LICENSE). Cited sources retain their own rights; citing or linking them does not relicense them.

@@ -1,6 +1,6 @@
 # Prospective behavioral evaluation protocol
 
-Status: **NOT RUN**. This file specifies future trials; it contains no model outputs, findings, participant evidence, or empirical validation. Fixture and validator results are structural evidence only. Release acceptance remains blocked until genuine model runs and their review are recorded. No model calls, dependencies, service, telemetry, or storage system are introduced here.
+Status: **NOT COMPLETED**. This remains the original full prospective protocol, not a report of completed coverage. A separate [bounded engineering pilot](../evaluation/pilot-2026-10-22/REPORT.md) retained 102 synthetic task responses in 76 fresh contexts and locked condition-blinded model ratings. It uses a reduced, procedurally different design; it does not fulfill this protocol's five conditions, independent repeats, original case tasks, all-round/reload coverage, authentic user confirmation or manual review. Fixture and validator results are structural evidence only. Release acceptance remains **BLOCKED**, including unresolved budget violations and review requirements. No model API dependency, service, telemetry, or storage system is introduced here.
 
 ## Question and claim boundary
 
@@ -80,4 +80,4 @@ Behavioral coverage requires actual outputs for all ten mappings, all five condi
 
 Stop a trial if real-person data, diagnosis, psychometric scoring, high-stakes decisions, sensitive inference, manipulation, or unsupported source-status upgrades are needed. Preserve the reason and partial record. Human review retains final judgment over any narrowly scoped acceptance decision. Even a completed successful evaluation does not authorize release, merge, deployment, automatic persona persistence, or a panel run.
 
-Current result: **NOT RUN; no empirical agent-validity claim; release acceptance BLOCKED pending genuine model evidence and manual review.**
+Current result: **Full protocol NOT COMPLETED; bounded pilot evidence recorded separately; no empirical psychological agent-validity claim; release acceptance BLOCKED.** The reduced pilot and its failures cannot substitute for the coverage and review requirements above.

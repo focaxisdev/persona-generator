@@ -18,7 +18,7 @@ Persona Generator（人格產生器）是一套 protocol-first、Markdown-first 
 
 設定只有偏低／中間／偏高／未指定四種設計目標，不是心理測量分數。未指定不補成中間；矛盾不平均。先檢視來源、轉譯理由與不確定項，再確認完整預覽，才能產出 spec。人格不得改寫事實準確性、隱私、安全或工具權限。
 
-由[Quickstart](docs/QUICKSTART.md)開始；v0.1 保留，見[遷移說明](docs/MIGRATION.md)。本增量尚無完成的模型行為實證，也尚未發布；參見[宣稱邊界](docs/CLAIMS_MATRIX.md)與[release 驗收](docs/RELEASE_ACCEPTANCE.md)。
+由[Quickstart](docs/QUICKSTART.md)開始；v0.1 保留，見[遷移說明](docs/MIGRATION.md)。本增量已完成一項[受限工程試驗](evaluation/pilot-2026-10-22/REPORT.md)，保留 76 個新 context 的 102 份合成任務回答，並由獨立 context 的模型進行條件盲評。結果混合且僅適用於記錄的任務，未完成原始行為 protocol；本增量仍未發布。參見[宣稱邊界](docs/CLAIMS_MATRIX.md)與[release 驗收](docs/RELEASE_ACCEPTANCE.md)。
 
 ## 一句話說明
 
