@@ -1,0 +1,75 @@
+{
+  "schema_version": "persona-core-v1",
+  "kind": "spec",
+  "approved_preview": {
+    "schema_version": "persona-core-v1",
+    "kind": "preview",
+    "revision": "r1",
+    "catalog": {
+      "id": "persona-core-catalog-v1",
+      "sha256": "8c616013d572fc6568fe76698f03c5cc41d8aeb130da84a4580090a48d873fc7"
+    },
+    "scope": {
+      "fictional": true,
+      "low_stakes": true,
+      "ephemeral": true
+    },
+    "answers": [],
+    "targets": {
+      "bfas.volatility": "unspecified",
+      "bfas.withdrawal": "unspecified",
+      "bfas.compassion": "unspecified",
+      "bfas.politeness": "unspecified",
+      "bfas.industriousness": "unspecified",
+      "bfas.orderliness": "unspecified",
+      "bfas.enthusiasm": "unspecified",
+      "bfas.assertiveness": "unspecified",
+      "bfas.intellect": "unspecified",
+      "bfas.openness": "unspecified"
+    },
+    "mappings": [],
+    "approvals": [],
+    "controls": {
+      "response_detail": {
+        "value": "unspecified",
+        "rule": null,
+        "answer_ids": [],
+        "approval_id": null
+      }
+    },
+    "conflicts": [],
+    "unknowns": [
+      "Synthetic preparation only; not owner consent or behavioral evidence."
+    ],
+    "sources": [
+      {
+        "id": "vocabulary-1",
+        "path": "persona-design-v0.2/construct-registry.md",
+        "sha256": "47cc2da25549b6cc2e9e49230342f5337f1c79ea01b18b35b85d167cd83976bf"
+      },
+      {
+        "id": "vocabulary-2",
+        "path": "persona-design-v0.2/sources.md",
+        "sha256": "287a435ef7a29778ec91cbc9b680e66128632741356b5e202a7f359294314bd2"
+      }
+    ],
+    "history": [],
+    "evidence": {
+      "status": "untested",
+      "behavioral_validation": false
+    }
+  },
+  "confirmation": {
+    "status": "confirmed",
+    "revision": "r1",
+    "snapshot_sha256": "2ed9a33f5fc16e4fcc3fe980d21392197a4b022a47f2e3b88391304cf0332629",
+    "presented_file_sha256": "07b8dc4105a562a1f34e76bca698d962c9ee8f03add20c4424a23c1001075aaf",
+    "record_ref": "synthetic-triage-confirmation-only",
+    "confirmed_by": "fictional-fixture-author",
+    "origin": "synthetic_fixture"
+  },
+  "review": {
+    "status": "Pass",
+    "record_ref": "synthetic-structural-review-only"
+  }
+}

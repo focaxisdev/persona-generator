@@ -1,0 +1,105 @@
+{
+  "schema_version": "persona-core-v1",
+  "kind": "spec",
+  "approved_preview": {
+    "schema_version": "persona-core-v1",
+    "kind": "preview",
+    "revision": "r1",
+    "catalog": {
+      "id": "persona-core-catalog-v1",
+      "sha256": "8c616013d572fc6568fe76698f03c5cc41d8aeb130da84a4580090a48d873fc7"
+    },
+    "scope": {
+      "fictional": true,
+      "low_stakes": true,
+      "ephemeral": true
+    },
+    "answers": [
+      {
+        "id": "a1",
+        "origin": "synthetic_fixture",
+        "kind": "choice",
+        "text": "Synthetic selection of the exact catalog candidate.",
+        "record_ref": "synthetic-triage-fixture"
+      }
+    ],
+    "targets": {
+      "bfas.volatility": "unspecified",
+      "bfas.withdrawal": "unspecified",
+      "bfas.compassion": "unspecified",
+      "bfas.politeness": "unspecified",
+      "bfas.industriousness": "unspecified",
+      "bfas.orderliness": "unspecified",
+      "bfas.enthusiasm": "unspecified",
+      "bfas.assertiveness": "low",
+      "bfas.intellect": "unspecified",
+      "bfas.openness": "unspecified"
+    },
+    "mappings": [
+      {
+        "id": "op.advisory_initiative.v1",
+        "aspect": "bfas.assertiveness",
+        "anchor": "low",
+        "trigger": "When the current task requests advice and more than one viable supported option exists.",
+        "rule": "Present the viable supported options and invite the human to choose.",
+        "boundary": "For a factual question or a task without multiple viable supported options, this preference adds no recommendation. Advice never grants permission to act, adds authority, increases factual certainty, or displaces human choice.",
+        "answer_ids": [
+          "a1"
+        ],
+        "approval_id": "approval1"
+      }
+    ],
+    "approvals": [
+      {
+        "id": "approval1",
+        "answer_id": "a1",
+        "kind": "mapping",
+        "setting": "bfas.assertiveness",
+        "target": "low",
+        "candidate_sha256": "3f4a3ce602d62573b67de641b6f502a8df75d98f3ed27a48b855031c2547fe42"
+      }
+    ],
+    "controls": {
+      "response_detail": {
+        "value": "unspecified",
+        "rule": null,
+        "answer_ids": [],
+        "approval_id": null
+      }
+    },
+    "conflicts": [],
+    "unknowns": [
+      "Synthetic preparation only; not owner consent or behavioral evidence."
+    ],
+    "sources": [
+      {
+        "id": "vocabulary-1",
+        "path": "persona-design-v0.2/construct-registry.md",
+        "sha256": "47cc2da25549b6cc2e9e49230342f5337f1c79ea01b18b35b85d167cd83976bf"
+      },
+      {
+        "id": "vocabulary-2",
+        "path": "persona-design-v0.2/sources.md",
+        "sha256": "287a435ef7a29778ec91cbc9b680e66128632741356b5e202a7f359294314bd2"
+      }
+    ],
+    "history": [],
+    "evidence": {
+      "status": "untested",
+      "behavioral_validation": false
+    }
+  },
+  "confirmation": {
+    "status": "confirmed",
+    "revision": "r1",
+    "snapshot_sha256": "7fdd351f21f9163c8d4af6ec7e248a3a29a1c251d0a122c834586c305b25c267",
+    "presented_file_sha256": "440b77af1cd3d44ee5a0f20f0259ec560a64a5b8e264324a2b7a7fb8ef6301ad",
+    "record_ref": "synthetic-triage-confirmation-only",
+    "confirmed_by": "fictional-fixture-author",
+    "origin": "synthetic_fixture"
+  },
+  "review": {
+    "status": "Pass",
+    "record_ref": "synthetic-structural-review-only"
+  }
+}

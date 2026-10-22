@@ -1,36 +1,32 @@
 # Persona Generator
 
-> Experimental discovery file for a protocol-first Markdown framework that generates academically bounded fictional personas on demand for multi-agent rehearsal.
+**Current status:** [Rating-contract v2 is paused for scope alignment](evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
 
-`llms.txt` is not an official GitHub standard, and crawler or model support is not guaranteed. Read only the smallest task-specific path. Do not crawl the entire repository by default.
+> Unreleased v0.2 candidate for configuring one fictional agent's desired behavior through an exact human-confirmed core spec and deterministic approved-only effective projection.
 
-## Core
+Experimental discovery file; crawler support is not guaranteed. Read only the smallest task-specific path.
 
-- [README](https://github.com/focaxisdev/persona-generator/blob/main/README.md)
-- [Traditional Chinese README](https://github.com/focaxisdev/persona-generator/blob/main/README.zh-TW.md)
-- [AI Discovery Guide](https://github.com/focaxisdev/persona-generator/blob/main/AI_DISCOVERY.md)
-- [Quickstart](https://github.com/focaxisdev/persona-generator/blob/main/docs/QUICKSTART.md)
-- [Architecture](https://github.com/focaxisdev/persona-generator/blob/main/docs/ARCHITECTURE.md)
-- [Safety Boundaries](https://github.com/focaxisdev/persona-generator/blob/main/docs/SAFETY_BOUNDARIES.md)
-- [Academic Boundaries and Source Notes](https://github.com/focaxisdev/persona-generator/blob/main/docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md)
-- [Evidence Summary](https://github.com/focaxisdev/persona-generator/blob/main/docs/EVIDENCE_SUMMARY.md)
+## Canonical route
 
-## Protocols
+- [README](README.md)
+- [Traditional Chinese README](README.zh-TW.md)
+- [Quickstart](docs/QUICKSTART.md)
+- [Core contract](core/README.md)
+- [Canonical model request](core/REQUEST_ENVELOPE.md)
+- [AI discovery](AI_DISCOVERY.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Coverage](core/COVERAGE.md)
+- [Sources](core/SOURCES.md)
+- [Claims](docs/CLAIMS_MATRIX.md)
+- [Safety](docs/SAFETY_BOUNDARIES.md)
+- [Migration](docs/MIGRATION.md)
+- [Prospective evidence plan](core/EVIDENCE_PLAN.md)
+- [Historical 18-response preparation; see stopped result](evaluation/core-triage-v1/PLAN.md)
 
-- [LLM-native fictional persona instantiation](https://github.com/focaxisdev/persona-generator/blob/main/protocols/llm-native-fictional-persona-instantiation-v0.1.md)
-- [Persona generation request template](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
-- [Ephemeral persona spec template](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
-- [Instantiation review checklist](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
-- [Minimal panel adapter](https://github.com/focaxisdev/persona-generator/blob/main/ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md)
-- [Persona Pack v0.1 README](https://github.com/focaxisdev/persona-generator/blob/main/persona-pack-v0.1/README.md)
-- [Persona Pack v0.1 contract](https://github.com/focaxisdev/persona-generator/blob/main/protocols/persona-pack-v0.1-contract.md)
+## Limits
 
-## Public Example
+Only op.planning_structure.v1 and op.advisory_initiative.v1 are supported operational analogues; neither is behaviorally validated. Ten human aspects are vocabulary, not ten implemented traits. Other aspects remain unspecified. The core diagnostic stopped after one generator and two invalid judge outcomes; zero ratings accepted, 17 generator cells NOT RUN. Authentic owner E2E remains NOT RUN. See evaluation/core-triage-v1/records/REPORT.md. Trace is inert; only approved catalog rules may render. Edits require reconfirmation and reload verifies the exact confirmed artifact. Static validation does not prove consent or model behavior.
 
-- [Limited public beta fixture](https://github.com/focaxisdev/persona-generator/blob/main/examples/limited-public-beta/README.md)
+Multiple personas, panel synthesis and Persona Pack are optional legacy paths only when explicitly requested. Historical mappings, evidence and validators do not transfer to the new core. No real-person profiling, diagnosis, psychometric scoring, sensitive inference, high-stakes use or autonomous final decision. Human final judgment; stop when the bounded task is complete. No static persona catalog or standalone website requirement.
 
-Examples are fictional fixtures for format and safety demonstration only. They are not runtime inventory, datasets, or reusable persona catalog entries.
-
-## Do Not Use For
-
-Real-person profiling, diagnosis, psychometric scoring, sensitive-attribute inference, hiring, surveillance, legal, medical, credit, insurance, educational placement, or autonomous decisions.
+Rating-contract v2: evaluation/core-triage-v2/README.md. Prospective NOT RUN at preparation; partial execution now paused (evaluation/core-triage-v2/records/REPORT.md); one disclosed carried answer, at most 17 new generators and 36 new judges, no old rating reuse. Static regression is not model evidence; separate decision required before resumption.

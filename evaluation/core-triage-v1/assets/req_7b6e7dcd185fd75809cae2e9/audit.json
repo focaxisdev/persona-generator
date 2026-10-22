@@ -1,0 +1,11 @@
+{
+  "schema_version": "persona-core-request-envelope-v1",
+  "request_sha256": "9d056c62b116fb4d9bc50c459dc1489c389750572b8fd28f7cd6798bb79da49c",
+  "message_sha256": "6e2227850836355d104d00cfe03004bb892dc821d3960d93ca920252217f7d34",
+  "persona_sha256": "70dd2894d6ff2ad5b9aba1ceafbeca09e455a280bffa542b5628f5b02dc02fe2",
+  "task_sha256": "908fa8dca78aa965db1f682c5c555450de94385fb3e3eca02e4c1c3694008188",
+  "task_name": "req_7b6e7dcd185fd75809cae2e9",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "fork_turns": "none"
+}

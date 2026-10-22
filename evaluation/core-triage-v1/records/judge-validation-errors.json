@@ -1,0 +1,12 @@
+{
+  "id": "req_259d3a551dbfe17bbfa8f342",
+  "frozen_validator_errors": {
+    "a": "invalid anchored observation",
+    "b": "invalid anchored observation"
+  },
+  "diagnostic_calls": {
+    "generator": 1,
+    "judges": 2
+  },
+  "correction_performed": false
+}

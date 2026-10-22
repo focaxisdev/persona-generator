@@ -1,106 +1,34 @@
-# Quickstart
+# Quickstart: configure one agent
 
-This quickstart shows how to use Persona Generator in a fictional, low-stakes scenario.
+**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
 
-## Configure an Agent: Interview to Reviewed Spec
+Start from [README](../README.md), then use the [core contract](../core/README.md). This unreleased v0.2 candidate configures desired behavior for one fictional, low-stakes advisory agent. Multiple personas, panels, and Persona Packs are optional legacy paths.
 
-The new v0.2 candidate is a portable Markdown workflow; use your existing capable language model. There is no account setup, paid API, backend, or telemetry. A model's interpretation still needs human review.
+## Interview → confirmation → effective projection
 
-1. Supply a fictional, low-stakes task and choose a guided interview or short answers.
-2. Give the model [protocol.md](../persona-design-v0.2/protocol.md), [interview.md](../persona-design-v0.2/interview.md), [construct-registry.md](../persona-design-v0.2/construct-registry.md), [sources.md](../persona-design-v0.2/sources.md), and [spec-template.md](../persona-design-v0.2/spec-template.md).
-3. Answer how you want the agent to behave. Skip any aspect you do not want to constrain. These are design choices, not questionnaire responses or scores.
-4. Review its preview: original answers, proposed construct targets and mappings, source references, conflicts, and unknowns. Resolve contradictions or explicitly withdraw a target; do not average incompatible requests.
-5. Confirm the exact preview revision only when it matches your intent. The model then emits a spec preserving that payload. Any later behavioral edit requires a new preview and confirmation.
-6. Follow [validation/README.md](../validation/README.md) for optional standard-library static checks and the separate manual review. Static success does not establish behavioral validity or genuine human approval.
-7. Use only the reviewed spec for this bounded task. For a fresh session, follow the reload check; panel synthesis and persistence remain opt-in.
-
-Copy-paste starter:
+1. Describe one fictional task and its limits. Read [safety boundaries](SAFETY_BOUNDARIES.md).
+2. Choose guided choices or free text about how the agent should behave. Read the [coverage ledger](../core/COVERAGE.md) and [source scope](../core/SOURCES.md). These are design choices, not a test of your personality.
+3. Consider only the two supported, untested operation proposals: planning structure and advisory initiative. Keep all other aspects unspecified; do not fill gaps from labels, role stereotypes, or source quotations. Preserve contradictions until the owner resolves or withdraws them.
+4. Review the exact proposed versions, settings, literal rules, boundaries, provenance, unresolved items, and full preview. Approve the selected rules and explicitly confirm that exact complete preview. Stop if confirmation is missing.
+5. Use the [core compiler instructions](../core/README.md) to validate and deterministically derive the effective projection. Trace fields remain inert; the projection includes only approved operation rules. Structural validation cannot authenticate a human.
+6. Keep the spec, presented preview and projection JSON on the compiler/audit side. Use only exact `render` stdout as the persona instruction payload inside the fixed [request envelope](../core/REQUEST_ENVELOPE.md), with the bounded task as a separate component. Do not send projection metadata, aspect/condition labels, interview answers or history to the model. The local envelope builder makes no model call; its documented delegation mechanism is the supported prospective transport.
+7. For a fresh session, revalidate the exact confirmed artifact and presented bytes locally, then rebuild the same rendered envelope. Stop if content, versions, or confirmation do not match. Any persistent behavior edit requires a new preview and confirmation. Stop when the task is complete.
 
 ```text
-Read persona-design-v0.2/protocol.md, interview.md, construct-registry.md,
-sources.md, and spec-template.md. Use the choice-guided interview or ask
-short-answer questions about how I want the fictional agent to behave.
-Do not infer my own personality. Keep skipped goals unspecified and conflicts
-visible. Show source/mapping/evidence distinctions and stop at the complete
-preview for my confirmation before outputting a final persona spec.
-
-Fictional low-stakes task: help plan a pretend board-game afternoon.
-Interview mode: guided choices.
-Desired behavior: organize the plan, offer an unusual theme, and let me decide.
+Read core/README.md, core/COVERAGE.md, and core/SOURCES.md.
+Help me configure one fictional agent for a pretend board-game afternoon.
+Interview mode: guided choices [or: free text].
+Ask how I want the agent to organize a plan and whether to propose a
+supported next step while keeping me in control. Leave skipped settings
+unspecified. Show proposed sources, operation versions, exact rules,
+conflicts, and the complete preview. Wait for my actual confirmation.
+Do not infer my personality. Do not add a panel or persistent pack.
 ```
 
-See [migration](MIGRATION.md) for existing v0.1 artifacts. The path below remains the legacy scenario-rehearsal workflow.
+## What this demonstrates
 
-## Five-Minute Path
+The compiler's synthetic fixtures illustrate the artifact contract only. They are not owner consent or behavioral evidence. The [core diagnostic](../evaluation/core-triage-v1/records/REPORT.md) stopped after one generator and two schema-invalid judge outcomes; zero ratings were accepted. Operation behavior remains unvalidated and authentic owner E2E is **NOT RUN**. Consult [claims](CLAIMS_MATRIX.md), [prospective evidence plan](../core/EVIDENCE_PLAN.md), and [private owner protocol](../core/OWNER_TEST_PROTOCOL.md). No real owner transcript should enter this public repository without specific permission.
 
-1. Read [../AI_DISCOVERY.md](../AI_DISCOVERY.md).
-2. Read [SAFETY_BOUNDARIES.md](SAFETY_BOUNDARIES.md).
-3. Fill the four-field scenario brief below.
-4. Generate the minimum useful ephemeral personas.
-5. Review each persona manually.
-6. Optionally run one panel rehearsal only when synthesis is part of the task.
-7. Stop with a bounded advisory synthesis.
+## Optional historical tasks
 
-## Four-Field Scenario Brief
-
-```text
-Scenario:
-
-Decision or rehearsal question:
-
-Why this is fictional and low-stakes:
-
-Desired output:
-```
-
-## Required Reads for an AI Agent
-
-- [../AI_DISCOVERY.md](../AI_DISCOVERY.md)
-- [SAFETY_BOUNDARIES.md](SAFETY_BOUNDARIES.md)
-- [../fictional-persona-instantiation-v0.1/persona-generation-request-template.md](../fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
-- [../fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md](../fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
-- [../fictional-persona-instantiation-v0.1/instantiation-review-checklist.md](../fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
-
-Read only the files needed for the active task. Do not crawl the repository by default.
-
-## Copy-Paste Prompt
-
-```text
-Use Persona Generator for a fictional, low-stakes scenario only.
-
-Read AI_DISCOVERY.md and docs/SAFETY_BOUNDARIES.md. Then use the persona generation request template, ephemeral persona spec template, and instantiation review checklist only as needed.
-
-Generate the minimum useful set of ephemeral fictional personas for this scenario. Do not create a static persona catalog. Do not infer real people. Preserve uncertainty and dissent. Stop after manual review and a bounded advisory synthesis.
-
-Scenario:
-[write a fictional low-stakes scenario here]
-
-Decision or rehearsal question:
-[write the question here]
-
-Why this is fictional and low-stakes:
-[write the boundary here]
-
-Desired output:
-[personas only / personas plus synthesis / optional handoff]
-```
-
-## Example
-
-See [../examples/limited-public-beta](../examples/limited-public-beta/README.md) for a complete fictional fixture.
-
-## Optional Panel Path
-
-Use [../ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md](../ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md) only after personas pass manual review and the active task explicitly asks for synthesis.
-
-## Optional Persistence Path
-
-Use [../protocols/persona-pack-v0.1-contract.md](../protocols/persona-pack-v0.1-contract.md) only when one selected fictional persona needs persistence, auditability, or handoff.
-
-## Stop Rule
-
-Stop when the bounded task is complete. Do not add extra personas, panels, persistence, or claims for completeness.
-
-## Separate v2 candidate reading path
-
-For the unreleased opt-in proposal, read the [mapping-v2 index](../persona-design-v0.2/mapping-v2/README.md), [workflow and handwritten examples](../persona-design-v0.2/mapping-v2/WORKFLOW.md#handwritten-traces-not-execution-evidence), [source ledger](../persona-design-v0.2/sources.md), [claims matrix](CLAIMS_MATRIX.md) and [draft release notes](RELEASE_NOTES_DRAFT.md). All ten aspects start unspecified; selected mapping versions and exact rules require explicit approval before a separately confirmed full preview. The examples are not evidence of model behavior or genuine owner consent. V2 execution and owner E2E are NOT RUN, coordinator acceptance is pending and this candidate does not replace the default instructions above. The [acceptance proposal](../persona-design-v0.2/mapping-v2/ACCEPTANCE_PROPOSAL.md) is prospective. Marketing work is scoped to GitHub documentation, with no standalone website requirement.
+If explicitly requested, follow [v0.1 instantiation](../fictional-persona-instantiation-v0.1/README.md), [panel adapter](../ephemeral-persona-panel-adapter-v0.1/README.md), or [Persona Pack](../persona-pack-v0.1/README.md). Do not silently translate old settings or approvals; see [migration](MIGRATION.md). Historical ten-aspect mapping documents and the frozen v2 diagnostic remain separate from the new core contract.
