@@ -1,0 +1,510 @@
+{
+  "schema_version": "mapping-v2",
+  "mappings": [
+    {
+      "mapping_id": "map.compassion.v2",
+      "aspect_id": "B03",
+      "test_id": "B03",
+      "task_id": "T03",
+      "rubric_axis_id": "F03",
+      "dimension": "Role of a stated need in accommodation generation",
+      "common_requirements": [
+        "T03.R01",
+        "T03.R02",
+        "T03.R03"
+      ],
+      "rule_clauses": [
+        {
+          "id": "B03.C01",
+          "text": "State the participant's written-instruction preference factually."
+        },
+        {
+          "id": "B03.C02",
+          "text": "Offer at least one usable accommodation of that preference within the task constraints."
+        },
+        {
+          "id": "B03.C03",
+          "text": "Explicitly compare an accommodation with another viable approach in terms of the stated preference."
+        },
+        {
+          "id": "B03.C04",
+          "text": "Use the stated preference as the organizing criterion for generating and comparing at least two usable accommodations."
+        }
+      ],
+      "features": [
+        {
+          "id": "F03.need_fact",
+          "criterion": "The stated written-instruction preference is explicitly identified.",
+          "rule_clause_ids": [
+            "B03.C01"
+          ]
+        },
+        {
+          "id": "F03.usable_accommodation",
+          "criterion": "At least one concrete, feasible accommodation addresses the stated preference.",
+          "rule_clause_ids": [
+            "B03.C02"
+          ]
+        },
+        {
+          "id": "F03.comparison_on_need",
+          "criterion": "At least two viable approaches are explicitly compared with respect to the stated written-instruction preference.",
+          "rule_clause_ids": [
+            "B03.C03"
+          ]
+        },
+        {
+          "id": "F03.need_organizes_options",
+          "criterion": "The stated preference visibly organizes generation and comparison of at least two usable accommodations, beyond a closing mention.",
+          "rule_clause_ids": [
+            "B03.C04"
+          ]
+        }
+      ],
+      "anchors": {
+        "low": {
+          "rule_clause_ids": [
+            "B03.C01",
+            "B03.C02"
+          ],
+          "expected_present": [
+            "F03.need_fact",
+            "F03.usable_accommodation"
+          ],
+          "expected_absent": []
+        },
+        "middle": {
+          "rule_clause_ids": [
+            "B03.C01",
+            "B03.C02",
+            "B03.C03"
+          ],
+          "expected_present": [
+            "F03.need_fact",
+            "F03.usable_accommodation",
+            "F03.comparison_on_need"
+          ],
+          "expected_absent": []
+        },
+        "high": {
+          "rule_clause_ids": [
+            "B03.C01",
+            "B03.C02",
+            "B03.C03",
+            "B03.C04"
+          ],
+          "expected_present": [
+            "F03.need_fact",
+            "F03.usable_accommodation",
+            "F03.comparison_on_need",
+            "F03.need_organizes_options"
+          ],
+          "expected_absent": []
+        }
+      },
+      "nonclaims": [
+        "No felt empathy, unstated emotion inference, consent override, or human Compassion measurement.",
+        "Low does not prohibit comparison; shared features and spontaneous overlap are retained.",
+        "Human-source definition remains in construct-registry.md; this project-authored v2 mapping has no v2 behavioral evidence. Low/middle/high are design instructions, not measured traits."
+      ]
+    },
+    {
+      "mapping_id": "map.industriousness.v2",
+      "aspect_id": "B05",
+      "test_id": "B05",
+      "task_id": "T05",
+      "rubric_axis_id": "F05",
+      "dimension": "Completion outcomes and recognition criteria",
+      "common_requirements": [
+        "T05.R01",
+        "T05.R02",
+        "T05.R03"
+      ],
+      "rule_clauses": [
+        {
+          "id": "B05.C01",
+          "text": "Give a usable plan that reaches the required instruction-card draft endpoint within scope."
+        },
+        {
+          "id": "B05.C02",
+          "text": "Identify at least one explicit intermediate completed outcome for the same required work."
+        },
+        {
+          "id": "B05.C03",
+          "text": "Attach observable recognition criteria to the intermediate completion checkpoints."
+        }
+      ],
+      "features": [
+        {
+          "id": "F05.usable_plan",
+          "criterion": "A usable plan leads to one draft for human review without writing the card itself.",
+          "rule_clause_ids": [
+            "B05.C01"
+          ]
+        },
+        {
+          "id": "F05.intermediate_outcomes",
+          "criterion": "At least one intermediate completed outcome is stated; action lists, numbering or times alone are insufficient.",
+          "rule_clause_ids": [
+            "B05.C02"
+          ]
+        },
+        {
+          "id": "F05.checkpoint_criteria",
+          "criterion": "Intermediate completion checkpoints have observable criteria for recognizing their completion; a final deadline alone is insufficient.",
+          "rule_clause_ids": [
+            "B05.C03"
+          ]
+        }
+      ],
+      "anchors": {
+        "low": {
+          "rule_clause_ids": [
+            "B05.C01"
+          ],
+          "expected_present": [
+            "F05.usable_plan"
+          ],
+          "expected_absent": []
+        },
+        "middle": {
+          "rule_clause_ids": [
+            "B05.C01",
+            "B05.C02"
+          ],
+          "expected_present": [
+            "F05.usable_plan",
+            "F05.intermediate_outcomes"
+          ],
+          "expected_absent": []
+        },
+        "high": {
+          "rule_clause_ids": [
+            "B05.C01",
+            "B05.C02",
+            "B05.C03"
+          ],
+          "expected_present": [
+            "F05.usable_plan",
+            "F05.intermediate_outcomes",
+            "F05.checkpoint_criteria"
+          ],
+          "expected_absent": []
+        }
+      },
+      "nonclaims": [
+        "Planning decomposition is not human persistence, actual effort, competence or quality.",
+        "Final stopping scope is common to every condition; sequencing dependencies are assessed separately on F06.",
+        "Human-source definition remains in construct-registry.md; this project-authored v2 mapping has no v2 behavioral evidence. Low/middle/high are design instructions, not measured traits."
+      ]
+    },
+    {
+      "mapping_id": "map.orderliness.v2",
+      "aspect_id": "B06",
+      "test_id": "B06",
+      "task_id": "T06",
+      "rubric_axis_id": "F06",
+      "dimension": "Sequencing, checks and adaptation",
+      "common_requirements": [
+        "T06.R01",
+        "T06.R02",
+        "T06.R03"
+      ],
+      "rule_clauses": [
+        {
+          "id": "B06.C01",
+          "text": "Include every task-required check in a usable sequence."
+        },
+        {
+          "id": "B06.C02",
+          "text": "Explicitly show at least one permissible reordering or flexible placement while preserving task dependencies."
+        },
+        {
+          "id": "B06.C03",
+          "text": "Group the same required work and checks into explicit stages."
+        },
+        {
+          "id": "B06.C04",
+          "text": "State an explicit dependency between steps and explain its effect on their order."
+        },
+        {
+          "id": "B06.C05",
+          "text": "Explain a conditional resequencing for initial table unavailability while preserving all required checks and dependencies."
+        }
+      ],
+      "features": [
+        {
+          "id": "F06.complete_checks",
+          "criterion": "The deck-completeness check and rules-readability check are both included.",
+          "rule_clause_ids": [
+            "B06.C01"
+          ]
+        },
+        {
+          "id": "F06.flexible_sequence",
+          "criterion": "At least one permissible reordering or flexible placement is made explicit while required precedence is preserved.",
+          "rule_clause_ids": [
+            "B06.C02"
+          ]
+        },
+        {
+          "id": "F06.grouped_stages",
+          "criterion": "Required work and checks are grouped into distinct explicit stages; bullets alone do not establish stages.",
+          "rule_clause_ids": [
+            "B06.C03"
+          ]
+        },
+        {
+          "id": "F06.dependency",
+          "criterion": "An explicit step dependency and its consequence for ordering are stated; timestamps alone are insufficient.",
+          "rule_clause_ids": [
+            "B06.C04"
+          ]
+        },
+        {
+          "id": "F06.adaptation_branch",
+          "criterion": "A conditional sequence for initial table unavailability is explicit and retains required checks and precedence.",
+          "rule_clause_ids": [
+            "B06.C05"
+          ]
+        }
+      ],
+      "anchors": {
+        "low": {
+          "rule_clause_ids": [
+            "B06.C01",
+            "B06.C02"
+          ],
+          "expected_present": [
+            "F06.complete_checks",
+            "F06.flexible_sequence"
+          ],
+          "expected_absent": []
+        },
+        "middle": {
+          "rule_clause_ids": [
+            "B06.C01",
+            "B06.C02",
+            "B06.C03"
+          ],
+          "expected_present": [
+            "F06.complete_checks",
+            "F06.flexible_sequence",
+            "F06.grouped_stages"
+          ],
+          "expected_absent": []
+        },
+        "high": {
+          "rule_clause_ids": [
+            "B06.C01",
+            "B06.C02",
+            "B06.C04",
+            "B06.C05"
+          ],
+          "expected_present": [
+            "F06.complete_checks",
+            "F06.flexible_sequence",
+            "F06.dependency",
+            "F06.adaptation_branch"
+          ],
+          "expected_absent": []
+        }
+      },
+      "nonclaims": [
+        "Organization is not human compulsivity, correctness, compliance or reliability.",
+        "Completion recognition criteria belong to F05. Common task feasibility may produce dependencies or adaptation in any condition.",
+        "Human-source definition remains in construct-registry.md; this project-authored v2 mapping has no v2 behavioral evidence. Low/middle/high are design instructions, not measured traits.",
+        "Task facts already require precedence and feasibility during table unavailability. F06 dependency explanation and explicit conditional resequencing add presentation requirements only; all conditions may spontaneously show them, so baseline saturation remains possible."
+      ]
+    },
+    {
+      "mapping_id": "map.assertiveness.v2",
+      "aspect_id": "B08",
+      "test_id": "B08",
+      "task_id": "T08",
+      "rubric_axis_id": "F08",
+      "dimension": "Advisory recommendation and process initiative",
+      "common_requirements": [
+        "T08.R01",
+        "T08.R02",
+        "T08.R03"
+      ],
+      "rule_clauses": [
+        {
+          "id": "B08.C01",
+          "text": "Present the viable supported options usefully."
+        },
+        {
+          "id": "B08.C02",
+          "text": "Invite the human group to make the final choice."
+        },
+        {
+          "id": "B08.C03",
+          "text": "Offer a recommendation with a task-grounded reason while preserving human choice."
+        },
+        {
+          "id": "B08.C04",
+          "text": "Propose a concrete advisory decision process or next step, give its reason, and preserve viable alternatives and human choice."
+        }
+      ],
+      "features": [
+        {
+          "id": "F08.options",
+          "criterion": "Both supplied activities remain visible as viable supported options.",
+          "rule_clause_ids": [
+            "B08.C01"
+          ]
+        },
+        {
+          "id": "F08.choice_invitation",
+          "criterion": "The answer explicitly invites the group's choice rather than claiming final authority.",
+          "rule_clause_ids": [
+            "B08.C02"
+          ]
+        },
+        {
+          "id": "F08.reasoned_recommendation",
+          "criterion": "A recommendation is offered with a task-grounded reason and preserves human choice.",
+          "rule_clause_ids": [
+            "B08.C03"
+          ]
+        },
+        {
+          "id": "F08.reasoned_process",
+          "criterion": "A concrete advisory process or next step has a task-grounded reason, retains the alternatives, and leaves choice to the group.",
+          "rule_clause_ids": [
+            "B08.C04"
+          ]
+        }
+      ],
+      "anchors": {
+        "low": {
+          "rule_clause_ids": [
+            "B08.C01",
+            "B08.C02"
+          ],
+          "expected_present": [
+            "F08.options",
+            "F08.choice_invitation"
+          ],
+          "expected_absent": []
+        },
+        "middle": {
+          "rule_clause_ids": [
+            "B08.C01",
+            "B08.C02",
+            "B08.C03"
+          ],
+          "expected_present": [
+            "F08.options",
+            "F08.choice_invitation",
+            "F08.reasoned_recommendation"
+          ],
+          "expected_absent": []
+        },
+        "high": {
+          "rule_clause_ids": [
+            "B08.C01",
+            "B08.C02",
+            "B08.C04"
+          ],
+          "expected_present": [
+            "F08.options",
+            "F08.choice_invitation",
+            "F08.reasoned_process"
+          ],
+          "expected_absent": []
+        }
+      },
+      "nonclaims": [
+        "Advisory initiative is not authority, dominance, persuasion, factual confidence or a leadership score.",
+        "Low remains useful and may recommend or choose an advisory option if the user requests one; it does not require an extra clarification turn.",
+        "Human-source definition remains in construct-registry.md; this project-authored v2 mapping has no v2 behavioral evidence. Low/middle/high are design instructions, not measured traits."
+      ]
+    },
+    {
+      "mapping_id": "map.openness.v2",
+      "aspect_id": "B10",
+      "test_id": "B10",
+      "task_id": "T10",
+      "rubric_axis_id": "F10",
+      "dimension": "Count of materially distinct feasible approaches",
+      "common_requirements": [
+        "T10.R01",
+        "T10.R02",
+        "T10.R03"
+      ],
+      "rule_clauses": [
+        {
+          "id": "B10.C01",
+          "text": "Develop exactly one materially distinct approach in the whole answer, each usable and feasible within the common task constraints; state material assumptions. Do not add undeveloped or infeasible candidate approaches beyond this count."
+        },
+        {
+          "id": "B10.C02",
+          "text": "Develop exactly two materially distinct approaches in the whole answer, each usable and feasible within the common task constraints; state material assumptions. Do not add undeveloped or infeasible candidate approaches beyond this count."
+        },
+        {
+          "id": "B10.C03",
+          "text": "Develop exactly three materially distinct approaches in the whole answer, each usable and feasible within the common task constraints; state material assumptions. Do not add undeveloped or infeasible candidate approaches beyond this count."
+        }
+      ],
+      "features": [
+        {
+          "id": "F10.one_approach",
+          "criterion": "The whole answer proposes exactly one materially distinct approach, all developed enough to try, usable and feasible. Count all proposed approaches, including undeveloped or infeasible candidates, in the total before checking feasibility; material assumptions are stated if any. Ambiguous grouping makes the predicate unclear.",
+          "rule_clause_ids": [
+            "B10.C01"
+          ]
+        },
+        {
+          "id": "F10.two_approaches",
+          "criterion": "The whole answer proposes exactly two materially distinct approaches, all developed enough to try, usable and feasible. Count all proposed approaches, including undeveloped or infeasible candidates, in the total before checking feasibility; material assumptions are stated if any. Ambiguous grouping makes the predicate unclear.",
+          "rule_clause_ids": [
+            "B10.C02"
+          ]
+        },
+        {
+          "id": "F10.three_approaches",
+          "criterion": "The whole answer proposes exactly three materially distinct approaches, all developed enough to try, usable and feasible. Count all proposed approaches, including undeveloped or infeasible candidates, in the total before checking feasibility; material assumptions are stated if any. Ambiguous grouping makes the predicate unclear.",
+          "rule_clause_ids": [
+            "B10.C03"
+          ]
+        }
+      ],
+      "anchors": {
+        "low": {
+          "rule_clause_ids": [
+            "B10.C01"
+          ],
+          "expected_present": [
+            "F10.one_approach"
+          ],
+          "expected_absent": []
+        },
+        "middle": {
+          "rule_clause_ids": [
+            "B10.C02"
+          ],
+          "expected_present": [
+            "F10.two_approaches"
+          ],
+          "expected_absent": []
+        },
+        "high": {
+          "rule_clause_ids": [
+            "B10.C03"
+          ],
+          "expected_present": [
+            "F10.three_approaches"
+          ],
+          "expected_absent": []
+        }
+      },
+      "nonclaims": [
+        "Only narrow feasible-option breadth is varied; familiarity, originality, imagination, artistic merit and human Openness are not rated.",
+        "Count each feasible developed approach once; cosmetic relabeling is not a new approach, and alternatives are not cumulative work.",
+        "Human-source definition remains in construct-registry.md; this project-authored v2 mapping has no v2 behavioral evidence. Low/middle/high are design instructions, not measured traits."
+      ]
+    }
+  ]
+}

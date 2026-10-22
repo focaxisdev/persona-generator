@@ -1,5 +1,11 @@
 # Persona Generator
 
+用 Markdown 定義臨時、虛構、低風險的 AI 觀點與行為，讓不同看法能被檢視，最後由人做決定。本專案提供生成與審閱的規則；不建立固定人格庫，也不測量使用者人格或宣稱 AI 擁有人類特質。
+
+**從這裡開始：**[Quickstart](docs/QUICKSTART.md) → 提供虛構情境 → 產生最少必要的觀點 → 人工審閱後停止。若要指定代理行為，可用選項或短答提出需求，再審閱規則並確認完整預覽。先看[來源](persona-design-v0.2/sources.md)與[主張／限制](docs/CLAIMS_MATRIX.md)；[v2 提案](persona-design-v0.2/mapping-v2/README.md)仍是 **NOT RUN、未發布**，不會自動取代既有流程。
+
+[v1 試行](evaluation/pilot-2026-10-22/REPORT.md)保留 102 份合成任務輸出：30 組初始低／高對照中，僅 5 組是符合端點且無已評定違規的候選對照，其中 3 組仍有信心限制；全部輸出有 28 次超出字數預算。這些有限觀察不代表十個人格面向已實現或通過驗證。完整門檻仍未完成；詳見[發布說明草稿](docs/RELEASE_NOTES_DRAFT.md)。專案介紹與行銷範圍為 GitHub 文件。
+
 Generate academically bounded fictional personas on demand for multi-agent rehearsal.
 
 `Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
@@ -115,6 +121,12 @@ Do not submit personal data, sensitive data, covert profiling requests, static p
 
 Persona Generator is licensed under [Apache-2.0](LICENSE). The license applies to this public repository's docs, protocols, templates, examples, visual assets, and future code unless a file states otherwise.
 
+This covers the project's original material; it does not relicense cited external papers, questionnaires or other third-party materials. Their respective terms and attribution limits remain in force; consult the [source ledger](persona-design-v0.2/sources.md). 本專案授權不涵蓋外部論文或其他第三方素材的再授權。
+
 ## Star the Project
 
 If this protocol-first approach is useful to you, consider starring the repository so other builders can find it.
+
+## Separate v2 candidate — not released
+
+The [mapping-v2 proposal](persona-design-v0.2/mapping-v2/README.md) offers a separate opt-in design path with [handwritten workflow illustrations](persona-design-v0.2/mapping-v2/WORKFLOW.md#handwritten-traces-not-execution-evidence). These are explanations, not model observations or owner approvals. V2 behavior and authentic owner E2E are NOT RUN; coordinator acceptance is pending and the existing workflow remains the default. Read the [sources](persona-design-v0.2/sources.md), [claims and limits](docs/CLAIMS_MATRIX.md), [acceptance proposal](persona-design-v0.2/mapping-v2/ACCEPTANCE_PROPOSAL.md) and [draft release notes](docs/RELEASE_NOTES_DRAFT.md). Marketing scope is this GitHub repository and its documentation; a standalone website is not required.

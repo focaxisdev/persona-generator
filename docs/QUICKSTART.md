@@ -100,3 +100,7 @@ Use [../protocols/persona-pack-v0.1-contract.md](../protocols/persona-pack-v0.1-
 ## Stop Rule
 
 Stop when the bounded task is complete. Do not add extra personas, panels, persistence, or claims for completeness.
+
+## Separate v2 candidate reading path
+
+For the unreleased opt-in proposal, read the [mapping-v2 index](../persona-design-v0.2/mapping-v2/README.md), [workflow and handwritten examples](../persona-design-v0.2/mapping-v2/WORKFLOW.md#handwritten-traces-not-execution-evidence), [source ledger](../persona-design-v0.2/sources.md), [claims matrix](CLAIMS_MATRIX.md) and [draft release notes](RELEASE_NOTES_DRAFT.md). All ten aspects start unspecified; selected mapping versions and exact rules require explicit approval before a separately confirmed full preview. The examples are not evidence of model behavior or genuine owner consent. V2 execution and owner E2E are NOT RUN, coordinator acceptance is pending and this candidate does not replace the default instructions above. The [acceptance proposal](../persona-design-v0.2/mapping-v2/ACCEPTANCE_PROPOSAL.md) is prospective. Marketing work is scoped to GitHub documentation, with no standalone website requirement.
