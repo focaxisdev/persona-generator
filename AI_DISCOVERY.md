@@ -97,3 +97,7 @@ No psychometric validity, personality truth detection, diagnosis, real-user read
 - Stop if more personas would only create redundancy.
 - Stop after one bounded advisory synthesis unless a new task is explicitly authorized.
 - Do not scan the entire repository by default.
+
+## Separate mapping-v2 proposal (not the default)
+
+The [mapping-v2 index](persona-design-v0.2/mapping-v2/README.md) routes to a separate proposed Markdown workflow and [limited alpha acceptance proposal](persona-design-v0.2/mapping-v2/ACCEPTANCE_PROPOSAL.md). The existing workflow remains the default until a prospective coordinator decision accepts another path. V2 is **NOT EXECUTED**, authentic owner E2E is **NOT RUN**, and coordinator acceptance is **PENDING**. Do not inherit v1 approvals, observations or source status, auto-upgrade old specs, or present the planned 50-response diagnostic as the original 400-response gate. Historical v1 budget classifications and locked ratings remain unchanged; release remains BLOCKED.
