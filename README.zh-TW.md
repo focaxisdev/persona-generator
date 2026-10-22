@@ -1,45 +1,31 @@
-# Persona Generator / 人格產生器
+# Persona Generator／人格規格產生器
 
-**目前狀態：**[core 診斷 v2 因範圍對齊而暫停](evaluation/core-triage-v2/records/REPORT.md)，已保留六份回答（一份精確沿用、五份新生成）及 12 份新產生且格式驗證通過的評分，六格均已鎖定，共 17 次新診斷呼叫。凍結準備文件中的 **NOT RUN** 是歷史狀態；不得自動繼續。兩個 operation 僅屬受限診斷，最終產品目標仍是可安裝、可組合、以心理學為依據的 agent／subagent 規格；持續性與組合行為仍未驗證。
+**為 agent 與子代理設計可追溯、可組合的人格規格。** 選擇希望 agent 表現的特質組合，檢查心理學來源與工程轉譯，確認完整規格，再於新任務載入同一個明確版本。
 
-為一個虛構、低風險任務設定單一 AI agent 的行為。主流程是：希望 agent 如何表現 → 來源與構念脈絡 → 人工確認的完整 spec → 確定性的有效指令投影 → 綁定版本的證據。
+目前是**尚未發布的候選版**。十個 BFAS aspects 有版本化的設定與指令語義，不等於模型已實現十種人類心理特質。[English](README.md) · [專案目的與驗收](PROJECT_PURPOSE.md)
 
-**從這裡開始：**[Quickstart](docs/QUICKSTART.md) → [core 合約](core/README.md)。[English README](README.md) · [AI 導覽](AI_DISCOVERY.md)
+**開始使用：**[Quickstart](docs/QUICKSTART.md) → [持久人格規格](profiles/README.md) → [Codex 安裝方式](adapters/codex/README.md)。
 
-`Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
+## 從需求到可載入規格
 
-## 目前範圍：尚未發布的 v0.2 候選版
+選擇題或簡答詢問「希望 agent 如何表現」，不推測使用者真實人格。未指定保持 `unspecified`；相互矛盾的要求先保留並解決，不偷偷平均。先看來源、精確行為假說、未知項、限制與完整 preview，再由真正的 owner 確認；修改後必須建立新 revision 並重新確認。
 
-核心流程透過選項或自由短答詢問「希望 agent 如何表現」，不推測使用者人格。未回答的設定保持 `unspecified`。使用者先檢查來源、轉譯理由、精確規則、衝突與完整預覽，再明確確認。行為變更必須重新預覽與確認；新 session 使用前須核對原確認內容。
+既有 BFAS 來源包含五個 domains、十個 **aspects**，不可混稱 facets。偏低／中間／偏高是設計目標，不是心理測量分數、百分位或人群常模。同一 domain 的兩個 aspects 不必相同，也不強制平衡。不尋常組合不會僅因不常見而被拒絕。[行為轉譯與限制](profiles/COVERAGE.md)將人類定義、AI 假說與未驗證部分分開；B01／B02 仍是 experimental 表達代理。
 
-[涵蓋表](core/COVERAGE.md)將十個 Big Five aspects 作為研究詞彙。核心只支援兩個新的操作類比：`op.planning_structure.v1` 與 `op.advisory_initiative.v1`。兩者都是**尚未經行為試驗的工程提案**，不代表已實現人類特質；其餘面向保持未指定，不產生指令。[來源與存取限制](core/SOURCES.md)支持詞彙脈絡，不證明本專案的 agent 行為有效。請讀[主張邊界](docs/CLAIMS_MATRIX.md)。
+本機 store 保存完整確認過的版本；父代理與每個子代理各自綁定 profile ID、revision 與 digest，可共用或不同。子代理的修改不會自動改動父代理。任務結束不刪除人格規格；臨時任務要求也不改寫持久 profile。角色、能力、價值／目標、暫時狀態與工具權限是另外的設定，不能混成人格滑桿。
 
-本機 compiler 檢查 core 合約，從固定邊界、已核准的 operation 規則與明確核准的回答詳略控制產生有效指令。訪談原文、來源摘錄、解釋與其他追溯欄位都是惰性資料，不能被拼進執行指令。確定性輸出能說明產生了什麼，不保證模型遵守，也無法自行證明真正的人已同意。
+## 已實作與未證明的界線
 
-## 以一個任務開始
+Python 本機工具負責嚴格驗證、不可覆寫的 revision 保存、明確綁定及確定性載入。來源、答案與歷史文字是惰性追溯資料，不會直接成為指令。Codex adapter 提供 repository-local skill；須明確啟用，不修改帳號設定，也不替真正的工作代理任意套用人格。新 session 與每次建立子代理均須明確重新載入綁定，不能假設 fork 已正確繼承。實際測過與仍需手動驗證的步驟見[驗證紀錄](profiles/VERIFICATION.md)。
 
-```text
-讀 docs/QUICKSTART.md 與 core/README.md，協助設定一個為虛構桌遊下午
-提供建議的 agent。可用選項或自由短答，詢問我希望 agent 如何表現。
-把提案連到 core 的來源與涵蓋表，略過的設定保持未指定。顯示完整且
-精確的預覽，等我確認後才能產生可使用的 spec。不要推測我的人格，
-也不要自行增加 panel 或持久化 Persona Pack。
-```
+檔案能保存與重載，不代表宿主一定自動載入，也不代表模型行為穩定、具有人類情感或心理計量效度。格式正確的確認紀錄無法證明真人同意；公開範例全部是合成選擇與合成確認。
 
-檢查與編譯合約不需要 hosted service、帳號、付費 API、資料庫、遙測或模型呼叫。把指令交給模型是另一個需人工審閱的步驟：只使用[固定請求格式](core/REQUEST_ENVELOPE.md)中的精確 renderer stdout，不能傳入 projection JSON、spec 或訪談歷史。完成受限的單一 agent 任務後停止。
+## 證據不跨版本挪用
 
-## 證據與限制
+本增量**沒有新增行為實驗**。[core triage v2](evaluation/core-triage-v2/records/REPORT.md)維持六格暫停：一份沿用、五份新回答、十二份新評讀，共十七次診斷呼叫，其餘不自動續跑。較早的 [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md)仍保留 102 份輸出、30 組中 5 組候選對照（其中 3 組信心有限）及 28 份字數違規；不能用來驗證新的人格假說。
 
-套件 v0.2 候選版、core schema 版本、operation 版本，以及舊 mapping 版本各自獨立。[core 診斷](evaluation/core-triage-v1/records/REPORT.md)在一次生成與兩次獨立評審後停止：兩份評審 JSON 均不符凍結 schema，接受評分為零，結果不確定。新 core 行為仍未驗證；真正 owner 的端到端試驗仍為 **NOT RUN**；靜態測試只支持實際測過的合約性質。不宣稱十個特質已實現、心理計量有效、人類心智／情緒、通用穩定性或跨模型可靠性。
+真正 owner 的確認／修改後確認／fresh reuse、組合行為、持續身份與跨模型穩定性仍待驗證。[宣稱矩陣](docs/CLAIMS_MATRIX.md) · [發布驗收](docs/RELEASE_ACCEPTANCE.md)。
 
-[舊 v1 試行](evaluation/pilot-2026-10-22/REPORT.md)保留 102 份模型對合成任務的實際輸出；30 組初始低／高對照中，只有 5 組是符合端點的候選觀察，其中 3 組信心受限；另有 28 次字數違規與三項不明確的 guardrail 評分。這些結果不能轉作新 operation 的證據。凍結的 [mapping-v2](persona-design-v0.2/mapping-v2/README.md) 與其診斷設計仍為歷史提案，不是預設路徑或新證據。原 400 回答門檻不變；[core 證據計畫](core/EVIDENCE_PLAN.md)是另立的前瞻計畫，不是替代門檻。詳見[發布驗收](docs/RELEASE_ACCEPTANCE.md)與[發布說明草稿](docs/RELEASE_NOTES_DRAFT.md)。凍結診斷已在首格停止，其餘 17 次生成與 34 次評審均為 NOT RUN；先前 132 份的涵蓋提案未被採納。兩個類比是實作里程碑，不是將心理學導向的專案目標縮減成兩種人格。候選版尚未發布。
+既有 [Persona Pack](persona-pack-v0.1/README.md)已支援由 corpus 形成的描述性持久化，與本次「期望特質規格」是不同概念。舊 [core](core/README.md)和單次無工具評測格式保持原樣，僅作受限診斷；情境排演及 panel 仍為選用功能，不是預設人格產品。
 
-另立的[評讀契約 v2 修正](evaluation/core-triage-v2/README.md)在準備階段是 **NOT RUN** 前瞻計畫；目前已部分執行並[暫停](evaluation/core-triage-v2/records/REPORT.md)。它保留停止的 v1 證據，提議沿用唯一原始回答的精確內容，最多新增 17 次生成及 36 次新契約評讀。舊無效評分仍然無效；合成與歷史回歸檢查只屬軟體測試，不是實際新評分或行為證據。剩餘部分是否恢復執行，仍須另行決定。
-
-## 僅在明確要求時使用的舊流程
-
-[v0.1 情境流程](fictional-persona-instantiation-v0.1/README.md)、[panel adapter](ephemeral-persona-panel-adapter-v0.1/README.md) 與 [Persona Pack](persona-pack-v0.1/README.md)仍可選用。多個 persona、panel 合成、持久化與交接都不是設定單一 agent 的必要步驟，也不構成 core spec 的確認。見[遷移說明](docs/MIGRATION.md)。
-
-僅供虛構、低風險、建議性任務，最終由人判斷。禁止真人側寫、診斷、人格評分、敏感屬性推論，以及招聘、監控、法律、醫療、信用、保險、教育分配等高風險用途與自動最終決策。人格設定不得改寫準確性、隱私、安全、任務必要內容或工具權限。[安全邊界](docs/SAFETY_BOUNDARIES.md) · [架構](docs/ARCHITECTURE.md) · [貢獻](CONTRIBUTING.md) · [安全通報](SECURITY.md)
-
-原創 repository 素材採 [Apache-2.0](LICENSE)；外部論文與第三方素材保留原權利。行銷範圍為 GitHub 文件，不需要獨立網站。
+限虛構、低風險建議用途，保留人類最終判斷。人格不能改寫準確性、隱私、安全或權限；禁止真人側寫、診斷、敏感推論與高風險決策。[安全邊界](docs/SAFETY_BOUNDARIES.md)。原創程式與文件採 [Apache-2.0](LICENSE)，不重新授權引用研究或量表。行銷交付只在 GitHub 文件，不需要獨立網站。

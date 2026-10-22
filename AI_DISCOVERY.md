@@ -1,37 +1,26 @@
-# Persona Generator AI Discovery Guide
+# Persona Generator AI discovery
 
-**Current status:** [Core triage v2 is paused for scope alignment](evaluation/core-triage-v2/records/REPORT.md): six retained answers (one byte-identical carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Frozen v2 preparation **NOT RUN** text is historical; no continuation is automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified.
+Read [PROJECT_PURPOSE](PROJECT_PURPOSE.md), then [Quickstart](docs/QUICKSTART.md), [profiles](profiles/README.md) and its [contract](profiles/CONTRACT.md). The current product increment is a desired-trait specification, local persistence and explicit agent/subagent binding layer. It is not a fixed role catalog, human personality test or autonomous framework.
 
-Canonical route: [README](README.md) → [Quickstart](docs/QUICKSTART.md) → [core contract](core/README.md). The default configures **one fictional agent's desired behavior** for a bounded, low-stakes task. Do not start by generating several personas, a panel, or a pack.
+## Current route
 
-`Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
+1. Acquire desired **agent** behavior through guided choice or short answers. Use existing BFAS vocabulary and new [hypothesis coverage](profiles/COVERAGE.md); keep all source/mapping/evidence claims separate.
+2. Preserve unspecified, unknowns and unresolved conflicts. Do not infer correlations, norms, scores, paired-aspect balance or owner psychology.
+3. Present exact rules and the whole preview. Require genuine owner confirmation; synthetic receipts cannot count as consent. Changed content requires a new revision and confirmation.
+4. Validate and store exact versioned originals. Compile only catalog-derived active rules; audit text stays inert.
+5. Bind each parent/child explicitly to ID, revision and digests. No automatic inheritance or averaging. Revalidate stored originals on each fresh load.
+6. Use the [Codex adapter](adapters/codex/README.md) only when explicitly requested, or the host-neutral loader for another manually reviewed integration. Installation does not activate a persona. Host tools/permissions and current task constraints override preferences without mutating the profile.
 
-## Smallest task path
+## Version router
 
-1. Read [Quickstart](docs/QUICKSTART.md), [core contract](core/README.md), and [safety boundaries](docs/SAFETY_BOUNDARIES.md).
-2. Consult [coverage](core/COVERAGE.md) and [sources](core/SOURCES.md) for the proposed behavior's provenance and exclusions.
-3. Collect guided choices or free text about desired agent behavior. Preserve skipped settings as unspecified and conflicts as unresolved.
-4. Present exact proposed operations/rules and the complete preview for human confirmation. Do not manufacture approval or use a synthetic receipt as consent.
-5. Validate the confirmed core artifact and derive its deterministic effective projection. Only approved catalog rules may become instructions; trace text stays inert.
-6. Keep projection JSON as audit data. Send only exact `render` stdout plus the separate bounded task through the fixed [request envelope](core/REQUEST_ENVELOPE.md). Spec, preview, trace and aspect/condition labels never go to the evaluated model. Reconfirm edits; verify original artifacts locally before fresh-session reuse. Stop when complete.
-
-## Contract boundaries
-
-The unreleased v0.2 package candidate uses the new core schema and separately versioned `op.planning_structure.v1` and `op.advisory_initiative.v1`. Ten human aspects are vocabulary; only these two operational analogues are supported, and neither is behaviorally validated. Other aspects remain unspecified. Never infer a user's personality, treat settings as human scores, or fill unsupported goals from a role, source excerpt, or neighboring aspect.
-
-Static validation cannot prove human approval, model adherence, safety, psychological validity, or stability. Read the [claims matrix](docs/CLAIMS_MATRIX.md) before describing evidence. The [core triage](evaluation/core-triage-v1/records/REPORT.md) stopped after one generator and two judge calls, both schema-invalid; zero ratings were accepted. New core behavior remains unvalidated; authentic owner E2E is NOT RUN. At preparation, the separate [rating-contract v2 repair](evaluation/core-triage-v2/README.md) was prospective NOT RUN; partial execution is now [paused](evaluation/core-triage-v2/records/REPORT.md). Its preparation maximum was: one disclosed carried answer, at most 17 new generators and 36 new judges; no old rating becomes valid and no execution follows automatically. The [evidence plan](core/EVIDENCE_PLAN.md) is prospective; the [private owner protocol](core/OWNER_TEST_PROTOCOL.md) must not be simulated into a claim of genuine consent.
-
-## Optional historical paths
-
-| Explicit task | Optional path | Boundary |
+| Need | Path | Evidence boundary |
 | --- | --- | --- |
-| Rehearse multiple fictional perspectives | [v0.1 instantiation](fictional-persona-instantiation-v0.1/README.md) | Only minimum requested perspectives; manual review. |
-| Synthesize reviewed perspectives | [panel adapter](ephemeral-persona-panel-adapter-v0.1/README.md) | One bounded advisory synthesis; preserve dissent. |
-| Persist or hand off one selected persona | [Persona Pack](persona-pack-v0.1/README.md) | Keep core artifact and confirmation identity intact; pack alone cannot activate it. |
-| Understand old design and evidence | [migration](docs/MIGRATION.md), [historical pilot](evaluation/pilot-2026-10-22/REPORT.md) | No automatic upgrades or evidence/approval transfer. |
+| Desired-trait composition and persistent revisions | [profiles](profiles/README.md) | New hypotheses, static engineering evidence only; no live behavior study |
+| Existing two-operation diagnostic | [core](core/README.md) | Unchanged limited ephemeral contract and evaluation envelope |
+| Corpus-derived descriptive persistence | [Persona Pack](persona-pack-v0.1/README.md) | Separate concept, not an automatic desired-trait migration |
+| Scenario rehearsal / synthesis | [instantiation](fictional-persona-instantiation-v0.1/README.md) / [panel](ephemeral-persona-panel-adapter-v0.1/README.md) | Optional, bounded, manually reviewed |
+| Historical studies | [paused triage](evaluation/core-triage-v2/records/REPORT.md), [old pilot](evaluation/pilot-2026-10-22/REPORT.md) | Preserve all raw evidence; no new collection or result transfer |
 
-Frozen `persona-design-v0.2` mapping-v1/v2 documents and `evaluation/diagnostic-v2` are historical research/design material, not current core runtime instructions. No v1 validator result validates a new core artifact or frozen v2 proposal. The original 400-response gate is unchanged; the old 50-response diagnostic is NOT RUN and is not a release gate.
+Read [claims](docs/CLAIMS_MATRIX.md) before describing capabilities. Ten renderable settings do not establish ten implemented human traits, psychometric validity, emotion, persistence of behavior or cross-model stability. Actual owner intent/confirmation and genuine end-to-end use remain private and pending. No owner transcript may enter this public repository without explicit permission.
 
-## Stop and safety rules
-
-Fictional, low-stakes, advisory only; human final judgment. No real-person profiling, diagnosis, psychometric scoring, sensitive-attribute inference, high-stakes decisions, static persona inventory, or autonomous final decisions. Accuracy, privacy, safety, required task content, and permissions are invariants. Stop on unresolved contradiction, missing exact confirmation, invalid or changed artifact, or completion of the bounded task. Do not crawl the repository by default. Examples are fictional fixtures, never reusable persona inventory or authentic owner evidence.
+Fictional, low-stakes advisory work; human final judgment. Safety, accuracy, privacy and permissions are invariant. Do not profile real people, diagnose, infer sensitive attributes, make high-stakes placement decisions or autonomous final decisions. Stop the bounded task when complete; do not erase or revise persistent persona state implicitly. No website work, experiment resumption or automatic release follows from this route.

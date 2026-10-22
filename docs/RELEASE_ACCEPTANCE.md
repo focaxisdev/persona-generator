@@ -1,6 +1,14 @@
 # Release acceptance — unreleased v0.2 core candidate
 
-**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
+## Desired-trait product acceptance remains separate
+
+The candidate now targets [installable, composable agent/subagent profiles](../PROJECT_PURPOSE.md), not two controls as a final product. The new [profile verification](../profiles/VERIFICATION.md) can establish strict persistence, bindings and disposable loading only. New thirty-anchor hypotheses have no behavioral evidence.
+
+Before any release decision, review ten-aspect semantic coverage and proxy limitations; verify real private owner choice/short-answer confirmation and revisions; test actual Codex discovery/application without assuming automatic loading; and prospectively assess composition, task overrides, repeated/fresh contexts, stable identity and parent/subagent application. Static passing fixtures do not satisfy these behavioral or authentic-owner requirements. A bounded revised acceptance proposal must state its claim scope and be separately reviewed; it cannot silently replace the original 400-response gate.
+
+The six-cell diagnostic remains paused. No remaining cell, new study, merge or release is authorized by this checklist. GitHub documentation is the marketing surface; standalone website work was a coordinator scope error and is not a release requirement.
+
+**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; behavioral persistence and composition effects remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
 
 This is a prospective review plan, not a release, tag, merge authorization, or replacement for frozen historical gates. The canonical reader route is [README](../README.md) → [Quickstart](QUICKSTART.md) → [core contract](../core/README.md). GitHub documentation is the marketing scope.
 

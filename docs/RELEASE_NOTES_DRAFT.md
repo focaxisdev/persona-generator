@@ -1,6 +1,6 @@
 # v0.2 core candidate release notes — DRAFT, NOT RELEASED
 
-**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
+**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; behavioral persistence and composition effects remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
 
 The candidate replaces competing entry routes with one confirmed single-agent path: desired behavior → construct/source trace → exact confirmed spec → deterministic effective projection → version-tied evidence. [Quickstart](QUICKSTART.md) routes to the [core contract](../core/README.md). Legacy scenario generation, multiple personas, panel synthesis and Persona Pack remain optional when explicitly requested.
 
@@ -31,3 +31,9 @@ Frozen [mapping-v2](../persona-design-v0.2/mapping-v2/README.md) and its 50-resp
 Candidate review, exact-revision static verification, authentic owner E2E, prospective behavioral work and any scoped acceptance remain separate requirements. This document announces no release, tag, merge or deployment. The released v0.1.0-alpha remains unchanged.
 
 Marketing scope is GitHub README, Quickstart, examples, source/claim limitations and release notes. The prior standalone website plan resulted from a coordinator misunderstanding, not a user request for a separate website; PR #3 and any private preview are excluded without sharing, deletion or merging. No website is required.
+
+## Additional unreleased profile increment
+
+Adds a host-neutral ten-aspect desired-trait specification, exact confirmed revisions, immutable local storage, explicit per-agent bindings and a repository-local Codex skill adapter. Two full synthetic combinations demonstrate parent/two-child assignments and fresh-process loading. See [verification](../profiles/VERIFICATION.md) for executed tests and limitations. This is software persistence and composition of declared preferences, not evidence of stable model identity or psychological validity.
+
+All thirty anchors are versioned untested hypotheses; B01/B02 remain expression proxies. Existing Persona Pack remains a separate corpus-derived persistence concept. The old core envelope is unchanged and remains a limited diagnostic adapter. All historical and paused experimental evidence remains intact; no behavior experiment was run for the profile increment. Actual owner confirmation, host activation and behavioral stability remain pending. Nothing here announces a published release.

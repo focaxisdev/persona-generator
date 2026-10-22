@@ -1,43 +1,41 @@
-# Architecture: confirmed single-agent core
+# Architecture: confirmed profiles and explicit application
+
+The product purpose is a composable desired-trait specification for agents and subagents. Persistence means preserving an exact confirmed artifact across tasks, not keeping a task running or proving a model has a stable mind. See [purpose and acceptance](../PROJECT_PURPOSE.md).
 
 ```text
-desired single-agent behavior (choices or free text)
-→ construct / source / coverage trace
-→ exact operation proposal and complete preview
-→ human confirmation of that exact content
-→ versioned confirmed core spec
-→ deterministic projection JSON retained for audit
-→ exact rendered rules + fixed envelope + separate bounded task
-→ bounded model use and version-tied evidence
-→ stop
+BFAS source vocabulary + separately versioned AI hypotheses
+→ desired agent choices / short answers
+→ explicit targets, exact rules, unknowns and conflicts
+→ complete preview → genuine owner confirmation
+→ profile ID + immutable revision + snapshot/effective digests
+→ local store
+→ explicit parent binding / explicit child binding / explicit child binding
+→ validate exact stored originals → deterministic renderer
+→ host-controlled bounded task (host policy/permissions take precedence)
+→ task ends; stored profile remains available for explicit reuse
 ```
 
-Canonical reader route: [README](../README.md) → [Quickstart](QUICKSTART.md) → [core contract](../core/README.md).
+## Small modules, different responsibilities
 
-## Responsibilities and trust boundaries
-
-| Layer | Responsibility | What it cannot establish |
+| Layer | Responsibility | Does not establish |
 | --- | --- | --- |
-| Intent | Record desired agent behavior and skipped/contradictory requests | The owner's human personality or implied consent |
-| Source/coverage | Trace human vocabulary, analogy, omissions and confounds | Transfer human research validity to agent behavior |
-| Proposal/preview | Expose exact operation versions, settings, rules and complete artifact | Consent before the owner actually confirms |
-| Confirmed spec | Bind the exact reviewed contract and its confirmation record | Authenticity merely because a receipt is structurally valid |
-| Compiler/projection | Check contract consistency and render approved catalog rules deterministically | Model adherence, semantic safety or behavioral efficacy |
-| Request envelope | Keep projection JSON local; send exact render stdout, fixed wrapper and separate task through the exposed delegation surface | Separate system roles, disabled tool access or control over hidden backend parameters |
-| Evidence | Retain exact input/projection versions, model context, attempts and limitations | General stability or validity beyond observed scope |
+| Sources and catalog | Ten BFAS aspect definitions; thirty explicit qualitative hypothesis anchors | Human norms, latent trait scores, psychological validity or measured correlations |
+| Preview and confirmation | Trace selected settings to exact rules and full presentation; retain audit data inert | Authenticity of a recorded owner action merely from JSON structure |
+| Profile compiler | Strictly validate versions/dependencies and render approved catalog text only | Model adherence, feelings or stable identity |
+| Store | Preserve exact original bytes per profile ID/revision and reject mutation | Automatic host discovery or authorization to keep working |
+| Binding | Pin each agent's profile ID, revision and digests | Inheritance, averaging, implicit upgrade or transfer of authority |
+| Codex adapter | Install an explicit-use local skill that invokes the same loader | Unobserved host activation or automatic child loading |
+| Evidence | Tie tests/results to their exact version and distinguish software from behavior | Evidence transfer from another mapping or old diagnostic |
 
-The executable rule surface is deliberately small: the new `op.planning_structure.v1` and `op.advisory_initiative.v1`. Alongside the fixed invariant boundary and any explicitly approved response-detail control, only their approved catalog rules may appear in the effective projection. Interview text, source passages, rationale, examples, and provenance are inert trace, including text that resembles instructions. Unsupported targets fail or remain unspecified; they must never be invented during rendering. Unspecified contributes no behavioral instruction.
+The [profile contract](../profiles/CONTRACT.md) is host-neutral. All ten aspects may be independently specified or left unspecified. A same-domain pair need not match; no random population model or total score exists. Each active rule has a local trigger and boundary. Genuine declared contradictions must be resolved explicitly; arbitrary natural-language conflict detection is not claimed. Separate role, capabilities, values, transient state, goals and permissions remain host/task concerns.
 
-Ten human aspects remain a vocabulary/coverage inventory. Eight have no active operation, and the two analogues omit human motives, feelings, ability, authority, and stability. [COVERAGE](../core/COVERAGE.md) owns that detail. The compiler is not a general interpreter of the old ten-aspect mapping documents.
+A new profile revision requires renewed confirmation. Bindings stay pinned until explicitly changed; child changes do not mutate the parent's binding. Current task facts and constraints override preferences temporarily without writing to the profile. Human final judgment, safety, accuracy and privacy remain invariant.
 
-## Why this corrects the previous architecture
+## Version routing and preserved concepts
 
-Earlier entry documents mixed multi-persona rehearsal, a ten-aspect Markdown proposal, and a separate revised-mapping candidate. They did not give one clear boundary from approved intent to emitted instructions. The core makes the confirmed artifact and deterministic projection the shared boundary for interview, use, reload, and evaluation. This prevents an interview answer or citation from silently becoming a rule, avoids filling unspecified aspects, and makes evidence attributable to the exact tested operation versions. It also narrows scope to operations that can be inspected without claiming ten implemented traits.
+- [Profiles](../profiles/README.md): new `persona-profile-v1` specification/storage/binding path; new `hyp.*.v1` rules have no behavioral evidence.
+- [Two-operation core](../core/README.md): preserved `persona-core-v1` diagnostic path. Its ephemeral scope and one-answer/no-delegation envelope remain unchanged and apply only to that adapter.
+- [Persona Pack](../persona-pack-v0.1/README.md): existing corpus-derived descriptive persistence, distinct from the new desired-trait profile.
+- [Scenario rehearsal](../fictional-persona-instantiation-v0.1/README.md) and [panel adapter](../ephemeral-persona-panel-adapter-v0.1/README.md): optional bounded workflows, not the default trait product.
 
-Approval is a human action outside the compiler. Changing behavior requires a new preview and confirmation; copying a receipt cannot substitute for that action. Fresh reuse verifies the confirmed artifact rather than reconstructing it from a summary. [Owner E2E](../core/OWNER_TEST_PROTOCOL.md) and [behavioral evidence](../core/EVIDENCE_PLAN.md) remain separate prospective checks.
-
-## Versions and optional components
-
-The package's unreleased v0.2 candidate, `persona-core-v1` schema, catalog version, and `.v1` operation versions are separate namespaces. Historical `map.*.v1`/`map.*.v2` identifiers and validators are not aliases. There is no automatic migration or inherited approval/evidence.
-
-[v0.1 instantiation](../fictional-persona-instantiation-v0.1/README.md), [panel rehearsal](../ephemeral-persona-panel-adapter-v0.1/README.md), and [Persona Pack](../persona-pack-v0.1/README.md) remain optional legacy extensions only when explicitly requested. No database, hosted service, model API, telemetry, static persona inventory, or hidden runtime is required for compilation. All model use remains advisory and subject to host permissions and required accuracy, privacy, safety, and task constraints.
+No implicit schema migration, inherited confirmation or inherited behavioral evidence exists. All experiments, including the [six-cell pause](../evaluation/core-triage-v2/records/REPORT.md), remain unchanged. This increment adds no server, model service, orchestration framework, website or experiment.

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Persona Profile"
+  short_description: "Explicitly load a validated agent profile binding"
+policy:
+  allow_implicit_invocation: false

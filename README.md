@@ -1,50 +1,37 @@
 # Persona Generator
 
-**Current status:** [Core triage v2 is paused for scope alignment](evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new) and 12 fresh locked schema-valid ratings, totaling 17 new diagnostic calls. The frozen v2 preparation’s **NOT RUN** text is historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified.
+**Traceable personality design for an agent and its subagents.** Configure a combination of desired traits, inspect their psychological sources and proposed AI behavior, confirm the complete specification, and load the same explicit profile revision again.
 
-Configure how one fictional AI agent should behave for a bounded, low-stakes task. Follow desired behavior through source and construct context, an exact human-confirmed specification, a deterministic effective projection, and evidence tied to those versions.
+**Unreleased candidate:** ten BFAS aspects now have versioned specification semantics, not demonstrated human personality or psychometric validity. New behavioral hypotheses have no inherited results from earlier experiments. [繁體中文](README.zh-TW.md) · [Project purpose and acceptance](PROJECT_PURPOSE.md)
 
-**Start:** [Quickstart](docs/QUICKSTART.md) → [core contract](core/README.md). [繁體中文](README.zh-TW.md) · [AI discovery](AI_DISCOVERY.md)
+**Start:** [Quickstart](docs/QUICKSTART.md) → [desired-trait profiles](profiles/README.md) → [Codex installation](adapters/codex/README.md).
 
 `Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
 
-## Current scope: unreleased v0.2 candidate
+## Choose behavior, review, confirm, load
 
-The canonical entry path is the confirmed single-agent core. It offers guided choices or free text about desired agent behavior, leaves unanswered settings `unspecified`, exposes exact proposed rules and their provenance, and requires human approval of the complete preview before use. Any behavior edit requires another preview and confirmation. Reload verifies the exact confirmed artifact before reuse.
+Guided choices or short answers ask how the agent should behave—not what personality the owner has. Unanswered aspects stay `unspecified`; contradictory requests remain visible until resolved. Preview exact sources, hypothesis rules, unknowns, exclusions and the complete artifact before actual confirmation. Edits require a new revision and confirmation.
 
-The [coverage ledger](core/COVERAGE.md) names ten Big Five aspects as research vocabulary. Only two new operational analogues are supported: `op.planning_structure.v1` and `op.advisory_initiative.v1`. They are **behaviorally unvalidated engineering proposals**, not implementations of human traits. The other aspects remain unspecified and produce no instructions. Human research supports vocabulary provenance; it does not validate these operations. Read [sources and access limits](core/SOURCES.md) and the [claims matrix](docs/CLAIMS_MATRIX.md).
+The profile layer covers the existing five Big Five domains and ten BFAS **aspects**, not facets. Low, middle and high are design targets, not scores or percentiles. Each selected hypothesis renders explicit bounded preferences; no balancing or population correlations are invented. B01/B02 remain experimental expression proxies. Read [coverage](profiles/COVERAGE.md) and [source limits](core/SOURCES.md).
 
-The local compiler checks the core contract and renders its fixed invariant boundary, approved operation rules, and any explicitly approved response-detail control. Source excerpts, interview answers, explanations, and other inert trace fields cannot become execution instructions. A deterministic projection establishes what instructions were emitted; it does not guarantee that a model follows them or prove that a human actually consented.
+A local store preserves exact confirmed profile revisions. Parent and child agents each bind an explicit profile ID, revision and digests; they may share a profile or use different ones. A child change does not silently change its parent. Task completion ends the task, not the saved profile. Tools, capabilities, role, values and transient states are separate host concerns. Safety, accuracy, privacy and permissions cannot become personality sliders.
 
-## Start with one bounded task
+## What can be checked locally
 
-```text
-Read docs/QUICKSTART.md and core/README.md. Help configure one fictional
-agent for a pretend board-game afternoon. Ask guided choices or accept
-free text about desired behavior. Trace proposals to core sources and
-coverage, keep skipped settings unspecified, and show the complete exact
-preview. Stop for my confirmation before producing an active specification.
-Do not infer my personality or add a panel or persistent persona pack.
-```
+Standard-library Python validates the confirmed artifact, saves immutable revisions and deterministically renders catalog rules. Interview/source/history text remains inert. The Codex adapter installs a repository-local explicit-invocation skill; it does not change account settings or automatically assign a persona. Fresh sessions and spawned agents must explicitly load and verify their binding. See [verification](profiles/VERIFICATION.md) for tested versus manual/unverified steps.
 
-No hosted service, account, paid API, database, telemetry, or model call is required to inspect and compile the contract. Applying its instructions to a model is a separate, human-reviewed step: use exact renderer stdout in the [canonical request envelope](core/REQUEST_ENVELOPE.md), never projection JSON, spec or interview history. The default stops when the bounded single-agent task is complete.
+File persistence does not establish automatic host reload, consistent model behavior, felt emotion, human psychometric validity, or cross-model stability. Structural confirmation receipts cannot prove that a real owner approved. Public examples use synthetic choices and synthetic receipts only.
 
-## Evidence and limitations
+## Evidence stays tied to its version
 
-The core schema version, operation versions, package candidate, and historical mapping versions are distinct. The [core triage](evaluation/core-triage-v1/records/REPORT.md) stopped after one generator and two judge calls: both judge outcomes were schema-invalid, with zero accepted ratings. New core behavior remains unvalidated; authentic owner end-to-end trials are **NOT RUN**. Static checks establish only their tested contract properties. No ten-trait implementation, psychological validity, human emotions, general stability, or cross-model reliability is claimed.
+This increment runs **zero behavior experiments**. [Core triage v2 remains paused](evaluation/core-triage-v2/records/REPORT.md) at six answers (one carried, five new) and twelve locked new ratings: seventeen diagnostic calls. Remaining cells do not resume automatically. The earlier [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md) retains 102 outputs, 5/30 candidate contrasts (three limited-confidence) and 28 word-budget violations. These results do not validate the new ten-aspect hypotheses.
 
-The [historical v1 pilot](evaluation/pilot-2026-10-22/REPORT.md) retains 102 model-generated outputs on synthetic tasks. Only 5/30 initial low/high pairs were candidate exact-anchor observations, three with limited confidence; there were 28 budget violations and three unclear guardrail ratings. Those findings do not validate the new operations. Frozen [mapping-v2](persona-design-v0.2/mapping-v2/README.md) and its diagnostic design remain historical proposals, not the core default or new evidence. The original 400-response gate is unchanged; a prospective bounded core plan is separately documented in [EVIDENCE_PLAN](core/EVIDENCE_PLAN.md). See [release acceptance](docs/RELEASE_ACCEPTANCE.md) and [draft release notes](docs/RELEASE_NOTES_DRAFT.md). The frozen diagnostic stopped at its first cell, leaving 17 generator cells and 34 judge calls NOT RUN; the earlier 132-response coverage proposal is not adopted. Two analogues are an implementation milestone, not the final scope of the project’s psychology-based ambition. This candidate is not released.
+Authentic owner E2E, composition behavior, persistent identity and general behavioral stability remain unverified. [Claims](docs/CLAIMS_MATRIX.md) · [Release acceptance](docs/RELEASE_ACCEPTANCE.md) · [Draft release notes](docs/RELEASE_NOTES_DRAFT.md).
 
-At preparation, the separate [rating-contract v2 repair](evaluation/core-triage-v2/README.md) was prospective and NOT RUN; its partial execution is now [paused](evaluation/core-triage-v2/records/REPORT.md). It preserves the stopped v1 evidence and proposes carrying its one exact raw answer forward, with at most 17 new generator calls and 36 new judge calls under a reviewed new contract. Old invalid ratings remain invalid; synthetic and historical regression checks are software tests, not live ratings or behavioral evidence. Resuming the remaining cells requires a separate decision.
+## Other supported concepts
 
-## Optional legacy workflows
+[Persona Pack](persona-pack-v0.1/README.md) supports corpus-derived descriptive persistence; it is not the desired-trait profile. [Two-operation core](core/README.md) remains an unchanged limited diagnostic implementation, and its one-answer evaluation adapter is not the universal product runtime. [Scenario rehearsal](fictional-persona-instantiation-v0.1/README.md) and [panel synthesis](ephemeral-persona-panel-adapter-v0.1/README.md) remain optional. No automatic migration or inherited approval/evidence is implied. [Architecture](docs/ARCHITECTURE.md) · [Migration](docs/MIGRATION.md).
 
-Only when explicitly requested, use the [v0.1 scenario workflow](fictional-persona-instantiation-v0.1/README.md), [panel adapter](ephemeral-persona-panel-adapter-v0.1/README.md), or [Persona Pack](persona-pack-v0.1/README.md). Multiple personas, panel synthesis, persistence, and handoff are optional legacy tools. They are never prerequisites for configuring one agent and do not confer confirmation on a core spec. See [migration](docs/MIGRATION.md).
+Fictional, low-stakes advisory use; human final judgment. No real-person covert profiling, diagnosis, psychometric scoring, sensitive inference, high-stakes placement or autonomous final decisions. [Safety](docs/SAFETY_BOUNDARIES.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md).
 
-## Boundaries and contribution
-
-Fictional, low-stakes, advisory use only; human judgment remains final. No real-person profiling, diagnosis, psychometric scoring, sensitive-attribute inference, hiring, surveillance, legal, medical, credit, insurance, educational placement, or autonomous final decisions. Settings cannot override accuracy, privacy, safety, required task content, or tool permissions. Read [safety boundaries](docs/SAFETY_BOUNDARIES.md).
-
-[Architecture](docs/ARCHITECTURE.md) · [Contributing](CONTRIBUTING.md) · [Code of conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md) · [Support](SUPPORT.md)
-
-Licensed under [Apache-2.0](LICENSE) for original repository material. Cited research and other third-party material retain their own rights; see [sources](core/SOURCES.md). GitHub documentation is the marketing scope; no standalone website is required.
+Original repository material is [Apache-2.0](LICENSE). Research, questionnaires and third-party text retain their own rights; no complete instrument is redistributed or relicensed. GitHub documentation is the marketing surface; no standalone website is required.

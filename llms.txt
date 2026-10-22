@@ -1,32 +1,22 @@
 # Persona Generator
 
-**Current status:** [Rating-contract v2 is paused for scope alignment](evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
+> Unreleased psychology-grounded desired-trait specification, explicit agent/subagent binding and persistent local revision layer. Engineering hypotheses are not human psychometric validity or proven model stability.
 
-> Unreleased v0.2 candidate for configuring one fictional agent's desired behavior through an exact human-confirmed core spec and deterministic approved-only effective projection.
-
-Experimental discovery file; crawler support is not guaranteed. Read only the smallest task-specific path.
-
-## Canonical route
-
-- [README](README.md)
-- [Traditional Chinese README](README.zh-TW.md)
+- [Project purpose and acceptance](PROJECT_PURPOSE.md)
+- [繁體中文](README.zh-TW.md)
 - [Quickstart](docs/QUICKSTART.md)
-- [Core contract](core/README.md)
-- [Canonical model request](core/REQUEST_ENVELOPE.md)
-- [AI discovery](AI_DISCOVERY.md)
+- [Profile contract](profiles/CONTRACT.md)
+- [Profile workflow](profiles/README.md)
+- [Hypothesis coverage](profiles/COVERAGE.md)
+- [Codex adapter](adapters/codex/README.md)
+- [Verification](profiles/VERIFICATION.md)
 - [Architecture](docs/ARCHITECTURE.md)
-- [Coverage](core/COVERAGE.md)
-- [Sources](core/SOURCES.md)
+- [AI discovery](AI_DISCOVERY.md)
 - [Claims](docs/CLAIMS_MATRIX.md)
+- [Sources](core/SOURCES.md)
 - [Safety](docs/SAFETY_BOUNDARIES.md)
-- [Migration](docs/MIGRATION.md)
-- [Prospective evidence plan](core/EVIDENCE_PLAN.md)
-- [Historical 18-response preparation; see stopped result](evaluation/core-triage-v1/PLAN.md)
+- [Separate descriptive Persona Pack](persona-pack-v0.1/README.md)
+- [Preserved two-operation diagnostic core](core/README.md)
+- [Preserved six-cell pause](evaluation/core-triage-v2/records/REPORT.md)
 
-## Limits
-
-Only op.planning_structure.v1 and op.advisory_initiative.v1 are supported operational analogues; neither is behaviorally validated. Ten human aspects are vocabulary, not ten implemented traits. Other aspects remain unspecified. The core diagnostic stopped after one generator and two invalid judge outcomes; zero ratings accepted, 17 generator cells NOT RUN. Authentic owner E2E remains NOT RUN. See evaluation/core-triage-v1/records/REPORT.md. Trace is inert; only approved catalog rules may render. Edits require reconfirmation and reload verifies the exact confirmed artifact. Static validation does not prove consent or model behavior.
-
-Multiple personas, panel synthesis and Persona Pack are optional legacy paths only when explicitly requested. Historical mappings, evidence and validators do not transfer to the new core. No real-person profiling, diagnosis, psychometric scoring, sensitive inference, high-stakes use or autonomous final decision. Human final judgment; stop when the bounded task is complete. No static persona catalog or standalone website requirement.
-
-Rating-contract v2: evaluation/core-triage-v2/README.md. Prospective NOT RUN at preparation; partial execution now paused (evaluation/core-triage-v2/records/REPORT.md); one disclosed carried answer, at most 17 new generators and 36 new judges, no old rating reuse. Static regression is not model evidence; separate decision required before resumption.
+Ask for desired agent behavior, not owner personality. Unspecified stays unspecified. Confirm complete previews genuinely; synthetic fixtures are not consent. Revisions and agent bindings are explicit; no inheritance, averaging, automatic latest-version upgrade or permission transfer. Task overrides do not rewrite saved profiles. No live behavioral experiments in this increment. Existing evidence does not transfer to new hypotheses. No website or automatic release.

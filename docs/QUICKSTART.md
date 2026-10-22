@@ -1,34 +1,27 @@
-# Quickstart: configure one agent
+# Quickstart: choose, confirm, bind and reload
 
-**Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
+Start with the [project purpose](../PROJECT_PURPOSE.md), [profile guide](../profiles/README.md) and [coverage](../profiles/COVERAGE.md). This candidate configures desired agent traits for fictional, low-stakes advisory work. It does not diagnose you or grant the agent tools.
 
-Start from [README](../README.md), then use the [core contract](../core/README.md). This unreleased v0.2 candidate configures desired behavior for one fictional, low-stakes advisory agent. Multiple personas, panels, and Persona Packs are optional legacy paths.
+1. Choose guided questions or short answers about how you want the agent to behave. Consult the ten BFAS aspects and their separate AI hypotheses. Keep skipped settings unspecified; choose middle only explicitly.
+2. Inspect each proposed rule, its trigger, source, omissions and uncertainty. Do not derive scores, force paired aspects to match, or silently resolve contradictory preferences.
+3. Review the complete versioned preview. Resolve conflicts or leave the profile inactive. Confirm the exact content only after you understand it. A change creates a new revision and needs confirmation again.
+4. Follow the [profile CLI examples](../profiles/README.md) to validate and publish the exact spec and presented preview to a local store. Public fixtures are synthetic demonstrations, never your approval.
+5. Explicitly bind the parent and each child agent to a profile ID/revision/digest. They may share or differ. A new child context must load its own binding; conversation inheritance is insufficient.
+6. Install the [Codex local skill](../adapters/codex/README.md) into an explicitly chosen repository. Invoke it explicitly with the agent ID and store location. No profile is installed or activated by default.
+7. In each fresh session, validate and render the exact bound revision before applying preferences. Keep task instructions separate; temporary overrides never modify the stored profile. End the task when complete while retaining the confirmed profile for deliberate reuse.
 
-## Interview → confirmation → effective projection
-
-1. Describe one fictional task and its limits. Read [safety boundaries](SAFETY_BOUNDARIES.md).
-2. Choose guided choices or free text about how the agent should behave. Read the [coverage ledger](../core/COVERAGE.md) and [source scope](../core/SOURCES.md). These are design choices, not a test of your personality.
-3. Consider only the two supported, untested operation proposals: planning structure and advisory initiative. Keep all other aspects unspecified; do not fill gaps from labels, role stereotypes, or source quotations. Preserve contradictions until the owner resolves or withdraws them.
-4. Review the exact proposed versions, settings, literal rules, boundaries, provenance, unresolved items, and full preview. Approve the selected rules and explicitly confirm that exact complete preview. Stop if confirmation is missing.
-5. Use the [core compiler instructions](../core/README.md) to validate and deterministically derive the effective projection. Trace fields remain inert; the projection includes only approved operation rules. Structural validation cannot authenticate a human.
-6. Keep the spec, presented preview and projection JSON on the compiler/audit side. Use only exact `render` stdout as the persona instruction payload inside the fixed [request envelope](../core/REQUEST_ENVELOPE.md), with the bounded task as a separate component. Do not send projection metadata, aspect/condition labels, interview answers or history to the model. The local envelope builder makes no model call; its documented delegation mechanism is the supported prospective transport.
-7. For a fresh session, revalidate the exact confirmed artifact and presented bytes locally, then rebuild the same rendered envelope. Stop if content, versions, or confirmation do not match. Any persistent behavior edit requires a new preview and confirmation. Stop when the task is complete.
+Suggested interview request:
 
 ```text
-Read core/README.md, core/COVERAGE.md, and core/SOURCES.md.
-Help me configure one fictional agent for a pretend board-game afternoon.
-Interview mode: guided choices [or: free text].
-Ask how I want the agent to organize a plan and whether to propose a
-supported next step while keeping me in control. Leave skipped settings
-unspecified. Show proposed sources, operation versions, exact rules,
-conflicts, and the complete preview. Wait for my actual confirmation.
-Do not infer my personality. Do not add a panel or persistent pack.
+Read PROJECT_PURPOSE.md and profiles/README.md. Help me design a desired
+personality specification for my fictional advisory agent. Use guided
+choices or short answers about how I want the agent to behave. Explain
+source definitions separately from proposed AI behavior. Keep skipped
+aspects unspecified, show conflicts and the complete preview, and wait
+for my real confirmation. Do not infer my personality or create approval
+on my behalf. Keep parent and child assignments explicit.
 ```
 
-## What this demonstrates
+No paid API, model service, telemetry or account settings are needed for local validation and installation. Actual Codex discovery/use, model behavior, persistent identity and genuine owner E2E remain separate verification steps; [verification](../profiles/VERIFICATION.md) records their status.
 
-The compiler's synthetic fixtures illustrate the artifact contract only. They are not owner consent or behavioral evidence. The [core diagnostic](../evaluation/core-triage-v1/records/REPORT.md) stopped after one generator and two schema-invalid judge outcomes; zero ratings were accepted. Operation behavior remains unvalidated and authentic owner E2E is **NOT RUN**. Consult [claims](CLAIMS_MATRIX.md), [prospective evidence plan](../core/EVIDENCE_PLAN.md), and [private owner protocol](../core/OWNER_TEST_PROTOCOL.md). No real owner transcript should enter this public repository without specific permission.
-
-## Optional historical tasks
-
-If explicitly requested, follow [v0.1 instantiation](../fictional-persona-instantiation-v0.1/README.md), [panel adapter](../ephemeral-persona-panel-adapter-v0.1/README.md), or [Persona Pack](../persona-pack-v0.1/README.md). Do not silently translate old settings or approvals; see [migration](MIGRATION.md). Historical ten-aspect mapping documents and the frozen v2 diagnostic remain separate from the new core contract.
+For the unchanged two-operation experiment interface, read [core/README](../core/README.md) and its [fixed envelope](../core/REQUEST_ENVELOPE.md). That envelope is not the universal product runtime. [Persona Pack](../persona-pack-v0.1/README.md) remains a separate descriptive-persistence format. No old spec, approval or rating automatically migrates. The [paused diagnostic](../evaluation/core-triage-v2/records/REPORT.md) does not resume through this quickstart.
