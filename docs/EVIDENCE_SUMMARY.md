@@ -4,6 +4,14 @@ This public summary is intentionally concise. It does not copy private raw evide
 
 Read this together with [Academic Boundaries and Source Notes](ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md), [Safety Boundaries](SAFETY_BOUNDARIES.md), [Architecture](ARCHITECTURE.md), and [Quickstart](QUICKSTART.md).
 
+## v0.2 Candidate Evidence Boundary
+
+The new [named registry](../persona-design-v0.2/construct-registry.md) and interview are a separate increment. Their sources support human construct names and definitions, not agent validity. Static fixture checks test document contracts; hand-authored examples are not model observations.
+
+**Model behavior pilot: not run.** The [behavior protocol](../validation/BEHAVIOR_PROTOCOL.md) specifies baseline contrasts, multiple rounds, reload trials, raw-output retention, and failure reporting. Until genuine results are captured and reviewed, its behavioral release gate is blocked. See [release acceptance](RELEASE_ACCEPTANCE.md).
+
+The legacy statements below are inherited v0.1 curated claims. Their private raw evidence was not independently re-audited for this increment, and they cannot count as v0.2 evidence.
+
 ## Supported Bounded Evidence
 
 - Persona Pack v0.1 was exercised across contrasting fictional work-context examples without schema expansion.

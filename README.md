@@ -8,6 +8,14 @@ Persona Generator is a local-first, Markdown-first protocol package for creating
 
 **Start here:** [Quickstart](docs/QUICKSTART.md) -> [AI discovery guide](AI_DISCOVERY.md) -> [Safety boundaries](docs/SAFETY_BOUNDARIES.md).
 
+## Traceable agent design (unreleased v0.2 candidate)
+
+Configure **how a fictional agent should behave**, using a choice-guided or short-answer interview. The new [design protocol](persona-design-v0.2/protocol.md) names the ten Big Five **aspects** described by DeYoung, Quilty, and Peterson (2007). It separates cited human constructs from this project's proposed behavior mappings and from actual model observations.
+
+Answers become `low`, `middle`, `high`, or `unspecified` design goals, never personality scores. Review the source trace, proposed rules, conflicts, and unknowns, then confirm the exact preview before generating a spec. Unanswered goals remain unconstrained. Accuracy, privacy, safety, and tool permissions are never personality options.
+
+Start with the [new quickstart](docs/QUICKSTART.md). Existing v0.1 workflows remain available; see [migration](docs/MIGRATION.md). This increment has **no completed model behavior evidence** and is **not released**. See [claims](docs/CLAIMS_MATRIX.md), [evaluation protocol](validation/BEHAVIOR_PROTOCOL.md), and [release acceptance](docs/RELEASE_ACCEPTANCE.md).
+
 ## What This Is
 
 | Persona Generator is | Persona Generator is not |

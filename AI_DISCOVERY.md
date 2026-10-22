@@ -24,6 +24,17 @@ Core principle:
 - No static persona catalog.
 - No autonomous final decision.
 
+## Configure Desired Agent Behavior (unreleased v0.2)
+
+For a request to configure the agent's personality or to run a choice/short-answer interview, use this path instead of the legacy generation path below:
+
+1. [Safety boundaries](docs/SAFETY_BOUNDARIES.md).
+2. [Design protocol](persona-design-v0.2/protocol.md) and [interview](persona-design-v0.2/interview.md).
+3. [Named aspect registry](persona-design-v0.2/construct-registry.md) and [source ledger](persona-design-v0.2/sources.md).
+4. [Spec template](persona-design-v0.2/spec-template.md) and [static validation](validation/README.md).
+
+Stop at a preview until the user confirms it. Missing answers stay `unspecified`; unresolved contradictions block the final spec. Ask about desired agent behavior, never infer a user's personality. Keep legacy workflow controls separate from BFAS aspects. All mappings are proposed, and behavior evidence is not yet completed. The [claims matrix](docs/CLAIMS_MATRIX.md) controls descriptions of this increment.
+
 ## Shortest Canonical Reading Path
 
 1. [docs/QUICKSTART.md](docs/QUICKSTART.md)

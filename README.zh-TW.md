@@ -12,6 +12,14 @@ Persona Generator（人格產生器）是一套 protocol-first、Markdown-first 
 
 [Read the English README](README.md)
 
+## 可追溯的 agent 人格設定（尚未發布的 v0.2 候選增量）
+
+新[訪談流程](persona-design-v0.2/protocol.md)以選擇題或簡答詢問「希望 agent 如何表現」，不推測使用者真實人格。十個 Big Five aspects 依 DeYoung、Quilty、Peterson（2007）具名記錄，並分開標示文獻構念、專案提出的行為轉譯、實際模型測試證據。
+
+設定只有偏低／中間／偏高／未指定四種設計目標，不是心理測量分數。未指定不補成中間；矛盾不平均。先檢視來源、轉譯理由與不確定項，再確認完整預覽，才能產出 spec。人格不得改寫事實準確性、隱私、安全或工具權限。
+
+由[Quickstart](docs/QUICKSTART.md)開始；v0.1 保留，見[遷移說明](docs/MIGRATION.md)。本增量尚無完成的模型行為實證，也尚未發布；參見[宣稱邊界](docs/CLAIMS_MATRIX.md)與[release 驗收](docs/RELEASE_ACCEPTANCE.md)。
+
 ## 一句話說明
 
 當你需要 AI Agent 為一個虛構、低風險情境產生幾個臨時觀點，用來做 brainstorming、風險檢查或交接演練時，Persona Generator 提供一套可檢查、可停止、可移交的 Markdown protocol。

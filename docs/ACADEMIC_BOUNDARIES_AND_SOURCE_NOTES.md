@@ -2,6 +2,14 @@
 
 Persona Generator uses academically bounded vocabulary to make fictional persona generation more disciplined. The vocabulary helps describe scenario-relevant variation, but it is not a measurement system.
 
+## New Named Construct Layer (unreleased v0.2)
+
+The [source ledger](../persona-design-v0.2/sources.md) and [registry](../persona-design-v0.2/construct-registry.md) now provide individual source traces for DeYoung, Quilty, and Peterson's (2007) ten Big Five aspects. Aspects sit between broad domains and narrower facets; do not substitute BFI-2 or HEXACO definitions. The eight legacy families below remain project workflow controls, with no inferred equivalence to a Big Five trait.
+
+Literature support concerns human construct vocabulary. It does not validate this project's agent mappings, its interview, or any generated spec. Original qualitative targets are requested design goals, not BFAS administration or scoring. The [claims matrix](CLAIMS_MATRIX.md) separates source verification, proposed mapping, static validation, and model behavior evidence.
+
+The source-coverage discussion below records the v0.1 layer; its statement about no bundled bibliography does not describe the new v0.2 source ledger.
+
 ## What "Academically Bounded" Means
 
 In this repository, academically bounded means:

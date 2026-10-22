@@ -2,6 +2,35 @@
 
 This quickstart shows how to use Persona Generator in a fictional, low-stakes scenario.
 
+## Configure an Agent: Interview to Reviewed Spec
+
+The new v0.2 candidate is a portable Markdown workflow; use your existing capable language model. There is no account setup, paid API, backend, or telemetry. A model's interpretation still needs human review.
+
+1. Supply a fictional, low-stakes task and choose a guided interview or short answers.
+2. Give the model [protocol.md](../persona-design-v0.2/protocol.md), [interview.md](../persona-design-v0.2/interview.md), [construct-registry.md](../persona-design-v0.2/construct-registry.md), [sources.md](../persona-design-v0.2/sources.md), and [spec-template.md](../persona-design-v0.2/spec-template.md).
+3. Answer how you want the agent to behave. Skip any aspect you do not want to constrain. These are design choices, not questionnaire responses or scores.
+4. Review its preview: original answers, proposed construct targets and mappings, source references, conflicts, and unknowns. Resolve contradictions or explicitly withdraw a target; do not average incompatible requests.
+5. Confirm the exact preview revision only when it matches your intent. The model then emits a spec preserving that payload. Any later behavioral edit requires a new preview and confirmation.
+6. Follow [validation/README.md](../validation/README.md) for optional standard-library static checks and the separate manual review. Static success does not establish behavioral validity or genuine human approval.
+7. Use only the reviewed spec for this bounded task. For a fresh session, follow the reload check; panel synthesis and persistence remain opt-in.
+
+Copy-paste starter:
+
+```text
+Read persona-design-v0.2/protocol.md, interview.md, construct-registry.md,
+sources.md, and spec-template.md. Use the choice-guided interview or ask
+short-answer questions about how I want the fictional agent to behave.
+Do not infer my own personality. Keep skipped goals unspecified and conflicts
+visible. Show source/mapping/evidence distinctions and stop at the complete
+preview for my confirmation before outputting a final persona spec.
+
+Fictional low-stakes task: help plan a pretend board-game afternoon.
+Interview mode: guided choices.
+Desired behavior: organize the plan, offer an unusual theme, and let me decide.
+```
+
+See [migration](MIGRATION.md) for existing v0.1 artifacts. The path below remains the legacy scenario-rehearsal workflow.
+
 ## Five-Minute Path
 
 1. Read [../AI_DISCOVERY.md](../AI_DISCOVERY.md).
