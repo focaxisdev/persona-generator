@@ -1,14 +1,16 @@
-# Evidence sequencing — frozen triage first, NOT RUN
+# Evidence sequencing — triage stopped, inconclusive
 
-No new model collection is performed or authorized by this integration. This is a proposed finite design for later review, not evidence, an implemented large harness or a release gate. The supported operations remain untested. Authentic owner workflow testing is separately specified in [OWNER_TEST_PROTOCOL](OWNER_TEST_PROTOCOL.md).
+The [retained triage result](../evaluation/core-triage-v1/records/REPORT.md) records one generator and two independent judge calls. Both judge outcomes failed the frozen string-quote schema, so zero ratings were accepted and the run stopped inconclusively. The remaining 17 generator cells and 34 judge calls are NOT RUN. The supported operations remain behaviorally unvalidated. No further collection is authorized by this document. Authentic owner workflow testing is separately specified in [OWNER_TEST_PROTOCOL](OWNER_TEST_PROTOCOL.md).
 
 ## Immediate bounded diagnostic
 
-The next prospective step is the separately [frozen 18-response maximum triage](../evaluation/core-triage-v1/PLAN.md): two operations × low/high/unspecified × opportunity/non-trigger/explicit current-task override × one fresh context. This turn generates **zero** experimental responses. It detects gross failures only; one sample per cell cannot establish reliability, psychological validity or release readiness. Two blind judges record observable features independently before condition crosswalks are revealed. Literal adherence, task adequacy, safety, optional contrast and mechanical word budget remain distinct.
+The executed prefix belongs to the separately [frozen 18-response maximum triage](../evaluation/core-triage-v1/PLAN.md): two operations × low/high/unspecified × opportunity/non-trigger/explicit current-task override × one fresh context. Its first cell produced one raw response, followed by two invalid judge outcomes; no accepted adherence or contrast result exists. It detects gross failures only; one sample per cell cannot establish reliability, psychological validity or release readiness. Two blind judges record observable features independently before condition crosswalks are revealed. Literal adherence, task adequacy, safety, optional contrast and mechanical word budget remain distinct.
 
 All requests use the same [canonical envelope](REQUEST_ENVELOPE.md): exact renderer stdout as persona payload, separately delimited task, fixed wrapper and exposed delegation settings. Projection JSON/spec/preview/trace are audit inputs only. Neutral and all-unspecified routes are statically required to produce identical request bytes for the same task and opaque call name, so there is no duplicate neutral model cell. The triage freezes exact tasks, request payloads, rating packets, ambiguity/error rules, and stopping/review criteria before generation.
 
 Middle settings, independent repetition, held-out transfer, multi-turn continuity, fresh reuse and composition remain **NOT RUN** and outside triage. No transfer task is exposed in this triage; a later transfer design must be separately reviewed and sealed before its collection. Finishing or stopping triage does not start any later phase automatically. The original ambition remains psychologically traceable desired-agent design; two analogues are an implementation milestone, not a final reduction to two personalities.
+
+The next bounded decision is a separately versioned judge-packet/schema alignment proposal, independently reviewed and frozen before any new study. Do not modify the current frozen rubric, repair the rejected ratings, or restart collection automatically.
 
 ## Requirements for any later study
 

@@ -28,9 +28,9 @@
 
 ## 證據與限制
 
-套件 v0.2 候選版、core schema 版本、operation 版本，以及舊 mapping 版本各自獨立。新 core 行為試驗與真正 owner 的端到端試驗均為 **NOT RUN**；靜態測試只支持實際測過的合約性質。不宣稱十個特質已實現、心理計量有效、人類心智／情緒、通用穩定性或跨模型可靠性。
+套件 v0.2 候選版、core schema 版本、operation 版本，以及舊 mapping 版本各自獨立。[core 診斷](evaluation/core-triage-v1/records/REPORT.md)在一次生成與兩次獨立評審後停止：兩份評審 JSON 均不符凍結 schema，接受評分為零，結果不確定。新 core 行為仍未驗證；真正 owner 的端到端試驗仍為 **NOT RUN**；靜態測試只支持實際測過的合約性質。不宣稱十個特質已實現、心理計量有效、人類心智／情緒、通用穩定性或跨模型可靠性。
 
-[舊 v1 試行](evaluation/pilot-2026-10-22/REPORT.md)保留 102 份模型對合成任務的實際輸出；30 組初始低／高對照中，只有 5 組是符合端點的候選觀察，其中 3 組信心受限；另有 28 次字數違規與三項不明確的 guardrail 評分。這些結果不能轉作新 operation 的證據。凍結的 [mapping-v2](persona-design-v0.2/mapping-v2/README.md) 與其診斷設計仍為歷史提案，不是預設路徑或新證據。原 400 回答門檻不變；[core 證據計畫](core/EVIDENCE_PLAN.md)是另立的前瞻計畫，不是替代門檻。詳見[發布驗收](docs/RELEASE_ACCEPTANCE.md)與[發布說明草稿](docs/RELEASE_NOTES_DRAFT.md)。下一個凍結診斷最多 18 份輸出，仍為 NOT RUN；先前 132 份的涵蓋提案未被採納。兩個類比是實作里程碑，不是將心理學導向的專案目標縮減成兩種人格。候選版尚未發布。
+[舊 v1 試行](evaluation/pilot-2026-10-22/REPORT.md)保留 102 份模型對合成任務的實際輸出；30 組初始低／高對照中，只有 5 組是符合端點的候選觀察，其中 3 組信心受限；另有 28 次字數違規與三項不明確的 guardrail 評分。這些結果不能轉作新 operation 的證據。凍結的 [mapping-v2](persona-design-v0.2/mapping-v2/README.md) 與其診斷設計仍為歷史提案，不是預設路徑或新證據。原 400 回答門檻不變；[core 證據計畫](core/EVIDENCE_PLAN.md)是另立的前瞻計畫，不是替代門檻。詳見[發布驗收](docs/RELEASE_ACCEPTANCE.md)與[發布說明草稿](docs/RELEASE_NOTES_DRAFT.md)。凍結診斷已在首格停止，其餘 17 次生成與 34 次評審均為 NOT RUN；先前 132 份的涵蓋提案未被採納。兩個類比是實作里程碑，不是將心理學導向的專案目標縮減成兩種人格。候選版尚未發布。
 
 ## 僅在明確要求時使用的舊流程
 

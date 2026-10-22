@@ -1,0 +1,25 @@
+{
+  "id": "req_259d3a551dbfe17bbfa8f342",
+  "request_sha256": "9618a1509dc11de0209f6e0070d76bd2d61525c43c909d0836248fdc9afeac08",
+  "status": "ok",
+  "raw_output": "There are eight scorecards in the eight welcome kits.",
+  "metadata": {
+    "agent_id": "/root/req_259d3a551dbfe17bbfa8f342",
+    "context_id": "/root/req_259d3a551dbfe17bbfa8f342",
+    "timestamp_utc": "2026-10-22T11:56:02+00:00",
+    "requested_parameters": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "medium",
+      "fork_turns": "none"
+    },
+    "returned_model_metadata": {
+      "model": "unavailable: spawn accepted requested model but did not return backend identity",
+      "sampling": "unavailable: no sampling controls or values exposed",
+      "provider_version": "unavailable: not returned"
+    },
+    "observed_tool_calls": [],
+    "raw_receipt": "{\"spawn_result\":{\"task_name\":\"/root/req_259d3a551dbfe17bbfa8f342\"},\"completion\":{\"message_type\":\"FINAL_ANSWER\",\"sender\":\"/root/req_259d3a551dbfe17bbfa8f342\",\"payload\":\"There are eight scorecards in the eight welcome kits.\"},\"list_agents_status\":\"completed\",\"thread_id\":\"unavailable: tool exposes canonical task name only\",\"turn_id\":\"unavailable: not returned\",\"tool_observability\":\"No tool activity appeared in delivered messages; internal tool-call trace is not exposed by this interface.\"}"
+  },
+  "error": null,
+  "safety_or_tool_action_issue": false
+}

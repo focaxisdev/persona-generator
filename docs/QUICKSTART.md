@@ -25,7 +25,7 @@ Do not infer my personality. Do not add a panel or persistent pack.
 
 ## What this demonstrates
 
-The compiler's synthetic fixtures illustrate the artifact contract only. They are not owner consent or behavioral evidence. New operation behavior and authentic owner E2E are **NOT RUN**. Consult [claims](CLAIMS_MATRIX.md), [prospective evidence plan](../core/EVIDENCE_PLAN.md), and [private owner protocol](../core/OWNER_TEST_PROTOCOL.md). No real owner transcript should enter this public repository without specific permission.
+The compiler's synthetic fixtures illustrate the artifact contract only. They are not owner consent or behavioral evidence. The [core diagnostic](../evaluation/core-triage-v1/records/REPORT.md) stopped after one generator and two schema-invalid judge outcomes; zero ratings were accepted. Operation behavior remains unvalidated and authentic owner E2E is **NOT RUN**. Consult [claims](CLAIMS_MATRIX.md), [prospective evidence plan](../core/EVIDENCE_PLAN.md), and [private owner protocol](../core/OWNER_TEST_PROTOCOL.md). No real owner transcript should enter this public repository without specific permission.
 
 ## Optional historical tasks
 

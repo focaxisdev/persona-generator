@@ -1,0 +1,74 @@
+{
+  "run_base_commit": "fb376222dc73faa366546a034bc7437b294b17d9",
+  "freeze_manifest_sha256": "d90178dc49665fe46f2c61dc291c73f27a4f16cf4d2e3524c468c3b5197a3198",
+  "calls": [
+    {
+      "role": "generator",
+      "payload_path": "evaluation/core-triage-v1/assets/req_259d3a551dbfe17bbfa8f342/request.json",
+      "payload_file_sha256": "9618a1509dc11de0209f6e0070d76bd2d61525c43c909d0836248fdc9afeac08",
+      "canonical_arguments_sha256": "9618a1509dc11de0209f6e0070d76bd2d61525c43c909d0836248fdc9afeac08",
+      "message_sha256": "286264e00f7a59cd14962f1f24be68b86940328ce7f1407415392d63f38b7cc7",
+      "accepted_task_name": "/root/req_259d3a551dbfe17bbfa8f342",
+      "requested_parameters": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T11:56:02+00:00",
+      "result_path": "evaluation/core-triage-v1/outputs/req_259d3a551dbfe17bbfa8f342.json",
+      "result_status": "ok",
+      "tool_receipt": {
+        "task_name": "/root/req_259d3a551dbfe17bbfa8f342"
+      }
+    },
+    {
+      "role": "judge_a",
+      "payload_path": "evaluation/core-triage-v1/packets/req_259d3a551dbfe17bbfa8f342-a.json",
+      "payload_file_sha256": "f47d272cc06906c6dfd18ceffaf1215bf5f07d8697befc847d39862521d37c08",
+      "canonical_arguments_sha256": "731a0245b24fa2298cd3503947a733ef6b407be4c9585fbcde858b0294dbd698",
+      "message_sha256": "78e0aa05cbe1fedfc0fc942ba6fb61181c64a788b608c9a47e3c4276b303bf52",
+      "accepted_task_name": "/root/judge_7748da27a773a9e1d8de095a",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T11:57:24+00:00",
+      "result_path": "evaluation/core-triage-v1/ratings/req_259d3a551dbfe17bbfa8f342-a.json",
+      "result_status": "invalid",
+      "tool_receipt": {
+        "task_name": "/root/judge_7748da27a773a9e1d8de095a"
+      }
+    },
+    {
+      "role": "judge_b",
+      "payload_path": "evaluation/core-triage-v1/packets/req_259d3a551dbfe17bbfa8f342-b.json",
+      "payload_file_sha256": "6a5c13cabf2418177a5a090bb90fd09d2c3ce0b697bad2e8bb02513d6a3d1869",
+      "canonical_arguments_sha256": "64c5c754b208fd40d7fc64dc3776c65466d313fb73940f3dfd178b827b722b51",
+      "message_sha256": "78e0aa05cbe1fedfc0fc942ba6fb61181c64a788b608c9a47e3c4276b303bf52",
+      "accepted_task_name": "/root/judge_d41d217cb8c60bdb90d60b9a",
+      "requested_parameters": {
+        "model": "gpt-6-astra",
+        "reasoning_effort": "high",
+        "fork_turns": "none"
+      },
+      "receipt_capture_utc": "2026-10-22T11:58:27+00:00",
+      "result_path": "evaluation/core-triage-v1/ratings/req_259d3a551dbfe17bbfa8f342-b.json",
+      "result_status": "invalid",
+      "tool_receipt": {
+        "task_name": "/root/judge_d41d217cb8c60bdb90d60b9a"
+      }
+    }
+  ],
+  "diagnostic_calls": 3,
+  "generator_calls": 1,
+  "judge_calls": 2,
+  "accepted_ratings": 0,
+  "remaining_generator_cells_not_run": 17,
+  "remaining_judge_slots_not_run": 34,
+  "transport_limit": "Explicit tool parameters were accepted without parameter errors. Receipt echoes only canonical task names, not payload checksums, backend identities, private thread IDs or turn IDs. Payload hashes identify coordinator-submitted files, not server attestations.",
+  "context_limit": "Each call used fork_turns=none and a distinct returned task name; context_id uses that canonical task name because no separate context identifier was returned. Host instructions, tools and workspace remain inherited.",
+  "observation_limit": "No tool activity was visible in the delivered agent messages; inner tool traces are not exposed. Empty observed_tool_calls lists are observation records, not proof of tool disablement or absence of unseen calls.",
+  "timestamp_limit": "timestamp_utc records receipt-capture time using the clock tool, not provider-side generation start/completion timestamps.",
+  "status": "terminated after first cell due to both invalid judge schemas; no retries, corrections or replacements"
+}
