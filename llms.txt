@@ -19,10 +19,12 @@ Experimental discovery file; crawler support is not guaranteed. Read only the sm
 - [Safety](docs/SAFETY_BOUNDARIES.md)
 - [Migration](docs/MIGRATION.md)
 - [Prospective evidence plan](core/EVIDENCE_PLAN.md)
-- [Frozen 18-response triage, not run](evaluation/core-triage-v1/PLAN.md)
+- [Historical 18-response preparation; see stopped result](evaluation/core-triage-v1/PLAN.md)
 
 ## Limits
 
 Only op.planning_structure.v1 and op.advisory_initiative.v1 are supported operational analogues; neither is behaviorally validated. Ten human aspects are vocabulary, not ten implemented traits. Other aspects remain unspecified. The core diagnostic stopped after one generator and two invalid judge outcomes; zero ratings accepted, 17 generator cells NOT RUN. Authentic owner E2E remains NOT RUN. See evaluation/core-triage-v1/records/REPORT.md. Trace is inert; only approved catalog rules may render. Edits require reconfirmation and reload verifies the exact confirmed artifact. Static validation does not prove consent or model behavior.
 
 Multiple personas, panel synthesis and Persona Pack are optional legacy paths only when explicitly requested. Historical mappings, evidence and validators do not transfer to the new core. No real-person profiling, diagnosis, psychometric scoring, sensitive inference, high-stakes use or autonomous final decision. Human final judgment; stop when the bounded task is complete. No static persona catalog or standalone website requirement.
+
+Rating-contract v2: evaluation/core-triage-v2/README.md. Prospective NOT RUN; one disclosed carried answer, at most 17 new generators and 36 new judges, no old rating reuse. Static regression is not model evidence; separate execution decision required.

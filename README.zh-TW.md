@@ -32,6 +32,8 @@
 
 [舊 v1 試行](evaluation/pilot-2026-10-22/REPORT.md)保留 102 份模型對合成任務的實際輸出；30 組初始低／高對照中，只有 5 組是符合端點的候選觀察，其中 3 組信心受限；另有 28 次字數違規與三項不明確的 guardrail 評分。這些結果不能轉作新 operation 的證據。凍結的 [mapping-v2](persona-design-v0.2/mapping-v2/README.md) 與其診斷設計仍為歷史提案，不是預設路徑或新證據。原 400 回答門檻不變；[core 證據計畫](core/EVIDENCE_PLAN.md)是另立的前瞻計畫，不是替代門檻。詳見[發布驗收](docs/RELEASE_ACCEPTANCE.md)與[發布說明草稿](docs/RELEASE_NOTES_DRAFT.md)。凍結診斷已在首格停止，其餘 17 次生成與 34 次評審均為 NOT RUN；先前 132 份的涵蓋提案未被採納。兩個類比是實作里程碑，不是將心理學導向的專案目標縮減成兩種人格。候選版尚未發布。
 
+另立的[評讀契約 v2 修正](evaluation/core-triage-v2/README.md)是 **NOT RUN** 前瞻計畫。它保留停止的 v1 證據，提議沿用唯一原始回答的精確內容，最多新增 17 次生成及 36 次新契約評讀。舊無效評分仍然無效；合成與歷史回歸檢查只屬軟體測試，不是實際新評分或行為證據。執行仍須另行決定。
+
 ## 僅在明確要求時使用的舊流程
 
 [v0.1 情境流程](fictional-persona-instantiation-v0.1/README.md)、[panel adapter](ephemeral-persona-panel-adapter-v0.1/README.md) 與 [Persona Pack](persona-pack-v0.1/README.md)仍可選用。多個 persona、panel 合成、持久化與交接都不是設定單一 agent 的必要步驟，也不構成 core spec 的確認。見[遷移說明](docs/MIGRATION.md)。
