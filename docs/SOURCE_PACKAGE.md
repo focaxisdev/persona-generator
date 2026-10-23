@@ -16,11 +16,11 @@ First commit and review the candidate. Use its full 40-character commit ID, neve
 # Replace CANDIDATE_SHA with the reviewed full commit ID.
 # Use a fresh empty output directory, outside the checkout.
 mkdir /tmp/persona-v0.2.0-alpha-candidate
-git archive --format=tar --prefix=persona-generator-v0.2.0-alpha/ --output=/tmp/persona-v0.2.0-alpha-candidate/persona-generator-v0.2.0-alpha-unconfigured-source.tar CANDIDATE_SHA
+git -c tar.umask=0022 archive --format=tar --prefix=persona-generator-v0.2.0-alpha/ --output=/tmp/persona-v0.2.0-alpha-candidate/persona-generator-v0.2.0-alpha-unconfigured-source.tar CANDIDATE_SHA
 sha256sum /tmp/persona-v0.2.0-alpha-candidate/persona-generator-v0.2.0-alpha-unconfigured-source.tar
 ```
 
-The tar contains the full reviewed tracked source tree, including preserved failure/paused evidence. No working-tree/untracked files are added. Verify every extracted regular file byte-for-byte against that commit's Git blobs, plus file inventory and mode; reject symlinks, submodules, path traversal, duplicate names, missing or extra files. Do not rely on an archive filename alone. Current `.gitattributes` has no export-ignore/substitution transformations. Repeated `git archive` at the same commit must produce identical bytes under the recorded Git version.
+The tar contains the full reviewed tracked source tree, including preserved failure/paused evidence. No working-tree/untracked files are added. Verify every extracted regular file byte-for-byte against that commit's Git blobs, plus file inventory and mode; reject symlinks, submodules, path traversal, duplicate names, missing or extra files. Do not rely on an archive filename alone. Current `.gitattributes` has no export-ignore/substitution transformations. The explicit archive-only `tar.umask=0022` makes regular-file permission bits match Git modes (0644/0755); do not rely on Git’s default archive umask. Repeated archives at the same commit and explicit setting must produce identical bytes under the recorded Git version.
 
 Create `manifest.json` as a sidecar, recording:
 
