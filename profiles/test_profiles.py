@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from profiles import compiler as c
 from profiles.fixtures.build_fixtures import make
 
@@ -37,6 +38,87 @@ class ProfileTests(unittest.TestCase):
 
     def bind(self, agent, pin):
         return c.bind(self.store, agent, pin['profile_id'], pin['revision'], pin['snapshot_sha256'], pin['effective_sha256'])
+
+    def assert_published_snapshot(self, pin, spec_bytes):
+        directory = self.store / 'versions' / pin['profile_id'] / pin['revision']
+        self.assertEqual((directory / 'spec.json').read_bytes(), spec_bytes)
+        self.assertEqual((directory / 'presented.json').read_bytes(), self.presented)
+        manifest = c.load_document((directory / 'manifest.json').read_bytes())
+        self.assertEqual(manifest, {**pin,
+            'spec_file_sha256': hashlib.sha256(spec_bytes).hexdigest(),
+            'presented_file_sha256': hashlib.sha256(self.presented).hexdigest()})
+        self.assertEqual(pin['spec_sha256'], c.digest(self.spec))
+        self.assertEqual(c.load_version(self.store, pin['profile_id'], pin['revision']),
+                         (self.spec, c.validate_spec(self.spec, self.presented)))
+
+    def test_publish_snapshots_each_input_once_before_source_changes(self):
+        sp, pp = self.write(self.p, self.presented, self.spec)
+        # Deliberately noncanonical: publication must preserve the raw spec bytes.
+        spec_bytes = json.dumps(self.spec, indent=2, ensure_ascii=False).encode('utf-8') + b'\n'
+        sp.write_bytes(spec_bytes)
+        _, replacement_presented, replacement_spec = make('synthetic-a', B)
+        replacements = {sp: c.canonical_bytes(replacement_spec), pp: replacement_presented}
+        reads = {sp: 0, pp: 0}
+        read = c._read
+
+        def mutate_after_read(path):
+            raw = read(path)
+            path = Path(path)
+            if path in replacements:
+                reads[path] += 1
+                path.write_bytes(replacements[path])
+            return raw
+
+        with mock.patch.object(c, '_read', side_effect=mutate_after_read):
+            pin = c.publish(sp, pp, self.store)
+        self.assertEqual(reads, {sp: 1, pp: 1})
+        self.assertEqual(sp.read_bytes(), replacements[sp])
+        self.assertEqual(pp.read_bytes(), replacements[pp])
+        self.assert_published_snapshot(pin, spec_bytes)
+
+    def test_publish_hashes_captured_spec_after_source_changes_during_write(self):
+        sp, pp = self.write(self.p, self.presented, self.spec)
+        spec_bytes = sp.read_bytes()
+        stored_spec = self.store / 'versions' / 'synthetic-a' / 'r1' / 'spec.json'
+        write = Path.write_bytes
+        mutations = []
+
+        def mutate_after_stored_spec_write(path, raw):
+            result = write(path, raw)
+            if path == stored_spec:
+                mutations.append(path)
+                write(sp, b'{"invalid":true}')
+            return result
+
+        with mock.patch.object(Path, 'write_bytes', new=mutate_after_stored_spec_write):
+            pin = c.publish(sp, pp, self.store)
+        self.assertEqual(mutations, [stored_spec])
+        self.assertEqual(sp.read_bytes(), b'{"invalid":true}')
+        self.assert_published_snapshot(pin, spec_bytes)
+
+    def test_publish_rejects_initial_invalid_input_even_if_repaired_after_read(self):
+        for invalid_input in ('spec', 'presented'):
+            with self.subTest(invalid_input=invalid_input):
+                sp, pp = self.write(self.p, self.presented, self.spec)
+                path = sp if invalid_input == 'spec' else pp
+                valid_bytes = path.read_bytes()
+                path.write_bytes(b'{}')
+                read = c._read
+                repairs = []
+
+                def repair_after_read(source):
+                    raw = read(source)
+                    if Path(source) == path:
+                        repairs.append(path)
+                        path.write_bytes(valid_bytes)
+                    return raw
+
+                with mock.patch.object(c, '_read', side_effect=repair_after_read):
+                    with self.assertRaises(c.ProfileError):
+                        c.publish(sp, pp, self.store)
+                self.assertEqual(repairs, [path])
+                self.assertEqual(path.read_bytes(), valid_bytes)
+                self.assertFalse(self.store.exists())
 
     def test_two_full_combinations_and_independent_parent_children(self):
         a = self.publish(); b = self.publish(make('synthetic-b', B), 'b')
