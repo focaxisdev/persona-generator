@@ -2,7 +2,7 @@
 
 Persona Generator defines a psychology-grounded, composable personality specification layer that an owner can install for an agent and explicitly assign to its subagents. It is a grammar for desired traits, not a small catalog of fixed roles. A saved profile can retain its identity and exact confirmed revision across bounded tasks; persistence of that artifact does not prove persistence of model behavior.
 
-The owner selects how the **agent should behave**, through guided choices or short answers. The system traces proposed settings to human constructs and separately identified engineering hypotheses, preserves unknowns and conflicts, presents the complete preview, and waits for actual owner confirmation. It does not diagnose the owner. Unspecified is not middle. The two aspects within a domain need not match, and unusual combinations are not automatically invalid. No population norms, correlations, total scores, forced balance or natural sampling distribution are inferred.
+The owner selects how the **agent should behave**, through guided choices or short answers. The system traces proposed settings to human constructs and separately identified engineering hypotheses, preserves unknowns and conflicts, presents the complete preview, and waits for actual owner confirmation. It does not diagnose the owner. Unspecified is not middle. The two aspects within a domain need not match, and unusual combinations are not automatically invalid. Independent selection implies neither statistical independence, zero correlation nor a validated joint distribution. No population norms, correlations, total scores, forced balance or natural sampling distribution are inferred.
 
 ## Four different claims
 

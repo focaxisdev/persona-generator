@@ -12,7 +12,7 @@
 
 Guided choices or short answers ask how the agent should behave—not what personality the owner has. Unanswered aspects stay `unspecified`; contradictory requests remain visible until resolved. Preview exact sources, hypothesis rules, unknowns, exclusions and the complete artifact before actual confirmation. Edits require a new revision and confirmation.
 
-The profile layer covers the existing five Big Five domains and ten BFAS **aspects**, not facets. Low, middle and high are design targets, not scores or percentiles. Each selected hypothesis renders explicit bounded preferences; no balancing or population correlations are invented. B01/B02 remain experimental expression proxies. Read [coverage](profiles/COVERAGE.md) and [source limits](core/SOURCES.md).
+The profile layer covers the existing five Big Five domains and ten BFAS **aspects**, not facets. Low, middle and high are design targets, not scores or percentiles. Each aspect is independently selectable; this implies neither statistical independence, zero correlation nor a validated joint distribution. Each selected hypothesis renders explicit bounded preferences; no balancing or population correlations are invented. B01/B02 remain experimental expression proxies. Read [coverage](profiles/COVERAGE.md) and [source limits](core/SOURCES.md).
 
 A local store preserves exact confirmed profile revisions. Parent and child agents each bind an explicit profile ID, revision and digests; they may share a profile or use different ones. A child change does not silently change its parent. Task completion ends the task, not the saved profile. Tools, capabilities, role, values and transient states are separate host concerns. Safety, accuracy, privacy and permissions cannot become personality sliders.
 

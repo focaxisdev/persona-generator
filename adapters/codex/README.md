@@ -85,3 +85,7 @@ Run the adapter tests from the repository root:
 ```bash
 python -m unittest discover -s adapters/codex -p 'test_*.py' -v
 ```
+
+## Actual-host smoke status
+
+A [single synthetic host attempt on 2026-10-23](HOST_SMOKE_2026-10-23.md) was blocked during Codex app-server initialization by a read-only filesystem error. The process did not expose a skill-read or loader-execution event. Manual preflight rendering and disposable file tests are not substituted for actual host loading. No retry or permission change followed; raw traces remain private. Actual discovery/application remains unverified.

@@ -44,7 +44,7 @@ An absent trigger is `not_triggered`. A required task format can instead overrid
 
 ## Composition without invented trait conflicts
 
-Each hypothesis owns a separate catalog `slot`. Unusual combinations are valid. There is no domain averaging, correlation inference, balancing, copying of a parent's settings, or rule that high/low aspects must form a familiar personality stereotype.
+Each hypothesis owns a separate catalog `slot`. Settings are independently selectable; this implies neither statistical independence, zero correlation nor a validated joint distribution. Unusual combinations are valid. There is no domain averaging, correlation inference, balancing, copying of a parent's settings, or rule that high/low aspects must form a familiar personality stereotype.
 
 Several overlaps in the historical prose are deliberately scoped in this new hypothesis version:
 
