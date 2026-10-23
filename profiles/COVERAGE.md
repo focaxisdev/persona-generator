@@ -4,7 +4,7 @@ This version represents all ten BFAS aspects as **desired output preferences** f
 
 The operative literals are in the explicitly selected [catalog-v1.json](catalog-v1.json) or [catalog-v2.json](catalog-v2.json). Catalog v1 remains unchanged; v2 changes only the Politeness hypothesis ID and its high-anchor rule to make the no-merit/no-stated-aim fallback explicit. This rule change is an untested hypothesis, not a new behavioral observation. Existing v1 confirmations are not migrated. The catalog and compiler pin the exact bytes of the existing [construct registry](../persona-design-v0.2/construct-registry.md) and [source ledger](../persona-design-v0.2/sources.md). The registry supplies the human definitions and domain/aspect assignments. `src.deyoung2007` and `src.ipip.bfas-table` support that vocabulary only. The definition strings in this catalog are short paraphrases of that pinned registry, not questionnaire items. No new literature verification or model experiment was performed for this increment.
 
-The new `hyp.*.v1` identifiers are distinct from historical `map.*` mappings and the two frozen `op.*.v1` operations. Similar wording does not transfer prior observations, approvals, or evidence. `legacy_test_id` links B01–B10 vocabulary for traceability only; it does not name a completed test of this catalog. Every new hypothesis and anchor remains untested.
+The `hyp.*` identifiers are distinct from historical `map.*` mappings and the two frozen `op.*.v1` operations. Similar wording does not transfer prior observations, approvals, or evidence. `legacy_test_id` links B01–B10 vocabulary for traceability only; it does not name a completed test of this catalog. Every hypothesis and anchor remains behaviorally unvalidated.
 
 ## Rendered choices
 

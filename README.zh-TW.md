@@ -20,6 +20,8 @@ Python 本機工具負責嚴格驗證、不可覆寫的 revision 保存、明確
 
 檔案能保存與重載，不代表宿主一定自動載入，也不代表模型行為穩定、具有人類情感或心理計量效度。格式正確的確認紀錄無法證明真人同意；公開範例全部是合成選擇與合成確認。
 
+本輪[依 repository 指引明確載入](adapters/codex/EXPLICIT_LOADING_2026-10-23.md)已記錄一個實際父代理與獨立委派的子代理，各自讀取已安裝 skill、呼叫自己的驗證 loader，再回答一個低風險合成任務。這不是自動探索或人格效度驗證；native discovery 仍未驗證。Catalog v2 為 Politeness 加入不臆造優點或目的的中性致意 fallback；v1 規格不改寫，替換 binding 則須提供目前 binding 的 digest。
+
 ## 證據不跨版本挪用
 
 本增量**沒有新增行為實驗**。[core triage v2](evaluation/core-triage-v2/records/REPORT.md)維持六格暫停：一份沿用、五份新回答、十二份新評讀，共十七次診斷呼叫，其餘不自動續跑。較早的 [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md)仍保留 102 份輸出、30 組中 5 組候選對照（其中 3 組信心有限）及 28 份字數違規；不能用來驗證新的人格假說。

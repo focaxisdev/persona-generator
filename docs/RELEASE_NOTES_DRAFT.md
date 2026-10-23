@@ -1,8 +1,18 @@
-# v0.2 core candidate release notes — DRAFT, NOT RELEASED
+# v0.2 candidate release notes — DRAFT, NOT RELEASED
+
+## Current profile integration increment
+
+Catalog v2 adds `hyp.politeness.v2`: when neither supported merit nor an explicitly stated aim is available, high Politeness uses a neutral acknowledgment without inventing either. Catalog v1 and its exact confirmed specifications remain supported; v2 requires its own exact preview and confirmation. New rules remain unvalidated engineering hypotheses.
+
+Replacing an agent binding now requires `--expected-current` with the complete validated binding digest exposed by `load`. Missing, malformed or stale expectations are rejected. This is a local stale-state guard, not owner authentication or a concurrent transaction.
+
+The [repository-guided explicit-loading demonstration](../adapters/codex/EXPLICIT_LOADING_2026-10-23.md) records one actual parent and independently delegated child reading the installed skill, running their own validated loader and answering a bounded synthetic task. Native discovery is optional and still unverified. The old failed nested-CLI attempt is unchanged. Genuine owner E2E, behavioral efficacy, persistence and psychological validity remain unverified; no paused study resumes.
+
+## Historical core increment (retained)
 
 **Current status:** [Rating-contract v2 is paused for scope alignment](../evaluation/core-triage-v2/records/REPORT.md) after six retained answers (one exact carried answer and five new), 12 fresh locked schema-valid ratings, and 17 new diagnostic calls. Its frozen preparation **NOT RUN** statements are historical; continuation is not automatically authorized. The two operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; behavioral persistence and composition effects remain unverified. Historical v1 outcomes and other unrun studies retain their original status.
 
-The candidate replaces competing entry routes with one confirmed single-agent path: desired behavior → construct/source trace → exact confirmed spec → deterministic effective projection → version-tied evidence. [Quickstart](QUICKSTART.md) routes to the [core contract](../core/README.md). Legacy scenario generation, multiple personas, panel synthesis and Persona Pack remain optional when explicitly requested.
+The earlier core increment introduced a confirmed single-agent path: desired behavior → construct/source trace → exact confirmed spec → deterministic effective projection → version-tied evidence. The current [Quickstart](QUICKSTART.md) routes to the profile layer; the [core contract](../core/README.md) remains its separate historical diagnostic path. Legacy scenario generation, multiple personas, panel synthesis and Persona Pack remain optional when explicitly requested.
 
 ## New implementation scope
 
@@ -36,4 +46,4 @@ Marketing scope is GitHub README, Quickstart, examples, source/claim limitations
 
 Adds a host-neutral ten-aspect desired-trait specification, exact confirmed revisions, immutable local storage, explicit per-agent bindings and a repository-local Codex skill adapter. Two full synthetic combinations demonstrate parent/two-child assignments and fresh-process loading. See [verification](../profiles/VERIFICATION.md) for executed tests and limitations. This is software persistence and composition of declared preferences, not evidence of stable model identity or psychological validity.
 
-All thirty anchors are versioned untested hypotheses; B01/B02 remain expression proxies. Existing Persona Pack remains a separate corpus-derived persistence concept. The old core envelope is unchanged and remains a limited diagnostic adapter. All historical and paused experimental evidence remains intact; no behavior experiment was run for the profile increment. Actual owner confirmation, host activation and behavioral stability remain pending. Nothing here announces a published release.
+All thirty anchors in each catalog are versioned, behaviorally unvalidated hypotheses; B01/B02 remain expression proxies. Existing Persona Pack remains a separate corpus-derived persistence concept. The old core envelope is unchanged and remains a limited diagnostic adapter. All historical and paused experimental evidence remains intact; no behavior experiment was run for the profile increment. Actual owner confirmation and behavioral stability remain pending; explicit host loading has only the bounded evidence described above. Nothing here announces a published release.
