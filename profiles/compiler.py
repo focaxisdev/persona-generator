@@ -291,11 +291,14 @@ def publish(spec_path, presented_path, store, repo_root=None):
 
 
 def load_version(store, profile_id, revision, repo_root=None):
-    directory = _directory(store, profile_id, revision)
-    spec, presented, effective = validate(_safe(store, 'versions', profile_id, revision, 'spec.json'), _safe(store, 'versions', profile_id, revision, 'presented.json'), repo_root)
+    _directory(store, profile_id, revision)
+    spec_bytes = _read(_safe(store, 'versions', profile_id, revision, 'spec.json'))
+    presented = _read(_safe(store, 'versions', profile_id, revision, 'presented.json'))
+    spec = load_document(spec_bytes)
+    effective = validate_spec(spec, presented, repo_root)
     pin = _pin(spec)
     require(pin['profile_id'] == profile_id and pin['revision'] == revision, 'stored identity/revision mismatch')
-    require(load_document(_read(_safe(store, 'versions', profile_id, revision, 'manifest.json'))) == {**pin, 'spec_file_sha256': hashlib.sha256(_read(_safe(store, 'versions', profile_id, revision, 'spec.json'))).hexdigest(), 'presented_file_sha256': hashlib.sha256(_read(_safe(store, 'versions', profile_id, revision, 'presented.json'))).hexdigest()}, 'stored manifest differs from confirmed revision')
+    require(load_document(_read(_safe(store, 'versions', profile_id, revision, 'manifest.json'))) == {**pin, 'spec_file_sha256': hashlib.sha256(spec_bytes).hexdigest(), 'presented_file_sha256': hashlib.sha256(presented).hexdigest()}, 'stored manifest differs from confirmed revision')
     return spec, effective
 
 

@@ -120,6 +120,117 @@ class ProfileTests(unittest.TestCase):
                 self.assertEqual(path.read_bytes(), valid_bytes)
                 self.assertFalse(self.store.exists())
 
+    def test_load_version_uses_captured_artifacts_despite_later_disk_changes(self):
+        pin = self.publish()
+        directory = self.store / 'versions' / pin['profile_id'] / pin['revision']
+        manifest_bytes = (directory / 'manifest.json').read_bytes()
+        expected = (self.spec, c.validate_spec(self.spec, self.presented))
+        for name in ('spec.json', 'presented.json'):
+            with self.subTest(artifact=name):
+                path = directory / name
+                original = path.read_bytes()
+                read = c._read
+                reads = []
+
+                def mutate_after_read(source):
+                    raw = read(source)
+                    if Path(source) == path:
+                        reads.append(path)
+                        path.write_bytes(b'{}')
+                    return raw
+
+                try:
+                    with mock.patch.object(c, '_read', side_effect=mutate_after_read):
+                        self.assertEqual(c.load_version(self.store, pin['profile_id'], pin['revision']), expected)
+                    self.assertEqual(reads, [path])
+                    self.assertEqual(path.read_bytes(), b'{}')
+                    self.assertEqual((directory / 'manifest.json').read_bytes(), manifest_bytes)
+                finally:
+                    path.write_bytes(original)
+
+    def test_load_version_rejects_initial_manifest_mismatch_despite_later_matching_bytes(self):
+        pin = self.publish()
+        directory = self.store / 'versions' / pin['profile_id'] / pin['revision']
+        manifest_path = directory / 'manifest.json'
+        manifest = c.load_document(manifest_path.read_bytes())
+        for name, field in (('spec.json', 'spec_file_sha256'),
+                            ('presented.json', 'presented_file_sha256')):
+            with self.subTest(artifact=name):
+                path = directory / name
+                original = path.read_bytes()
+                mismatching_manifest = {**manifest, field: hashlib.sha256(b'{}').hexdigest()}
+                manifest_bytes = c.canonical_bytes(mismatching_manifest)
+                manifest_path.write_bytes(manifest_bytes)
+                read = c._read
+                reads = []
+
+                def mutate_after_read(source):
+                    raw = read(source)
+                    if Path(source) == path:
+                        reads.append(path)
+                        path.write_bytes(b'{}')
+                    return raw
+
+                try:
+                    with mock.patch.object(c, '_read', side_effect=mutate_after_read):
+                        with self.assertRaisesRegex(c.ProfileError, 'stored manifest differs'):
+                            c.load_version(self.store, pin['profile_id'], pin['revision'])
+                    self.assertEqual(reads, [path])
+                    self.assertEqual(path.read_bytes(), b'{}')
+                    self.assertEqual(manifest_path.read_bytes(), manifest_bytes)
+                finally:
+                    path.write_bytes(original)
+                    manifest_path.write_bytes(c.canonical_bytes(manifest))
+
+    def test_load_version_rejects_captured_spec_byte_mismatch_despite_later_repair(self):
+        pin = self.publish()
+        directory = self.store / 'versions' / pin['profile_id'] / pin['revision']
+        path = directory / 'spec.json'
+        original = path.read_bytes()
+        manifest_bytes = (directory / 'manifest.json').read_bytes()
+        # Valid JSON and unchanged canonical spec, but different exact file bytes.
+        path.write_bytes(original + b'\n')
+        read = c._read
+        repairs = []
+
+        def repair_after_read(source):
+            raw = read(source)
+            if Path(source) == path:
+                repairs.append(path)
+                path.write_bytes(original)
+            return raw
+
+        with mock.patch.object(c, '_read', side_effect=repair_after_read):
+            with self.assertRaisesRegex(c.ProfileError, 'stored manifest differs'):
+                c.load_version(self.store, pin['profile_id'], pin['revision'])
+        self.assertEqual(repairs, [path])
+        self.assertEqual(path.read_bytes(), original)
+        self.assertEqual((directory / 'manifest.json').read_bytes(), manifest_bytes)
+
+    def test_load_version_rejects_initial_invalid_artifact_despite_later_repair(self):
+        pin = self.publish()
+        directory = self.store / 'versions' / pin['profile_id'] / pin['revision']
+        for name in ('spec.json', 'presented.json'):
+            with self.subTest(artifact=name):
+                path = directory / name
+                original = path.read_bytes()
+                path.write_bytes(b'{}')
+                read = c._read
+                repairs = []
+
+                def repair_after_read(source):
+                    raw = read(source)
+                    if Path(source) == path:
+                        repairs.append(path)
+                        path.write_bytes(original)
+                    return raw
+
+                with mock.patch.object(c, '_read', side_effect=repair_after_read):
+                    with self.assertRaises(c.ProfileError):
+                        c.load_version(self.store, pin['profile_id'], pin['revision'])
+                self.assertEqual(repairs, [path])
+                self.assertEqual(path.read_bytes(), original)
+
     def test_two_full_combinations_and_independent_parent_children(self):
         a = self.publish(); b = self.publish(make('synthetic-b', B), 'b')
         self.bind('parent', a); self.bind('child-1', b); self.bind('child-2', a)
