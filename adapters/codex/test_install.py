@@ -25,6 +25,48 @@ class InstallTests(unittest.TestCase):
         self.target = self.root / "target repo with spaces"
         self.target.mkdir()
 
+    def test_version_guards_reject_before_work_and_allow_minimum_boundary(self):
+        # Simulated version_info exercises guard logic, not Python 3.9 execution.
+        destination = installer.install(self.target)
+        never_installed = self.root / "never installed target"
+        never_installed.mkdir()
+        entries = (
+            (str(HERE / "install.py"), ["--target-repo", str(never_installed)]),
+            (str(destination / "run.py"), ["--help"]),
+            (str(REPO / "profiles" / "__main__.py"), ["--help"]),
+        )
+        untouched = self.root / "untouched"
+        untouched.mkdir()
+        for entry, args in entries:
+            for version, expected in (((3, 8), 2), ((3, 9), 0)):
+                with self.subTest(entry=entry, simulated_version=version):
+                    # --help on accepted versions avoids installing or loading data.
+                    cli_args = args if version < (3, 9) else ["--help"]
+                    code = (
+                        "import runpy, sys; "
+                        "sys.path.insert(0, sys.argv[1]); "
+                        "entry = sys.argv[2]; "
+                        "sys.argv = [entry] + sys.argv[3:]; "
+                        "sys.version_info = " + repr(version) + "; "
+                        + ("runpy.run_module('profiles', run_name='__main__')"
+                           if entry.endswith("__main__.py")
+                           else "runpy.run_path(entry, run_name='__main__')")
+                    )
+                    result = subprocess.run(
+                        [sys.executable, "-B", "-c", code, str(REPO), entry, *cli_args],
+                        cwd=untouched, capture_output=True, text=True,
+                    )
+                    self.assertEqual(result.returncode, expected, result.stderr)
+                    if expected:
+                        self.assertEqual(result.stdout, "")
+                        self.assertIn("REJECTED: Persona Generator requires Python 3.9 or newer", result.stderr)
+                        self.assertNotIn("Traceback", result.stderr)
+                    else:
+                        self.assertIn("usage:", result.stdout)
+                    self.assertEqual(list(untouched.iterdir()), [])
+                    self.assertFalse((never_installed / ".agents").exists())
+                    self.assertEqual(list(never_installed.iterdir()), [])
+
     def test_layout_is_self_contained_and_exact(self):
         destination = installer.install(self.target)
         actual = {str(path.relative_to(destination)) for path in destination.rglob("*") if path.is_file()}

@@ -30,11 +30,11 @@ No. The [Codex adapter](../adapters/codex/README.md) supports repository-guided 
 
 ## Does this require an account, server or paid model API?
 
-No new service is required for local validation, installation and rendering: Markdown, JSON and standard-library Python suffice. Using a model still requires an already available host. The package grants no tools or permissions and changes no owner account settings.
+No new service is required for local validation, installation and rendering: Markdown, JSON and standard-library Python 3.9+ suffice; actual execution was tested on Python 3.12.14 only. Using a model still requires an already available host. The package grants no tools or permissions and changes no owner account settings.
 
 ## What would an experimental alpha mean?
 
-A clearly labeled, scoped install/configure/load package, not scientific validation. The [prospective package track](RELEASE_ACCEPTANCE.md) is separate from the original unmet scientific gate and still awaits actual owner confirmation/assignment/reuse and coordinator acceptance. No v0.2 release has occurred.
+A clearly labeled, scoped install/configure/load package, not scientific validation. The [UNCONFIGURED source-package track](RELEASE_ACCEPTANCE.md) is separate from the original unmet scientific gate and awaits exact-artifact review and release authorization. Personal confirmation/assignment/reuse remains unverified and non-gating for unconfigured distribution; genuine confirmation is required before later profile activation. No v0.2 release has occurred.
 
 ## What uses are excluded?
 

@@ -4,10 +4,15 @@ This local installer neither starts Codex nor activates any profile.
 """
 from __future__ import annotations
 
+import sys
+
+if sys.version_info < (3, 9):
+    print("REJECTED: Persona Generator requires Python 3.9 or newer", file=sys.stderr)
+    raise SystemExit(2)
+
 import argparse
 from pathlib import Path
 import shutil
-import sys
 import tempfile
 
 

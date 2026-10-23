@@ -6,7 +6,9 @@ profile activation. The host-neutral [profiles package](../../profiles/README.md
 owns storage, immutable revisions, confirmation and agent bindings. Installation
 copies no profiles, private records or example personas.
 
-From the Persona Generator checkout, with Python 3 and the standard library:
+Installation and the installed loader require **Python 3.9 or newer** and the standard library. The tested interpreter is **Python 3.12.14**. The runtime uses dictionary union (Python 3.9); postponed annotations do not require Python 3.10. Python 3.9 execution has not been verified in this check. When the entry script is parseable, its version guard rejects reported versions below Python 3.9 with exit 2 before installation or profile loading. Older interpreters may fail to parse the script before reaching that guard.
+
+From the Persona Generator checkout, using that interpreter:
 
 ```bash
 python adapters/codex/install.py --target-repo /absolute/path/to/disposable-repo

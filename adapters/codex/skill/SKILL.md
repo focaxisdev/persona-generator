@@ -10,7 +10,9 @@ not select or activate any profile. The store is separate from this skill.
    context. If either is missing, ask for it; never choose a profile from a
    directory listing, task wording, character label, role or conversation memory.
 2. Resolve the installed directory containing this SKILL.md. Run its adjacent
-   launcher with Python 3 (the command works from any working directory):
+   launcher with Python 3.9 or newer (standard library only; tested interpreter:
+   Python 3.12.14; Python 3.9 execution has not been verified). The command works
+   from any working directory:
 
    ```text
    python /ABSOLUTE/SKILL/DIRECTORY/run.py render --store /ABSOLUTE/STORE --agent AGENT_ID

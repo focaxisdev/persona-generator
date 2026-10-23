@@ -25,7 +25,7 @@ This matrix controls GitHub README, Quickstart, examples, and draft release lang
 | New core evidence | Behavior remains unvalidated after the inconclusive stopped prefix; authentic owner E2E NOT RUN; [evidence plan](../core/EVIDENCE_PLAN.md) is prospective. | Existing pilot evidence validates new operations or fresh-session stability. |
 | Invariants | Accuracy, privacy, safety, task requirements and permissions are mandatory at every setting. | Guaranteed safety, lower-quality low settings, or personality granting tool authority. |
 | Portability | Versioned text artifacts can be inspected and verified on reload. | Universal provider portability, general reliability or cross-model stability. |
-| Experimental package | [Prospective track A](RELEASE_ACCEPTANCE.md) assesses installation, configuration, loading and rollback, with genuine owner decisions and coordinator adoption still pending. | An adopted release gate, owner approval inferred from tests, or permission to publish. |
+| Experimental package | [Track A](RELEASE_ACCEPTANCE.md) prepares an UNCONFIGURED experimental source package; installation, loader and rollback are software checks. Owner E2E/reuse remains pending and non-gating for that distribution; authentic full-spec and assignment confirmation are required before actual owner activation. | Scientific acceptance, owner approval inferred from tests, a configured persona, or permission to publish. |
 | Scientific validation | Original scientific gate remains unmet and unwaived; no smaller study substitutes for it. | Psychometric validity, composition validity or a passed scientific gate inferred from package acceptance. |
 
 ## Historical observations stay historical

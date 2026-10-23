@@ -2,7 +2,7 @@
 
 **Traceable personality design for an agent and its subagents.** Configure a combination of desired traits, inspect their psychological sources and proposed AI behavior, confirm the complete specification, and load the same explicit profile revision again.
 
-**Unreleased candidate:** ten BFAS aspects now have versioned specification semantics, not demonstrated human personality or psychometric validity. New behavioral hypotheses have no inherited results from earlier experiments. [繁體中文](README.zh-TW.md) · [Project purpose and acceptance](PROJECT_PURPOSE.md)
+**UNCONFIGURED experimental source candidate (unreleased):** ten BFAS aspects now have versioned specification semantics, not demonstrated human personality or psychometric validity. New behavioral hypotheses have no inherited results from earlier experiments. [繁體中文](README.zh-TW.md) · [Project purpose and acceptance](PROJECT_PURPOSE.md)
 
 **Choose questions OR free text, or skip:** [owner onboarding](profiles/ONBOARDING.md) · [parent/optional-child assignments and rollback](profiles/ASSIGNMENTS.md) · [readable psychology definitions](docs/PSYCHOLOGY_GROUNDING.md).
 
@@ -20,6 +20,8 @@ A local store preserves exact confirmed profile revisions. Parent and child agen
 
 ## What can be checked locally
 
+The profile tooling and Codex adapter require **Python 3.9 or newer** and the standard library; the tested interpreter is **Python 3.12.14**. Python 3.9 is the implementation minimum, not an execution-tested interpreter in this check.
+
 Standard-library Python validates the confirmed artifact, saves immutable revisions and deterministically renders catalog rules. Interview/source/history text remains inert. The Codex adapter installs a repository-local explicit-invocation skill; it does not change account settings or automatically assign a persona. Fresh sessions and spawned agents must explicitly load and verify their binding. See [verification](profiles/VERIFICATION.md) for tested versus manual/unverified steps.
 
 File persistence does not establish automatic host reload, consistent model behavior, felt emotion, human psychometric validity, or cross-model stability. Structural confirmation receipts cannot prove that a real owner approved. Public examples use synthetic choices and synthetic receipts only.
@@ -30,7 +32,7 @@ One [repository-guided explicit-loading demonstration](adapters/codex/EXPLICIT_L
 
 This increment runs **zero behavior experiments**. [Core triage v2 remains paused](evaluation/core-triage-v2/records/REPORT.md) at six answers (one carried, five new) and twelve locked new ratings: seventeen diagnostic calls. Remaining cells do not resume automatically. The earlier [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md) retains 102 outputs, 5/30 candidate contrasts (three limited-confidence) and 28 word-budget violations. These results do not validate the new ten-aspect hypotheses.
 
-A prospective **experimental package** track covers install/configure/load usability separately from scientific validation; it still awaits genuine private owner preference/spec/assignment confirmation, fresh reuse and coordinator acceptance. The original scientific gate remains unmet and unwaived. Authentic owner E2E, composition behavior, persistent identity and general behavioral stability remain unverified. [Claims](docs/CLAIMS_MATRIX.md) · [Release acceptance](docs/RELEASE_ACCEPTANCE.md) · [Draft release notes](docs/RELEASE_NOTES_DRAFT.md).
+The **UNCONFIGURED experimental source-package** candidate covers inspectable install/configure/load software separately from scientific validation. It activates no persona. Genuine private owner preference/spec/assignment confirmation and fresh reuse remain unverified and non-gating for this distribution; authentic confirmation is still required before later activation. [Exact packaging and checklist](docs/SOURCE_PACKAGE.md) await coordinator artifact review and separate release authorization. The original scientific gate remains unmet and unwaived. Authentic owner E2E, composition behavior, persistent identity and general behavioral stability remain unverified. [Claims](docs/CLAIMS_MATRIX.md) · [Release acceptance](docs/RELEASE_ACCEPTANCE.md) · [Draft release notes](docs/RELEASE_NOTES_DRAFT.md).
 
 ## Other supported concepts
 

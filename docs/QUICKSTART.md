@@ -2,6 +2,8 @@
 
 Start with the [project purpose](../PROJECT_PURPOSE.md), [profile guide](../profiles/README.md) and [coverage](../profiles/COVERAGE.md). This candidate configures desired agent traits for fictional, low-stakes advisory work. It does not diagnose you or grant the agent tools.
 
+Requirements: **Python 3.9 or newer**, standard library only. The tested interpreter is **Python 3.12.14**; execution on Python 3.9 has not been verified in this check.
+
 1. Follow [optional onboarding](../profiles/ONBOARDING.md): choose guided questions **or** short answers about how you want the agent to behave. Consult the ten BFAS aspects and their separate AI hypotheses. Keep skipped settings unspecified; choose middle only explicitly.
 2. Inspect each proposed rule, its trigger, source, omissions and uncertainty. Do not derive scores, force paired aspects to match, or silently resolve contradictory preferences.
 3. Review the complete versioned preview. Resolve conflicts or leave the profile inactive. Confirm the exact content only after you understand it. A change creates a new revision and needs confirmation again.

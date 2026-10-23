@@ -2,7 +2,7 @@
 
 **為 agent 與子代理設計可追溯、可組合的人格規格。** 選擇希望 agent 表現的特質組合，檢查心理學來源與工程轉譯，確認完整規格，再於新任務載入同一個明確版本。
 
-目前是**尚未發布的候選版**。十個 BFAS aspects 有版本化的設定與指令語義，不等於模型已實現十種人類心理特質。[English](README.md) · [專案目的與驗收](PROJECT_PURPOSE.md)
+目前是 **UNCONFIGURED 未設定人格、尚未發布的實驗性來源套件候選版**。十個 BFAS aspects 有版本化的設定與指令語義，不等於模型已實現十種人類心理特質。[English](README.md) · [專案目的與驗收](PROJECT_PURPOSE.md)
 
 **可選擇題或自由文字，也可略過：**[owner 入門](profiles/ONBOARDING.md) · [父／選用子代理指派與回復](profiles/ASSIGNMENTS.md) · [心理學定義與排除範圍](docs/PSYCHOLOGY_GROUNDING.md)。
 
@@ -18,6 +18,8 @@
 
 ## 已實作與未證明的界線
 
+Profile 工具與 Codex adapter 需要 **Python 3.9 以上版本**與標準函式庫；實際測試的解譯器為 **Python 3.12.14**。Python 3.9 是依實作判定的最低需求，本次未在該版本執行驗證。
+
 Python 本機工具負責嚴格驗證、不可覆寫的 revision 保存、明確綁定及確定性載入。來源、答案與歷史文字是惰性追溯資料，不會直接成為指令。Codex adapter 提供 repository-local skill；須明確啟用，不修改帳號設定，也不替真正的工作代理任意套用人格。新 session 與每次建立子代理均須明確重新載入綁定，不能假設 fork 已正確繼承。實際測過與仍需手動驗證的步驟見[驗證紀錄](profiles/VERIFICATION.md)。
 
 檔案能保存與重載，不代表宿主一定自動載入，也不代表模型行為穩定、具有人類情感或心理計量效度。格式正確的確認紀錄無法證明真人同意；公開範例全部是合成選擇與合成確認。
@@ -28,7 +30,7 @@ Python 本機工具負責嚴格驗證、不可覆寫的 revision 保存、明確
 
 本增量**沒有新增行為實驗**。[core triage v2](evaluation/core-triage-v2/records/REPORT.md)維持六格暫停：一份沿用、五份新回答、十二份新評讀，共十七次診斷呼叫，其餘不自動續跑。較早的 [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md)仍保留 102 份輸出、30 組中 5 組候選對照（其中 3 組信心有限）及 28 份字數違規；不能用來驗證新的人格假說。
 
-另提出「實驗性套件」驗收，檢查安裝／設定／載入的可用性，與科學驗證分開；仍待真正 owner 私下確認偏好、完整規格、指派與 fresh reuse，以及協調者採納範圍和審查。原科學門檻未通過、未豁免。修改不是必經步驟，只有實際修改時才重新確認。真正 owner 的端到端流程、組合行為、持續身份與跨模型穩定性仍待驗證。[宣稱矩陣](docs/CLAIMS_MATRIX.md) · [發布驗收](docs/RELEASE_ACCEPTANCE.md)。
+本次準備的是 **UNCONFIGURED 未設定人格的實驗性來源套件**，檢查安裝／設定／載入軟體，與科學驗證分開。套件不啟用人格；owner 的偏好、完整規格、指派確認與 fresh reuse 仍未驗證，但不是未設定套件的發行前提，將來實際啟用前仍須真正確認。[來源套件與檢查清單](docs/SOURCE_PACKAGE.md)待精確候選審查及另行發布授權。原科學門檻未通過、未豁免。修改不是必經步驟，只有實際修改時才重新確認。真正 owner 的端到端流程、組合行為、持續身份與跨模型穩定性仍待驗證。[宣稱矩陣](docs/CLAIMS_MATRIX.md) · [發布驗收](docs/RELEASE_ACCEPTANCE.md)。
 
 既有 [Persona Pack](persona-pack-v0.1/README.md)已支援由 corpus 形成的描述性持久化，與本次「期望特質規格」是不同概念。舊 [core](core/README.md)和單次無工具評測格式保持原樣，僅作受限診斷；情境排演及 panel 仍為選用功能，不是預設人格產品。
 

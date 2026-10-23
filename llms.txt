@@ -11,6 +11,8 @@
 - [Explicit assignment, replacement and rollback](profiles/ASSIGNMENTS.md)
 - [Psychology definitions and exclusions](docs/PSYCHOLOGY_GROUNDING.md)
 - [Prospective release tracks](docs/RELEASE_ACCEPTANCE.md)
+- [UNCONFIGURED experimental source package](docs/SOURCE_PACKAGE.md)
+- [Merge route, not executed](docs/MERGE_ROUTE.md)
 - [Hypothesis coverage](profiles/COVERAGE.md)
 - [Codex adapter](adapters/codex/README.md)
 - [Verification](profiles/VERIFICATION.md)

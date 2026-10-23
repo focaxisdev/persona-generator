@@ -12,7 +12,7 @@ Before binding, privately show each intended agent ID with the exact profile ID,
 
 One real response can explicitly authorize several listed agents, but silence, a synthetic test, an inferred parent choice or a model's statement cannot. Leave unrequested children unconfigured. A confirmed assignment record should identify the actual owner response and exact listed pins; never fabricate one to make a walkthrough pass. Keep real transcripts private. The compiler validates binding integrity, not assignment consent, so the operator must enforce this step.
 
-Run all commands below from this checkout. Paths and uppercase values are placeholders to replace with actual private paths, exact validated values and confirmed agent IDs; do not run them unchanged.
+Requirements: Python 3.9 or newer and the standard library; actual execution tested on Python 3.12.14 only, not Python 3.9. Run all commands below from this checkout. Paths and uppercase values are placeholders to replace with actual private paths, exact validated values and confirmed agent IDs; do not run them unchanged.
 
 ```sh
 python -m profiles validate /absolute/private/spec.json --presented /absolute/private/preview.json
