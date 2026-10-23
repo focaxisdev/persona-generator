@@ -6,8 +6,8 @@ Requirements: **Python 3.9 or newer**, standard library only. The tested interpr
 
 1. Follow [optional onboarding](../profiles/ONBOARDING.md): choose guided questions **or** short answers about how you want the agent to behave. Consult the ten BFAS aspects and their separate AI hypotheses. Keep skipped settings unspecified; choose middle only explicitly.
 2. Inspect each proposed rule, its trigger, source, omissions and uncertainty. Do not derive scores, force paired aspects to match, or silently resolve contradictory preferences.
-3. Review the complete versioned preview. Resolve conflicts or leave the profile inactive. Confirm the exact content only after you understand it. A change creates a new revision and needs confirmation again.
-4. Follow the [profile CLI examples](../profiles/README.md) to validate and publish the exact spec and presented preview to a local store. Public fixtures are synthetic demonstrations, never your approval.
+3. Run `validate-preview PREVIEW` on the exact versioned preview to obtain a structural receipt marked `NOT_CONFIRMED`. Resolve conflicts and blocking issues or leave the profile inactive; a blocked receipt cannot authorize use. Then review the complete unchanged preview and its receipt digests, accompanied by the selected catalog's full invariant preamble and source limitations. Wait for genuine full-preview confirmation and manual review. Any preview edit, including presented-file whitespace, requires a fresh receipt, renewed presentation and actual confirmation; a persistent profile change also needs a new revision.
+4. Only after genuine confirmation and review, follow the [profile CLI examples](../profiles/README.md) to prepare and validate the spec with the preserved presented preview, then publish the exact pair to a local store. Publication does not assign or activate an agent. Public fixtures are synthetic demonstrations, never your approval.
 5. Obtain [separate actual assignment confirmation](../profiles/ASSIGNMENTS.md), then explicitly bind the parent and each requested child agent to a profile ID/revision/digest. Children are optional; they may share or differ. No preference edit or correction is required to complete onboarding. For replacement, review `load` audit output and pass its `binding_sha256` as `bind --expected-current`; an existing binding cannot be silently overwritten. This guard is not owner authentication. A new child context must load its own binding; conversation inheritance is insufficient.
 6. Install the [Codex local skill](../adapters/codex/README.md) into an explicitly chosen repository. Use its repository-guided explicit-loading path: supply the installed skill path, agent ID, store location and a separate bounded task; the host reads the skill and executes the validated loader. Native skill discovery is an optional distinct path, not a requirement to start a nested CLI. No profile is installed or activated by default.
 7. In each fresh session, validate and render the exact bound revision before applying preferences. Keep task instructions separate; temporary overrides never modify the stored profile. End the task when complete while retaining the confirmed profile for deliberate reuse.
@@ -21,8 +21,10 @@ Read PROJECT_PURPOSE.md and profiles/ONBOARDING.md. Help me design a desired
 personality specification for my fictional advisory agent. Use guided
 choices OR short answers, with optional skipping, about how I want the agent to behave. Explain
 source definitions separately from proposed AI behavior. Keep skipped
-aspects unspecified, show conflicts and the complete preview, and wait
-for my real confirmation. Do not infer my personality or create approval
+aspects unspecified, retain conflicts, obtain a structural preview receipt,
+then show the complete unchanged preview, its digests and full invariant
+preamble, and wait for my real confirmation and manual review.
+Do not infer my personality or create approval
 on my behalf. Keep parent and child assignments explicit.
 ```
 
