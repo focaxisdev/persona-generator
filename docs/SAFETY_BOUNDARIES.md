@@ -23,7 +23,7 @@ Persona Generator is limited to fictional, low-stakes, advisory use.
 ## Required
 
 - Label scenarios as fictional.
-- Keep personas ephemeral by default.
+- Keep execution bounded. Persist only explicitly confirmed profile revisions and assignments; stored state does not authorize ongoing activity.
 - Preserve uncertainty and dissent.
 - Use manual review.
 - Stop when the bounded task is complete.

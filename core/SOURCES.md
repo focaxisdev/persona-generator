@@ -1,0 +1,21 @@
+# Source scope for the core
+
+Checked 2026-10-22. Source inspection establishes attribution and research context, never validity of this implementation. Definitions in [COVERAGE.md](COVERAGE.md) are original short paraphrases. No questionnaires, scoring keys, instrument adaptations, or human norms are reproduced. External sources retain their rights; repository licensing does not relicense them.
+
+## Human construct vocabulary
+
+`src.deyoung2007`: DeYoung, Quilty, and Peterson (2007), *Between facets and domains: 10 aspects of the Big Five*, JPSP 93, 880–896, [DOI](https://doi.org/10.1037/0022-3514.93.5.880). The [author-hosted primary PDF](https://www.jordanbpeterson.com/docs/230/2014/15DeYoung.pdf) rendered 17 pages; inspected hierarchy and interpretations on pp. 880, 883–885, 891. It supports ten human aspects between domains and facets. It supplies no agent implementation or validation. The [PubMed record](https://pubmed.ncbi.nlm.nih.gov/17983306/) was inspected earlier in this integration task; later direct retrieval exposed only a footer. Detailed definitions use the PDF. The frozen [registry](../persona-design-v0.2/construct-registry.md) and [source ledger](../persona-design-v0.2/sources.md) preserve historical provenance, not current operation evidence.
+
+## LLM research: distinct versions and access limits
+
+`src.serapio2025`: Serapio-García et al., [*A psychometric framework for evaluating and shaping personality traits in large language models*](https://www.nature.com/articles/s42256-025-01115-6), Nature Machine Intelligence 7, 1954–1968 (2025), DOI 10.1038/s42256-025-01115-6. The [primary PubMed metadata/abstract](https://pubmed.ncbi.nlm.nih.gov/41438004/) was available through search indexing; direct rendering exposed only a footer. Publisher article/PDF retrieval was inaccessible; full published methods were **not verified**.
+
+Separately inspected: author preprint [*Personality Traits in Large Language Models*, arXiv v4](https://arxiv.org/abs/2307.00184v4), revised 11 March 2025, and [HTML](https://arxiv.org/html/2307.00184v4), sections 2.1, 4.1, 5.1. This earlier version distinguishes measurement consistency from convergent, discriminant, and criterion evidence; it studies prompted outputs across 18 models and separately evaluates generated social-media text. Its limitations include assessment selection and need for further external tasks. This supports demanding independent behavioral evidence; it does not establish this core's validity, ten-aspect coverage, or transfer across tasks/models. Preprint and final publication are not treated as identical.
+
+`src.salecha2024`: Salecha et al., [*Large language models display human-like social desirability biases in Big Five personality surveys*](https://academic.oup.com/pnasnexus/article/3/12/pgae533/7919163), PNAS Nexus 3(12), pgae533 (2024), DOI 10.1093/pnasnexus/pgae533. Publisher search indexing exposed title and question-batching context; direct publisher retrieval was inaccessible, [PubMed](https://pubmed.ncbi.nlm.nih.gov/39691446/) rendered only a footer, and PMC encountered a challenge. Full published text was **not verified**.
+
+Separately inspected: primary author preprint [*Large Language Models Show Human-like Social Desirability Biases in Survey Responses*, arXiv v2](https://arxiv.org/abs/2405.06058v2), revised 21 November 2024, abstract. Varying question batches produced more socially desirable responses when evaluation became apparent; question randomization and paraphrasing did not remove the effect, while reverse coding reduced it. This motivates checking context and desirability confounds rather than accepting self-description as behavioral evidence. No reported magnitude is imported. Preprint title/version differences remain explicit.
+
+## Project claims
+
+Operation definitions, triggers, exclusions, and counterexamples are original engineering proposals. Their relationship to human aspects is a bounded analogy. File validation and static fixtures can establish serialization and routing behavior only. Historical v1 pilot results and v2 diagnostic plans confer no approval, measured effect, robustness, or psychometric validity on new operations. New behavioral evidence is **not collected** in this integration task. Release readiness is not established.

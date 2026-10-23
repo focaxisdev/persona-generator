@@ -1,0 +1,8 @@
+{
+  "decision": "approve",
+  "reviewer": "Independent targeted reviewer /root/repair_review (separate from designer and implementer)",
+  "draft_sha256": "2b7686d577689be737225be4816494e680c9ebdc4849a933d5e1533916e127cd",
+  "scope": "Prospective core-triage-v2 preparation and local freeze only; not execution authorization",
+  "experimental_calls": 0,
+  "execution_authorized": false
+}

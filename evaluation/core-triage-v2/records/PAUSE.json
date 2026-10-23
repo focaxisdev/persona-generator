@@ -1,0 +1,92 @@
+{
+  "status": "paused_for_scope_alignment",
+  "timestamp_utc": "2026-10-22T13:10:04+00:00",
+  "reason": "Scope alignment at the completed sixth-cell boundary; this is an administrative pause, not a frozen failure or termination.",
+  "run_base_commit": "246a1177d21b487edae97b111a6b3329e8706604",
+  "freeze_manifest_sha256": "eec76d8a00ff5f468dbf1930df40e5097a7c98e7a773d07dee83086343ac15f2",
+  "last_completed_cell_id": "req_cc85a6edf2b6b47feaffde0c",
+  "completed_prefix_ids": [
+    "req_259d3a551dbfe17bbfa8f342",
+    "req_57f68112f863daa5d9e8f1a6",
+    "req_3dfb50eb9c415d2b6a7b30fb",
+    "req_09314e39fcf919f5cbcb87b1",
+    "req_967d3f5b1f8ddce304178382",
+    "req_cc85a6edf2b6b47feaffde0c"
+  ],
+  "retained_answers": 6,
+  "carried_answers": 1,
+  "carried_new_generator_calls": 0,
+  "carried_output_record_byte_identical_to_v1": true,
+  "new_generator_calls": 5,
+  "new_judge_calls": 12,
+  "new_diagnostic_calls": 17,
+  "schema_valid_new_judge_ratings": 12,
+  "locked_cells": 6,
+  "pending_calls": 0,
+  "seventh_cell_reserved": false,
+  "remaining_cells_unattempted": 12,
+  "remaining_potential_generator_calls": 12,
+  "remaining_potential_judge_calls": 24,
+  "remaining_potential_diagnostic_calls": 36,
+  "automatic_resume_authorized": false,
+  "continuation": "No further reservation or experimental call is authorized by this pause record. Any resumption requires a separate explicit decision and the unchanged frozen gates.",
+  "frozen_gate_status_at_pause": "All six retained cells pass prior_gate; no frozen stop condition was observed.",
+  "termination_or_reveal_performed": false,
+  "requested_and_tool_accepted_parameters": {
+    "new_generators": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "medium",
+      "fork_turns": "none"
+    },
+    "fresh_judges": {
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high",
+      "fork_turns": "none"
+    }
+  },
+  "provenance_limits": [
+    "Tool calls accepted explicit requested parameters and returned canonical task names; backend model identity, provider version, sampling values, thread IDs and turn IDs were unavailable.",
+    "Payload hashes in call-ledger.json identify coordinator-submitted files, not server attestations.",
+    "Distinct canonical task names with fork_turns=none are context surrogates; tools-off and blindness instructions are operational, not enforced sandbox isolation.",
+    "No tool activity appeared in delivered sampled-model messages; internal tool-call traces were not exposed.",
+    "UTC timestamps are receipt-capture times, not provider generation timestamps.",
+    "The rating contract was prepared after the carried answer and invalid v1 ratings were visible; this is not a wholly unseen study."
+  ],
+  "preserved_observation_value_disagreements": [
+    {
+      "id": "req_3dfb50eb9c415d2b6a7b30fb",
+      "observable_id": "ordered_checklist",
+      "judge_a": "false",
+      "judge_b": "not_applicable"
+    },
+    {
+      "id": "req_3dfb50eb9c415d2b6a7b30fb",
+      "observable_id": "named_stages",
+      "judge_a": "false",
+      "judge_b": "not_applicable"
+    },
+    {
+      "id": "req_3dfb50eb9c415d2b6a7b30fb",
+      "observable_id": "explicit_task_format_followed",
+      "judge_a": "not_applicable",
+      "judge_b": "true"
+    },
+    {
+      "id": "req_967d3f5b1f8ddce304178382",
+      "observable_id": "adjustment_for_changed_conditions_or_explicit_none_needed",
+      "judge_a": "not_applicable",
+      "judge_b": "false"
+    },
+    {
+      "id": "req_cc85a6edf2b6b47feaffde0c",
+      "observable_id": "explicit_task_format_followed",
+      "judge_a": "true",
+      "judge_b": "not_applicable"
+    }
+  ],
+  "disagreement_limit": "Original raw texts, evidence quotes, notes and both independent ratings remain separately retained without adjudication or replacement. The list records differing observation values, not all wording differences.",
+  "evidence_limits": "Schema acceptance and frozen gate passage do not establish semantic truth, operation efficacy, psychological validity, reliability, persistence, composition, authentic owner approval or release readiness. The original 400-response gate remains unmet; authentic owner E2E remains NOT RUN.",
+  "scope_alignment": "The two current operations are limited diagnostics. The intended final product remains an installable, composable, psychology-grounded specification for agents and subagents; persistence and composition remain unverified.",
+  "report": "REPORT.md",
+  "call_ledger": "call-ledger.json"
+}

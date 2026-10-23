@@ -1,36 +1,28 @@
 # Persona Generator
 
-> Experimental discovery file for a protocol-first Markdown framework that generates academically bounded fictional personas on demand for multi-agent rehearsal.
+> Unreleased psychology-grounded desired-trait specification, explicit agent/subagent binding and persistent local revision layer. Engineering hypotheses are not human psychometric validity or proven model stability.
 
-`llms.txt` is not an official GitHub standard, and crawler or model support is not guaranteed. Read only the smallest task-specific path. Do not crawl the entire repository by default.
+- [Project purpose and acceptance](PROJECT_PURPOSE.md)
+- [繁體中文](README.zh-TW.md)
+- [Quickstart](docs/QUICKSTART.md)
+- [Profile contract](profiles/CONTRACT.md)
+- [Profile workflow](profiles/README.md)
+- [Optional questions OR free-text onboarding](profiles/ONBOARDING.md)
+- [Explicit assignment, replacement and rollback](profiles/ASSIGNMENTS.md)
+- [Psychology definitions and exclusions](docs/PSYCHOLOGY_GROUNDING.md)
+- [Prospective release tracks](docs/RELEASE_ACCEPTANCE.md)
+- [UNCONFIGURED experimental source package](docs/SOURCE_PACKAGE.md)
+- [Merge route, not executed](docs/MERGE_ROUTE.md)
+- [Hypothesis coverage](profiles/COVERAGE.md)
+- [Codex adapter](adapters/codex/README.md)
+- [Verification](profiles/VERIFICATION.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [AI discovery](AI_DISCOVERY.md)
+- [Claims](docs/CLAIMS_MATRIX.md)
+- [Sources](core/SOURCES.md)
+- [Safety](docs/SAFETY_BOUNDARIES.md)
+- [Separate descriptive Persona Pack](persona-pack-v0.1/README.md)
+- [Preserved two-operation diagnostic core](core/README.md)
+- [Preserved six-cell pause](evaluation/core-triage-v2/records/REPORT.md)
 
-## Core
-
-- [README](https://github.com/focaxisdev/persona-generator/blob/main/README.md)
-- [Traditional Chinese README](https://github.com/focaxisdev/persona-generator/blob/main/README.zh-TW.md)
-- [AI Discovery Guide](https://github.com/focaxisdev/persona-generator/blob/main/AI_DISCOVERY.md)
-- [Quickstart](https://github.com/focaxisdev/persona-generator/blob/main/docs/QUICKSTART.md)
-- [Architecture](https://github.com/focaxisdev/persona-generator/blob/main/docs/ARCHITECTURE.md)
-- [Safety Boundaries](https://github.com/focaxisdev/persona-generator/blob/main/docs/SAFETY_BOUNDARIES.md)
-- [Academic Boundaries and Source Notes](https://github.com/focaxisdev/persona-generator/blob/main/docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md)
-- [Evidence Summary](https://github.com/focaxisdev/persona-generator/blob/main/docs/EVIDENCE_SUMMARY.md)
-
-## Protocols
-
-- [LLM-native fictional persona instantiation](https://github.com/focaxisdev/persona-generator/blob/main/protocols/llm-native-fictional-persona-instantiation-v0.1.md)
-- [Persona generation request template](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
-- [Ephemeral persona spec template](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
-- [Instantiation review checklist](https://github.com/focaxisdev/persona-generator/blob/main/fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
-- [Minimal panel adapter](https://github.com/focaxisdev/persona-generator/blob/main/ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md)
-- [Persona Pack v0.1 README](https://github.com/focaxisdev/persona-generator/blob/main/persona-pack-v0.1/README.md)
-- [Persona Pack v0.1 contract](https://github.com/focaxisdev/persona-generator/blob/main/protocols/persona-pack-v0.1-contract.md)
-
-## Public Example
-
-- [Limited public beta fixture](https://github.com/focaxisdev/persona-generator/blob/main/examples/limited-public-beta/README.md)
-
-Examples are fictional fixtures for format and safety demonstration only. They are not runtime inventory, datasets, or reusable persona catalog entries.
-
-## Do Not Use For
-
-Real-person profiling, diagnosis, psychometric scoring, sensitive-attribute inference, hiring, surveillance, legal, medical, credit, insurance, educational placement, or autonomous decisions.
+Ask for desired agent behavior, not owner personality. Unspecified stays unspecified. Confirm complete previews genuinely; synthetic fixtures are not consent. Revisions and agent bindings are explicit; no inheritance, averaging, automatic latest-version upgrade or permission transfer. Task overrides do not rewrite saved profiles. No live behavioral experiments in this increment. Existing evidence does not transfer to new hypotheses. No website or automatic release.

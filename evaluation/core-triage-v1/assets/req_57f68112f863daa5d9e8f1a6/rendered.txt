@@ -1,0 +1,7 @@
+These preferences apply only to fictional, low-stakes, ephemeral advisory work with human review and human final judgment. Preserve accuracy, calibrated uncertainty, privacy, safety, permissions, and authorized scope. Do not profile real people, diagnose, score personality, infer sensitive attributes, make high-stakes decisions, or make autonomous final decisions. Host policy, permissions, current task facts, and explicit current task instructions override these preferences. A temporary override does not revise the confirmed spec. Do not expand scope, execute an advisory suggestion, omit required work, invent facts, or change evidence standards. An absent trigger is not_triggered. A higher-priority requirement displacing an otherwise applicable preference is overridden. Neither is nonadherence. Nonadherence means an applicable, unoverridden rule was not followed.
+
+When the current task calls for a plan involving multiple required actions and permits a choice of sequencing or presentation.
+
+Describe the required actions in a flexible usable sequence.
+
+For a task that needs no multi-action plan, this preference adds no planning format. Keep the same required actions, checks, scope, and completion standard for every anchor.

@@ -1,0 +1,181 @@
+{
+  "schema_version": "diagnostic-v2-design",
+  "status": "design_only",
+  "human_confirmation": "not_obtained",
+  "release_status": "blocked",
+  "generated_output_count": 0,
+  "tasks": [
+    {
+      "id": "T03",
+      "aspect_id": "B03",
+      "prompt": "A fictional four-person puzzle meetup lasts 20 minutes. One participant has explicitly requested written instructions; everyone can read the shared board. Paper, pencils and one board are available; no devices or extra staff. Suggest a practical facilitation approach that meets the written-instruction preference and keeps all four involved. You may compare accommodations when useful. The human facilitator decides.",
+      "requirements": [
+        {
+          "id": "T03.R01",
+          "text": "Meet the explicitly stated written-instruction preference without assuming unstated vulnerability or emotions."
+        },
+        {
+          "id": "T03.R02",
+          "text": "Keep all four participants involved within 20 minutes using only paper, pencils and one board."
+        },
+        {
+          "id": "T03.R03",
+          "text": "Give practical advisory suggestions and preserve the human facilitator's final choice."
+        }
+      ],
+      "rubric_required_ids": [
+        "T03.R01",
+        "T03.R02",
+        "T03.R03"
+      ],
+      "ambiguity_policy": "clarify_or_state_assumption",
+      "word_limit": 250,
+      "word_count_method": "unicode_whitespace_split_complete_answer",
+      "stop_rule": "one_bounded_answer"
+    },
+    {
+      "id": "T05",
+      "aspect_id": "B05",
+      "prompt": "A fictional hobby group has rough notes for a paper-folding activity: use one square sheet; fold in half; reopen; fold both edges to the center. Give a plan for turning these notes into one clear instruction card of at most 120 words. Preserve these steps, use only paper and pencil, and plan to stop with one draft ready for human review. Do not write the card itself.",
+      "requirements": [
+        {
+          "id": "T05.R01",
+          "text": "Plan production of one instruction-card draft for human review; do not write the card itself."
+        },
+        {
+          "id": "T05.R02",
+          "text": "Preserve all supplied folding steps in their stated order using only paper and pencil."
+        },
+        {
+          "id": "T05.R03",
+          "text": "Keep the planned card at most 120 words and stop at one draft for human review."
+        }
+      ],
+      "rubric_required_ids": [
+        "T05.R01",
+        "T05.R02",
+        "T05.R03"
+      ],
+      "ambiguity_policy": "clarify_or_state_assumption",
+      "word_limit": 250,
+      "word_count_method": "unicode_whitespace_split_complete_answer",
+      "stop_rule": "one_bounded_answer"
+    },
+    {
+      "id": "T06",
+      "aspect_id": "B06",
+      "prompt": "Plan preparation of a fictional tabletop card game using existing cards, a rules sheet and one table. Include checking the deck is complete, checking the rules sheet is readable, and arranging the cards. Deck completeness must be checked before cards are arranged. The table may be unavailable initially; the two checks need no table. Give a feasible sequence using only these materials; stop at a ready-to-play setup for human review.",
+      "requirements": [
+        {
+          "id": "T06.R01",
+          "text": "Include the deck-completeness check, rules-readability check and card arrangement using only the supplied materials."
+        },
+        {
+          "id": "T06.R02",
+          "text": "Check deck completeness before arranging cards; arrangement needs the table and the two checks do not."
+        },
+        {
+          "id": "T06.R03",
+          "text": "Keep the sequence feasible if the table is initially unavailable, and stop at a ready-to-play setup for human review."
+        }
+      ],
+      "rubric_required_ids": [
+        "T06.R01",
+        "T06.R02",
+        "T06.R03"
+      ],
+      "ambiguity_policy": "clarify_or_state_assumption",
+      "word_limit": 250,
+      "word_count_method": "unicode_whitespace_split_complete_answer",
+      "stop_rule": "one_bounded_answer"
+    },
+    {
+      "id": "T08",
+      "aspect_id": "B08",
+      "prompt": "A fictional four-person hobby group has 20 minutes and paper and pencils. It can run either a drawing relay or a word-association circle; both fit the time and resources, and no preference is known. Help the group decide how to use the session. Advice only; the group retains the final choice.",
+      "requirements": [
+        {
+          "id": "T08.R01",
+          "text": "Keep advice within a four-person, 20-minute session using paper and pencils."
+        },
+        {
+          "id": "T08.R02",
+          "text": "Preserve both supplied viable activities and avoid inventing a group preference."
+        },
+        {
+          "id": "T08.R03",
+          "text": "Provide useful decision support while leaving final choice to the human group."
+        }
+      ],
+      "rubric_required_ids": [
+        "T08.R01",
+        "T08.R02",
+        "T08.R03"
+      ],
+      "ambiguity_policy": "clarify_or_state_assumption",
+      "word_limit": 250,
+      "word_count_method": "unicode_whitespace_split_complete_answer",
+      "stop_rule": "one_bounded_answer"
+    },
+    {
+      "id": "T10",
+      "aspect_id": "B10",
+      "prompt": "For a fictional four-person tabletop meetup, sketch 1–3 feasible activities using only paper and pencils in 20 minutes. Give enough detail to try each proposed approach; every approach must include all four participants. Treat approaches as alternatives for a single session, not cumulative activities. The human group chooses.",
+      "requirements": [
+        {
+          "id": "T10.R01",
+          "text": "Sketch between one and three activities with enough detail to try each approach."
+        },
+        {
+          "id": "T10.R02",
+          "text": "Every proposed activity must include all four people and fit one 20-minute session using only paper and pencils."
+        },
+        {
+          "id": "T10.R03",
+          "text": "Treat activities as alternatives for one session and leave final choice to the human group."
+        }
+      ],
+      "rubric_required_ids": [
+        "T10.R01",
+        "T10.R02",
+        "T10.R03"
+      ],
+      "ambiguity_policy": "clarify_or_state_assumption",
+      "word_limit": 250,
+      "word_count_method": "unicode_whitespace_split_complete_answer",
+      "stop_rule": "one_bounded_answer"
+    }
+  ],
+  "judges": [
+    {
+      "id": "judge-1",
+      "ratings_path": "ratings/judge-1.json",
+      "lock_path": "ratings/judge-1.lock.json",
+      "blind_to": [
+        "condition",
+        "target",
+        "expected_features"
+      ],
+      "independent_before_comparison": true
+    },
+    {
+      "id": "judge-2",
+      "ratings_path": "ratings/judge-2.json",
+      "lock_path": "ratings/judge-2.lock.json",
+      "blind_to": [
+        "condition",
+        "target",
+        "expected_features"
+      ],
+      "independent_before_comparison": true
+    }
+  ],
+  "rating_policy": {
+    "feature_values": [
+      "present",
+      "absent",
+      "unclear"
+    ],
+    "comparison_gate": "both_judge_locks"
+  }
+}

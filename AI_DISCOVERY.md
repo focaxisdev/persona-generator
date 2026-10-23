@@ -1,88 +1,26 @@
-# Persona Generator AI Discovery Guide
+# Persona Generator AI discovery
 
-Persona Generator is a local-first Markdown protocol package for generating academically bounded fictional personas on demand for multi-agent rehearsal.
+Read [PROJECT_PURPOSE](PROJECT_PURPOSE.md), then [Quickstart](docs/QUICKSTART.md), [profiles](profiles/README.md) and its [contract](profiles/CONTRACT.md). The current product increment is a desired-trait specification, local persistence and explicit agent/subagent binding layer. It is not a fixed role catalog, human personality test or autonomous framework.
 
-Core principle:
+## Current route
 
-`Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
+1. Use [optional onboarding](profiles/ONBOARDING.md): acquire desired **agent** behavior through guided choice **or** short answers, with skipping allowed. Use existing BFAS vocabulary and new [hypothesis coverage](profiles/COVERAGE.md); keep all source/mapping/evidence claims separate.
+2. Preserve unspecified, unknowns and unresolved conflicts. Do not infer correlations, norms, scores, paired-aspect balance or owner psychology.
+3. Present exact rules and the whole preview. Require genuine owner confirmation; synthetic receipts cannot count as consent. Changed content requires a new revision and confirmation.
+4. Validate and store exact versioned originals. Compile only catalog-derived active rules; audit text stays inert.
+5. Confirm [assignments](profiles/ASSIGNMENTS.md) separately, then bind the parent and each requested child explicitly to ID, revision and digests. Children are optional. Use guarded replacement/rollback, not file overwrite. No automatic inheritance or averaging. Revalidate stored originals on each fresh load.
+6. Use the [Codex adapter](adapters/codex/README.md) only when explicitly requested, or the host-neutral loader for another manually reviewed integration. Installation does not activate a persona. Host tools/permissions and current task constraints override preferences without mutating the profile.
 
-## Intended Use
+## Version router
 
-- Generate temporary fictional personas for bounded low-stakes scenarios.
-- Review generated personas manually before downstream use.
-- Preserve uncertainty, dissent, and safety boundaries.
-- Use optional panel rehearsal only when the task explicitly asks for synthesis.
-- Use optional Persona Pack serialization only when the task explicitly needs persistence, auditability, or handoff.
-
-## Prohibited Use
-
-- No real-person profiling.
-- No diagnosis.
-- No psychometric scoring.
-- No sensitive-attribute inference.
-- No high-stakes decisions.
-- No static persona catalog.
-- No autonomous final decision.
-
-## Shortest Canonical Reading Path
-
-1. [docs/QUICKSTART.md](docs/QUICKSTART.md)
-2. [docs/SAFETY_BOUNDARIES.md](docs/SAFETY_BOUNDARIES.md)
-3. [docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md)
-4. [fictional-persona-instantiation-v0.1/persona-generation-request-template.md](fictional-persona-instantiation-v0.1/persona-generation-request-template.md)
-5. [fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md](fictional-persona-instantiation-v0.1/ephemeral-persona-spec-template.md)
-6. [fictional-persona-instantiation-v0.1/instantiation-review-checklist.md](fictional-persona-instantiation-v0.1/instantiation-review-checklist.md)
-7. Optional, only when task-triggered: [ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md](ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md)
-8. Optional, only when task-triggered: [protocols/persona-pack-v0.1-contract.md](protocols/persona-pack-v0.1-contract.md)
-
-## Machine-Readable Architecture Summary
-
-```text
-fictional_low_stakes_scenario
--> bounded_construct_vocabulary
--> on_demand_ephemeral_personas
--> manual_review
--> optional_panel_rehearsal
--> dissent_preserving_synthesis
--> optional_persona_pack_handoff
--> stop
-```
-
-## Task-Based File Map
-
-| Task | Start Here | Stop Condition |
+| Need | Path | Evidence boundary |
 | --- | --- | --- |
-| Understand the project | [README.md](README.md) | You understand the core principle and safety boundary. |
-| Generate personas | [fictional-persona-instantiation-v0.1/persona-generation-request-template.md](fictional-persona-instantiation-v0.1/persona-generation-request-template.md) | Minimum useful personas are reviewed. |
-| Review personas | [fictional-persona-instantiation-v0.1/instantiation-review-checklist.md](fictional-persona-instantiation-v0.1/instantiation-review-checklist.md) | Pass, Revise, or Block is recorded. |
-| Run optional panel rehearsal | [ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md](ephemeral-persona-panel-adapter-v0.1/minimal-ephemeral-persona-panel-adapter-v0.1.md) | One bounded synthesis is complete. |
-| Serialize for handoff | [protocols/persona-pack-v0.1-contract.md](protocols/persona-pack-v0.1-contract.md) | Persona Pack files are complete and manually reviewed. |
-| Audit or discover boundaries | [docs/SAFETY_BOUNDARIES.md](docs/SAFETY_BOUNDARIES.md) + [docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md) | Boundary summary complete; no generation performed. |
+| Desired-trait composition and persistent revisions | [profiles](profiles/README.md) | New hypotheses, static engineering evidence only; no live behavior study |
+| Existing two-operation diagnostic | [core](core/README.md) | Unchanged limited ephemeral contract and evaluation envelope |
+| Corpus-derived descriptive persistence | [Persona Pack](persona-pack-v0.1/README.md) | Separate concept, not an automatic desired-trait migration |
+| Scenario rehearsal / synthesis | [instantiation](fictional-persona-instantiation-v0.1/README.md) / [panel](ephemeral-persona-panel-adapter-v0.1/README.md) | Optional, bounded, manually reviewed |
+| Historical studies | [paused triage](evaluation/core-triage-v2/records/REPORT.md), [old pilot](evaluation/pilot-2026-10-22/REPORT.md) | Preserve all raw evidence; no new collection or result transfer |
 
-## Examples
+Read [psychology definitions](docs/PSYCHOLOGY_GROUNDING.md), [claims](docs/CLAIMS_MATRIX.md) and the separate [prospective release tracks](docs/RELEASE_ACCEPTANCE.md) before describing capabilities. The previous two live answers used Politeness alone: explicit loading, not composition validation. Ten renderable settings do not establish ten implemented human traits, psychometric validity, emotion, persistence of behavior or cross-model stability. The [UNCONFIGURED source candidate](docs/SOURCE_PACKAGE.md) activates nothing. Actual owner intent/confirmation and genuine end-to-end use remain private, pending and non-gating for unconfigured distribution; genuine confirmation is required before later activation. No owner transcript may enter this public repository without explicit permission.
 
-Examples are fictional fixtures for format and safety demonstration only. They are not runtime inventory, datasets, reusable presets, or a static persona catalog.
-
-## Bounded Claims
-
-- Bounded fictional dry-runs support this package as an inspectable protocol foundation.
-- The evidence does not establish general reliability or real-user readiness.
-- Academic constructs are vocabulary for description and generation, not scores.
-
-## Unsupported Claims
-
-No psychometric validity, personality truth detection, diagnosis, real-user readiness, high-stakes suitability, cross-provider reliability, or autonomous decision suitability is claimed.
-
-## Stable Terms
-
-- `ephemeral persona`: a temporary fictional perspective generated for one bounded scenario.
-- `Persona Pack v0.1`: optional Markdown handoff format.
-- `panel rehearsal`: optional advisory synthesis across reviewed fictional personas.
-- `bounded construct vocabulary`: descriptive vocabulary, not measurement.
-
-## Stop Conditions
-
-- Stop if the scenario is real-person, high-stakes, covert, diagnostic, or surveillance-oriented.
-- Stop if more personas would only create redundancy.
-- Stop after one bounded advisory synthesis unless a new task is explicitly authorized.
-- Do not scan the entire repository by default.
+Fictional, low-stakes advisory work; human final judgment. Safety, accuracy, privacy and permissions are invariant. Do not profile real people, diagnose, infer sensitive attributes, make high-stakes placement decisions or autonomous final decisions. Stop the bounded task when complete; do not erase or revise persistent persona state implicitly. No website work, experiment resumption or automatic release follows from this route.

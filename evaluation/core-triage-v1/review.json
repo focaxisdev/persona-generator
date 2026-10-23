@@ -1,0 +1,7 @@
+{
+  "decision": "approve",
+  "reviewer": "separate independent static reviewer; see INDEPENDENT_REVIEW.md",
+  "draft_sha256": "6ea7779970b0b8101d47368f269036221b1c27fbab6677f0bc74dd5de67b1e68",
+  "review_report_sha256": "a5ff724087605b0a42ef47340e3b5a37d4d6daf26d9c5d747db7a2450ac35df6",
+  "scope": "Static freeze only; no collection, owner consent, merge or release approval."
+}

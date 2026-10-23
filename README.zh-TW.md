@@ -1,109 +1,37 @@
-# Persona Generator / 人格產生器
+# Persona Generator／人格規格產生器
 
-Persona Generator（人格產生器）是一套 protocol-first、Markdown-first 的 AI 多代理人格生成框架。它不儲存預製人格目錄，而是依照情境即時產生受學術邊界約束的虛構人格。
+**為 agent 與子代理設計可追溯、可組合的人格規格。** 選擇希望 agent 表現的特質組合，檢查心理學來源與工程轉譯，確認完整規格，再於新任務載入同一個明確版本。
 
-公開 tagline：
+目前是 **UNCONFIGURED 未設定人格、尚未發布的實驗性來源套件候選版**。十個 BFAS aspects 有版本化的設定與指令語義，不等於模型已實現十種人類心理特質。[English](README.md) · [專案目的與驗收](PROJECT_PURPOSE.md)
 
-`Generate academically bounded fictional personas on demand for multi-agent rehearsal.`
+**可選擇題或自由文字，也可略過：**[owner 入門](profiles/ONBOARDING.md) · [父／選用子代理指派與回復](profiles/ASSIGNMENTS.md) · [心理學定義與排除範圍](docs/PSYCHOLOGY_GROUNDING.md)。
 
-核心原則：
+**開始使用：**[Quickstart](docs/QUICKSTART.md) → [持久人格規格](profiles/README.md) → [Codex 安裝方式](adapters/codex/README.md)。
 
-`Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
+## 從需求到可載入規格
 
-[Read the English README](README.md)
+選擇題或簡答詢問「希望 agent 如何表現」，不推測使用者真實人格。未指定保持 `unspecified`；相互矛盾的要求先保留並解決，不偷偷平均。先看來源、精確行為假說、未知項、限制與完整 preview，再由真正的 owner 確認；修改後必須建立新 revision 並重新確認。
 
-## 一句話說明
+既有 BFAS 來源包含五個 domains、十個 **aspects**，不可混稱 facets。偏低／中間／偏高是設計目標，不是心理測量分數、百分位或人群常模。同一 domain 的兩個 aspects 不必相同，也不強制平衡。不尋常組合不會僅因不常見而被拒絕。各 aspect 可分別選擇，不代表統計獨立、零相關或已有驗證的聯合分布。[行為轉譯與限制](profiles/COVERAGE.md)將人類定義、AI 假說與未驗證部分分開；B01／B02 仍是 experimental 表達代理。
 
-當你需要 AI Agent 為一個虛構、低風險情境產生幾個臨時觀點，用來做 brainstorming、風險檢查或交接演練時，Persona Generator 提供一套可檢查、可停止、可移交的 Markdown protocol。
+本機 store 保存完整確認過的版本；父代理與每個子代理各自綁定 profile ID、revision 與 digest，可共用或不同。子代理的修改不會自動改動父代理。任務結束不刪除人格規格；臨時任務要求也不改寫持久 profile。角色、能力、價值／目標、暫時狀態與工具權限是另外的設定，不能混成人格滑桿。
 
-## 這是什麼 / 不是什麼
+## 已實作與未證明的界線
 
-| Persona Generator 是 | Persona Generator 不是 |
-| --- | --- |
-| 本地優先的 Markdown protocol 套件 | Hosted service |
-| 依情境產生臨時虛構人格的 grammar | 靜態人格目錄 |
-| 用於低風險演練的受限 construct vocabulary | 人格測驗或心理計量工具 |
-| 需要人工審查的 advisory workflow | 診斷工具 |
-| 保留異議與少數觀點的合成輔助 | 自動決策系統 |
-| 可選的 Persona Pack 交接格式 | 真人側寫基礎建設 |
+Profile 工具與 Codex adapter 需要 **Python 3.9 以上版本**與標準函式庫；實際測試的解譯器為 **Python 3.12.14**。Python 3.9 是依實作判定的最低需求，本次未在該版本執行驗證。
 
-## 五分鐘開始
+Python 本機工具負責嚴格驗證、不可覆寫的 revision 保存、明確綁定及確定性載入。來源、答案與歷史文字是惰性追溯資料，不會直接成為指令。Codex adapter 提供 repository-local skill；須明確啟用，不修改帳號設定，也不替真正的工作代理任意套用人格。新 session 與每次建立子代理均須明確重新載入綁定，不能假設 fork 已正確繼承。實際測過與仍需手動驗證的步驟見[驗證紀錄](profiles/VERIFICATION.md)。
 
-1. 讀 [docs/QUICKSTART.md](docs/QUICKSTART.md)。
-2. 讓 AI Agent 讀 [AI_DISCOVERY.md](AI_DISCOVERY.md)，並只走最小必要路徑。
-3. 提供一個虛構、低風險的 scenario brief。
-4. 產生最小必要的 ephemeral personas（臨時虛構人格）。
-5. 執行人工 review checklist。
-6. 只有在任務明確需要時，才使用 panel rehearsal（多觀點合成）或 Persona Pack handoff（Markdown 交接包）。
-7. 產出 bounded advisory synthesis（受限建議性合成）後停止。
+檔案能保存與重載，不代表宿主一定自動載入，也不代表模型行為穩定、具有人類情感或心理計量效度。格式正確的確認紀錄無法證明真人同意；公開範例全部是合成選擇與合成確認。
 
-複製起始 prompt：
+先前[依 repository 指引明確載入](adapters/codex/EXPLICIT_LOADING_2026-10-23.md)已記錄一個實際父代理與獨立委派的子代理，各自讀取已安裝 skill、呼叫自己的驗證 loader，再回答一個低風險合成任務。兩份回答都只使用 Politeness，其他 aspects 全未指定，因此證明的是明確載入，不是組合效度。這不是自動探索或人格效度驗證；native discovery 仍未驗證，也不是明確載入產品的必要條件。Catalog v2 為 Politeness 加入不臆造優點或目的的中性致意 fallback；v1 規格不改寫，替換 binding 則須提供目前 binding 的 digest。
 
-```text
-Read AI_DISCOVERY.md and docs/QUICKSTART.md. Use Persona Generator only for a fictional, low-stakes scenario. Generate the minimum useful set of ephemeral fictional personas, review them manually, preserve dissent, avoid static persona catalogs, and stop after a bounded advisory synthesis.
+## 證據不跨版本挪用
 
-Scenario: [描述一個虛構、低風險情境]
-Decision or rehearsal question: [臨時觀點要檢查什麼問題？]
-Why this is fictional and low-stakes: [簡短說明邊界]
-Desired output: [只要 personas / personas plus synthesis / optional handoff]
-```
+本增量**沒有新增行為實驗**。[core triage v2](evaluation/core-triage-v2/records/REPORT.md)維持六格暫停：一份沿用、五份新回答、十二份新評讀，共十七次診斷呼叫，其餘不自動續跑。較早的 [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md)仍保留 102 份輸出、30 組中 5 組候選對照（其中 3 組信心有限）及 28 份字數違規；不能用來驗證新的人格假說。
 
-## 架構概覽
+本次準備的是 **UNCONFIGURED 未設定人格的實驗性來源套件**，檢查安裝／設定／載入軟體，與科學驗證分開。套件不啟用人格；owner 的偏好、完整規格、指派確認與 fresh reuse 仍未驗證，但不是未設定套件的發行前提，將來實際啟用前仍須真正確認。[來源套件與檢查清單](docs/SOURCE_PACKAGE.md)待精確候選審查及另行發布授權。原科學門檻未通過、未豁免。修改不是必經步驟，只有實際修改時才重新確認。真正 owner 的端到端流程、組合行為、持續身份與跨模型穩定性仍待驗證。[宣稱矩陣](docs/CLAIMS_MATRIX.md) · [發布驗收](docs/RELEASE_ACCEPTANCE.md)。
 
-![Architecture overview](docs/assets/architecture-overview.svg)
+既有 [Persona Pack](persona-pack-v0.1/README.md)已支援由 corpus 形成的描述性持久化，與本次「期望特質規格」是不同概念。舊 [core](core/README.md)和單次無工具評測格式保持原樣，僅作受限診斷；情境排演及 panel 仍為選用功能，不是預設人格產品。
 
-```text
-虛構低風險情境
--> 受邊界約束的 construct vocabulary
--> LLM-native on-demand ephemeral personas
--> 人工審查
--> 可選 panel rehearsal
--> 保留異議的 advisory synthesis
--> 可選 Persona Pack v0.1 serialization
--> 可選 handoff
--> stop
-```
-
-## 公開範例
-
-請看 [examples/limited-public-beta](examples/limited-public-beta/README.md)。這是一個虛構的志工知識分享場景，示範多個臨時人格、可見異議、少數觀點保留，以及受限的建議性合成。
-
-範例只是 public fixture：用來示範格式與安全邊界，不是資料集、runtime inventory、可重用 preset，也不是靜態人格目錄。
-
-## 安全邊界
-
-Persona Generator 預設只用於虛構、低風險、建議性情境。不要用於真人側寫、診斷、心理計量評分、招聘、監控、法律、醫療、信用、保險、教育分配或其他高風險決策。
-
-使用前請讀 [docs/SAFETY_BOUNDARIES.md](docs/SAFETY_BOUNDARIES.md)。
-
-## 學術邊界與證據限制
-
-這裡的 construct 只是受邊界約束的描述詞彙，用來幫助情境設計；它不是心理測量、臨床驗證、診斷、人格真相或行為預測。
-
-請讀 [docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md) 與 [docs/EVIDENCE_SUMMARY.md](docs/EVIDENCE_SUMMARY.md)。
-
-## 文件導覽
-
-- [Quickstart](docs/QUICKSTART.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Academic Boundaries and Source Notes](docs/ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md)
-- [Why Persona Generator](docs/WHY_PERSONA_GENERATOR.md)
-- [Use Cases](docs/USE_CASES.md)
-- [FAQ](docs/FAQ.md)
-- [Safety Boundaries](docs/SAFETY_BOUNDARIES.md)
-- [AI Discovery Guide](AI_DISCOVERY.md)
-- [Experimental llms.txt](llms.txt)
-
-## Contributing
-
-貢獻前請讀 [CONTRIBUTING.md](CONTRIBUTING.md)、[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)、[SECURITY.md](SECURITY.md) 與 [SUPPORT.md](SUPPORT.md)。
-
-請不要提交個人資料、敏感資料、秘密側寫需求、靜態人格目錄、心理計量評分或高風險使用案例。
-
-## License
-
-Persona Generator 使用 [Apache-2.0](LICENSE) 授權。除非個別檔案另有說明，授權範圍包含本公開 repository 的文件、protocols、templates、examples、visual assets，以及未來程式碼。
-
-## Star
-
-如果這種 protocol-first 的做法對你有幫助，歡迎 Star 這個 repository，讓更多 builders 找得到它。
+限虛構、低風險建議用途，保留人類最終判斷。人格不能改寫準確性、隱私、安全或權限；禁止真人側寫、診斷、敏感推論與高風險決策。[安全邊界](docs/SAFETY_BOUNDARIES.md)。原創程式與文件採 [Apache-2.0](LICENSE)，不重新授權引用研究或量表。行銷交付只在 GitHub 文件，不需要獨立網站。

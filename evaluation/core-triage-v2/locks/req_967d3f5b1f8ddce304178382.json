@@ -1,0 +1,12 @@
+{
+  "id": "req_967d3f5b1f8ddce304178382",
+  "files": {
+    "ratings/req_967d3f5b1f8ddce304178382-a.json": "a8f946f638a72829a85799dc27b12ce78999a1fd5b74b1b6d0f55267ed9578d8",
+    "packets/req_967d3f5b1f8ddce304178382-a.json": "6d9f0cade86b6ddb8df6cafb85dc564fe660c51a102ae8bdf858c42235433ad0",
+    "ratings/req_967d3f5b1f8ddce304178382-b.json": "d931c5e8f811e8f2239b7c98fba60e31497bdd0f81122a41852aad2d0b635ecd",
+    "packets/req_967d3f5b1f8ddce304178382-b.json": "8a7334e1201e3f2e4ee774a5488e071d5dbb932d9b15d6ad485ceaa7ac175f75",
+    "outputs/req_967d3f5b1f8ddce304178382.json": "fecad4e4614505a22236c3440dbdcbf05217e2855b44a96022442ec9bb82dbe7",
+    "records/req_967d3f5b1f8ddce304178382.reservation.json": "d583c65f52619eed6a4475c836e7f86e32f63bcbb74ae19df5daf9d7b92c6bc1"
+  },
+  "both_judge_attempt_outcomes_retained": true
+}

@@ -1,32 +1,17 @@
 # Why Persona Generator
 
-Many persona workflows start by creating reusable persona lists. Those lists can become repetitive, brittle, and easy to treat as a source of truth.
+The goal is an inspectable, installable personality specification that an owner can compose for an agent and explicitly assign to optional subagents. The repository supplies a grammar and versioned choices, not a catalog of fixed characters.
 
-Persona Generator takes a different path. It stores a protocol for generating the perspectives needed by one bounded fictional scenario.
+## Trace decisions before applying them
 
-## Why On-Demand Beats Catalog Expansion
+[BFAS sources](PSYCHOLOGY_GROUNDING.md) define human constructs. Separate engineering hypotheses state the proposed observable AI behavior and what they omit. Owner choices or free text become exact candidate rules, then a complete preview. Unknowns and conflicts stay visible; real confirmation is required. Citation alone is not behavioral validation.
 
-- The scenario defines the need.
-- The minimum useful set of perspectives reduces redundancy.
-- Personas remain ephemeral unless handoff is explicitly needed.
-- The system avoids presenting fictional personas as stable assets.
+## Preserve the artifact deliberately
 
-## Why Academic Boundaries Matter
+Immutable revisions and digest-pinned bindings make a prior confirmed specification reloadable and auditable. Parent and child agents can share or differ without implicit inheritance. [Replacement and rollback](../profiles/ASSIGNMENTS.md) change explicit assignments rather than rewriting old profiles. Stored bytes do not establish consistent model behavior or a human-like mind.
 
-Academic constructs provide vocabulary and caution. They do not provide scores, diagnosis, or proof of personality truth.
+## Keep the interface portable and bounded
 
-## Why Dissent Preservation Matters
+Markdown explains the process; small standard-library Python tools validate and render the exact version. The [Codex adapter](../adapters/codex/README.md) provides explicit loading without a new service. Tasks remain bounded, while confirmed profiles can be deliberately reused. Host policy, facts, safety and permissions take precedence.
 
-Multi-persona work is most useful when it keeps minority concerns visible. Persona Generator asks for advisory synthesis that records disagreement instead of forcing fake consensus.
-
-## Why Markdown-First Matters
-
-Markdown keeps the protocol inspectable. A human reviewer or AI agent can read the files, audit claims, challenge assumptions, and stop without hidden runtime state.
-
-## Intentional Non-Goals
-
-- No real-person profiling.
-- No psychometric scoring.
-- No public claim of universal reliability.
-- No static persona catalog.
-- No autonomous final decision.
+Begin with [Quickstart](QUICKSTART.md) or [optional questions OR free text](../profiles/ONBOARDING.md). The [release tracks](RELEASE_ACCEPTANCE.md) distinguish useful experimental software from the still-unmet scientific validation. Optional legacy rehearsal can retain dissent, but it does not define this persistent-profile product.
