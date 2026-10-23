@@ -269,7 +269,9 @@ def _directory(store, profile_id, revision):
 
 def publish(spec_path, presented_path, store, repo_root=None):
     """Persist already confirmed artifacts. Never manufacture approval/confirmation."""
-    spec, presented, effective = validate(spec_path, presented_path, repo_root)
+    spec_bytes = _read(spec_path); presented = _read(presented_path)
+    spec = load_document(spec_bytes)
+    validate_spec(spec, presented, repo_root)
     pin = _pin(spec); directory = _directory(store, pin['profile_id'], pin['revision'])
     require(not directory.exists(), 'immutable profile revision already exists')
     if directory.parent.exists():
@@ -280,9 +282,9 @@ def publish(spec_path, presented_path, store, repo_root=None):
     directory.parent.mkdir(parents=True, exist_ok=True)
     try:
         directory.mkdir()
-        (directory / 'spec.json').write_bytes(_read(spec_path))
+        (directory / 'spec.json').write_bytes(spec_bytes)
         (directory / 'presented.json').write_bytes(presented)
-        (directory / 'manifest.json').write_bytes(canonical_bytes({**pin, 'spec_file_sha256': hashlib.sha256(_read(spec_path)).hexdigest(), 'presented_file_sha256': hashlib.sha256(presented).hexdigest()}))
+        (directory / 'manifest.json').write_bytes(canonical_bytes({**pin, 'spec_file_sha256': hashlib.sha256(spec_bytes).hexdigest(), 'presented_file_sha256': hashlib.sha256(presented).hexdigest()}))
     except OSError as error:
         raise ProfileError('could not publish immutable revision: ' + str(error)) from error
     return pin
