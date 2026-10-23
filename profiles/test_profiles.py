@@ -44,7 +44,9 @@ class ProfileTests(unittest.TestCase):
         parent = c.load_binding(self.store, 'parent'); child = c.load_binding(self.store, 'child-1')
         self.assertNotEqual(parent[1], child[1]); self.assertEqual(parent[1], c.load_binding(self.store, 'child-2')[1])
         revision = self.publish(make('synthetic-b', A, 'r2'), 'revision')
-        self.bind('child-1', revision)
+        c.bind(self.store, 'child-1', revision['profile_id'], revision['revision'],
+               revision['snapshot_sha256'], revision['effective_sha256'],
+               expected_current_sha256=c.digest(child[0]))
         self.assertEqual(parent, c.load_binding(self.store, 'parent'))
         self.assertEqual(parent[1], c.load_binding(self.store, 'child-1')[1])
         self.assertEqual(c.load_binding(self.store, 'child-2')[0]['revision'], 'r1')

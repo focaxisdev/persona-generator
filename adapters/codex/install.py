@@ -20,6 +20,7 @@ RUNTIME_FILES = (
     "profiles/__main__.py",
     "profiles/compiler.py",
     "profiles/catalog-v1.json",
+    "profiles/catalog-v2.json",
     "core/__init__.py",
     "core/compiler.py",
     "persona-design-v0.2/construct-registry.md",

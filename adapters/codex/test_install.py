@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from profiles.fixtures.build_fixtures import make
 
 
 HERE = Path(__file__).resolve().parent
@@ -80,6 +81,50 @@ class InstallTests(unittest.TestCase):
                                 cwd=self.root, capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("render", result.stdout)
+
+    def test_installed_two_catalogs_and_guarded_replacement(self):
+        destination = installer.install(self.target)
+        store = self.root / "two catalog store"
+
+        def run(*args):
+            return subprocess.run([sys.executable, str(destination / "run.py"), *map(str, args)],
+                                  cwd=self.root, capture_output=True, text=True)
+
+        pins = []
+        for revision, version in (("r1", "persona-profile-catalog-v1"), ("r2", "persona-profile-catalog-v2")):
+            _, presented, spec = make("synthetic-installed-versions", ("high",) * 10, revision, catalog_id=version)
+            sp = self.root / (revision + "-spec.json"); pp = self.root / (revision + "-preview.json")
+            sp.write_text(json.dumps(spec)); pp.write_bytes(presented)
+            result = run("publish", sp, "--presented", pp, "--store", store)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            pins.append(json.loads(result.stdout))
+
+        def bind(agent, pin, *extra):
+            return run("bind", "--store", store, "--agent", agent, "--profile", pin["profile_id"],
+                       "--revision", pin["revision"], "--snapshot", pin["snapshot_sha256"],
+                       "--effective", pin["effective_sha256"], *extra)
+
+        for agent in ("parent", "child"):
+            self.assertEqual(bind(agent, pins[0]).returncode, 0)
+        before = {p.name: p.read_bytes() for p in (store / "bindings").iterdir()}
+        for extra in ((), ("--expected-current", "0" * 64)):
+            rejected = bind("child", pins[1], *extra)
+            self.assertEqual(rejected.returncode, 2); self.assertEqual(rejected.stdout, "")
+            self.assertEqual(before, {p.name: p.read_bytes() for p in (store / "bindings").iterdir()})
+        audit = run("load", "--store", store, "--agent", "child")
+        self.assertEqual(audit.returncode, 0, audit.stderr)
+        replaced = bind("child", pins[1], "--expected-current", json.loads(audit.stdout)["binding_sha256"])
+        self.assertEqual(replaced.returncode, 0, replaced.stderr)
+        for agent, pin in (("parent", pins[0]), ("child", pins[1])):
+            result = run("render", "--store", store, "--agent", agent)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(hashlib.sha256(result.stdout.encode()).hexdigest(), pin["effective_sha256"])
+        # A changed copied catalog rejects only the binding selecting that version.
+        path = destination / "runtime/profiles/catalog-v2.json"
+        path.write_bytes(path.read_bytes() + b" ")
+        rejected = run("render", "--store", store, "--agent", "child")
+        self.assertEqual(rejected.returncode, 2); self.assertEqual(rejected.stdout, "")
+        self.assertEqual(run("render", "--store", store, "--agent", "parent").returncode, 0)
 
     def test_unbound_loader_fails_closed_in_fresh_processes(self):
         destination = installer.install(self.target)

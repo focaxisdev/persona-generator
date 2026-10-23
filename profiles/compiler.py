@@ -17,6 +17,10 @@ ProfileError = CoreError
 SCHEMA_VERSION = 'persona-profile-v1'
 CATALOG_PATH = 'profiles/catalog-v1.json'
 TRUSTED_CATALOG_SHA256 = '52d66e3265567b615cb7230390b5befa8de29e969c4913a6f97fc7230ed67cb5'
+TRUSTED_CATALOGS = {
+    'persona-profile-catalog-v1': (CATALOG_PATH, TRUSTED_CATALOG_SHA256),
+    'persona-profile-catalog-v2': ('profiles/catalog-v2.json', '4543ed162540a57bde37d264eade0fe0ea43fdcf4d6f027735e7229e49665acf'),
+}
 ORIGINS = ('owner', 'synthetic_fixture')
 
 
@@ -31,12 +35,14 @@ def _read(path):
         raise ProfileError('missing or unreadable artifact: ' + str(error)) from error
 
 
-def load_catalog(repo_root=None):
+def load_catalog(repo_root=None, catalog_id='persona-profile-catalog-v1'):
     root = _root(repo_root)
-    raw = _read(root / CATALOG_PATH)
-    require(hashlib.sha256(raw).hexdigest() == TRUSTED_CATALOG_SHA256, 'profile catalog differs from trust pin')
+    require(type(catalog_id) is str and catalog_id in TRUSTED_CATALOGS, 'unknown profile catalog')
+    path, sha = TRUSTED_CATALOGS[catalog_id]
+    raw = _read(root / path)
+    require(hashlib.sha256(raw).hexdigest() == sha, 'profile catalog differs from trust pin')
     catalog = load_document(raw)
-    require(catalog['id'] == 'persona-profile-catalog-v1' and catalog['schema_version'] == SCHEMA_VERSION, 'wrong profile catalog version')
+    require(catalog['id'] == catalog_id and catalog['schema_version'] == SCHEMA_VERSION, 'wrong profile catalog version')
     expected = [{'path': p, 'sha256': h} for p, h in TRUSTED_DEPENDENCIES]
     require(catalog['dependencies'] == expected, 'catalog source declarations differ from pins')
     for path, sha in TRUSTED_DEPENDENCIES:
@@ -73,6 +79,12 @@ def candidate(mapping):
     return {key: mapping[key] for key in ('id', 'aspect', 'anchor', 'trigger', 'rule', 'boundary')}
 
 
+def hypothesis_for_aspect(catalog, aspect):
+    matches = [(key, value) for key, value in catalog['hypotheses'].items() if value['aspect'] == aspect]
+    require(len(matches) == 1, 'catalog must have exactly one hypothesis per aspect')
+    return matches[0]
+
+
 def detect_constraints(constraints):
     """Detect only declared exact-context/action require/forbid pairs, never prose meaning."""
     array(constraints, 'constraints')
@@ -92,9 +104,9 @@ def validate_preview(preview, repo_root=None, allow_unresolved=False):
     obj(preview, 'schema_version kind profile_id revision catalog sources targets mappings answers approvals conflicts blocking_issues unknowns history evidence', 'profile preview')
     require(preview['schema_version'] == SCHEMA_VERSION and preview['kind'] == 'preview', 'unsupported profile schema/kind')
     _id(preview['profile_id'], 'profile_id'); _revision(preview['revision'])
-    catalog = load_catalog(repo_root)
     obj(preview['catalog'], 'id sha256', 'catalog reference')
-    require(preview['catalog'] == {'id': catalog['id'], 'sha256': TRUSTED_CATALOG_SHA256}, 'stale catalog reference')
+    catalog = load_catalog(repo_root, preview['catalog']['id'])
+    require(preview['catalog']['sha256'] == TRUSTED_CATALOGS[catalog['id']][1], 'stale catalog reference')
     require(type(preview['sources']) is list and preview['sources'] == catalog['dependencies'], 'source versions/hashes do not match pinned catalog')
     obj(preview['evidence'], 'status behavioral_validation', 'evidence')
     require(preview['evidence']['status'] == 'untested' and preview['evidence']['behavioral_validation'] is False, 'profile hypotheses remain untested')
@@ -121,6 +133,7 @@ def validate_preview(preview, repo_root=None, allow_unresolved=False):
         hypothesis = catalog['hypotheses'][mapping['id']]
         aspect = mapping['aspect']; anchor = mapping['anchor']
         require(aspect == hypothesis['aspect'] and anchor in ('low', 'middle', 'high'), 'hypothesis aspect/anchor mismatch')
+        require(hypothesis_for_aspect(catalog, aspect)[0] == mapping['id'], 'hypothesis does not match catalog aspect')
         require(aspect not in active and preview['targets'][aspect] == anchor, 'duplicate or target-mismatched mapping')
         exact = hypothesis['anchors'][anchor]
         require(all(mapping[k] == exact[k] for k in ('trigger', 'rule', 'boundary')), 'custom/stale mapping text')
@@ -150,7 +163,7 @@ def validate_preview(preview, repo_root=None, allow_unresolved=False):
             require(type(anchor) is str and anchor in ('low', 'middle', 'high'), 'unknown conflict anchor')
             require(anchor not in anchors, 'duplicate alternative anchor')
             anchors.add(anchor)
-            exact = catalog['hypotheses']['hyp.' + aspect.split('.')[1] + '.v1']['anchors'][anchor]
+            exact = hypothesis_for_aspect(catalog, aspect)[1]['anchors'][anchor]
             require(all(alternative[k] == exact[k] for k in ('trigger', 'rule', 'boundary')), 'conflict candidate differs from catalog')
             strings(alternative['answer_ids'], 'conflict answer_ids')
             require(all(a in answers for a in alternative['answer_ids']), 'unknown conflict answer')
@@ -284,14 +297,23 @@ def load_version(store, profile_id, revision, repo_root=None):
     return spec, effective
 
 
-def bind(store, agent_id, profile_id, revision, snapshot_sha256, effective_sha256, repo_root=None):
+def bind(store, agent_id, profile_id, revision, snapshot_sha256, effective_sha256, repo_root=None, *, expected_current_sha256=None):
     _id(agent_id, 'agent_id')
+    if expected_current_sha256 is not None:
+        _sha(expected_current_sha256, 'expected current binding digest')
+    path = _safe(store, 'bindings', agent_id + '.json')
+    if path.exists():
+        current, _ = load_binding(store, agent_id, repo_root)
+        require(expected_current_sha256 is not None, 'existing binding requires expected current digest')
+        require(digest(current) == expected_current_sha256, 'expected current binding digest mismatch')
+    else:
+        require(expected_current_sha256 is None, 'expected current binding is missing')
     spec, effective = load_version(store, profile_id, revision, repo_root)
     pin = _pin(spec)
     require(pin['snapshot_sha256'] == snapshot_sha256 and pin['effective_sha256'] == effective_sha256, 'binding supplied digests differ from exact revision')
     binding = {'schema_version': 'persona-profile-binding-v1', 'agent_id': agent_id, **pin}
     folder = _safe(store, 'bindings'); folder.mkdir(parents=True, exist_ok=True)
-    path = _safe(store, 'bindings', agent_id + '.json'); temporary = _safe(store, 'bindings', agent_id + '.tmp')
+    temporary = _safe(store, 'bindings', agent_id + '.tmp')
     temporary.write_bytes(canonical_bytes(binding)); temporary.replace(path)
     return binding
 
@@ -316,6 +338,7 @@ def main(argv=None):
     p = subs.add_parser('bind')
     for name in ('store', 'agent', 'profile', 'revision', 'snapshot', 'effective'):
         p.add_argument('--' + name, required=True)
+    p.add_argument('--expected-current')
     for command in ('load', 'render'):
         p = subs.add_parser(command); p.add_argument('--store', required=True); p.add_argument('--agent', required=True)
     args = parser.parse_args(argv)
@@ -327,12 +350,12 @@ def main(argv=None):
         elif args.command == 'publish':
             result = publish(args.spec, args.presented, args.store)
         elif args.command == 'bind':
-            result = bind(args.store, args.agent, args.profile, args.revision, args.snapshot, args.effective)
+            result = bind(args.store, args.agent, args.profile, args.revision, args.snapshot, args.effective, expected_current_sha256=args.expected_current)
         else:
             binding, effective = load_binding(args.store, args.agent)
             if args.command == 'render':
                 sys.stdout.write(effective); return 0
-            result = {**binding, 'validation_status': 'structural_only'}
+            result = {**binding, 'binding_sha256': digest(binding), 'validation_status': 'structural_only'}
         print(json.dumps(result, ensure_ascii=False, sort_keys=True)); return 0
     except (ProfileError, OSError) as error:
         print('REJECTED: ' + str(error), file=sys.stderr); return 2

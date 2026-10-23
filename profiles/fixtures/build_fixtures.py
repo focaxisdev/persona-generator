@@ -9,12 +9,12 @@ from pathlib import Path
 from profiles import compiler as c
 
 
-def make(profile_id, anchors, revision='r1', audit='Synthetic format fixture; not authentic owner input.'):
-    catalog = c.load_catalog()
+def make(profile_id, anchors, revision='r1', audit='Synthetic format fixture; not authentic owner input.', *, catalog_id='persona-profile-catalog-v1'):
+    catalog = c.load_catalog(catalog_id=catalog_id)
     preview = {
         'schema_version': c.SCHEMA_VERSION, 'kind': 'preview',
         'profile_id': profile_id, 'revision': revision,
-        'catalog': {'id': catalog['id'], 'sha256': c.TRUSTED_CATALOG_SHA256},
+        'catalog': {'id': catalog['id'], 'sha256': c.TRUSTED_CATALOGS[catalog_id][1]},
         'sources': catalog['dependencies'], 'targets': dict(zip(c.ASPECTS, anchors)),
         'mappings': [], 'answers': [], 'approvals': [], 'conflicts': [], 'blocking_issues': [],
         'unknowns': [audit], 'history': ['SYNTHETIC FIXTURE ONLY: no owner interview or model observation.'],
@@ -23,7 +23,7 @@ def make(profile_id, anchors, revision='r1', audit='Synthetic format fixture; no
     for aspect, anchor in preview['targets'].items():
         if anchor == 'unspecified':
             continue
-        name = aspect.split('.')[1]; hypothesis_id = 'hyp.' + name + '.v1'
+        name = aspect.split('.')[1]; hypothesis_id = c.hypothesis_for_aspect(catalog, aspect)[0]
         mapping = {'id': hypothesis_id, 'aspect': aspect, 'anchor': anchor,
                    **{k: catalog['hypotheses'][hypothesis_id]['anchors'][anchor][k] for k in ('trigger', 'rule', 'boundary')},
                    'answer_ids': ['answer-' + name], 'approval_id': 'approval-' + name}
