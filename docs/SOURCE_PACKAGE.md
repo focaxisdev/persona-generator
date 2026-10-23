@@ -8,15 +8,21 @@ The profile runtime and adapter require **Python 3.9+**, standard library only. 
 
 Building the candidate additionally uses Git and a SHA-256 utility. There is no pip dependency, wheel, new model service, credential or background process. Historical evidence documents keep the interpreter requirements/status they originally recorded; current install instructions govern the current profile package.
 
-## Exact source artifact, outside the repository
+## Approved alpha source
 
-First commit and review the candidate. Use its full 40-character commit ID, never a moving branch name. Resolve and record `git rev-parse CANDIDATE^{tree}`. Do not put the generated archive, manifest or private records into this Git tree: that would create self-hash recursion or change the reviewed source.
+At the [2026-10-23 checkpoint](RELEASE_STATUS.md), the approved v0.2.0-alpha source is exactly commit [`290ede4760f03048ddb8fcc4d613509cc573cb80`](https://github.com/focaxisdev/persona-generator/commit/290ede4760f03048ddb8fcc4d613509cc573cb80), tree `79eb58c33a3373e462c1e4a126f88dee6cfa453c`. Publication was approved but failed; no v0.2 tag/release exists. Current main includes PR #7; the install-manifest fix in Draft PR #8 is absent from both main and this approved alpha. Neither is a replacement release source.
+
+The procedure below documents reproducibility, not an instruction to regenerate approved assets, upload them or retry publication. Existing approved artifacts remain bound to their recorded commit and hashes. A different source requires a new review and decision. Never substitute `HEAD`, a moving branch, current main or PR #8 for this alpha.
+
+## Generic exact-source reproduction, outside the repository
+
+For a separately requested reproduction, use the reviewed full 40-character commit ID, never a moving branch name. For this alpha, `CANDIDATE_SHA` must be `290ede4760f03048ddb8fcc4d613509cc573cb80`. Resolve and record `git rev-parse CANDIDATE_SHA^{tree}`. Do not put the generated archive, manifest or private records into this Git tree: that would create self-hash recursion or change the reviewed source.
 
 ```sh
-# Replace CANDIDATE_SHA with the reviewed full commit ID.
+# For the approved v0.2 alpha, use only 290ede4760f03048ddb8fcc4d613509cc573cb80.
 # Use a fresh empty output directory, outside the checkout.
 mkdir /tmp/persona-v0.2.0-alpha-candidate
-git -c tar.umask=0022 archive --format=tar --prefix=persona-generator-v0.2.0-alpha/ --output=/tmp/persona-v0.2.0-alpha-candidate/persona-generator-v0.2.0-alpha-unconfigured-source.tar CANDIDATE_SHA
+git -c tar.umask=0022 archive --format=tar --prefix=persona-generator-v0.2.0-alpha/ --output=/tmp/persona-v0.2.0-alpha-candidate/persona-generator-v0.2.0-alpha-unconfigured-source.tar 290ede4760f03048ddb8fcc4d613509cc573cb80
 sha256sum /tmp/persona-v0.2.0-alpha-candidate/persona-generator-v0.2.0-alpha-unconfigured-source.tar
 ```
 
@@ -31,7 +37,7 @@ Create `manifest.json` as a sidecar, recording:
 - implementation minimum `3.9`, actual tested interpreter `3.12.14`, no execution evidence for other versions;
 - protected-history comparison, website exclusion, source/rights documentation and check results.
 
-Write indented UTF-8 JSON with sorted keys and a final newline, then SHA-256 the actual manifest bytes. The source file hash domain excludes the manifest, archive and test outputs: these are external evidence. Record archive and manifest hashes, full commit/tree and test results in the existing Draft PR. An archive checksum verifies bytes, not signatures or publisher identity. No release asset upload is performed by these instructions.
+Write indented UTF-8 JSON with sorted keys and a final newline, then SHA-256 the actual manifest bytes. The source file hash domain excludes the manifest, archive and test outputs: these are external evidence. Retain archive and manifest hashes, full commit/tree and test results with the corresponding review record; the approved alpha review is no longer an open Draft PR. An archive checksum verifies bytes, not signatures or publisher identity. No release asset upload is performed by these instructions.
 
 ## Clean installation and synthetic reload acceptance
 
@@ -55,4 +61,4 @@ For real optional configuration later, read [onboarding](../profiles/ONBOARDING.
 | Private owner material and raw host traces | Outside the source tree; not included. |
 | Website PR #3 | Excluded; existing original README SVG assets are separate and retained. |
 
-[Changelog](../CHANGELOG.md), [draft notes](RELEASE_NOTES_DRAFT.md), [acceptance tracks](RELEASE_ACCEPTANCE.md) and [safe merge route](MERGE_ROUTE.md) must agree with the exact artifact. No new academic endorsement or expanded validation claim is licensed by packaging.
+[Current release status](RELEASE_STATUS.md) and [acceptance tracks](RELEASE_ACCEPTANCE.md) distinguish the exact artifact from later changes. [Changelog](../CHANGELOG.md), [draft notes](RELEASE_NOTES_DRAFT.md) and [merge route](MERGE_ROUTE.md) retain historical preparation context; the latter two are pre-merge snapshots. No new academic endorsement or expanded validation claim is licensed by packaging.

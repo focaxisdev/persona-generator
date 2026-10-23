@@ -2,7 +2,7 @@
 
 **Traceable personality design for an agent and its subagents.** Configure a combination of desired traits, inspect their psychological sources and proposed AI behavior, confirm the complete specification, and load the same explicit profile revision again.
 
-**UNCONFIGURED experimental source candidate (unreleased):** ten BFAS aspects now have versioned specification semantics, not demonstrated human personality or psychometric validity. New behavioral hypotheses have no inherited results from earlier experiments. [繁體中文](README.zh-TW.md) · [Project purpose and acceptance](PROJECT_PURPOSE.md)
+**UNCONFIGURED experimental source candidate (v0.2 unreleased):** ten BFAS aspects now have versioned specification semantics, not demonstrated human personality or psychometric validity. New behavioral hypotheses have no inherited results from earlier experiments. [繁體中文](README.zh-TW.md) · [Project purpose and acceptance](PROJECT_PURPOSE.md)
 
 **Choose questions OR free text, or skip:** [owner onboarding](profiles/ONBOARDING.md) · [parent/optional-child assignments and rollback](profiles/ASSIGNMENTS.md) · [readable psychology definitions](docs/PSYCHOLOGY_GROUNDING.md).
 
@@ -32,7 +32,7 @@ One [repository-guided explicit-loading demonstration](adapters/codex/EXPLICIT_L
 
 This increment runs **zero behavior experiments**. [Core triage v2 remains paused](evaluation/core-triage-v2/records/REPORT.md) at six answers (one carried, five new) and twelve locked new ratings: seventeen diagnostic calls. Remaining cells do not resume automatically. The earlier [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md) retains 102 outputs, 5/30 candidate contrasts (three limited-confidence) and 28 word-budget violations. These results do not validate the new ten-aspect hypotheses.
 
-The **UNCONFIGURED experimental source-package** candidate covers inspectable install/configure/load software separately from scientific validation. It activates no persona. Genuine private owner preference/spec/assignment confirmation and fresh reuse remain unverified and non-gating for this distribution; authentic confirmation is still required before later activation. [Exact packaging and checklist](docs/SOURCE_PACKAGE.md) await coordinator artifact review and separate release authorization. The original scientific gate remains unmet and unwaived. Authentic owner E2E, composition behavior, persistent identity and general behavioral stability remain unverified. [Claims](docs/CLAIMS_MATRIX.md) · [Release acceptance](docs/RELEASE_ACCEPTANCE.md) · [Draft release notes](docs/RELEASE_NOTES_DRAFT.md).
+The **UNCONFIGURED experimental source-package** candidate covers inspectable install/configure/load software separately from scientific validation. It activates no persona. Genuine private owner preference/spec/assignment confirmation and fresh reuse remain unverified and non-gating for this distribution; authentic confirmation is still required before later activation. The exact alpha source and publication were approved, but publication remains blocked and no v0.2 tag/release exists at the [2026-10-23 checkpoint](docs/RELEASE_STATUS.md). Main and Draft PR #8 differ from that approved source; see [packaging](docs/SOURCE_PACKAGE.md). The original scientific gate remains unmet and unwaived. Authentic owner E2E, composition behavior, persistent identity and general behavioral stability remain unverified. [Claims](docs/CLAIMS_MATRIX.md) · [Release acceptance](docs/RELEASE_ACCEPTANCE.md) · [Draft release notes](docs/RELEASE_NOTES_DRAFT.md).
 
 ## Other supported concepts
 
