@@ -3,10 +3,12 @@ import importlib.util
 import hashlib
 import json
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from profiles.fixtures.build_fixtures import make
 
 
@@ -15,6 +17,11 @@ REPO = HERE.parents[1]
 spec = importlib.util.spec_from_file_location("codex_install", HERE / "install.py")
 installer = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(installer)
+ADAPTER_ASSETS = (
+    ("skill/SKILL.md", "SKILL.md"),
+    ("skill/agents/openai.yaml", "agents/openai.yaml"),
+    ("run.py", "run.py"),
+)
 
 
 class InstallTests(unittest.TestCase):
@@ -24,6 +31,110 @@ class InstallTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         self.target = self.root / "target repo with spaces"
         self.target.mkdir()
+
+    def disposable_sources(self):
+        source = self.root / "source"
+        adapter = source / "adapters/codex"
+        for relative in installer.RUNTIME_FILES:
+            output = source / relative
+            output.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(REPO / relative, output)
+        for relative, _ in ADAPTER_ASSETS:
+            output = adapter / relative
+            output.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(HERE / relative, output)
+        return source, adapter
+
+    def assert_manifest_bytes(self, destination, source, adapter):
+        expected = {installed: (adapter / relative).read_bytes()
+                    for relative, installed in ADAPTER_ASSETS}
+        expected.update({"runtime/" + relative: (source / relative).read_bytes()
+                         for relative in installer.RUNTIME_FILES})
+        actual = {p.relative_to(destination).as_posix(): p.read_bytes()
+                  for p in destination.rglob("*") if p.is_file()}
+        self.assertEqual(actual, expected)
+        self.assertEqual(len(actual), 13)
+        self.assertFalse(any(p.is_symlink() for p in destination.rglob("*")))
+
+    def test_unlisted_source_content_is_ignored(self):
+        source, adapter = self.disposable_sources()
+        extras = (
+            "private-profile.json", "store/versions/private/r1/spec.json",
+            "store/bindings/private-agent.json", "__pycache__/private.pyc",
+            "agents/private-record.json",
+        )
+        for relative in extras:
+            path = adapter / "skill" / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(b"synthetic private record: must not ship")
+        (adapter / "skill/empty-store").mkdir()
+        (source / "profiles/private-profile.json").write_text("unlisted runtime record")
+        (adapter / "private-profile.json").write_text("unlisted adapter record")
+        outside = self.root / "outside"
+        outside.mkdir()
+        (outside / "private.json").write_text("unlisted external record")
+        for name, target, is_directory in (
+                ("linked-file", outside / "private.json", False),
+                ("linked-store", outside, True),
+                ("broken-link", outside / "absent", False)):
+            (adapter / "skill" / name).symlink_to(target, target_is_directory=is_directory)
+        with mock.patch.object(installer, "ADAPTER_ROOT", adapter):
+            destination = installer.install(self.target, source_root=source)
+        self.assert_manifest_bytes(destination, source, adapter)
+        directories = {p.relative_to(destination).as_posix()
+                       for p in destination.rglob("*") if p.is_dir()}
+        self.assertEqual(directories, {"agents", "runtime", "runtime/profiles",
+                                      "runtime/core", "runtime/persona-design-v0.2"})
+
+    def test_required_assets_reject_before_target_writes(self):
+        source, adapter = self.disposable_sources()
+        marker = self.target / ".agents/keep.txt"
+        marker.parent.mkdir()
+        marker.write_bytes(b"preserve existing target content")
+        before = {p.relative_to(self.target).as_posix():
+                  p.read_bytes() if p.is_file() else None
+                  for p in self.target.rglob("*")}
+        required = [(adapter / relative, "adapter") for relative, _ in ADAPTER_ASSETS]
+        required.extend((source / relative, "runtime") for relative in installer.RUNTIME_FILES)
+        for path, kind in required:
+            original = path.read_bytes()
+            for defect in ("missing", "symlink"):
+                with self.subTest(asset=path.relative_to(source), defect=defect):
+                    path.unlink()
+                    if defect == "symlink":
+                        replacement = self.root / "replacement"
+                        replacement.write_bytes(original)
+                        path.symlink_to(replacement)
+                    try:
+                        with mock.patch.object(installer, "ADAPTER_ROOT", adapter):
+                            with self.assertRaisesRegex(ValueError, kind + " source"):
+                                installer.install(self.target, source_root=source)
+                        after = {p.relative_to(self.target).as_posix():
+                                 p.read_bytes() if p.is_file() else None
+                                 for p in self.target.rglob("*")}
+                        self.assertEqual(after, before)
+                    finally:
+                        if path.is_symlink():
+                            path.unlink()
+                        path.write_bytes(original)
+
+    def test_required_source_directory_symlinks_reject_before_target_writes(self):
+        source, adapter = self.disposable_sources()
+        directories = (adapter / "skill/agents", adapter / "skill",
+                       source / "profiles", source / "core", source / "persona-design-v0.2")
+        for index, path in enumerate(directories):
+            with self.subTest(directory=path.relative_to(source)):
+                replacement = self.root / ("directory-" + str(index))
+                path.rename(replacement)
+                path.symlink_to(replacement, target_is_directory=True)
+                try:
+                    with mock.patch.object(installer, "ADAPTER_ROOT", adapter):
+                        with self.assertRaisesRegex(ValueError, "symlinked .* source"):
+                            installer.install(self.target, source_root=source)
+                    self.assertEqual(list(self.target.iterdir()), [])
+                finally:
+                    path.unlink()
+                    replacement.rename(path)
 
     def test_version_guards_reject_before_work_and_allow_minimum_boundary(self):
         # Simulated version_info exercises guard logic, not Python 3.9 execution.
@@ -73,6 +184,7 @@ class InstallTests(unittest.TestCase):
         expected = {"SKILL.md", "agents/openai.yaml", "run.py"}
         expected.update("runtime/" + relative for relative in installer.RUNTIME_FILES)
         self.assertEqual(actual, expected)
+        self.assert_manifest_bytes(destination, REPO, HERE)
         for relative in installer.RUNTIME_FILES:
             self.assertEqual((destination / "runtime" / relative).read_bytes(),
                              (REPO / relative).read_bytes())
