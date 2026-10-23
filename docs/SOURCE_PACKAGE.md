@@ -10,7 +10,7 @@ Building the candidate additionally uses Git and a SHA-256 utility. There is no 
 
 ## Approved alpha source
 
-At the [2026-10-23 checkpoint](RELEASE_STATUS.md), the approved v0.2.0-alpha source is exactly commit [`290ede4760f03048ddb8fcc4d613509cc573cb80`](https://github.com/focaxisdev/persona-generator/commit/290ede4760f03048ddb8fcc4d613509cc573cb80), tree `79eb58c33a3373e462c1e4a126f88dee6cfa453c`. Publication was approved but failed; no v0.2 tag/release exists. Current main includes PR #7; the install-manifest fix in Draft PR #8 is absent from both main and this approved alpha. Neither is a replacement release source.
+At the [2026-10-23 checkpoint](RELEASE_STATUS.md), the approved v0.2.0-alpha source is exactly commit [`290ede4760f03048ddb8fcc4d613509cc573cb80`](https://github.com/focaxisdev/persona-generator/commit/290ede4760f03048ddb8fcc4d613509cc573cb80), tree `79eb58c33a3373e462c1e4a126f88dee6cfa453c`. Publication was approved but failed; no v0.2 tag/release exists. Current main at `cd737a88445287ede3d763d9465f269094f36950` includes PR #7 and the merged PR #8 install-manifest fix. These later fixes are absent from the approved alpha; main is not a replacement release source.
 
 The procedure below documents reproducibility, not an instruction to regenerate approved assets, upload them or retry publication. Existing approved artifacts remain bound to their recorded commit and hashes. A different source requires a new review and decision. Never substitute `HEAD`, a moving branch, current main or PR #8 for this alpha.
 

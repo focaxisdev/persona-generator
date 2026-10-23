@@ -30,7 +30,7 @@ Python 本機工具負責嚴格驗證、不可覆寫的 revision 保存、明確
 
 本增量**沒有新增行為實驗**。[core triage v2](evaluation/core-triage-v2/records/REPORT.md)維持六格暫停：一份沿用、五份新回答、十二份新評讀，共十七次診斷呼叫，其餘不自動續跑。較早的 [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md)仍保留 102 份輸出、30 組中 5 組候選對照（其中 3 組信心有限）及 28 份字數違規；不能用來驗證新的人格假說。
 
-本次準備的是 **UNCONFIGURED 未設定人格的實驗性來源套件**，檢查安裝／設定／載入軟體，與科學驗證分開。套件不啟用人格；owner 的偏好、完整規格、指派確認與 fresh reuse 仍未驗證，但不是未設定套件的發行前提，將來實際啟用前仍須真正確認。精確 alpha 來源與發布已獲核准，但發布仍受阻；[2026-10-23 狀態快照](docs/RELEASE_STATUS.md)尚無 v0.2 tag／release。Main 與 Draft PR #8 均不同於核准來源，詳見[來源套件](docs/SOURCE_PACKAGE.md)。原科學門檻未通過、未豁免。修改不是必經步驟，只有實際修改時才重新確認。真正 owner 的端到端流程、組合行為、持續身份與跨模型穩定性仍待驗證。[宣稱矩陣](docs/CLAIMS_MATRIX.md) · [發布驗收](docs/RELEASE_ACCEPTANCE.md)。
+本次準備的是 **UNCONFIGURED 未設定人格的實驗性來源套件**，檢查安裝／設定／載入軟體，與科學驗證分開。套件不啟用人格；owner 的偏好、完整規格、指派確認與 fresh reuse 仍未驗證，但不是未設定套件的發行前提，將來實際啟用前仍須真正確認。精確 alpha 來源與發布已獲核准，但發布仍受阻；[2026-10-23 狀態快照](docs/RELEASE_STATUS.md)尚無 v0.2 tag／release。Main 已包含合併後的 PR #8，與核准來源不同，詳見[來源套件](docs/SOURCE_PACKAGE.md)。原科學門檻未通過、未豁免。修改不是必經步驟，只有實際修改時才重新確認。真正 owner 的端到端流程、組合行為、持續身份與跨模型穩定性仍待驗證。[宣稱矩陣](docs/CLAIMS_MATRIX.md) · [發布驗收](docs/RELEASE_ACCEPTANCE.md)。
 
 既有 [Persona Pack](persona-pack-v0.1/README.md)已支援由 corpus 形成的描述性持久化，與本次「期望特質規格」是不同概念。舊 [core](core/README.md)和單次無工具評測格式保持原樣，僅作受限診斷；情境排演及 panel 仍為選用功能，不是預設人格產品。
 

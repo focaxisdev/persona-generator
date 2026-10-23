@@ -6,7 +6,7 @@ The original behavioral release gate remains **unmet and unwaived**. This docume
 
 ## Track A: UNCONFIGURED experimental source package
 
-This is the selected distribution scope: source, documentation and inert synthetic examples without selecting, publishing, binding or activating an owner's profile. The exact alpha source was approved and PR #6 merged; actual publication remains blocked. Later main changes and Draft PR #8 are distinct checkpoints; see [release status](RELEASE_STATUS.md). This prospective distribution acceptance is not a revision of the scientific gate.
+This is the selected distribution scope: source, documentation and inert synthetic examples without selecting, publishing, binding or activating an owner's profile. The exact alpha source was approved and PR #6 merged; actual publication remains blocked. Main now includes the later fixes from merged PR #7 and PR #8; these remain distinct from the approved alpha checkpoint; see [release status](RELEASE_STATUS.md). This prospective distribution acceptance is not a revision of the scientific gate.
 
 Permitted claim: inspectable software can author desired-trait specifications, preserve exact confirmed revisions and explicitly load trusted rules. Thirty rule anchors per catalog are engineering hypotheses. “Experimental”, “source package” and “UNCONFIGURED” must remain prominent. A package includes no runtime store or assigned persona; synthetic fixtures and historical model outputs remain inert test/evidence data.
 
@@ -43,6 +43,6 @@ B01/B02 remain experimental expression proxies. Ten independently selectable set
 
 ## Next bounded decision
 
-Review Draft PR #8 and the current release-status documentation change separately. Platform-log diagnosis is needed for the retained publication failure; no new retry is authorized here. Preserve the exact approved alpha commit and artifacts rather than substituting current main or PR #8. See [release status](RELEASE_STATUS.md) for the dated checkpoint and [source packaging](SOURCE_PACKAGE.md) for the pinned source. Personal onboarding can be undertaken later, privately and optionally; it is neither completed nor a prerequisite for this distribution scope. Scientific Track B remains open and unwaived.
+PR #8 has merged. Review the current release-status documentation change against that integrated main checkpoint. Platform-log diagnosis is needed for the retained publication failure; no new retry is authorized here. Preserve the exact approved alpha commit and artifacts rather than substituting current main or PR #8. See [release status](RELEASE_STATUS.md) for the dated checkpoint and [source packaging](SOURCE_PACKAGE.md) for the pinned source. Personal onboarding can be undertaken later, privately and optionally; it is neither completed nor a prerequisite for this distribution scope. Scientific Track B remains open and unwaived.
 
 Marketing is GitHub documentation only. The standalone website was a coordinator misunderstanding, not the user's requested deliverable. PR #3 and its private preview remain untouched, unmerged, unshared and excluded from the candidate. The released v0.1.0-alpha is not overwritten.
