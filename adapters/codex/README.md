@@ -20,6 +20,14 @@ no network requests, starts no model session, changes no account settings, and
 does not install into a user's home, global agent configuration or running
 agent by default. There is no implicit destination or overwrite switch.
 
+Copying uses an explicit manifest: the three adapter assets shown below and the
+ten runtime files. Unlisted source files, directories and links are ignored.
+Every required source file and its path components must be present and free of
+symlinks before any target writes. Use a trusted, reviewed source checkout;
+these checks do not protect against concurrent source or destination changes.
+An interrupted or failed final copy can leave a partial installation that needs
+manual removal before retrying.
+
 The resulting layout is:
 
 ```text

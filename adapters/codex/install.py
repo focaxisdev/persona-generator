@@ -19,6 +19,11 @@ import tempfile
 SKILL_NAME = "persona-profile"
 SOURCE_ROOT = Path(__file__).resolve().parents[2]
 ADAPTER_ROOT = Path(__file__).resolve().parent
+ADAPTER_FILES = (
+    ("skill/SKILL.md", "SKILL.md"),
+    ("skill/agents/openai.yaml", "agents/openai.yaml"),
+    ("run.py", "run.py"),
+)
 RUNTIME_FILES = (
     "LICENSE",
     "profiles/__init__.py",
@@ -39,6 +44,13 @@ def _no_symlink_components(path: Path) -> None:
             raise ValueError("installation path contains a symlink: " + str(component))
 
 
+def _require_source(root: Path, relative: str, kind: str) -> None:
+    source = (root / relative).absolute()
+    if (any(component.is_symlink() for component in (source, *source.parents))
+            or not source.is_file()):
+        raise ValueError("missing or symlinked " + kind + " source: " + relative)
+
+
 def install(target_repo: Path, source_root: Path = SOURCE_ROOT) -> Path:
     """Install the allowlisted local package; refuse an existing skill path."""
     target_repo = Path(target_repo).absolute()
@@ -49,18 +61,20 @@ def install(target_repo: Path, source_root: Path = SOURCE_ROOT) -> Path:
     _no_symlink_components(destination)
     if destination.exists():
         raise ValueError("skill already exists; refusing to overwrite: " + str(destination))
+    for relative, _ in ADAPTER_FILES:
+        _require_source(ADAPTER_ROOT, relative, "adapter")
     for relative in RUNTIME_FILES:
-        source = source_root / relative
-        if not source.is_file() or source.is_symlink():
-            raise ValueError("missing or symlinked runtime source: " + relative)
+        _require_source(source_root, relative, "runtime")
     with tempfile.TemporaryDirectory(prefix="persona-codex-install-") as temporary:
         staged = Path(temporary) / SKILL_NAME
-        shutil.copytree(ADAPTER_ROOT / "skill", staged)
+        for relative, installed in ADAPTER_FILES:
+            output = staged / installed
+            output.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(ADAPTER_ROOT / relative, output)
         for relative in RUNTIME_FILES:
             output = staged / "runtime" / relative
             output.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source_root / relative, output)
-        shutil.copyfile(ADAPTER_ROOT / "run.py", staged / "run.py")
         destination.parent.mkdir(parents=True, exist_ok=True)
         # copytree reserves the destination with mkdir(exist_ok=False).
         # An existing directory, file or symlink is never merged or replaced.
