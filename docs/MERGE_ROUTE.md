@@ -1,3 +1,5 @@
+> **Historical pre-merge snapshot.** The original body below is preserved unchanged. For the approved source, merged changes, unpublished release and remaining blockers, read [current release status](RELEASE_STATUS.md). Do not repeat this snapshot’s merge or candidate-selection instructions.
+
 # Reviewed merge route — instructions only
 
 No retarget, merge, tag or publication has been executed. The source candidate is **v0.2.0-alpha UNCONFIGURED experimental**, not a scientifically validated persona. [Package acceptance](RELEASE_ACCEPTANCE.md) and explicit maintainer decisions govern any future action.

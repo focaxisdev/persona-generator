@@ -1,3 +1,5 @@
+> **Historical pre-merge snapshot.** The original body below is preserved unchanged. For the approved source, merged changes, unpublished release and remaining blockers, read [current release status](RELEASE_STATUS.md). Do not repeat this snapshot’s merge or candidate-selection instructions.
+
 # v0.2.0-alpha UNCONFIGURED experimental source package — NOT RELEASED
 
 **Prepared distribution scope: UNCONFIGURED source package.** An installable, psychology-source-grounded specification and composition layer for desired agent behavior. No owner profile, runtime store, binding or activation is distributed. Synthetic fixtures and old model outputs are inert examples/evidence, not defaults. AI mappings are experimental and scientifically unvalidated. These notes are not a tag, merge approval, release announcement or claim that the original scientific gate passed. See the separate prospective [package and scientific tracks](RELEASE_ACCEPTANCE.md).
