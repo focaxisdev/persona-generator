@@ -24,7 +24,7 @@ The owner selects how the **agent should behave**, through guided choices or sho
 - [x] Static tests cover two full combinations, parent/two-child isolation, fresh-process reload, task isolation, tampering, unknown values and unresolved conflicts.
 - [x] Independent review distinguishes tested installation/loading code from untested host activation and behavioral stability.
 
-Completion evidence belongs in [profile verification](profiles/VERIFICATION.md). Checked items refer only to the bounded implementation and static/synthetic checks; they do not assert live host or model validation. Future release additionally needs real private owner confirmation/reconfirmation, host-use checks and a separately reviewed behavior plan covering the intended system. The original release gate is not silently replaced.
+Historical implementation evidence belongs in [profile verification](profiles/VERIFICATION.md); current release preparation is tracked in [readiness verification](docs/RELEASE_READINESS_VERIFICATION.md). Checked items above refer to the original bounded implementation and synthetic checks. Later explicit host loading is documented separately and used Politeness alone, not composition. The [prospective release tracks](docs/RELEASE_ACCEPTANCE.md) separate a scoped experimental install/configure/load package from scientific validation. Genuine owner preference, full-spec and assignment confirmation and fresh reuse remain pending; reconfirmation is required only if content changes. Coordinator adoption and exact-candidate review are also pending. The original scientific gate remains unmet and unwaived.
 
 ## Deliberately separate paths
 

@@ -4,6 +4,8 @@
 
 目前是**尚未發布的候選版**。十個 BFAS aspects 有版本化的設定與指令語義，不等於模型已實現十種人類心理特質。[English](README.md) · [專案目的與驗收](PROJECT_PURPOSE.md)
 
+**可選擇題或自由文字，也可略過：**[owner 入門](profiles/ONBOARDING.md) · [父／選用子代理指派與回復](profiles/ASSIGNMENTS.md) · [心理學定義與排除範圍](docs/PSYCHOLOGY_GROUNDING.md)。
+
 **開始使用：**[Quickstart](docs/QUICKSTART.md) → [持久人格規格](profiles/README.md) → [Codex 安裝方式](adapters/codex/README.md)。
 
 ## 從需求到可載入規格
@@ -20,13 +22,13 @@ Python 本機工具負責嚴格驗證、不可覆寫的 revision 保存、明確
 
 檔案能保存與重載，不代表宿主一定自動載入，也不代表模型行為穩定、具有人類情感或心理計量效度。格式正確的確認紀錄無法證明真人同意；公開範例全部是合成選擇與合成確認。
 
-本輪[依 repository 指引明確載入](adapters/codex/EXPLICIT_LOADING_2026-10-23.md)已記錄一個實際父代理與獨立委派的子代理，各自讀取已安裝 skill、呼叫自己的驗證 loader，再回答一個低風險合成任務。這不是自動探索或人格效度驗證；native discovery 仍未驗證。Catalog v2 為 Politeness 加入不臆造優點或目的的中性致意 fallback；v1 規格不改寫，替換 binding 則須提供目前 binding 的 digest。
+先前[依 repository 指引明確載入](adapters/codex/EXPLICIT_LOADING_2026-10-23.md)已記錄一個實際父代理與獨立委派的子代理，各自讀取已安裝 skill、呼叫自己的驗證 loader，再回答一個低風險合成任務。兩份回答都只使用 Politeness，其他 aspects 全未指定，因此證明的是明確載入，不是組合效度。這不是自動探索或人格效度驗證；native discovery 仍未驗證，也不是明確載入產品的必要條件。Catalog v2 為 Politeness 加入不臆造優點或目的的中性致意 fallback；v1 規格不改寫，替換 binding 則須提供目前 binding 的 digest。
 
 ## 證據不跨版本挪用
 
 本增量**沒有新增行為實驗**。[core triage v2](evaluation/core-triage-v2/records/REPORT.md)維持六格暫停：一份沿用、五份新回答、十二份新評讀，共十七次診斷呼叫，其餘不自動續跑。較早的 [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md)仍保留 102 份輸出、30 組中 5 組候選對照（其中 3 組信心有限）及 28 份字數違規；不能用來驗證新的人格假說。
 
-真正 owner 的確認／修改後確認／fresh reuse、組合行為、持續身份與跨模型穩定性仍待驗證。[宣稱矩陣](docs/CLAIMS_MATRIX.md) · [發布驗收](docs/RELEASE_ACCEPTANCE.md)。
+另提出「實驗性套件」驗收，檢查安裝／設定／載入的可用性，與科學驗證分開；仍待真正 owner 私下確認偏好、完整規格、指派與 fresh reuse，以及協調者採納範圍和審查。原科學門檻未通過、未豁免。修改不是必經步驟，只有實際修改時才重新確認。真正 owner 的端到端流程、組合行為、持續身份與跨模型穩定性仍待驗證。[宣稱矩陣](docs/CLAIMS_MATRIX.md) · [發布驗收](docs/RELEASE_ACCEPTANCE.md)。
 
 既有 [Persona Pack](persona-pack-v0.1/README.md)已支援由 corpus 形成的描述性持久化，與本次「期望特質規格」是不同概念。舊 [core](core/README.md)和單次無工具評測格式保持原樣，僅作受限診斷；情境排演及 panel 仍為選用功能，不是預設人格產品。
 

@@ -4,6 +4,8 @@
 
 **Unreleased candidate:** ten BFAS aspects now have versioned specification semantics, not demonstrated human personality or psychometric validity. New behavioral hypotheses have no inherited results from earlier experiments. [繁體中文](README.zh-TW.md) · [Project purpose and acceptance](PROJECT_PURPOSE.md)
 
+**Choose questions OR free text, or skip:** [owner onboarding](profiles/ONBOARDING.md) · [parent/optional-child assignments and rollback](profiles/ASSIGNMENTS.md) · [readable psychology definitions](docs/PSYCHOLOGY_GROUNDING.md).
+
 **Start:** [Quickstart](docs/QUICKSTART.md) → [desired-trait profiles](profiles/README.md) → [Codex installation](adapters/codex/README.md).
 
 `Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
@@ -22,13 +24,13 @@ Standard-library Python validates the confirmed artifact, saves immutable revisi
 
 File persistence does not establish automatic host reload, consistent model behavior, felt emotion, human psychometric validity, or cross-model stability. Structural confirmation receipts cannot prove that a real owner approved. Public examples use synthetic choices and synthetic receipts only.
 
-One [repository-guided explicit-loading demonstration](adapters/codex/EXPLICIT_LOADING_2026-10-23.md) now records an actual parent and independently delegated child reading the installed skill, running their own validated loader and answering a bounded synthetic task. Native discovery remains unverified; this integration is not behavioral validation. Catalog v2 adds a neutral Politeness fallback, while existing v1 specs remain unchanged; deliberate binding replacement requires an expected-current digest.
+One [repository-guided explicit-loading demonstration](adapters/codex/EXPLICIT_LOADING_2026-10-23.md) now records an actual parent and independently delegated child reading the installed skill, running their own validated loader and answering a bounded synthetic task. Both live answers used **Politeness alone**, with every other aspect unspecified. They establish explicit loading, not composition validity. Native discovery remains unverified and optional for explicit loading; this integration is not behavioral validation. Catalog v2 adds a neutral Politeness fallback, while existing v1 specs remain unchanged; deliberate binding replacement requires an expected-current digest.
 
 ## Evidence stays tied to its version
 
 This increment runs **zero behavior experiments**. [Core triage v2 remains paused](evaluation/core-triage-v2/records/REPORT.md) at six answers (one carried, five new) and twelve locked new ratings: seventeen diagnostic calls. Remaining cells do not resume automatically. The earlier [v1 pilot](evaluation/pilot-2026-10-22/REPORT.md) retains 102 outputs, 5/30 candidate contrasts (three limited-confidence) and 28 word-budget violations. These results do not validate the new ten-aspect hypotheses.
 
-Authentic owner E2E, composition behavior, persistent identity and general behavioral stability remain unverified. [Claims](docs/CLAIMS_MATRIX.md) · [Release acceptance](docs/RELEASE_ACCEPTANCE.md) · [Draft release notes](docs/RELEASE_NOTES_DRAFT.md).
+A prospective **experimental package** track covers install/configure/load usability separately from scientific validation; it still awaits genuine private owner preference/spec/assignment confirmation, fresh reuse and coordinator acceptance. The original scientific gate remains unmet and unwaived. Authentic owner E2E, composition behavior, persistent identity and general behavioral stability remain unverified. [Claims](docs/CLAIMS_MATRIX.md) · [Release acceptance](docs/RELEASE_ACCEPTANCE.md) · [Draft release notes](docs/RELEASE_NOTES_DRAFT.md).
 
 ## Other supported concepts
 

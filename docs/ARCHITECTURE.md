@@ -29,11 +29,11 @@ BFAS source vocabulary + separately versioned AI hypotheses
 
 The [profile contract](../profiles/CONTRACT.md) is host-neutral. All ten aspects may be independently specified or left unspecified. A same-domain pair need not match; no random population model or total score exists. Each active rule has a local trigger and boundary. Genuine declared contradictions must be resolved explicitly; arbitrary natural-language conflict detection is not claimed. Separate role, capabilities, values, transient state, goals and permissions remain host/task concerns.
 
-A new profile revision requires renewed confirmation. Bindings stay pinned until explicitly changed; child changes do not mutate the parent's binding. Current task facts and constraints override preferences temporarily without writing to the profile. Human final judgment, safety, accuracy and privacy remain invariant.
+A new profile revision requires renewed confirmation. [Assignments and rollback](../profiles/ASSIGNMENTS.md) require a real assignment decision and the validated current binding digest for replacement; this is neither owner authentication nor a concurrent-writer transaction. Bindings stay pinned until explicitly changed; child changes do not mutate the parent's binding. Current task facts and constraints override preferences temporarily without writing to the profile. Human final judgment, safety, accuracy and privacy remain invariant.
 
 ## Version routing and preserved concepts
 
-- [Profiles](../profiles/README.md): new `persona-profile-v1` specification/storage/binding path; new `hyp.*.v1` rules have no behavioral evidence.
+- [Profiles](../profiles/README.md): new `persona-profile-v1` specification/storage/binding path; explicit catalog v1/v2 pins `hyp.*.v1` and the v2 Politeness repair `hyp.politeness.v2`. Hypotheses have no scientific behavioral validation.
 - [Two-operation core](../core/README.md): preserved `persona-core-v1` diagnostic path. Its ephemeral scope and one-answer/no-delegation envelope remain unchanged and apply only to that adapter.
 - [Persona Pack](../persona-pack-v0.1/README.md): existing corpus-derived descriptive persistence, distinct from the new desired-trait profile.
 - [Scenario rehearsal](../fictional-persona-instantiation-v0.1/README.md) and [panel adapter](../ephemeral-persona-panel-adapter-v0.1/README.md): optional bounded workflows, not the default trait product.

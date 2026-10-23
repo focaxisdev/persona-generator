@@ -4,11 +4,11 @@ Read [PROJECT_PURPOSE](PROJECT_PURPOSE.md), then [Quickstart](docs/QUICKSTART.md
 
 ## Current route
 
-1. Acquire desired **agent** behavior through guided choice or short answers. Use existing BFAS vocabulary and new [hypothesis coverage](profiles/COVERAGE.md); keep all source/mapping/evidence claims separate.
+1. Use [optional onboarding](profiles/ONBOARDING.md): acquire desired **agent** behavior through guided choice **or** short answers, with skipping allowed. Use existing BFAS vocabulary and new [hypothesis coverage](profiles/COVERAGE.md); keep all source/mapping/evidence claims separate.
 2. Preserve unspecified, unknowns and unresolved conflicts. Do not infer correlations, norms, scores, paired-aspect balance or owner psychology.
 3. Present exact rules and the whole preview. Require genuine owner confirmation; synthetic receipts cannot count as consent. Changed content requires a new revision and confirmation.
 4. Validate and store exact versioned originals. Compile only catalog-derived active rules; audit text stays inert.
-5. Bind each parent/child explicitly to ID, revision and digests. No automatic inheritance or averaging. Revalidate stored originals on each fresh load.
+5. Confirm [assignments](profiles/ASSIGNMENTS.md) separately, then bind the parent and each requested child explicitly to ID, revision and digests. Children are optional. Use guarded replacement/rollback, not file overwrite. No automatic inheritance or averaging. Revalidate stored originals on each fresh load.
 6. Use the [Codex adapter](adapters/codex/README.md) only when explicitly requested, or the host-neutral loader for another manually reviewed integration. Installation does not activate a persona. Host tools/permissions and current task constraints override preferences without mutating the profile.
 
 ## Version router
@@ -21,6 +21,6 @@ Read [PROJECT_PURPOSE](PROJECT_PURPOSE.md), then [Quickstart](docs/QUICKSTART.md
 | Scenario rehearsal / synthesis | [instantiation](fictional-persona-instantiation-v0.1/README.md) / [panel](ephemeral-persona-panel-adapter-v0.1/README.md) | Optional, bounded, manually reviewed |
 | Historical studies | [paused triage](evaluation/core-triage-v2/records/REPORT.md), [old pilot](evaluation/pilot-2026-10-22/REPORT.md) | Preserve all raw evidence; no new collection or result transfer |
 
-Read [claims](docs/CLAIMS_MATRIX.md) before describing capabilities. Ten renderable settings do not establish ten implemented human traits, psychometric validity, emotion, persistence of behavior or cross-model stability. Actual owner intent/confirmation and genuine end-to-end use remain private and pending. No owner transcript may enter this public repository without explicit permission.
+Read [psychology definitions](docs/PSYCHOLOGY_GROUNDING.md), [claims](docs/CLAIMS_MATRIX.md) and the separate [prospective release tracks](docs/RELEASE_ACCEPTANCE.md) before describing capabilities. The previous two live answers used Politeness alone: explicit loading, not composition validation. Ten renderable settings do not establish ten implemented human traits, psychometric validity, emotion, persistence of behavior or cross-model stability. Actual owner intent/confirmation and genuine end-to-end use remain private and pending. No owner transcript may enter this public repository without explicit permission.
 
 Fictional, low-stakes advisory work; human final judgment. Safety, accuracy, privacy and permissions are invariant. Do not profile real people, diagnose, infer sensitive attributes, make high-stakes placement decisions or autonomous final decisions. Stop the bounded task when complete; do not erase or revise persistent persona state implicitly. No website work, experiment resumption or automatic release follows from this route.

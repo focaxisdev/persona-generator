@@ -1,57 +1,45 @@
 # FAQ
 
-The current unreleased candidate configures **one fictional agent**: desired behavior → source/construct trace → exact confirmed spec → deterministic effective projection → version-tied evidence. Start at [Quickstart](QUICKSTART.md) → [core contract](../core/README.md). Only two operational analogues are supported and behaviorally untested; see [coverage](../core/COVERAGE.md) and [claims](CLAIMS_MATRIX.md).
+## What is the current product?
 
-Multiple perspectives, panels and Persona Packs described below are **optional legacy use cases**, only when explicitly requested. They are never required by the single-agent core.
+An unreleased desired-trait specification and explicit loading layer for a fictional advisory agent and optional subagents. Choose a combination, inspect its sources and proposed behavior, confirm the full profile, then explicitly assign exact revisions. Start at [Quickstart](QUICKSTART.md), [optional onboarding](../profiles/ONBOARDING.md) and [assignments](../profiles/ASSIGNMENTS.md).
 
-## Is this a personality test?
+## Must I answer a questionnaire and write an essay?
 
-No. Persona Generator is not a personality test or psychometric instrument.
+No. Choose guided questions **or** free text, or skip preferences. Skipped aspects remain unspecified. No correction, edit, child agent or particular setting is mandatory. A change that you actually request needs a new preview and confirmation.
 
-## Does it analyze real people?
+## Is this a personality test or a collection of fixed roles?
 
-No. The public package is for fictional, low-stakes scenarios only.
+Neither. It configures desired agent behavior, not the owner's personality. The ten BFAS aspects provide source-grounded vocabulary; their qualitative AI rules are engineering hypotheses, not human scores or validated traits. See [readable definitions and exclusions](PSYCHOLOGY_GROUNDING.md). Role, capability, values and permissions are separate.
 
-## Are personas prebuilt?
+## Are combinations validated?
 
-No. The design is on-demand generation, not a static persona catalog.
+No. Traits are independently selectable, which does not imply statistical independence or a validated joint distribution. Synthetic tests check composition of exact rules and isolation of bindings. The two previous live answers used Politeness alone with every other aspect unspecified; they establish explicit loading, not composition validity or stable identity.
 
-## Why use academic constructs?
+## What persists, and what activates it?
 
-They provide bounded vocabulary and caution. They are not scores, measurements, proof, or validation. See [Academic Boundaries and Source Notes](ACADEMIC_BOUNDARIES_AND_SOURCE_NOTES.md).
+Only deliberately published confirmed revisions and explicit bindings persist in the local store. Installation assigns nothing. Fresh sessions and children must explicitly validate and load their own binding. Ending a task does not delete its profile or authorize ongoing work. Follow [replacement and rollback](../profiles/ASSIGNMENTS.md); the current-binding guard is not owner authentication.
 
-## Must personas be stored?
+## Is automatic discovery required?
 
-No. Personas are ephemeral by default.
+No. The [Codex adapter](../adapters/codex/README.md) supports repository-guided explicit loading: the host reads installed skill instructions and invokes its validated loader. Native discovery remains unverified; the separate failed nested-CLI attempt remains unchanged. Copying profile prose into a prompt is not evidence that the host loaded it.
 
-## What is Persona Pack v0.1?
+## What are Persona Pack and panels?
 
-Persona Pack v0.1 is an optional Markdown handoff format for one selected fictional persona.
+[Persona Pack](../persona-pack-v0.1/README.md) is a separate corpus-derived descriptive persistence format. [Scenario rehearsal](../fictional-persona-instantiation-v0.1/README.md) and panels are optional legacy workflows. The preserved two-operation core is a diagnostic interface, not the scope of the current profile product.
 
-## Is a panel required?
+## Does this require an account, server or paid model API?
 
-No. Panel rehearsal is optional and should be used only after manual review when the task explicitly asks for synthesis.
+No new service is required for local validation, installation and rendering: Markdown, JSON and standard-library Python suffice. Using a model still requires an already available host. The package grants no tools or permissions and changes no owner account settings.
 
-## Does Persona Generator make final decisions?
+## What would an experimental alpha mean?
 
-No. Human judgment remains final.
+A clearly labeled, scoped install/configure/load package, not scientific validation. The [prospective package track](RELEASE_ACCEPTANCE.md) is separate from the original unmet scientific gate and still awaits actual owner confirmation/assignment/reuse and coordinator acceptance. No v0.2 release has occurred.
 
-## Can it be used for hiring, medical, legal, credit, insurance, surveillance, or education placement?
+## What uses are excluded?
 
-No.
+Real-person profiling, diagnosis, psychometric scoring, sensitive inference, high-stakes placement and autonomous final decisions. Human judgment remains final; read [safety boundaries](SAFETY_BOUNDARIES.md).
 
-## Does it require an app or database?
+## Where should an agent start?
 
-No. It is Markdown-first and local-first.
-
-## Which file should an AI agent read first?
-
-Read [../AI_DISCOVERY.md](../AI_DISCOVERY.md), then follow the smallest task-specific path.
-
-## Is `llms.txt` guaranteed to be supported?
-
-No. It is experimental navigation metadata only, not an official GitHub standard and not guaranteed to be read by crawlers or models.
-
-## What does public alpha mean?
-
-It means the repository is an early protocol distribution for technical review and low-stakes fictional use. It is licensed under [Apache-2.0](../LICENSE) and intentionally avoids claims of broad reliability, psychometric validity, real-person readiness, or high-stakes suitability.
+[AI Discovery](../AI_DISCOVERY.md). `llms.txt` is navigation metadata, not a guarantee of crawler support or host discovery. Original repository material is [Apache-2.0](../LICENSE); cited research and questionnaires retain their own rights.
