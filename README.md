@@ -1,10 +1,24 @@
 # Persona Generator
 
-**Read Markdown to design desired traits for an agent and its subagents.** Choose desired behavior, inspect its psychological sources and exact proposed rules, confirm the whole readable specification, and explicitly hand it to each intended recipient. No installation, Python, store or specific host is required for this primary route.
+## Define your AI agent’s personality
 
-**UNCONFIGURED experimental source candidate (v0.2 unreleased):** ten BFAS aspects now have versioned specification semantics, not demonstrated human personality or psychometric validity. New behavioral hypotheses have no inherited results from earlier experiments. [繁體中文](README.zh-TW.md) · [Project purpose and acceptance](PROJECT_PURPOSE.md)
+Choose how you want your agent to advise, communicate and approach a task. Turn those preferences into a personality specification you can review, confirm and give to your agent or explicitly assigned subagents.
 
-**Start:** [AI_DISCOVERY.md](AI_DISCOVERY.md) → [no-code Quickstart and starter prompt](docs/QUICKSTART.md) → [self-contained synthetic Markdown draft](examples/desired-trait-spec.md). Choose guided questions **or** short answers, or skip. [Psychology definitions](docs/PSYCHOLOGY_GROUNDING.md).
+Choose and combine preferences separately across the existing five Big Five domains and ten BFAS aspects; anything left `unspecified` stays inactive.
+
+**[Start with the Quickstart →](docs/QUICKSTART.md)** · [Entry point for agents](AI_DISCOVERY.md) · [繁體中文](README.zh-TW.md)
+
+Answer guided questions **or** describe what you want in your own words; skip anything you do not want to specify. You get a readable Markdown document with proposed rules, sources and boundaries. No installation, Python or particular host is required for this route.
+
+The vocabulary draws on human personality research; translating it into AI behavior remains an **unvalidated engineering hypothesis**, not evidence that a model has human traits or a stable personality. Intended for fictional, low-stakes advisory use, with human final judgment.
+
+**An example of what you could ask for:**
+
+> For a fictional club choosing between two feasible workshop dates, I want my agent to recommend a concrete next step, explain its reasons, keep the alternatives visible and leave the decision to me.
+
+This request targets **high Assertiveness** in the [current catalog](profiles/catalog-v2.json); the other nine aspects stay `unspecified`. It illustrates a desired preference, not an executed agent response or a ready-made persona. Review and genuinely confirm the whole proposed specification, its recipients and scope before use. [See a complete synthetic draft](examples/desired-trait-spec.md).
+
+**UNCONFIGURED experimental source; v0.2 unreleased at the [dated checkpoint](docs/RELEASE_STATUS.md).** [Project purpose](PROJECT_PURPOSE.md) · [Psychology sources and limits](docs/PSYCHOLOGY_GROUNDING.md)
 
 `Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
 

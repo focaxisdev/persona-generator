@@ -1,10 +1,26 @@
 # Persona Generator／人格規格產生器
 
-**讀取 Markdown，為 agent 與子代理設計可追溯的人格規格。** 選擇希望 agent 表現的特質，檢查心理學來源與精確工程規則，確認整份文件，再明確交給各接收者。主要流程不需要安裝、Python、store 或特定宿主。
+## 定義你的 AI agent 人格
 
-目前是 **UNCONFIGURED 未設定人格、v0.2 尚未發布的實驗性來源套件候選版**。十個 BFAS aspects 有版本化的設定與指令語義，不等於模型已實現十種人類心理特質。[English](README.md) · [專案目的與驗收](PROJECT_PURPOSE.md)
+選擇你希望 agent 如何提供建議、溝通與處理任務，將這些偏好整理成一份可檢視、確認的人格規格，交給你的 agent 或明確指派的子代理使用。
 
-**開始使用：**[AI_DISCOVERY.md](AI_DISCOVERY.md) → [免程式 Quickstart 與可複製起始提示](docs/QUICKSTART.md) → [完整可攜 Markdown 合成草稿](examples/desired-trait-spec.md)。可選引導選擇題**或**簡答，也可略過。[心理學定義與排除範圍](docs/PSYCHOLOGY_GROUNDING.md)。
+可在既有 Big Five 五個 domains、BFAS 十個 aspects 中分別選擇並組合偏好；保留為 `unspecified` 的部分不啟用。
+
+**[從 Quickstart 開始 →](docs/QUICKSTART.md)** · [給 agent 的入口](AI_DISCOVERY.md) · [English](README.md)
+
+可回答引導問題，**或**用自己的話描述需求；不想設定的部分可以略過。你會得到一份可閱讀的 Markdown 文件，列出擬採用的規則、來源與邊界。這條路徑不需要安裝、Python 或特定宿主。
+
+特質詞彙以人類人格研究為來源；轉譯成 AI 行為仍是**未驗證的工程假說**，不代表模型具有人類特質或穩定人格。限虛構、低風險建議用途，保留人類最終判斷。
+
+**例如，你可以提出這樣的需求：**
+
+> 在虛構社團從兩個可行的工作坊日期中做選擇時，我希望 agent 提出具體的下一步建議、說明理由、保留其他選項，並由我做最後決定。
+
+這項需求對應[目前 catalog](profiles/catalog-v2.json) 的 **Assertiveness 偏高**；其他九個 aspects 保持 `unspecified`。這只是期望偏好的示例，並非已執行的 agent 回答或可直接套用的預設人格。使用前須檢視整份擬定規格，真正確認內容、接收者與範圍。[查看完整合成草稿](examples/desired-trait-spec.md)。
+
+**UNCONFIGURED 未設定人格的實驗性來源；[歷史狀態快照](docs/RELEASE_STATUS.md) 中 v0.2 尚未發布。** [專案目的](PROJECT_PURPOSE.md) · [心理學來源與限制](docs/PSYCHOLOGY_GROUNDING.md)
+
+`Persona Generator 保存的是產生人格規格的語法，不是預設人格目錄。`
 
 ## 從需求到可載入規格
 
