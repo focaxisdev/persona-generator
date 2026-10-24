@@ -39,6 +39,8 @@ Contributions should keep the project fictional, low-stakes, evidence-bounded, a
 
 Before opening a pull request:
 
+Run the [software checks](docs/TESTING.md) for code changes.
+
 - confirm all examples are fictional or explicitly scoped
 - confirm no personal data, sensitive data, secrets, credentials, or private files are included
 - confirm no covert profiling request, static persona catalog, or prohibited use case is introduced

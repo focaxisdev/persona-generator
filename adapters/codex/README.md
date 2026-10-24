@@ -48,6 +48,20 @@ with the loader. No dependency download is needed. To update, review the new
 version and install into a new target; this installer never merges or silently
 upgrades an existing skill.
 
+Before loading profiles, `run.py` requires its adjacent `runtime`, `profiles`
+and `core` directories and the five Python files shown above to be present and
+free of symlinks. Missing or symlinked code rejects with exit 2, empty stdout
+and a `REJECTED:` diagnostic, including when an ordinary source checkout is on
+`PYTHONPATH`. This prevents an incomplete installation from silently loading
+those packages from that checkout. These checks assume a trusted launcher and
+ordinary Python import environment; they do not authenticate code or protect
+against concurrent filesystem changes. Catalog and pinned source verification
+remain part of profile validation.
+
+If installed dependencies are missing or damaged, retain the separate profile
+store and install a reviewed source version into a clean new target. The
+installer refuses to repair or overwrite an existing skill in place.
+
 Create and confirm profiles and explicitly bind agent IDs using the profiles
 workflow. Keep the store outside the installed skill. Then invoke in Codex:
 
