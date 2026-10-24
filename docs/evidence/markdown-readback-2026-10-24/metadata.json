@@ -1,0 +1,32 @@
+{
+  "base_commit": "070084da8fe5b1ad40088ac0cf8f15237eaed63e",
+  "source_path": "examples/desired-trait-spec.md",
+  "source_sha256": "558791130a41e2912d4cf5b0cd9c22031281189b86da3f2b1af8f65ad530e8ad",
+  "request_sha256": "8d900860c4e81acb3519ebfa8598757a366cba55dfdc7803dbb16030ae61e4ab",
+  "plan_sha256": "943ee0a0d99cdd2d305e6279cfd3ac1624ef347a27d9b514797ddd52cc92448c",
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning_effort": "medium",
+  "fork_turns": "none",
+  "attempt": 1,
+  "status": "FIRST_RESPONSE_RETAINED",
+  "frozen_at_utc": "2026-10-24T07:50:12.942171+00:00",
+  "response_sha256": "e14f6561ede44fb79cd2bc9a2e34dc378ff5e972a9b159a2f946c8e8528ff2b1",
+  "response_saved_at_utc": "2026-10-24T07:52:01.479375+00:00",
+  "accepted_tool_parameters": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "fork_turns": "none"
+  },
+  "tool": "collaboration.spawn_agent",
+  "returned_agent_name": "/root/standalone_reader_once",
+  "generator_calls": 1,
+  "rerolls": 0,
+  "reader_followups": 0,
+  "thread_id": "not exposed",
+  "turn_id": "not exposed",
+  "temperature": "not exposed",
+  "seed": "not exposed",
+  "backend_model_attestation": "not exposed; selection accepted by delegation tool",
+  "tool_use_audit": "No reader tool call was surfaced in parent-visible messages; complete child tool trace is not exposed by the available collaboration interface. No-tools was an instruction, not enforced isolation.",
+  "raw_response_representation": "Exact returned final-answer text, saved as UTF-8 with final LF; no internal reasoning requested or retained."
+}
