@@ -1,22 +1,22 @@
 # Persona Generator／人格規格產生器
 
-**為 agent 與子代理設計可追溯、可組合的人格規格。** 選擇希望 agent 表現的特質組合，檢查心理學來源與工程轉譯，確認完整規格，再於新任務載入同一個明確版本。
+**讀取 Markdown，為 agent 與子代理設計可追溯的人格規格。** 選擇希望 agent 表現的特質，檢查心理學來源與精確工程規則，確認整份文件，再明確交給各接收者。主要流程不需要安裝、Python、store 或特定宿主。
 
 目前是 **UNCONFIGURED 未設定人格、v0.2 尚未發布的實驗性來源套件候選版**。十個 BFAS aspects 有版本化的設定與指令語義，不等於模型已實現十種人類心理特質。[English](README.md) · [專案目的與驗收](PROJECT_PURPOSE.md)
 
-**可選擇題或自由文字，也可略過：**[owner 入門](profiles/ONBOARDING.md) · [父／選用子代理指派與回復](profiles/ASSIGNMENTS.md) · [心理學定義與排除範圍](docs/PSYCHOLOGY_GROUNDING.md)。
-
-**開始使用：**[Quickstart](docs/QUICKSTART.md) → [持久人格規格](profiles/README.md) → [Codex 安裝方式](adapters/codex/README.md)。
+**開始使用：**[AI_DISCOVERY.md](AI_DISCOVERY.md) → [免程式 Quickstart 與可複製起始提示](docs/QUICKSTART.md) → [完整可攜 Markdown 合成草稿](examples/desired-trait-spec.md)。可選引導選擇題**或**簡答，也可略過。[心理學定義與排除範圍](docs/PSYCHOLOGY_GROUNDING.md)。
 
 ## 從需求到可載入規格
 
-選擇題或簡答詢問「希望 agent 如何表現」，不推測使用者真實人格。未指定保持 `unspecified`；相互矛盾的要求先保留並解決，不偷偷平均。先看來源、精確行為假說、未知項、限制與完整 preview，再由真正的 owner 確認；修改後必須建立新 revision 並重新確認。
+選擇題或簡答詢問「希望 agent 如何表現」，不推測使用者真實人格。未指定保持 `unspecified`；相互矛盾的要求先保留並解決，不偷偷平均。先看來源、精確行為假說、未知項、限制與整份 Markdown，再等待使用者真正回覆確認；在此之前維持 PENDING，不可代填同意或收據。同一次整份確認也可明確包含已列出的接收者與任務指派。變更接收者或範圍須真正確認該變更；文件內容變更才須重新展示並確認整份新版本。已確認且未變動的規格與指派，可於原範圍內重用於各自授權的有界任務；每個新情境仍須明確重讀。
 
 既有 BFAS 來源包含五個 domains、十個 **aspects**，不可混稱 facets。偏低／中間／偏高是設計目標，不是心理測量分數、百分位或人群常模。同一 domain 的兩個 aspects 不必相同，也不強制平衡。不尋常組合不會僅因不常見而被拒絕。各 aspect 可分別選擇，不代表統計獨立、零相關或已有驗證的聯合分布。[行為轉譯與限制](profiles/COVERAGE.md)將人類定義、AI 假說與未驗證部分分開；B01／B02 仍是 experimental 表達代理。
 
-本機 store 保存完整確認過的版本；父代理與每個子代理各自綁定 profile ID、revision 與 digest，可共用或不同。子代理的修改不會自動改動父代理。任務結束不刪除人格規格；臨時任務要求也不改寫持久 profile。角色、能力、價值／目標、暫時狀態與工具權限是另外的設定，不能混成人格滑桿。
+保存已確認的 Markdown 版本，為父代理與每個需要的子代理明確指定文件 ID／revision、接收者與有界任務範圍。每位接收者取得完整文件；新 session 或子代理情境都要明確重讀，不假設自動繼承或權限轉移。來源、訪談與歷史是惰性追溯資料。任務結束不刪除規格，臨時要求不改寫已保存版本。宿主較高優先指令、安全、準確性、隱私與權限始終優先。
 
-## 已實作與未證明的界線
+手動 Markdown 本身不提供機器完整性檢查、使用者身分驗證、強制載入或行為效度；保存文字不等於穩定人格，也不是 strict JSON contract 可接受的 spec。舊核准不會自動移轉。[Profile 軟體](profiles/README.md)、[嚴格 JSON contract](profiles/CONTRACT.md) 與 [Codex 整合](adapters/codex/README.md) 是選用路徑，原有核准、收據、digest 與 binding 要求完整保留。
+
+## 選用軟體：已實作與未證明的界線
 
 Profile 工具與 Codex adapter 需要 **Python 3.9 以上版本**與標準函式庫；實際測試的解譯器為 **Python 3.12.14**。Python 3.9 是依實作判定的最低需求，本次未在該版本執行驗證。
 

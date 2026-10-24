@@ -1,5 +1,7 @@
 # Optional desired-behavior onboarding
 
+> **Optional strict JSON route.** For the primary read-and-follow Markdown workflow, with no installation or Python prerequisite, start at the [Quickstart](../docs/QUICKSTART.md). The requirements below apply to this separate software contract and remain unchanged; Markdown is not an accepted strict JSON spec.
+
 Use this guide with [CONTRACT](CONTRACT.md) and [COVERAGE](COVERAGE.md) to prepare a fictional, low-stakes advisory agent's desired behavior. Python 3.9 or newer and the standard library are required; the tested interpreter is Python 3.12.14. Python 3.9 execution has not been verified in this check. No model call, questionnaire service or new authoring framework is required. A person or an LLM following the exact contract can assemble the JSON; the compiler validates it but cannot establish that a person agreed.
 
 ## Choose either starting route, or skip

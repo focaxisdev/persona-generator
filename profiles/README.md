@@ -1,5 +1,7 @@
 # Persistent desired-trait profiles — unreleased candidate
 
+> **Optional strict JSON route.** For the primary read-and-follow Markdown workflow, with no installation or Python prerequisite, start at the [Quickstart](../docs/QUICKSTART.md). The requirements below apply to this separate software contract and remain unchanged; Markdown is not an accepted strict JSON spec.
+
 Create a reviewable persistent desired-behavior profile, confirm its exact complete preview, then explicitly bind each fictional advisory agent to one immutable revision. Ten independently selectable BFAS aspect targets and 30 original catalog anchors are available. Independent selection implies neither statistical independence, zero correlation nor a validated joint distribution. Every new rule is an **untested engineering hypothesis**; human construct sources support vocabulary only. This package supplies generation grammar, never a predefined persona inventory. Its local persistence and binding tests do not establish psychological validity, stable model behavior or authentic owner approval.
 
 Requirements: **Python 3.9 or newer**, standard library only; tested with **Python 3.12.14**. Dictionary union in the runtime requires Python 3.9; postponed annotations do not raise that minimum. Python 3.9 execution has not been verified in this check.

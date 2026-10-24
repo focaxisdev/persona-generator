@@ -1,24 +1,24 @@
 # Persona Generator
 
-**Traceable personality design for an agent and its subagents.** Configure a combination of desired traits, inspect their psychological sources and proposed AI behavior, confirm the complete specification, and load the same explicit profile revision again.
+**Read Markdown to design desired traits for an agent and its subagents.** Choose desired behavior, inspect its psychological sources and exact proposed rules, confirm the whole readable specification, and explicitly hand it to each intended recipient. No installation, Python, store or specific host is required for this primary route.
 
 **UNCONFIGURED experimental source candidate (v0.2 unreleased):** ten BFAS aspects now have versioned specification semantics, not demonstrated human personality or psychometric validity. New behavioral hypotheses have no inherited results from earlier experiments. [繁體中文](README.zh-TW.md) · [Project purpose and acceptance](PROJECT_PURPOSE.md)
 
-**Choose questions OR free text, or skip:** [owner onboarding](profiles/ONBOARDING.md) · [parent/optional-child assignments and rollback](profiles/ASSIGNMENTS.md) · [readable psychology definitions](docs/PSYCHOLOGY_GROUNDING.md).
-
-**Start:** [Quickstart](docs/QUICKSTART.md) → [desired-trait profiles](profiles/README.md) → [Codex installation](adapters/codex/README.md).
+**Start:** [AI_DISCOVERY.md](AI_DISCOVERY.md) → [no-code Quickstart and starter prompt](docs/QUICKSTART.md) → [self-contained synthetic Markdown draft](examples/desired-trait-spec.md). Choose guided questions **or** short answers, or skip. [Psychology definitions](docs/PSYCHOLOGY_GROUNDING.md).
 
 `Persona Generator stores the grammar for generating personas, not a catalog of predefined personas.`
 
 ## Choose behavior, review, confirm, load
 
-Guided choices or short answers ask how the agent should behave—not what personality the owner has. Unanswered aspects stay `unspecified`; contradictory requests remain visible until resolved. Preview exact sources, hypothesis rules, unknowns, exclusions and the complete artifact before actual confirmation. Edits require a new revision and confirmation.
+Guided choices or short answers ask how the agent should behave—not what personality the owner has. Unanswered aspects stay `unspecified`; contradictory requests remain visible until resolved. Preview exact sources, hypothesis rules, unknowns, exclusions and the complete Markdown artifact before the user actually confirms. Confirmation stays PENDING until a real response; never fabricate consent or receipts. Whole-profile confirmation may also explicitly assign listed recipients and tasks in that same response. Changed assignments or scope need actual confirmation of that change; changed document content needs review and confirmation of the whole changed revision. Unchanged confirmed profiles and assignments can be reused within their agreed scope for separately authorized bounded tasks, with explicit reading in each fresh context.
 
 The profile layer covers the existing five Big Five domains and ten BFAS **aspects**, not facets. Low, middle and high are design targets, not scores or percentiles. Each aspect is independently selectable; this implies neither statistical independence, zero correlation nor a validated joint distribution. Each selected hypothesis renders explicit bounded preferences; no balancing or population correlations are invented. B01/B02 remain experimental expression proxies. Read [coverage](profiles/COVERAGE.md) and [source limits](core/SOURCES.md).
 
-A local store preserves exact confirmed profile revisions. Parent and child agents each bind an explicit profile ID, revision and digests; they may share a profile or use different ones. A child change does not silently change its parent. Task completion ends the task, not the saved profile. Tools, capabilities, role, values and transient states are separate host concerns. Safety, accuracy, privacy and permissions cannot become personality sliders.
+Save the confirmed Markdown revision and explicitly assign each parent or requested child to its exact document and bounded task scope. Give each recipient the complete document; require explicit reading again in fresh contexts. No automatic inheritance or permission transfer follows from parentage. Source notes and history stay inactive; task completion ends the task, not the saved document. Higher-priority host instructions, safety, accuracy, privacy and permissions govern. Tools, capabilities, role, values and transient states are separate host concerns.
 
-## What can be checked locally
+Manual Markdown does not supply machine-checked integrity, user authentication, enforced loading or behavioral validation. Saved text does not prove stable personality. It is not an accepted strict JSON profile; no old approval migrates. The separate [profiles software guide](profiles/README.md), [strict contract](profiles/CONTRACT.md) and [Codex integration](adapters/codex/README.md) remain optional routes with their full existing requirements.
+
+## Optional software: what can be checked locally
 
 The profile tooling and Codex adapter require **Python 3.9 or newer** and the standard library; the tested interpreter is **Python 3.12.14**. Python 3.9 is the implementation minimum, not an execution-tested interpreter in this check.
 
