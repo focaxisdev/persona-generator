@@ -2,6 +2,7 @@
 import importlib.util
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -235,6 +236,84 @@ class InstallTests(unittest.TestCase):
                                 cwd=self.root, capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("render", result.stdout)
+
+    def installed_runtime_commands(self):
+        destination = installer.install(self.target)
+        store = self.root / "runtime boundary store"
+        fixture = REPO / "profiles/fixtures"
+        preview = fixture / "combination-a-preview.json"
+        environment = os.environ.copy()
+        environment["PYTHONPATH"] = str(REPO)
+
+        def run(*arguments, env=environment):
+            return subprocess.run(
+                [sys.executable, "-B", str(destination / "run.py"), *map(str, arguments)],
+                cwd=self.root, env=env, capture_output=True, text=True,
+            )
+
+        published = run("publish", fixture / "combination-a-spec.json",
+                        "--presented", preview, "--store", store)
+        self.assertEqual(published.returncode, 0, published.stderr)
+        pin = json.loads(published.stdout)
+        bound = run("bind", "--store", store, "--agent", "synthetic-boundary",
+                    "--profile", pin["profile_id"], "--revision", pin["revision"],
+                    "--snapshot", pin["snapshot_sha256"],
+                    "--effective", pin["effective_sha256"])
+        self.assertEqual(bound.returncode, 0, bound.stderr)
+        commands = (("validate-preview", preview),
+                    ("render", "--store", store, "--agent", "synthetic-boundary"))
+        return destination, run, commands, environment, pin
+
+    def test_intact_installed_runtime_wins_over_ordinary_ambient_checkout(self):
+        destination, run, commands, _, pin = self.installed_runtime_commands()
+        for arguments in commands:
+            result = run(*arguments)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue(result.stdout)
+        self.assertEqual(hashlib.sha256(result.stdout.encode()).hexdigest(),
+                         pin["effective_sha256"])
+
+    def test_broken_installed_code_rejects_before_ambient_import(self):
+        destination, run, commands, environment, _ = self.installed_runtime_commands()
+        runtime = destination / "runtime"
+        marker = self.root / "ambient package executed"
+        ambient = self.root / "fake ambient"
+        for package in ("profiles", "core"):
+            path = ambient / package
+            path.mkdir(parents=True)
+            (path / "__init__.py").write_text(
+                "from pathlib import Path\nPath(" + repr(str(marker)) + ").write_text('executed')\n"
+            )
+            (path / "__main__.py").write_text("print('ambient fallback')\n")
+        fake_environment = dict(environment, PYTHONPATH=str(ambient))
+        required = (".", "profiles", "core", "profiles/__init__.py",
+                    "profiles/__main__.py", "profiles/compiler.py",
+                    "core/__init__.py", "core/compiler.py")
+        for relative in required:
+            path = runtime if relative == "." else runtime / relative
+            replacement = self.root / "saved installed code"
+            for defect in ("missing", "symlink"):
+                path.rename(replacement)
+                if defect == "symlink":
+                    path.symlink_to(replacement, target_is_directory=replacement.is_dir())
+                try:
+                    for ambient_environment in (environment, fake_environment):
+                        for arguments in commands:
+                            with self.subTest(path=relative, defect=defect,
+                                              ambient=ambient_environment["PYTHONPATH"],
+                                              command=arguments[0]):
+                                result = run(*arguments, env=ambient_environment)
+                                self.assertEqual(result.returncode, 2, result.stderr)
+                                self.assertEqual(result.stdout, "")
+                                self.assertEqual(result.stderr,
+                                    "REJECTED: missing or symlinked installed runtime code: "
+                                    + ("runtime" if relative == "." else "runtime/" + relative)
+                                    + "\n")
+                                self.assertFalse(marker.exists())
+                finally:
+                    if path.is_symlink():
+                        path.unlink()
+                    replacement.rename(path)
 
     def test_installed_two_catalogs_and_guarded_replacement(self):
         destination = installer.install(self.target)
